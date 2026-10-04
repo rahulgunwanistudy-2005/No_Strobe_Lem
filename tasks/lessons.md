@@ -23,3 +23,15 @@
   inside a later qualifying range can otherwise hide all subsequent flashes.
   Red detection likewise needs observed startup color endpoints, not only the
   first RGB sample. Regression tests cover both luma directions and red at all fps.
+
+- S3: blend original display-code samples before transferring/averaging into
+  analysis cells. Inverting an average luminance loses subcell variation.
+- S3: verifier success alone does not implement Kids' veil_warn policy; local
+  solver candidates must suppress the selected warnings as well.
+- S3: preserve event provenance separately in a WebVTT NOTE so complete round
+  trips can validate cue covers without altering the metadata NOTE contract.
+- S3: grouping byte-identical sample histories is exact only if the detector's
+  counts expand back to the original spatial grid before every area decision.
+- S3: segment context must include the detector's longest history. Extended
+  warnings require >5 s of persistence; a 1.5 s reset can falsely accept a
+  zero-alpha Kids candidate. Keep the longer prefix and test actual suppression.

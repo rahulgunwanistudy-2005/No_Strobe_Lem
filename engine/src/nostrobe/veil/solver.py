@@ -36,13 +36,19 @@ def distortion(cache: FrameCache, cues: Sequence[VeilCue], start: float, end: fl
 
 
 def _solve_segment(
-    cache: FrameCache, segment: Segment, index: int, params: ProfileParams
+    cache: FrameCache,
+    segment: Segment,
+    index: int,
+    params: ProfileParams,
+    *,
+    extended_history: bool = False,
 ) -> tuple[VeilCue, UnresolvedSegment | None]:
     support = (
         max(0.0, segment.start - params.min_ramp_s),
         min(cache.media.duration_s, segment.end + params.min_ramp_s),
     )
-    context = (max(0.0, support[0] - 1.5), min(cache.media.duration_s, support[1] + 1.5))
+    history = params.extended_duration_s + 1.5 if extended_history else 1.5
+    context = (max(0.0, support[0] - history), min(cache.media.duration_s, support[1] + 1.5))
     candidates: list[tuple[float, float, float, VeilCue]] = []
     grid = sorted(
         {
@@ -100,7 +106,8 @@ def solve(cache: FrameCache, events: list[HazardEvent], params: ProfileParams) -
     cues: list[VeilCue] = []
     unresolved: list[UnresolvedSegment] = []
     for index, segment in enumerate(segments(events, cache.media.duration_s, params), 1):
-        cue, failure = _solve_segment(cache, segment, index, params)
+        extended = any(e.kind == "extended_flashing" and e.id in segment.covers for e in events)
+        cue, failure = _solve_segment(cache, segment, index, params, extended_history=extended)
         # Zero-alpha candidates are valid for warnings; omit their empty veils.
         if cue.alpha > 0:
             cues.append(cue)

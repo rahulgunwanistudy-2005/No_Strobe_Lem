@@ -75,3 +75,29 @@ def test_exact_cell_grouping_preserves_area_and_all_profiles(tmp_path, primitive
     ordinary = detect_cached(cache, [], params)
     grouped = detect_cached(cache, [], params, bounds=(0, cache.media.duration_s))
     assert ordinary == grouped
+
+
+def test_kids_extended_warning_is_not_hidden_by_short_context(tmp_path, monkeypatch):
+    path = tmp_path / "HAZARD_extended.mp4"
+    encode(path, ClipSpec("extended", "full_flash", rate=2, duration_s=7))
+    cache = load_cache(path, Settings(repo_root=tmp_path))
+    kids = get_profile("kids")
+    events = detect_cached(cache, [], [kids])["kids"]
+    assert any(e.kind == "extended_flashing" for e in events)
+    assert not any(e.severity == "fail" for e in events)
+    result = solve(cache, events, kids)
+    assert result.cues and result.cues[0].alpha == kids.max_alpha
+    # Fixed lead/ramp padding is too late to clear the trailing change window.
+    # The required outcome is explicit refusal, never a zero-opacity "pass".
+    assert result.unresolved and result.unresolved[0].covers == [events[0].id]
+    strict = verify(cache, result.cues, kids, reject_warnings=True)
+    assert not strict.passes
+    assert any(e.kind == "extended_flashing" for e in strict.residual_events)
+    assert verify(cache, result.cues, kids).passes
+    from nostrobe import analysis
+
+    monkeypatch.setattr(analysis, "solve", lambda *args: result)
+    track = analysis.analyze_cache(cache, [kids])[0]
+    assert not track.verifier.passes and track.unresolved_segments
+    assert not track.verifier.residual_events
+    assert not solve(cache, events, get_profile("broadcast")).cues

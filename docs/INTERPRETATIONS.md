@@ -119,3 +119,14 @@ flash-threshold Notes 2/3 on 2026-10-04. Source wording overrides the brief.
   whose peak qualifying-change count is maximal during the event interval.
   Before/after luminance traces use that same group. Extended events use raw
   opposing-change counts. Neither source frames nor video are embedded.
+- Extended-warning candidates retain `extended_duration_s + 1.5` seconds of
+  pre-context, rather than only 1.5. Resetting a >5 s persistence counter inside
+  a shorter window would hide the very warning Kids is supposed to mitigate.
+  Other candidates retain the requested 1.5 s context on both sides.
+- A seven-second 2 Hz full-frame clip exercises Kids' extended-warning policy.
+  It has no fail events, but the fixed lead/ramp padding cannot clear the
+  one-second raw-change window before the >5 s warning is emitted at the late
+  sync offset. This case must be marked unresolved even when the final
+  fail-only verifier passes. Its test asserts refusal and an actual residual
+  extended warning; the initial expectation of guaranteed suppression was not
+  supported by the timing bounds. No source truth or detector threshold changes.
