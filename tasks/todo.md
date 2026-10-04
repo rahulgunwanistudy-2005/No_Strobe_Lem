@@ -16,3 +16,21 @@ Lane A selected: macOS 26.3 arm64 is a supported host family; 31 GiB available b
 
 S1 gates passed on 2026-10-04. See docs/S1_REPORT.md. S2 was not started.
 The desktop was locked, so visual inspection was unavailable; the device lifecycle manager confirmed the app was visible before the device was stopped.
+
+# Session 2 plan
+
+Scope: execute S2_detection_engine.md under the project bible, with source
+corrections preserved from S1. The user's explicit commit request overrides
+the manual-commit default. Commit logical stages without attribution trailers.
+
+- [ ] Re-read ITU/Ofcom/WCAG sources and record detection interpretations.
+- [ ] Build vectorized opposing-change and bounded rate counters, luma/red
+  detection, summed-area rules, interval merging and extended warnings.
+- [ ] Wire one decoding pass shared by all profiles to analyze --detect-only;
+  emit detection results only, with no verified-track claim.
+- [ ] Add independent boundary/property/encoded integration checks across
+  24/25/30/50/60 fps; preserve S1 truth and investigate every mismatch.
+- [ ] Benchmark a ten-minute 1080p CC-BY film, profile bottlenecks and record
+  actual machine/tool versions and throughput.
+- [ ] Self-review; run lint/format/strict types/full tests and contract checks;
+  document results, friction, limitations and commit each finished stage.
