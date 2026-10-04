@@ -1,0 +1,14 @@
+[
+  {
+    "name": "bt1702-3",
+    "url": "https://www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.1702-3-202311-I!!PDF-E.pdf",
+    "sha256": "9d1167de5553a82c633020a44b5f729118e90ff6536a3b519f1813e235437bf2",
+    "retrieved": "2026-10-04"
+  },
+  {
+    "name": "bt1702-2",
+    "url": "https://www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.1702-2-201910-S!!PDF-E.pdf",
+    "sha256": "69d2c1e8d35e7b9add37654c94bbc8672cebfda44f11b3e8631652890499534f",
+    "retrieved": "2026-10-04"
+  }
+]

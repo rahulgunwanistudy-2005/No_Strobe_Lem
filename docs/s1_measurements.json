@@ -1,0 +1,28 @@
+{
+  "cells": [
+    160,
+    90
+  ],
+  "decode_grid": [
+    640,
+    360
+  ],
+  "raw_cell_errors_cd_m2": {
+    "area_24": 0.4555000000000007,
+    "area_26": 0.17899999999997362,
+    "camera_burst": 0,
+    "delta_19": 0,
+    "delta_21": 0,
+    "flat": 0,
+    "isolated_1": 0,
+    "isolated_2": 0,
+    "isolated_3": 0,
+    "lightning": 0,
+    "moving_bar": 0,
+    "rate_3": 0,
+    "rate_3_5": 0,
+    "tiles_26": 0.1220000000000141
+  },
+  "smoke_clips": 16,
+  "smoke_seconds": 6.421475291979732
+}
