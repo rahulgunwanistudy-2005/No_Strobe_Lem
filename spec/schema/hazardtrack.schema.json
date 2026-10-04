@@ -1,0 +1,331 @@
+{
+  "$defs": {
+    "HazardEvent": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "luma_flash",
+            "red_flash",
+            "extended_flashing"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "peak_area_fraction": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Peak Area Fraction",
+          "type": "number"
+        },
+        "peak_changes_per_s": {
+          "minimum": 0,
+          "title": "Peak Changes Per S",
+          "type": "integer"
+        },
+        "peak_delta_cd_m2": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Peak Delta Cd M2"
+        },
+        "regime": {
+          "enum": [
+            "absolute",
+            "relative",
+            "red"
+          ],
+          "title": "Regime",
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "fail",
+            "warn"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "t_end": {
+          "minimum": 0,
+          "title": "T End",
+          "type": "number"
+        },
+        "t_start": {
+          "minimum": 0,
+          "title": "T Start",
+          "type": "number"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "severity",
+        "t_start",
+        "t_end",
+        "peak_changes_per_s",
+        "peak_area_fraction",
+        "peak_delta_cd_m2",
+        "regime"
+      ],
+      "title": "HazardEvent",
+      "type": "object"
+    },
+    "MediaInfo": {
+      "properties": {
+        "content_id": {
+          "title": "Content Id",
+          "type": "string"
+        },
+        "duration_s": {
+          "exclusiveMinimum": 0,
+          "title": "Duration S",
+          "type": "number"
+        },
+        "fps": {
+          "exclusiveMinimum": 0,
+          "title": "Fps",
+          "type": "number"
+        },
+        "height": {
+          "exclusiveMinimum": 0,
+          "title": "Height",
+          "type": "integer"
+        },
+        "source_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Source Sha256",
+          "type": "string"
+        },
+        "transfer": {
+          "const": "sdr",
+          "title": "Transfer",
+          "type": "string"
+        },
+        "width": {
+          "exclusiveMinimum": 0,
+          "title": "Width",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "content_id",
+        "duration_s",
+        "fps",
+        "width",
+        "height",
+        "transfer",
+        "source_sha256"
+      ],
+      "title": "MediaInfo",
+      "type": "object"
+    },
+    "TrackStats": {
+      "properties": {
+        "mean_alpha": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Mean Alpha",
+          "type": "number"
+        },
+        "n_events_by_kind": {
+          "additionalProperties": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "propertyNames": {
+            "enum": [
+              "luma_flash",
+              "red_flash",
+              "extended_flashing"
+            ]
+          },
+          "title": "N Events By Kind",
+          "type": "object"
+        },
+        "veiled_fraction_of_runtime": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Veiled Fraction Of Runtime",
+          "type": "number"
+        }
+      },
+      "required": [
+        "veiled_fraction_of_runtime",
+        "mean_alpha",
+        "n_events_by_kind"
+      ],
+      "title": "TrackStats",
+      "type": "object"
+    },
+    "VeilCue": {
+      "properties": {
+        "alpha": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Alpha",
+          "type": "number"
+        },
+        "covers": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Covers",
+          "type": "array"
+        },
+        "gray": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Gray",
+          "type": "number"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "ramp_in_s": {
+          "minimum": 0.5,
+          "title": "Ramp In S",
+          "type": "number"
+        },
+        "ramp_out_s": {
+          "minimum": 0.5,
+          "title": "Ramp Out S",
+          "type": "number"
+        },
+        "t_off": {
+          "title": "T Off",
+          "type": "number"
+        },
+        "t_on": {
+          "title": "T On",
+          "type": "number"
+        }
+      },
+      "required": [
+        "id",
+        "t_on",
+        "t_off",
+        "ramp_in_s",
+        "ramp_out_s",
+        "alpha",
+        "gray",
+        "covers"
+      ],
+      "title": "VeilCue",
+      "type": "object"
+    },
+    "VerifierResult": {
+      "properties": {
+        "engine_version": {
+          "title": "Engine Version",
+          "type": "string"
+        },
+        "offsets_checked_s": {
+          "items": {
+            "type": "number"
+          },
+          "title": "Offsets Checked S",
+          "type": "array"
+        },
+        "params_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Params Hash",
+          "type": "string"
+        },
+        "passes": {
+          "title": "Passes",
+          "type": "boolean"
+        },
+        "residual_events": {
+          "items": {
+            "$ref": "#/$defs/HazardEvent"
+          },
+          "title": "Residual Events",
+          "type": "array"
+        }
+      },
+      "required": [
+        "passes",
+        "offsets_checked_s",
+        "residual_events",
+        "engine_version",
+        "params_hash"
+      ],
+      "title": "VerifierResult",
+      "type": "object"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "events": {
+      "items": {
+        "$ref": "#/$defs/HazardEvent"
+      },
+      "title": "Events",
+      "type": "array"
+    },
+    "format": {
+      "const": "hazardtrack",
+      "title": "Format",
+      "type": "string"
+    },
+    "format_version": {
+      "const": "1.0",
+      "title": "Format Version",
+      "type": "string"
+    },
+    "generated_at": {
+      "format": "date-time",
+      "title": "Generated At",
+      "type": "string"
+    },
+    "media": {
+      "$ref": "#/$defs/MediaInfo"
+    },
+    "profile": {
+      "enum": [
+        "broadcast",
+        "local",
+        "kids"
+      ],
+      "title": "Profile",
+      "type": "string"
+    },
+    "stats": {
+      "$ref": "#/$defs/TrackStats"
+    },
+    "veils": {
+      "items": {
+        "$ref": "#/$defs/VeilCue"
+      },
+      "title": "Veils",
+      "type": "array"
+    },
+    "verifier": {
+      "$ref": "#/$defs/VerifierResult"
+    }
+  },
+  "required": [
+    "format",
+    "format_version",
+    "profile",
+    "media",
+    "events",
+    "veils",
+    "verifier",
+    "generated_at",
+    "stats"
+  ],
+  "title": "HazardTrack",
+  "type": "object"
+}

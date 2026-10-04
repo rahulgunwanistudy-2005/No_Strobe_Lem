@@ -1,0 +1,14 @@
+{
+  "name": "nostrobe-contracts",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "types:generate": "node scripts/generate-types.cjs",
+    "types:check": "node scripts/generate-types.cjs --check",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "json-schema-to-typescript": "15.0.4",
+    "typescript": "5.9.3"
+  }
+}

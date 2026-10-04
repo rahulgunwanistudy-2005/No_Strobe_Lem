@@ -1,0 +1,21 @@
+name: Quality gates
+on: [push, pull_request]
+jobs:
+  session-one:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: '0.8.23'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - run: npm ci
+      - run: uv sync --locked
+        working-directory: engine
+      - run: uv run ruff check && uv run ruff format --check && uv run mypy --strict src && uv run pytest -q
+        working-directory: engine
+      - run: npm run types:check && npm run typecheck

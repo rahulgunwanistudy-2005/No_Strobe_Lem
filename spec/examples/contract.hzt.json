@@ -1,0 +1,29 @@
+{
+  "format": "hazardtrack",
+  "format_version": "1.0",
+  "profile": "broadcast",
+  "media": {
+    "content_id": "contract_fixture_only",
+    "duration_s": 3.0,
+    "fps": 25.0,
+    "width": 640,
+    "height": 360,
+    "transfer": "sdr",
+    "source_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "events": [],
+  "veils": [],
+  "verifier": {
+    "passes": false,
+    "offsets_checked_s": [],
+    "residual_events": [],
+    "engine_version": "0.1.0",
+    "params_hash": "70dcc50ff260aa1abcb1137f7ca022293f27dbcdc6c694c49b1c3ed79455de6a"
+  },
+  "generated_at": "2026-10-04T00:00:00Z",
+  "stats": {
+    "veiled_fraction_of_runtime": 0.0,
+    "mean_alpha": 0.0,
+    "n_events_by_kind": {}
+  }
+}

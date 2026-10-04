@@ -1,0 +1,422 @@
+{
+  "clips": [
+    {
+      "area": 1.0,
+      "code8": 64,
+      "dark_cd_m2": 100.0,
+      "delta_cd_m2": 60.0,
+      "duration_s": 1,
+      "duty": 0.5,
+      "fps": 25,
+      "height": 360,
+      "n_flashes": 1,
+      "name": "flat",
+      "primitive": "flat",
+      "rate": 3.5,
+      "rgb_a": [
+        255,
+        0,
+        0
+      ],
+      "rgb_b": [
+        0,
+        0,
+        255
+      ],
+      "seed": 7,
+      "width": 640
+    },
+    {
+      "area": 1.0,
+      "code8": 64,
+      "dark_cd_m2": 100.0,
+      "delta_cd_m2": 60.0,
+      "duration_s": 3.0,
+      "duty": 0.5,
+      "fps": 25,
+      "height": 360,
+      "n_flashes": 1,
+      "name": "rate_3",
+      "primitive": "full_flash",
+      "rate": 3,
+      "rgb_a": [
+        255,
+        0,
+        0
+      ],
+      "rgb_b": [
+        0,
+        0,
+        255
+      ],
+      "seed": 7,
+      "width": 640
+    },
+    {
+      "area": 1.0,
+      "code8": 64,
+      "dark_cd_m2": 100.0,
+      "delta_cd_m2": 60.0,
+      "duration_s": 3.0,
+      "duty": 0.5,
+      "fps": 25,
+      "height": 360,
+      "n_flashes": 1,
+      "name": "rate_3_5",
+      "primitive": "full_flash",
+      "rate": 3.5,
+      "rgb_a": [
+        255,
+        0,
+        0
+      ],
+      "rgb_b": [
+        0,
+        0,
+        255
+      ],
+      "seed": 7,
+      "width": 640
+    },
+    {
+      "area": 0.24,
+      "code8": 64,
+      "dark_cd_m2": 100.0,
+      "delta_cd_m2": 60.0,
+      "duration_s": 3.0,
+      "duty": 0.5,
+      "fps": 25,
+      "height": 360,
+      "n_flashes": 1,
+      "name": "area_24",
+      "primitive": "regional_rect",
+      "rate": 3.5,
+      "rgb_a": [
+        255,
+        0,
+        0
+      ],
+      "rgb_b": [
+        0,
+        0,
+        255
+      ],
+      "seed": 7,
+      "width": 640
+    },
+    {
+      "area": 0.26,
+      "code8": 64,
+      "dark_cd_m2": 100.0,
+      "delta_cd_m2": 60.0,
+      "duration_s": 3.0,
+      "duty": 0.5,
+      "fps": 25,
+      "height": 360,
+      "n_flashes": 1,
+      "name": "area_26",
+      "primitive": "regional_rect",
+      "rate": 3.5,
+      "rgb_a": [
+        255,
+        0,
+        0
+      ],
+      "rgb_b": [
+        0,
+        0,
+        255
+      ],
+      "seed": 7,
+      "width": 640
+    },
+    {
+      "area": 0.26,
+      "code8": 64,
+      "dark_cd_m2": 100.0,
+      "delta_cd_m2": 60.0,
+      "duration_s": 3.0,
+      "duty": 0.5,
+      "fps": 25,
+      "height": 360,
+      "n_flashes": 1,
+      "name": "tiles_26",
+      "primitive": "regional_tiles",
+      "rate": 3.5,
+      "rgb_a": [
+        255,
+        0,
+        0
+      ],
+      "rgb_b": [
+        0,
+        0,
+        255
+      ],
+      "seed": 7,
+      "width": 640
+    },
+    {
+      "area": 1.0,
+      "code8": 64,
+      "dark_cd_m2": 100.0,
+      "delta_cd_m2": 19,
+      "duration_s": 3.0,
+      "duty": 0.5,
+      "fps": 25,
+      "height": 360,
+      "n_flashes": 1,
+      "name": "delta_19",
+      "primitive": "full_flash",
+      "rate": 3.5,
+      "rgb_a": [
+        255,
+        0,
+        0
+      ],
+      "rgb_b": [
+        0,
+        0,
+        255
+      ],
+      "seed": 7,
+      "width": 640
+    },
+    {
+      "area": 1.0,
+      "code8": 64,
+      "dark_cd_m2": 100.0,
+      "delta_cd_m2": 21,
+      "duration_s": 3.0,
+      "duty": 0.5,
+      "fps": 25,
+      "height": 360,
+      "n_flashes": 1,
+      "name": "delta_21",
+      "primitive": "full_flash",
+      "rate": 3.5,
+      "rgb_a": [
+        255,
+        0,
+        0
+      ],
+      "rgb_b": [
+        0,
+        0,
+        255
+      ],
+      "seed": 7,
+      "width": 640
+    },
+    {
+      "area": 1.0,
+      "code8": 64,
+      "dark_cd_m2": 100.0,
+      "delta_cd_m2": 60.0,
+      "duration_s": 3.0,
+      "duty": 0.5,
+      "fps": 25,
+      "height": 360,
+      "n_flashes": 1,
+      "name": "red_blue",
+      "primitive": "red",
+      "rate": 3.5,
+      "rgb_a": [
+        255,
+        0,
+        0
+      ],
+      "rgb_b": [
+        0,
+        0,
+        255
+      ],
+      "seed": 7,
+      "width": 640
+    },
+    {
+      "area": 0.1,
+      "code8": 64,
+      "dark_cd_m2": 100.0,
+      "delta_cd_m2": 60.0,
+      "duration_s": 3.0,
+      "duty": 0.5,
+      "fps": 25,
+      "height": 360,
+      "n_flashes": 1,
+      "name": "moving_bar",
+      "primitive": "moving_bar",
+      "rate": 3.5,
+      "rgb_a": [
+        255,
+        0,
+        0
+      ],
+      "rgb_b": [
+        0,
+        0,
+        255
+      ],
+      "seed": 7,
+      "width": 640
+    },
+    {
+      "area": 1.0,
+      "code8": 64,
+      "dark_cd_m2": 100.0,
+      "delta_cd_m2": 60.0,
+      "duration_s": 3.0,
+      "duty": 0.5,
+      "fps": 25,
+      "height": 360,
+      "n_flashes": 1,
+      "name": "camera_burst",
+      "primitive": "camera_burst",
+      "rate": 5,
+      "rgb_a": [
+        255,
+        0,
+        0
+      ],
+      "rgb_b": [
+        0,
+        0,
+        255
+      ],
+      "seed": 7,
+      "width": 640
+    },
+    {
+      "area": 1.0,
+      "code8": 64,
+      "dark_cd_m2": 100.0,
+      "delta_cd_m2": 60.0,
+      "duration_s": 3.0,
+      "duty": 0.5,
+      "fps": 25,
+      "height": 360,
+      "n_flashes": 1,
+      "name": "lightning",
+      "primitive": "lightning",
+      "rate": 3.5,
+      "rgb_a": [
+        255,
+        0,
+        0
+      ],
+      "rgb_b": [
+        0,
+        0,
+        255
+      ],
+      "seed": 7,
+      "width": 640
+    },
+    {
+      "area": 1.0,
+      "code8": 64,
+      "dark_cd_m2": 100.0,
+      "delta_cd_m2": 60.0,
+      "duration_s": 3.0,
+      "duty": 0.5,
+      "fps": 25,
+      "height": 360,
+      "n_flashes": 1,
+      "name": "police",
+      "primitive": "police",
+      "rate": 3.5,
+      "rgb_a": [
+        255,
+        0,
+        0
+      ],
+      "rgb_b": [
+        0,
+        0,
+        255
+      ],
+      "seed": 7,
+      "width": 640
+    },
+    {
+      "area": 1.0,
+      "code8": 64,
+      "dark_cd_m2": 100.0,
+      "delta_cd_m2": 60.0,
+      "duration_s": 3.0,
+      "duty": 0.5,
+      "fps": 25,
+      "height": 360,
+      "n_flashes": 1,
+      "name": "isolated_1",
+      "primitive": "isolated",
+      "rate": 3.5,
+      "rgb_a": [
+        255,
+        0,
+        0
+      ],
+      "rgb_b": [
+        0,
+        0,
+        255
+      ],
+      "seed": 7,
+      "width": 640
+    },
+    {
+      "area": 1.0,
+      "code8": 64,
+      "dark_cd_m2": 100.0,
+      "delta_cd_m2": 60.0,
+      "duration_s": 3.0,
+      "duty": 0.5,
+      "fps": 25,
+      "height": 360,
+      "n_flashes": 2,
+      "name": "isolated_2",
+      "primitive": "isolated",
+      "rate": 3.5,
+      "rgb_a": [
+        255,
+        0,
+        0
+      ],
+      "rgb_b": [
+        0,
+        0,
+        255
+      ],
+      "seed": 7,
+      "width": 640
+    },
+    {
+      "area": 1.0,
+      "code8": 64,
+      "dark_cd_m2": 100.0,
+      "delta_cd_m2": 60.0,
+      "duration_s": 3.0,
+      "duty": 0.5,
+      "fps": 25,
+      "height": 360,
+      "n_flashes": 3,
+      "name": "isolated_3",
+      "primitive": "isolated",
+      "rate": 3.5,
+      "rgb_a": [
+        255,
+        0,
+        0
+      ],
+      "rgb_b": [
+        0,
+        0,
+        255
+      ],
+      "seed": 7,
+      "width": 640
+    }
+  ],
+  "seed": 7,
+  "suite": "smoke"
+}
