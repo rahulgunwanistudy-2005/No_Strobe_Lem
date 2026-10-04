@@ -25,12 +25,18 @@ def detect_cached(
 ) -> dict[str, list[HazardEvent]]:
     start, end = bounds or (0, cache.media.duration_s)
     shape = cache.shape(start, end)
-    pipeline = DetectionPipeline(shape, params)
+    grouping = cache.grouping(start, end) if shape == (90, 160) and bounds is not None else None
+    pipeline = DetectionPipeline(
+        (1, len(grouping[0])) if grouping else shape, params, grouping[1] if grouping else None
+    )
     last: float | None = None
     for frame, t in cache.samples(start, end):
         alpha, gray = veil_timeline(cues, t - offset)
-        frame = frame[: shape[0] * 4, : shape[1] * 4]
-        luma, rgb = cache.cells(frame, alpha, gray)
+        if grouping:
+            luma, rgb = cache.grouped_cells(frame, grouping[0], alpha, gray)
+        else:
+            frame = frame[: shape[0] * 4, : shape[1] * 4]
+            luma, rgb = cache.cells(frame, alpha, gray)
         pipeline.update(luma, rgb, t)
         last = t
         if stop_on_failure and any(

@@ -125,6 +125,11 @@ class HazardTrack(FrozenModel):
             raise ValueError("veil ids must be unique")
         if any(event.t_end > self.media.duration_s for event in self.events):
             raise ValueError("events must lie within the media timeline")
+        if any(
+            segment.end > self.media.duration_s or set(segment.covers) - set(ids)
+            for segment in self.unresolved_segments
+        ):
+            raise ValueError("unresolved segments must lie within media and reference events")
         if any(set(cue.covers) - set(ids) for cue in self.veils):
             raise ValueError("veil covers must reference existing event ids")
         return self

@@ -12,7 +12,9 @@ import numpy as np
 
 from nostrobe.config import Settings
 from nostrobe.decode.ffmpeg import ByteArray, block_mean, iter_analysis, probe
+from nostrobe.detect.zigzag import IntArray
 from nostrobe.domain.models import MediaInfo
+from nostrobe.errors import DecodeError, NostrobeError
 from nostrobe.luminance.color import bt709_to_linear
 from nostrobe.luminance.curve import FloatArray, code10_to_cd_m2
 
@@ -26,6 +28,50 @@ class FrameCache:
     timestamps: FloatArray
     shards: tuple[tuple[str, int], ...]
     reductions: dict[tuple[float, float], tuple[int, int]] = field(default_factory=dict)
+
+    groups: dict[tuple[float, float], tuple[IntArray, IntArray] | None] = field(
+        default_factory=dict
+    )
+
+    def grouping(self, start: float, end: float) -> tuple[IntArray, IntArray] | None:
+        key = (start, end)
+        if key not in self.groups:
+            labels = np.zeros(90 * 160, dtype=np.int64)
+            for frame, _ in self.samples(start, end):
+                blocks = np.ascontiguousarray(
+                    frame.reshape(90, 4, 160, 4, 4).transpose(0, 2, 1, 3, 4)
+                ).reshape(90 * 160, 64)
+                unique, inverse = np.unique(blocks.view("V64").reshape(-1), return_inverse=True)
+                pairs = labels * len(unique) + inverse
+                _, labels = np.unique(pairs, return_inverse=True)
+                if int(labels.max()) + 1 == 90 * 160:
+                    self.groups[key] = None
+                    break
+            else:
+                _, indices, mapping = np.unique(labels, return_index=True, return_inverse=True)
+                self.groups[key] = (indices.astype(np.int64), mapping.reshape(90, 160))
+        return self.groups[key]
+
+    def grouped_cells(
+        self, frame: ByteArray, indices: IntArray, alpha: float, gray: float
+    ) -> tuple[FloatArray, FloatArray]:
+        blocks = frame.reshape(90, 4, 160, 4, 4).transpose(0, 2, 1, 3, 4)
+        samples = blocks.reshape(90 * 160, 4, 4, 4)[indices]
+        codes = np.arange(256, dtype=np.float64) / 255
+        blended = (1 - alpha) * codes + alpha * gray
+        y = code10_to_cd_m2(blended * 255 * 4)[samples[..., 0]]
+        rgb = bt709_to_linear(blended)[samples[..., 1:]]
+
+        def average(values: FloatArray) -> FloatArray:
+            rows = values[:, :, 0].copy()
+            for x in range(1, 4):
+                rows += values[:, :, x]
+            total = rows[:, 0].copy()
+            for y in range(1, 4):
+                total += rows[:, y]
+            return np.asarray(total[None] / 16, dtype=np.float64)
+
+        return average(y), average(rgb)
 
     def shape(self, start: float, end: float) -> tuple[int, int]:
         key = (start, end)
@@ -55,6 +101,12 @@ class FrameCache:
             for frame, t in zip(data, times, strict=True):
                 if start <= t < limit:
                     yield frame, float(t)
+
+    def luminance(self, frame: ByteArray, alpha: float = 0, gray: float = 0) -> FloatArray:
+        codes = np.arange(256, dtype=np.float64) / 255
+        lut = code10_to_cd_m2(((1 - alpha) * codes + alpha * gray) * 255 * 4)
+        cells = (frame.shape[1] // 4, frame.shape[0] // 4)
+        return block_mean(lut[frame[..., 0]], cells)
 
     def cells(
         self, frame: ByteArray, alpha: float = 0, gray: float = 0
@@ -96,8 +148,6 @@ def load_cache(path: Path, settings: Settings | None = None) -> FrameCache:
             if batch:
                 flush()
             if not times:
-                from nostrobe.errors import DecodeError
-
                 raise DecodeError("decoder emitted no frames")
             if media.duration_s <= times[-1]:
                 media = media.model_copy(update={"duration_s": times[-1] + 1 / media.fps})
@@ -112,9 +162,11 @@ def load_cache(path: Path, settings: Settings | None = None) -> FrameCache:
             )
             try:
                 temporary.rename(directory)
-            except FileExistsError:
+            except OSError:
+                if not directory.is_dir():
+                    raise
                 shutil.rmtree(temporary)
-        except (OSError, ValueError, RuntimeError):
+        except (OSError, ValueError, RuntimeError, NostrobeError):
             shutil.rmtree(temporary, ignore_errors=True)
             raise
     manifest = json.loads((directory / "manifest.json").read_text())

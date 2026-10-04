@@ -40,6 +40,8 @@ def serialize(track: HazardTrack) -> str:
         "NOTE hazardtrack-events\n" + json.dumps(events, separators=(",", ":")),
     ]
     for cue in sorted(track.veils, key=lambda c: (c.t_on - c.ramp_in_s, c.id)):
+        if not cue.id or any(value in cue.id for value in ("\n", "\r", "-->")):
+            raise ValueError("invalid WebVTT cue identifier")
         start = timestamp(cue.t_on - cue.ramp_in_s)
         end = timestamp(cue.t_off + cue.ramp_out_s)
         if _seconds(end) <= _seconds(start):
@@ -73,7 +75,7 @@ def parse(payload: str) -> HazardTrack:
             if not isinstance(value, list):
                 raise ValueError("events must be an array")
             events, event_note = value, True
-        elif lines[0].startswith("NOTE"):
+        elif lines[0] == "NOTE" or lines[0].startswith(("NOTE ", "NOTE\t")):
             continue
         else:
             if len(lines) != 3 or " --> " not in lines[1]:

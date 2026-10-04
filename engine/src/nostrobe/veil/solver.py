@@ -27,10 +27,11 @@ def distortion(cache: FrameCache, cues: Sequence[VeilCue], start: float, end: fl
         next_t = float(times[index + 1]) if index + 1 < len(times) else cache.media.duration_s
         dt = max(0.0, min(end, next_t) - max(start, t))
         alpha, gray = veil_timeline(cues, t)
-        before, _ = cache.cells(frame)
-        after, _ = cache.cells(frame, alpha, gray)
-        total += float(np.abs(after - before).mean()) * dt
         weight += dt
+        if alpha > 0:
+            before = cache.luminance(frame)
+            after = cache.luminance(frame, alpha, gray)
+            total += float(np.abs(after - before).mean()) * dt
     return total / weight if weight else 0.0
 
 

@@ -12,6 +12,7 @@ from nostrobe.detect.events import EventBuilder, merge_events
 from nostrobe.detect.extended import ExtendedDetector
 from nostrobe.detect.luma_flash import LumaFlashDetector, flash_evidence
 from nostrobe.detect.red_flash import RedFlashDetector
+from nostrobe.detect.zigzag import IntArray
 from nostrobe.domain.models import HazardEvent, HazardKind, ProfileId
 from nostrobe.domain.profiles import ProfileParams, get_profile
 from nostrobe.errors import DecodeError
@@ -24,11 +25,17 @@ _RGB_LUT = rgb24_to_linear(np.arange(256, dtype=np.uint8))
 
 
 class DetectionPipeline:
-    def __init__(self, shape: tuple[int, int], profiles: Sequence[ProfileParams]) -> None:
+    def __init__(
+        self,
+        shape: tuple[int, int],
+        profiles: Sequence[ProfileParams],
+        cell_index: IntArray | None = None,
+    ) -> None:
         if not profiles or len({p.profile for p in profiles}) != len(profiles):
             raise ValueError("profiles must be nonempty and unique")
         if len({p.leading_edge_spacing_s for p in profiles}) != 1:
             raise ValueError("shared detectors require the same spacing policy")
+        self.cell_index = cell_index
         self.profiles = tuple(profiles)
         self.luma = LumaFlashDetector(shape, profiles[0].leading_edge_spacing_s)
         self.red = RedFlashDetector(shape, profiles[0].leading_edge_spacing_s)
@@ -45,9 +52,15 @@ class DetectionPipeline:
             if rgb is not None
             else (np.zeros_like(counts), np.zeros_like(raw))
         )
+        deltas = self.luma.peak_delta
+        if self.cell_index is not None:
+            counts, raw, red_counts, red_raw = (
+                values.reshape(-1)[self.cell_index] for values in (counts, raw, red_counts, red_raw)
+            )
+            deltas = deltas.reshape(-1)[self.cell_index]
         for params in self.profiles:
             builders = self.builders[params.profile]
-            builders["luma_flash"].update(flash_evidence(counts, t, params, self.luma.peak_delta))
+            builders["luma_flash"].update(flash_evidence(counts, t, params, deltas))
             if params.red_rule:
                 builders["red_flash"].update(flash_evidence(red_counts, t, params))
             builders["extended_flashing"].update(
