@@ -77,7 +77,7 @@ def markdown(result: dict[str, object], rows: Sequence[Observation]) -> str:
         "## Throughput",
         "",
         "All-profile shared passes. Full analyze includes "
-        "cold decode/cache packing and detection/solve/verification; it excludes generation, "
+        "decode/cache loading or packing and detection/solve/verification; it excludes generation, "
         "truth calculation and report rendering. Detect includes cell conversion for the "
         "synthetic/composite cache runs. Full-film detect below measures detector updates "
         "separately. Host was not reserved for benchmarking.",
@@ -159,6 +159,15 @@ def markdown(result: dict[str, object], rows: Sequence[Observation]) -> str:
         "are cached with source checksum and provenance. A repeated run regenerates "
         "byte-identical JSON and Markdown. generated_at in internal evaluation tracks "
         "is fixed to 2000-01-01 UTC; evaluation never publishes player tracks.",
+        "",
+        "## Oracle source validation",
+        "",
+        "The initial S4 oracle applied the HDR relative criterion to SDR high-dark states. "
+        "Re-reading ITU-R BT.1702-3 Annex 1 Guideline 1 confirmed the SDR predicate: "
+        "darker state below 160 cd/m² and difference at least 20 cd/m². Explicit "
+        "159/160/170 tests validate this distinction. The initial apparent misses are retained "
+        "in [the correction audit](audits/sdr_oracle_correction.json). Every source clip, "
+        "seed, randomized parameter, original S1 truth and production detector is preserved.",
         "",
         "## Environment",
         "",

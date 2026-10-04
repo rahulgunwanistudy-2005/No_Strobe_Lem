@@ -2,6 +2,22 @@
   "cause": "The new S4 oracle incorrectly applied the HDR-only relative criterion to SDR darker states at or above 160 cd/m2.",
   "completed_profile_outcomes": 480,
   "correction": "SDR qualifies only when darker state is below 160 cd/m2 and delta is at least 20 cd/m2. No detector, source clip, randomized parameters, S1 truth or gate is changed.",
+  "origin_environment": {
+    "cpu_model": "Apple M1",
+    "engine_version": "0.1.0",
+    "ffmpeg": "ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers",
+    "git_sha": "f18f8a209f07507168f3299ecf7fb8d341359a67",
+    "machine": "arm64",
+    "memory_bytes": 8589934592,
+    "params_hash": {
+      "broadcast": "70dcc50ff260aa1abcb1137f7ca022293f27dbcdc6c694c49b1c3ed79455de6a",
+      "kids": "eba16e78fcd87c00137e0d37641526314d2d4fe80aad5bbf6f54add615054832",
+      "local": "14b825f91e0477aeabe01a0491ec83ce00d1b4096a43c5d582d5895ca4490538"
+    },
+    "platform": "macOS-26.3-arm64-arm-64bit",
+    "python": "3.12.11"
+  },
+  "origin_evidence_fingerprint": "6361d94df61e015e3922ee070c37d65adfbf340fcf62382d71facc8463504854",
   "original_observations": [
     {
       "analyze_s": 0.12292183400131762,
