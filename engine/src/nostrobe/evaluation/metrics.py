@@ -68,7 +68,10 @@ def summarize(rows: Sequence[Observation]) -> dict[str, object]:
             "analyzed_tracks": len(tracks),
             "verifier_pass_rate": passed / len(tracks) if tracks else None,
             "unresolved_segments": unresolved,
-            "gate_passes": confusion["fn"] == 0 and accounted == len(tracks),
+            "gate_passes": bool(selected)
+            and confusion["fn"] == 0
+            and len(tracks) == len(selected)
+            and accounted == len(tracks),
             "veiled_fraction": veiled / duration if duration else 0,
             "mean_alpha": sum(
                 t.stats.mean_alpha * t.stats.veiled_fraction_of_runtime * t.media.duration_s

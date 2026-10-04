@@ -1,0 +1,13 @@
+{
+  "source_sha256": "dc2146a2b1172def56730143ad80cd1825b7fad15f1fc9c23a4e7d01a741ac11",
+  "method": "Static reference frames plus numerical traces; no raw playback and no external PEAT adjudication.",
+  "broadcast_context": [
+    {"sample_time_s": 196.25, "context": "Rapid squirrel close-up movement against a bright background."},
+    {"sample_time_s": 421.0, "context": "Moving squirrel and leaves against bright sky and spikes."},
+    {"sample_time_s": 443.0, "context": "Moving high-contrast branches and leaves."},
+    {"sample_time_s": 445.0, "context": "Moving foliage and a squirrel over the spikes."},
+    {"sample_time_s": 555.0, "context": "Dense white-on-black credits with an animated squirrel."},
+    {"sample_time_s": 559.0, "context": "Dense scrolling white-on-black credits."}
+  ],
+  "conclusion": "The flags coincide with high-contrast motion, foliage and credits, rather than an assumed clean zero-flash source. The detector measures cell luminance reversals, so motion can create qualifying excursions. These are candidate motion/text false alarms; they have not been adjudicated as confirmed false alarms or true broadcast violations. Local and Kids add smaller-area/lower-count detections and remain unadjudicated. No natural-film accuracy score or zero-false-alarm claim is justified."
+}

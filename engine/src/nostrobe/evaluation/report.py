@@ -10,7 +10,7 @@ def markdown(result: dict[str, object], rows: Sequence[Observation]) -> str:
     lines = [
         "# S4 evaluation results",
         "",
-        f"Acceptance gate: **{'PASS' if result['gates_pass'] else 'NOT PASSED'}**.",
+        f"Detection and verifier gate: **{'PASS' if result['gates_pass'] else 'NOT PASSED'}**.",
         "",
         "Headline numbers (these are the sole submission-number source):",
         "",
@@ -45,6 +45,15 @@ def markdown(result: dict[str, object], rows: Sequence[Observation]) -> str:
         lines.append(
             f"| {profile} | {c['tp']} | {c['tn']} | {c['fp']} | **{c['fn']}** | {med} | {p10} |"
         )
+    lines += ["", "| Suite | Profile | TP | TN | FP | FN |", "|---|---|---:|---:|---:|---:|"]
+    for category in ("boundary", "shapes", "realistic"):
+        for profile, value in summarize([r for r in rows if r.suite == category]).items():
+            assert isinstance(value, dict)
+            c = value["confusion"]
+            assert isinstance(c, dict)
+            lines.append(
+                f"| {category} | {profile} | {c['tp']} | {c['tn']} | {c['fp']} | {c['fn']} |"
+            )
     lines += [
         "",
         "## Viewing cost and verification",
@@ -68,7 +77,7 @@ def markdown(result: dict[str, object], rows: Sequence[Observation]) -> str:
         "## Throughput",
         "",
         "All-profile shared passes. Full analyze includes "
-        "cold decode and detection/solve/whole-file verification; it excludes generation, "
+        "cold decode/cache packing and detection/solve/verification; it excludes generation, "
         "truth calculation and report rendering. Detect includes cell conversion for the "
         "synthetic/composite cache runs. Full-film detect below measures detector updates "
         "separately. Host was not reserved for benchmarking.",
@@ -109,6 +118,12 @@ def markdown(result: dict[str, object], rows: Sequence[Observation]) -> str:
                 f"| {row.name} | {row.profile} | {fails} | {len(row.events) - fails} | "
                 f"[luminance trace]({row.trace}) |"
             )
+    review = result.get("clean_context_review")
+    if isinstance(review, dict):
+        lines += ["", str(review["method"]), ""]
+        for sample in review["broadcast_context"]:
+            lines.append(f"- At {sample['sample_time_s']} s: {sample['context']}")
+        lines += ["", str(review["conclusion"])]
     lines += ["", "## Unresolved and missed cases", ""]
     failures = []
     for row in rows:
@@ -136,7 +151,7 @@ def markdown(result: dict[str, object], rows: Sequence[Observation]) -> str:
         "Realistic: five effects over moving licensed footage at the manifest timestamps, "
         "90% effect / 10% source in display-code space. They test injected hazards against "
         "complex backgrounds; they are not a representative natural-content prevalence "
-        "sample. Scene descriptors are scenario names, not verified scene annotations.",
+        "sample. Scene descriptors identify inspected reference frames, not scene-label truth.",
         "",
         str(result["timing_policy"]),
         "",
@@ -160,6 +175,12 @@ def markdown(result: dict[str, object], rows: Sequence[Observation]) -> str:
         "```json",
         canonical(result["provenance"]).rstrip(),
         "```",
+        "",
+        "## Control exclusions and review",
+        "",
+        "Tears of Steel originals lack required BT.709 tags and are not clean controls. "
+        "The zero-fail expectation on the retained control is reported honestly; independent "
+        "review of its flags is outstanding, so the clean-control acceptance claim remains open.",
         "",
         "## PEAT cross-check",
         "",

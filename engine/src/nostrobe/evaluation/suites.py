@@ -43,7 +43,7 @@ def shape_specs(seed: int, count: int, fps_values: list[int]) -> list[ClipSpec]:
     result = []
     for index in range(count):
         primitive = primitives[index % len(primitives)]
-        fps = fps_values[index % len(fps_values)]
+        fps = int(rng.choice(fps_values))
         dark = float(rng.choice([40, 70, 100, 150, 170]))
         delta = float(rng.choice([19, 21, 28]))
         area = float(rng.choice([0.10, 0.24, 0.26, 0.5, 1]))

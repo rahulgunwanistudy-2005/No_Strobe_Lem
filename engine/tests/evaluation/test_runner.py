@@ -73,3 +73,23 @@ def test_unknown_source_manifest_is_rejected(tmp_path):
     path.write_text(json.dumps(payload))
     with pytest.raises(ValueError, match="unknown footage"):
         read_manifest(path)
+
+
+def test_reused_evidence_rejects_changed_generated_media(tmp_path, monkeypatch):
+    manifest = tiny_manifest(tmp_path)
+    monkeypatch.setenv("NOSTROBE_REPO_ROOT", str(tmp_path))
+    monkeypatch.setattr(
+        runner,
+        "environment",
+        lambda _: {"ffmpeg": "fixture", "python": "3.12", "machine": "fixture", "params_hash": {}},
+    )
+    monkeypatch.setattr(runner, "code_hash", lambda _: "0" * 64)
+    monkeypatch.setattr(runner, "boundary_specs", lambda *_: [])
+    cli = CliRunner()
+    args = ["eval", "--manifest", str(manifest), "--out", str(tmp_path / "out")]
+    assert cli.invoke(app, args).exit_code == 0
+    path = next((tmp_path / "synth_out/s4/clips").glob("*.mp4"))
+    path.write_bytes(b"changed bytes")
+    result = cli.invoke(app, [*args, "--resume"])
+    assert result.exit_code == 1
+    assert "checksum" in str(result.exception) or "source mismatch" in result.output

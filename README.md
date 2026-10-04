@@ -2,7 +2,7 @@
 
 Offline SDR video analysis with portable HazardTrack sidecars and a planned Vega OS viewing aid.
 
-**Session 3 engine:** detects SDR luminance/red flashes and prolonged flashing, solves display-code veils, verifies the complete simulated output at −0.15/0/+0.15 s offsets, and writes HazardTrack JSON/WebVTT plus a static trace report. Profiles are Broadcast, Local and Kids. Unresolved profiles produce debugging JSON only. Device calibration, the TV app, AWS processing and broader S4 evaluation remain later work. Verification describes the simulation model and does not establish medical safety or certification.
+**Engine and S4 evaluation:** detects SDR luminance/red flashes and prolonged flashing, solves display-code veils, verifies the complete simulated output at −0.15/0/+0.15 s offsets, and writes HazardTrack JSON/WebVTT plus a static trace report. Profiles are Broadcast, Local and Kids. Unresolved profiles produce debugging JSON only. Device calibration, the TV app, AWS processing remain later work. S4 evaluation covers seeded boundaries/shapes, licensed-footage composites and an unmodified full-film detection control. Verification describes the simulation model and does not establish medical safety or certification.
 
 No Strobe-lem is a viewing aid that reduces flashing according to published broadcast guidelines. It is not a medical device and cannot guarantee that content is safe for every person with photosensitive epilepsy.
 
@@ -60,8 +60,42 @@ and current parameter hash. JSON logs go to stderr.
 Detection-only JSON carries `verified: false`, uses `--output`, and cannot use
 a HazardTrack extension. Expected exits: 0 success, 1 validation/filesystem,
 2 unresolved verification, 3 unsupported media, 4 decode error, 5 invalid
-profile, 6 deferred stage. `eval` remains the broader S4 harness placeholder;
-S3 acceptance scripts are in `engine/eval/`.
+profile. Evaluation returns 2 when its acceptance gate fails or a selected
+subset is incomplete. Reports remain available for inspection.
+
+## Evaluation
+
+From `engine/`:
+
+```sh
+uv run nostrobe eval
+uv run nostrobe eval --resume
+uv run nostrobe eval --fresh-measurements
+```
+
+The default command regenerates [RESULTS.md](engine/eval/RESULTS.md) and
+`engine/eval/results.json`. It downloads checksum-pinned licensed sources once,
+then evaluates every declared case on Broadcast, Local and Kids. Default runs
+recompute accuracy; `--resume` reuses provenance-matched completed outcomes
+following an interruption. Timing measurements are retained for deterministic
+reports; `--fresh-measurements` explicitly replaces them. `--suite boundary`,
+`shapes`, `realistic`, or `clean` supports diagnosis, with exit 2 because a subset
+cannot satisfy the full evaluation gate. `--manifest` and `--out` support
+alternate manifests/output directories; the committed manifest is a strict
+JSON document valid as YAML 1.2.
+
+Generated media, decoded-cache archives and resumable observations stay under
+ignored `synth_out/s4/`. Compressed decoded samples preserve the exact Y/RGB
+bytes; temporary unpacked samples are removed after each clip. Full films are
+streamed for detection controls. Their unreviewed flags are excluded from the
+synthetic confusion matrix and are never described as confirmed false alarms.
+The untagged Tears of Steel releases are composite backgrounds only; the
+strict tagged-media requirement is unchanged. The report states the scope,
+measured throughput, simulation tolerance and unresolved reasons. PEAT is
+reported as not run. No player-ready tracks are published by evaluation.
+
+Only numbers from the committed S4 report may be quoted in submission copy.
+Read its gate and limitations before using the headline block.
 
 Decoded Y/RGB bytes are cached in ignored `.nostrobe_cache/`, keyed by source
 SHA-256 and decode format. Each frame takes about 0.88 MiB; a ten-minute

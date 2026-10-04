@@ -38,6 +38,6 @@ Excluded logos and trademarks are not claimed as licensed project assets.
 The realistic suite extracts three-second moving excerpts and alpha-composites
 camera-flash, repeated lightning, police-light, strobe and glitch effects in
 RGB display-code space (90% effect, 10% original). These are modified test
-assets, named `HAZARD_`, held only in ignored `engine/synth_out/`; no autoplay.
+assets, named `HAZARD_`, held only in ignored `synth_out/`; no autoplay.
 Scenario names describe intended effects, not independently annotated scene
 semantics. Original films remain byte-identical and contain unreviewed flags.

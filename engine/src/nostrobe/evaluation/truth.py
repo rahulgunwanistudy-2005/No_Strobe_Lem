@@ -46,6 +46,21 @@ def _uv(values: FloatArray) -> FloatArray:
 
 def _changes(values: FloatArray, red: bool) -> list[int]:
     # Offline range traversal. Retain both startup endpoints until the first edge.
+    if red:
+        totals = values.sum(axis=-1)
+        saturation = (
+            np.divide(values[:, 0], totals, out=np.zeros_like(totals), where=totals > 0) >= 0.8
+        )
+        coordinates = _uv(values)
+        reference = 0
+        edges_red = []
+        for index in range(1, len(values)):
+            if (saturation[reference] or saturation[index]) and np.linalg.norm(
+                coordinates[index] - coordinates[reference]
+            ) > 0.2:
+                edges_red.append(index)
+                reference = index
+        return edges_red
     edges: list[int] = []
     low = high = values[0].copy()
     direction = 0

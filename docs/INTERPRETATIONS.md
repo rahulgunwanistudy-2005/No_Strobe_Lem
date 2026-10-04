@@ -156,3 +156,12 @@ flash-threshold Notes 2/3 on 2026-10-04. Source wording overrides the brief.
 - Composite effects occupy 90% of the RGB code blend, retaining 10% moving
   source detail. These stress the verifier and are not a prevalence study.
 - Default ±150 ms sync tolerance remains simulated until S5 device calibration.
+
+Static source-frame review corrected the real-scene selections before composite
+execution: the group scene at 450 s, street at 250 s, and dark display-lit lab at
+350 s in Tears of Steel. This is a staged club-like strobe test, not a claim that
+the film depicts a club. Boundary/shape truth was not changed to fit detections.
+Big Buck Bunny's six Broadcast flag contexts were reviewed from isolated stills:
+rapid character motion, high-contrast foliage, and animated/scrolling credits.
+They are candidate motion/text false alarms, not adjudicated false alarms or
+confirmed violations; `eval/control_review.json` records that distinction.

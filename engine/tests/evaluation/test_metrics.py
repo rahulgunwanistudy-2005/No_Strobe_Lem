@@ -51,3 +51,21 @@ def test_confusion_distinguishes_all_four_outcomes_and_excludes_clean():
     value = summarize(rows)["broadcast"]
     assert value["confusion"] == dict(tp=1, tn=1, fp=1, fn=1)
     assert not value["gate_passes"]
+
+
+def test_missing_analysis_cannot_pass_verification_gate():
+    row = Observation(
+        suite="boundary",
+        name="unprocessed",
+        profile="broadcast",
+        source_sha256="0" * 64,
+        duration_s=2,
+        truth=ProfileTruth(must_fail=False, intervals=[]),
+        events=[],
+        track=None,
+        detect_s=1,
+        analyze_s=None,
+        decode_s=1,
+    )
+    assert not summarize([row])["broadcast"]["gate_passes"]
+    assert not summarize([])["broadcast"]["gate_passes"]

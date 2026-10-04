@@ -35,7 +35,7 @@
     {
       "name": "crowd_camera_burst",
       "source": "tos",
-      "start_s": 90,
+      "start_s": 450,
       "effect": "camera_burst"
     },
     {
@@ -47,13 +47,13 @@
     {
       "name": "street_police",
       "source": "tos",
-      "start_s": 120,
+      "start_s": 250,
       "effect": "police"
     },
     {
       "name": "dark_strobe",
       "source": "tos",
-      "start_s": 150,
+      "start_s": 350,
       "effect": "strobe"
     },
     {

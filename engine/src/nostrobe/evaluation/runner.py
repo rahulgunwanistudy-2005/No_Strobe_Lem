@@ -48,7 +48,13 @@ def environment(config: Settings) -> dict[str, object]:
         if (platform.system() == "Darwin")
         else None
     )
+    cpu = (
+        subprocess.run(["sysctl", "-n", "machdep.cpu.brand_string"], capture_output=True, text=True)
+        if platform.system() == "Darwin"
+        else None
+    )
     return {
+        "cpu_model": cpu.stdout.strip() if cpu and cpu.returncode == 0 else platform.processor(),
         "engine_version": __version__,
         "ffmpeg": version.stdout.splitlines()[0],
         "git_sha": git.stdout.strip(),
@@ -177,12 +183,18 @@ def run_eval(
         raise ValueError("unknown evaluation suite")
     destination.mkdir(parents=True, exist_ok=True)
     env = environment(config)
+    review_file = config.eval_output / "control_review.json"
+    review = json.loads(review_file.read_text()) if review_file.exists() else None
     provenance = {
         "code_sha256": code_hash(config),
         "manifest_sha256": digest(manifest_file),
+        "control_review_sha256": digest(review_file) if review_file.exists() else None,
         "ffmpeg": env["ffmpeg"],
         "python": env["python"],
         "machine": env["machine"],
+        "cpu_model": env.get("cpu_model"),
+        "memory_bytes": env.get("memory_bytes"),
+        "platform": env.get("platform"),
         "params_hash": env["params_hash"],
     }
     fingerprint = hashlib.sha256(canonical(provenance).encode()).hexdigest()
@@ -299,7 +311,7 @@ def run_eval(
             len(jobs) * 3,
         )
     summary = summarize(rows)
-    complete = suite == "all"
+    complete = suite == "all" and bool(jobs)
     gates = complete and all(
         bool(v["gate_passes"]) for v in summary.values() if isinstance(v, dict)
     )
@@ -312,6 +324,16 @@ def run_eval(
         "environment": env,
         "provenance": provenance,
         "summary": summary,
+        "by_suite": {
+            name: summarize([r for r in rows if r.suite == name])
+            for name in ("boundary", "shapes", "realistic")
+        },
+        "unique_source_checksums": len({r.source_sha256 for r in rows}),
+        "clean_context_review": review,
+        "clean_adjudication_complete": False,
+        "control_exclusions": [
+            "Tears of Steel originals lack required BT.709 tags; not scored as clean controls"
+        ],
         "observations": [r.model_dump(mode="json") for r in rows],
         "peat": "not run: no Windows PEAT environment available",
         "timing_policy": "First measured observations cached by code/manifest/tool/params hash; "
