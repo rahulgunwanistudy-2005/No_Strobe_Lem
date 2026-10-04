@@ -111,7 +111,7 @@ def analyze_detect_all(
 ) -> dict[ProfileId, list[HazardEvent]]:
     """Detect all profiles in one pass; never publish a verified HazardTrack."""
     config = settings or Settings()
-    media = probe(path, settings=config)
+    media = probe(path, settings=config, require_bt709=True)
     pipeline = DetectionPipeline((90, 160), profiles or [get_profile(p) for p in PROFILES])
     last_t: float | None = None
     with closing(_cell_frames(path, config)) as frames:

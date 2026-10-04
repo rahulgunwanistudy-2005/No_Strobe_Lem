@@ -66,3 +66,31 @@ def test_counter_spacing_exact_window_and_monotone():
 def test_invalid_input(value, time):
     with pytest.raises(ValueError):
         ChangeDetector((1, 1)).update(np.array([[value]]), time)
+
+
+def test_frame_mask_window_matches_per_cell_ring():
+    from nostrobe.detect.window import MaskWindow
+
+    rng = np.random.default_rng(17)
+    reference = TimestampRing((9, 12))
+    batched = MaskWindow((9, 12))
+    for index in range(180):
+        time = index / 60
+        mask = rng.random((9, 12)) < 0.1
+        reference.expire(time)
+        batched.expire(time)
+        reference.add(mask, time)
+        batched.add(mask, time)
+        np.testing.assert_array_equal(batched.counts, reference.counts)
+    reference.expire(10)
+    batched.expire(10)
+    assert not batched.counts.any()
+    # Retroactive times arrive out of order with a different PTS per cell.
+    mask = np.ones((9, 12), dtype=bool)
+    times = np.arange(mask.size).reshape(mask.shape) / 120 + 10
+    reference.add(mask, times)
+    batched.add(mask, times)
+    for time in (11, 11.5, 12):
+        reference.expire(time)
+        batched.expire(time)
+        np.testing.assert_array_equal(batched.counts, reference.counts)

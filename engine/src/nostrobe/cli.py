@@ -47,7 +47,7 @@ def _run(action: Callable[[], None]) -> None:
 
 
 def _deferred(stage: str) -> None:
-    raise NotImplementedError(f"{stage} is not implemented in Session 1")
+    raise NotImplementedError(f"{stage} is not implemented yet")
 
 
 @app.command()
@@ -63,6 +63,11 @@ def analyze(
         if not detect_only:
             _deferred("verified analyze")
         params = None if profile == "all" else [get_profile(profile)]
+        if output is not None:
+            if output.name.lower().endswith((".hzt.json", ".hzt.vtt")):
+                raise ValueError("detection output cannot use a HazardTrack extension")
+            if output.resolve() == path.resolve():
+                raise ValueError("detection output cannot overwrite the input video")
         events = analyze_detect_all(path, profiles=params)
         payload = {
             "format": "nostrobe-detection",
@@ -80,8 +85,6 @@ def analyze(
         if output is None:
             typer.echo(serialized, nl=False)
         else:
-            if output.name.endswith((".hzt.json", ".hzt.vtt")):
-                raise ValueError("detection output cannot use a HazardTrack extension")
             output.write_text(serialized)
 
     _run(action)

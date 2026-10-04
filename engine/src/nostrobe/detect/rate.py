@@ -6,13 +6,14 @@ The >6-change convention and fixed 360 ms are documented product choices.
 import numpy as np
 from numpy.typing import NDArray
 
-from nostrobe.detect.zigzag import TIME_EPS, BoolArray, IntArray, TimestampRing
+from nostrobe.detect.window import MaskWindow
+from nostrobe.detect.zigzag import TIME_EPS, BoolArray, IntArray
 
 
 class FlashCounter:
     def __init__(self, shape: tuple[int, int], spacing_s: float = 0.36) -> None:
-        self.raw = TimestampRing(shape)
-        self.dense = TimestampRing(shape)
+        self.raw = MaskWindow(shape)
+        self.dense = MaskWindow(shape)
         self.spacing_s = spacing_s
         self.direction = np.zeros(shape, dtype=np.int8)
         self._pending = np.zeros(shape, dtype=np.bool_)

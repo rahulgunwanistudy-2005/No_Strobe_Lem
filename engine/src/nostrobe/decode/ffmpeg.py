@@ -27,7 +27,9 @@ _PTS = re.compile(rb"\bn:\s*\d+.*?pts_time:([^ ]+)")
 _LUMA_LUT = code10_to_cd_m2(np.arange(256, dtype=np.float64) * 4)
 
 
-def probe(path: Path, *, settings: Settings | None = None) -> MediaInfo:
+def probe(
+    path: Path, *, settings: Settings | None = None, require_bt709: bool = False
+) -> MediaInfo:
     config = settings or Settings()
     try:
         result = subprocess.run(
@@ -56,6 +58,11 @@ def probe(path: Path, *, settings: Settings | None = None) -> MediaInfo:
             raise UnsupportedMediaError("only explicitly tagged limited-range SDR is supported")
         if stream.get("pix_fmt") not in {"yuv420p", "yuv422p", "yuv444p"}:
             raise UnsupportedMediaError("S1 decoder requires 8-bit planar YUV SDR")
+        if require_bt709 and any(
+            stream.get(tag) != "bt709"
+            for tag in ("color_transfer", "color_primaries", "color_space")
+        ):
+            raise UnsupportedMediaError("red analysis requires explicitly tagged BT.709 color")
         fps = float(Fraction(stream.get("avg_frame_rate") or stream["r_frame_rate"]))
         duration = float(stream.get("duration") or data["format"]["duration"])
         digest = hashlib.sha256()
@@ -87,7 +94,7 @@ def probe(path: Path, *, settings: Settings | None = None) -> MediaInfo:
 def _frames(
     path: Path, grid: tuple[int, int], mode: Literal["luma", "rgb", "analysis"], config: Settings
 ) -> Generator[tuple[ByteArray, float], None, None]:
-    probe(path, settings=config)
+    probe(path, settings=config, require_bt709=mode == "analysis")
     width, height = grid
     if width <= 0 or height <= 0:
         raise ValueError("grid dimensions must be positive")

@@ -24,6 +24,8 @@ def max_local_fraction(mask: NDArray[np.bool_], win: tuple[int, int] = (30, 53))
         raise ValueError("window must be positive and fit within the mask")
     if not mask.any():
         return 0.0
+    if mask.all():
+        return 1.0
     table = np.zeros((mask.shape[0] + 1, mask.shape[1] + 1), dtype=np.int64)
     table[1:, 1:] = mask.cumsum(axis=0, dtype=np.int64).cumsum(axis=1)
     sums = table[height:, width:] - table[:-height, width:]
