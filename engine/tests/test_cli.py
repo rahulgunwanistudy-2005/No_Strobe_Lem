@@ -18,7 +18,7 @@ def test_cli_commands_and_error_mapping(tmp_path):
         app, ["analyze", str(tmp_path / "missing.mp4"), "--out", str(tmp_path / "out")]
     )
     assert result.exit_code == 4
-    assert runner.invoke(app, ["eval"]).exit_code == 6
+    assert runner.invoke(app, ["eval", "--manifest", str(tmp_path / "missing.yaml")]).exit_code == 1
     assert runner.invoke(app, ["synth", "--suite", "typo"]).exit_code == 1
 
 

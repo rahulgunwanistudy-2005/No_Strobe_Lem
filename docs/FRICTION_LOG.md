@@ -32,3 +32,22 @@ optimization, not vendor friction. The first film cache preparation completed;
 that analysis was interrupted during development, so the recorded final film
 benchmark explicitly starts with a warm decode cache. Concurrent validation
 activity is recorded rather than presenting the timing as an isolated run.
+
+## S4 source access — 2026-10-05
+
+- Firecrawl scrape calls to official Blender license/download pages returned
+  `Insufficient credits`; the web reader returned HTTP 402 on the same URLs.
+- Reproduction: Firecrawl scrape with `maxAge: 0` for
+  `https://peach.blender.org/about/` and `https://mango.blender.org/sharing/`.
+- Workaround: direct HTTPS retrieval succeeded with curl; license snapshots
+  are retained under `engine/eval/sources/`. No source facts were invented.
+
+## S4 untagged reference releases — 2026-10-05
+
+ffprobe 7.1.1 reports no color_transfer/color_primaries/color_space for the
+Blender-hosted Tears of Steel 720p MOV, ToS-4k-1920 MOV, and Sintel 1080p
+trailer MP4. The strict probe rejects them with `unsupported or unspecified
+transfer: unknown`. Reproduced via ffprobe stream color metadata fields.
+No detector checks were weakened. Retained the explicitly BT.709-tagged
+Big Buck Bunny original as the full-film control; Tears of Steel is only
+an artistic background to explicitly tagged synthetic composites.

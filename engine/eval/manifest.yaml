@@ -1,5 +1,69 @@
-version: '1.0'
-status: pending_s4
-synthetic_seed: 7
-realistic_footage: []
-clean_controls: []
+{
+  "version": "1.0",
+  "seed": 7,
+  "fps": [
+    24,
+    25,
+    30,
+    50,
+    60
+  ],
+  "shapes_count": 200,
+  "sources": [
+    {
+      "id": "bbb",
+      "title": "Big Buck Bunny (2008)",
+      "author": "Blender Foundation / Peach team",
+      "license": "CC-BY-3.0",
+      "license_url": "https://peach.blender.org/about/",
+      "url": "https://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_1080p_h264.mov.zip",
+      "archive_sha256": "402d6625f614631627d518b931865c9c4aefbbf3b75ed0494672e77ff510666d",
+      "member": "big_buck_bunny_1080p_h264.mov",
+      "sha256": "dc2146a2b1172def56730143ad80cd1825b7fad15f1fc9c23a4e7d01a741ac11"
+    },
+    {
+      "id": "tos",
+      "title": "Tears of Steel (2012)",
+      "author": "Blender Foundation / Mango team",
+      "license": "CC-BY-3.0",
+      "license_url": "https://mango.blender.org/sharing/",
+      "url": "https://download.blender.org/demo/movies/ToS/tears_of_steel_720p.mov",
+      "sha256": "efa9062d9cdb7a338e40ad530dfdf234806743f29ae6a1a136b97ece4e588e8f"
+    }
+  ],
+  "realistic": [
+    {
+      "name": "crowd_camera_burst",
+      "source": "tos",
+      "start_s": 90,
+      "effect": "camera_burst"
+    },
+    {
+      "name": "landscape_lightning",
+      "source": "bbb",
+      "start_s": 30,
+      "effect": "lightning"
+    },
+    {
+      "name": "street_police",
+      "source": "tos",
+      "start_s": 120,
+      "effect": "police"
+    },
+    {
+      "name": "dark_strobe",
+      "source": "tos",
+      "start_s": 150,
+      "effect": "strobe"
+    },
+    {
+      "name": "glitch_cuts",
+      "source": "bbb",
+      "start_s": 60,
+      "effect": "glitch"
+    }
+  ],
+  "clean": [
+    "bbb"
+  ]
+}

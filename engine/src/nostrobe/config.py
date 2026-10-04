@@ -23,3 +23,15 @@ class Settings(BaseSettings):
     @property
     def schema_path(self) -> Path:
         return self.repo_root / "spec/schema/hazardtrack.schema.json"
+
+    @property
+    def eval_manifest(self) -> Path:
+        return self.repo_root / "eval/manifest.yaml"
+
+    @property
+    def eval_sources(self) -> Path:
+        return self.repo_root / "synth_out/s4/sources"
+
+    @property
+    def eval_output(self) -> Path:
+        return self.repo_root / "eval"

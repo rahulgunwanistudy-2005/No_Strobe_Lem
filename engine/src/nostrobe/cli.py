@@ -52,10 +52,6 @@ def _run(action: Callable[[], None]) -> None:
         raise typer.Exit(codes.get(type(exc), 1)) from exc
 
 
-def _deferred(stage: str) -> None:
-    raise NotImplementedError(f"{stage} is not implemented yet")
-
-
 @app.command()
 def analyze(
     path: Path,
@@ -159,9 +155,30 @@ def report(
 
 
 @app.command(name="eval")
-def evaluate() -> None:
-    """Run the evaluation harness (S4)."""
-    _run(lambda: _deferred("eval"))
+def evaluate(
+    manifest: Annotated[Path | None, typer.Option()] = None,
+    output: Annotated[Path | None, typer.Option("--out", "--output")] = None,
+    suite: Annotated[str, typer.Option()] = "all",
+    fresh_measurements: Annotated[bool, typer.Option()] = False,
+    resume: Annotated[bool, typer.Option()] = False,
+) -> None:
+    """Regenerate measured evaluation results, retaining honest gate failures."""
+    from nostrobe.evaluation.runner import run_eval
+
+    def action() -> None:
+        passed = run_eval(
+            manifest_path=manifest,
+            output=output,
+            suite=suite,
+            fresh_measurements=fresh_measurements,
+            resume=resume,
+        )
+        if not passed:
+            raise VerifierFailedError(
+                "evaluation incomplete or acceptance gate failed; see RESULTS.md"
+            )
+
+    _run(action)
 
 
 @app.command()

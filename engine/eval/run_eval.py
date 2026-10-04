@@ -1,5 +1,6 @@
-"""Evaluation harness begins in S4."""
+"""Compatibility entry point; the installed runner is exposed as nostrobe eval."""
 
+from nostrobe.cli import app
 
-def run_eval() -> None:
-    raise NotImplementedError("evaluation begins in S4")
+if __name__ == "__main__":
+    app(["eval"])

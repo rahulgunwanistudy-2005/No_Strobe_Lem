@@ -130,3 +130,29 @@ flash-threshold Notes 2/3 on 2026-10-04. Source wording overrides the brief.
   fail-only verifier passes. Its test asserts refusal and an actual residual
   extended warning; the initial expectation of guaranteed suppression was not
   supported by the timing bounds. No source truth or detector threshold changes.
+
+## S4 evaluation decisions
+
+- `eval/manifest.yaml` uses the JSON subset of YAML 1.2, keeping manifest
+  parsing strict and avoiding another runtime dependency.
+- Truth enumerates raw pre-codec cell histories independently of production
+  detectors. It uses the documented display model and profile rules. The
+  original S1 truth files and generator are preserved. 8-bit chroma pairs
+  bracket 0.2; exact equality remains a numeric boundary test.
+- Timing is a recorded observation, not a deterministic algorithm output.
+  Default eval reruns accuracy; it retains the first timing per code/manifest/
+  tool/parameters/source fingerprint. `--fresh-measurements` replaces timing;
+  `--resume` is an explicit recovery mode reusing completed evidence.
+- Full unmodified films are source-detection controls, outside the binary
+  confusion matrix until their flags have independently reviewed truth.
+  Mitigation metrics cover every synthetic/composite profile track. Clean-film
+  full mitigation is outside this accuracy control, and is not scored as passed.
+- Big Buck Bunny is the full-film clean control. The official Tears of Steel
+  720p and ToS-4k-1920 MOVs and Sintel trailer omit transfer/primaries/matrix
+  metadata. They cannot be clean controls under the existing strict BT.709
+  reader; no input check was relaxed. Tears of Steel is used only as a background
+  for explicitly encoded BT.709 composites; ffmpeg's HD-source RGB conversion
+  is an assumption for that artistic background, not a measured source transfer.
+- Composite effects occupy 90% of the RGB code blend, retaining 10% moving
+  source detail. These stress the verifier and are not a prevalence study.
+- Default ±150 ms sync tolerance remains simulated until S5 device calibration.
