@@ -62,3 +62,19 @@ Detection/accuracy/quality gates are verified; the 20× performance target is
 - S3 mitigation/verifier/publishing, S4 broader evaluation and film-flag review,
   TV/media calibration and AWS remain future sessions. No verified track is
   emitted by S2. Performance requires further work before production claims.
+
+# Session 3 plan
+
+Scope: execute S3_veil_verifier_track_cli.md. User authorizes logical commits
+without attribution tags. Preserve S2 standards corrections and existing truth.
+
+- [ ] Implement validated display-code compositing, deterministic ramps and
+  padded/merged segments; document shared playback semantics.
+- [ ] Cache source-hash-keyed decoded samples without losing subcell variation;
+  implement all-offset full-detector verification and distortion search.
+- [ ] Add final whole-file verification, one retry and explicit unresolved reasons;
+  refuse publication of failing tracks.
+- [ ] Implement JSON/WebVTT readers/writers, stats, CLI and trace-only HTML report.
+- [ ] Test encoded synthetic cases at all supported frame rates, record viewing
+  costs, run a ten-minute film analysis and record actual time/limitations.
+- [ ] Self-review, pass quality/contract gates, document outcomes and commit stages.
