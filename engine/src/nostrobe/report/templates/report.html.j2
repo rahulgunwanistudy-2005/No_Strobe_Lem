@@ -1,1 +1,21 @@
-{# Report implementation begins in S3. #}
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>No Strobe-lem · {{ media.content_id }}</title>
+<style>body{font:16px system-ui,sans-serif;background:#f4f5f6;color:#24323c;margin:auto;max-width:1050px;padding:32px}section{background:white;padding:24px;margin:24px 0;border-radius:12px}table{border-collapse:collapse;width:100%}th,td{text-align:left;padding:8px;border-bottom:1px solid #dde2e5}img{max-width:100%;height:auto}code{overflow-wrap:anywhere}.pass{color:#206144}.fail{color:#a52c2c}.muted{color:#586975}</style></head><body>
+<h1>No Strobe-lem analysis</h1><p class="muted">{{ media.content_id }} · {{ '%.3f'|format(media.duration_s) }} s · {{ media.width }} × {{ media.height }} · {{ media.fps }} fps · SDR</p>
+<p>Source SHA-256: <code>{{ media.source_sha256 }}</code></p>
+{% for item in profiles %}{% set track=item.track %}<section>
+<h2>{{ track.profile|capitalize }}</h2>
+<p class="{{ 'pass' if track.verifier.passes else 'fail' }}">{{ 'VERIFIED' if track.verifier.passes else 'UNRESOLVED — publication refused' }}</p>
+<p>Offsets checked: {{ track.verifier.offsets_checked_s }} s · Residual failures: {{ track.verifier.residual_events|length }} · Engine: {{ track.verifier.engine_version }}</p>
+<p>Parameters: <code>{{ track.verifier.params_hash }}</code></p>
+<p>Veiled runtime: {{ '%.2f'|format(track.stats.veiled_fraction_of_runtime * 100) }}% · Mean active opacity: {{ '%.4f'|format(track.stats.mean_alpha) }} · Mean active luminance distortion: {{ '%.4f'|format(track.stats.mean_delta_cd_m2) }} cd/m²</p>
+<img alt="Veil opacity over media time" src="data:image/png;base64,{{ item.timeline }}">
+<table><thead><tr><th>Event</th><th>Kind / severity</th><th>Interval (s)</th><th>Changes/s</th><th>Area</th></tr></thead><tbody>
+{% for event in track.events %}<tr><td>{{ event.id }}</td><td>{{ event.kind }} / {{ event.severity }}</td><td>{{ '%.3f'|format(event.t_start) }}–{{ '%.3f'|format(event.t_end) }}</td><td>{{ event.peak_changes_per_s }}</td><td>{{ '%.3f'|format(event.peak_area_fraction) }}</td></tr>{% endfor %}</tbody></table>
+{% for unresolved in track.unresolved_segments %}<p class="fail">{{ unresolved.start }}–{{ unresolved.end }} s: {{ unresolved.reason }}</p>{% endfor %}
+{% if not track.events %}<p class="muted">No detected events for this profile.</p>{% elif not item.traces %}<p class="muted">Source traces unavailable; use report --video to include them.</p>{% endif %}
+{% for chart in item.traces %}<h3>{{ chart.id }} · cells with maximum qualifying-change count</h3><img alt="Before and after luminance trace for {{ chart.id }}" src="data:image/png;base64,{{ chart.image }}">{% endfor %}
+</section>{% endfor %}
+<footer><p>{{ disclaimer }}</p><p class="muted">Numerical traces only. This report contains no raw video or source frames. Verification models display-code blending; device calibration remains pending.</p></footer>
+</body></html>

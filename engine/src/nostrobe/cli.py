@@ -1,4 +1,4 @@
-"""Thin command entry points. Unimplemented stages refuse to produce tracks."""
+"""Thin command entry points with strict verified-track publication gates."""
 
 import json
 import logging
@@ -8,8 +8,11 @@ from typing import Annotated
 
 import typer
 
+from nostrobe.analysis import analyze as analyze_video
 from nostrobe.config import Settings
+from nostrobe.decode.cache import FrameCache, load_cache
 from nostrobe.detect.pipeline import analyze_detect_all
+from nostrobe.domain.models import HazardTrack
 from nostrobe.domain.profiles import get_profile
 from nostrobe.domain.schema import write_schema
 from nostrobe.errors import (
@@ -20,7 +23,10 @@ from nostrobe.errors import (
     VerifierFailedError,
 )
 from nostrobe.logging import configure_logging
+from nostrobe.report.html import render
 from nostrobe.synth.generator import generate_suite
+from nostrobe.track import jsonio, webvtt
+from nostrobe.verify.verifier import verify as verify_track
 
 app = typer.Typer(no_args_is_help=True, help="No Strobe-lem offline tools")
 
@@ -35,9 +41,9 @@ def _run(action: Callable[[], None]) -> None:
         action()
     except (NostrobeError, OSError, ValueError, NotImplementedError) as exc:
         codes: dict[type[Exception], int] = {
-            DecodeError: 2,
+            DecodeError: 4,
             UnsupportedMediaError: 3,
-            VerifierFailedError: 4,
+            VerifierFailedError: 2,
             ProfileError: 5,
             NotImplementedError: 6,
         }
@@ -56,13 +62,23 @@ def analyze(
     detect_only: Annotated[bool, typer.Option()] = False,
     profile: Annotated[str, typer.Option()] = "all",
     output: Annotated[Path | None, typer.Option()] = None,
+    out: Annotated[Path | None, typer.Option()] = None,
 ) -> None:
-    """Emit unverified detection events; track publishing requires S3."""
+    """Analyze all profiles, verify veils, and write tracks plus a static report."""
 
     def action() -> None:
-        if not detect_only:
-            _deferred("verified analyze")
         params = None if profile == "all" else [get_profile(profile)]
+        if not detect_only:
+            if output is not None and out is not None:
+                raise ValueError("choose --out or --output, not both")
+            tracks = analyze_video(path, out or output or Path("analysis_out"), params)
+            if any(not track.verifier.passes for track in tracks):
+                raise VerifierFailedError(
+                    "unresolved segments; only debug JSON written for failing profiles"
+                )
+            return
+        if out is not None:
+            raise ValueError("detection-only output uses --output")
         if output is not None:
             if output.name.lower().endswith((".hzt.json", ".hzt.vtt")):
                 raise ValueError("detection output cannot use a HazardTrack extension")
@@ -90,16 +106,56 @@ def analyze(
     _run(action)
 
 
-@app.command()
-def verify(path: Path) -> None:
-    """Verify a mitigated track (S3)."""
-    _run(lambda: _deferred("verify"))
+def _read_track(path: Path, *, debug: bool = False) -> HazardTrack:
+    return (
+        webvtt.parse(path.read_text())
+        if path.suffix == ".vtt"
+        else jsonio.parse(path.read_text(), allow_unresolved=debug)
+    )
+
+
+def _matching_cache(video: Path, track: HazardTrack) -> FrameCache:
+    cache = load_cache(video)
+    if cache.media.source_sha256 != track.media.source_sha256:
+        raise ValueError("video SHA-256 does not match the track")
+    if get_profile(track.profile).params_hash() != track.verifier.params_hash:
+        raise ValueError("track parameters do not match this engine")
+    return cache
 
 
 @app.command()
-def report(path: Path) -> None:
-    """Render an analysis report (S3)."""
-    _run(lambda: _deferred("report"))
+def verify(path: Path, track: Path) -> None:
+    """Re-verify an existing JSON or WebVTT track against the matching video."""
+
+    def action() -> None:
+        artifact = _read_track(track, debug=True)
+        cache = _matching_cache(path, artifact)
+        result = verify_track(cache, artifact.veils, artifact.profile)
+        typer.echo(result.model_dump_json())
+        if not result.passes or artifact.unresolved_segments:
+            raise VerifierFailedError("track remains unresolved")
+
+    _run(action)
+
+
+@app.command()
+def report(
+    path: Path,
+    output: Annotated[Path, typer.Option("--out", "--output")] = Path("report.html"),
+    video: Annotated[Path | None, typer.Option()] = None,
+) -> None:
+    """Render a static report, with source traces when --video is supplied."""
+
+    def action() -> None:
+        track = _read_track(path, debug=True)
+        if output.resolve() == path.resolve() or (
+            video is not None and output.resolve() == video.resolve()
+        ):
+            raise ValueError("report cannot overwrite an input")
+        cache = None if video is None else _matching_cache(video, track)
+        output.write_text(render(track, cache=cache))
+
+    _run(action)
 
 
 @app.command(name="eval")
