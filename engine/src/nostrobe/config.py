@@ -26,7 +26,7 @@ class Settings(BaseSettings):
 
     @property
     def eval_manifest(self) -> Path:
-        return self.repo_root / "eval/manifest.yaml"
+        return self.repo_root / "engine/eval/manifest.yaml"
 
     @property
     def eval_sources(self) -> Path:
@@ -34,4 +34,4 @@ class Settings(BaseSettings):
 
     @property
     def eval_output(self) -> Path:
-        return self.repo_root / "eval"
+        return self.repo_root / "engine/eval"

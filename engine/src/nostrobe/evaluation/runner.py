@@ -67,7 +67,7 @@ def code_hash(config: Settings) -> str:
         hasher.update(str(path.relative_to(root)).encode())
         hasher.update(path.read_bytes())
     hasher.update((root / "luminance/bt1702_sdr_curve.csv").read_bytes())
-    hasher.update((config.repo_root / "uv.lock").read_bytes())
+    hasher.update((config.repo_root / "engine/uv.lock").read_bytes())
     return hasher.hexdigest()
 
 
