@@ -165,3 +165,12 @@ Big Buck Bunny's six Broadcast flag contexts were reviewed from isolated stills:
 rapid character motion, high-contrast foliage, and animated/scrolling credits.
 They are candidate motion/text false alarms, not adjudicated false alarms or
 confirmed violations; `eval/control_review.json` records that distinction.
+
+S4 oracle source correction: the first expanded run exposed seven apparent
+misses on high-dark camera-burst cases. Re-reading BT.1702-3 Annex 1 Guideline 1
+(printed p.3) confirmed the already recorded S2 correction: ≥160 relative
+contrast applies to HDR only. The new oracle had mistakenly used the generic
+HDR-capable helper's predicate. The erroneous observations remain unchanged in
+`engine/eval/audits/sdr_oracle_correction.json`. The SDR oracle is corrected from
+the source, with explicit 159/160/170 tests. No production detector, source clip,
+seed, randomized parameters, original S1 truth, or acceptance gate is changed.

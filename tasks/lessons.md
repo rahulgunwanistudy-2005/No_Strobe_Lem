@@ -35,3 +35,10 @@
 - S3: segment context must include the detector's longest history. Extended
   warnings require >5 s of persistence; a 1.5 s reset can falsely accept a
   zero-alpha Kids candidate. Keep the longer prefix and test actual suppression.
+
+- S4: validate the independent oracle against source-corrected rules as well as
+  the original brief. Smoke-only agreement hid an HDR/SDR distinction because
+  its high-dark amplitudes did not separate the two predicates. BT.1702-3 Annex 1
+  Guideline 1 applies relative contrast at/above 160 cd/m² to HDR only. Preserve
+  erroneous provisional observations as an audit, retain every clip/seed/gate,
+  and add explicit 159/160/170 regime tests before rerunning evaluation.

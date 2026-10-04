@@ -1,0 +1,402 @@
+{
+  "cause": "The new S4 oracle incorrectly applied the HDR-only relative criterion to SDR darker states at or above 160 cd/m2.",
+  "completed_profile_outcomes": 480,
+  "correction": "SDR qualifies only when darker state is below 160 cd/m2 and delta is at least 20 cd/m2. No detector, source clip, randomized parameters, S1 truth or gate is changed.",
+  "original_observations": [
+    {
+      "analyze_s": 0.12292183400131762,
+      "decode_s": 0.8928540000342764,
+      "detect_s": 0.28094174998113886,
+      "duration_s": 3.0,
+      "events": [],
+      "name": "shape_024",
+      "profile": "broadcast",
+      "source_sha256": "5d3be83fee8402ff42640ff8c422b61a176b8d334bb79df56fbfac2415c7fb7c",
+      "suite": "shapes",
+      "trace": null,
+      "track": {
+        "events": [],
+        "format": "hazardtrack",
+        "format_version": "1.0",
+        "generated_at": "2000-01-01T00:00:00Z",
+        "media": {
+          "content_id": "HAZARD_shapes_shape_024",
+          "duration_s": 3.0,
+          "fps": 25.0,
+          "height": 360,
+          "source_sha256": "5d3be83fee8402ff42640ff8c422b61a176b8d334bb79df56fbfac2415c7fb7c",
+          "transfer": "sdr",
+          "width": 640
+        },
+        "profile": "broadcast",
+        "stats": {
+          "mean_alpha": 0.0,
+          "mean_delta_cd_m2": 0.0,
+          "n_events_by_kind": {},
+          "veiled_fraction_of_runtime": 0.0
+        },
+        "unresolved_segments": [],
+        "veils": [],
+        "verifier": {
+          "engine_version": "0.1.0",
+          "offsets_checked_s": [
+            -0.15,
+            0.0,
+            0.15
+          ],
+          "params_hash": "70dcc50ff260aa1abcb1137f7ca022293f27dbcdc6c694c49b1c3ed79455de6a",
+          "passes": true,
+          "residual_events": []
+        }
+      },
+      "truth": {
+        "intervals": [
+          {
+            "t_end": 2.44,
+            "t_start": 1.36
+          }
+        ],
+        "must_fail": true
+      }
+    },
+    {
+      "analyze_s": 0.12292183400131762,
+      "decode_s": 0.8928540000342764,
+      "detect_s": 0.28094174998113886,
+      "duration_s": 3.0,
+      "events": [],
+      "name": "shape_024",
+      "profile": "local",
+      "source_sha256": "5d3be83fee8402ff42640ff8c422b61a176b8d334bb79df56fbfac2415c7fb7c",
+      "suite": "shapes",
+      "trace": null,
+      "track": {
+        "events": [],
+        "format": "hazardtrack",
+        "format_version": "1.0",
+        "generated_at": "2000-01-01T00:00:00Z",
+        "media": {
+          "content_id": "HAZARD_shapes_shape_024",
+          "duration_s": 3.0,
+          "fps": 25.0,
+          "height": 360,
+          "source_sha256": "5d3be83fee8402ff42640ff8c422b61a176b8d334bb79df56fbfac2415c7fb7c",
+          "transfer": "sdr",
+          "width": 640
+        },
+        "profile": "local",
+        "stats": {
+          "mean_alpha": 0.0,
+          "mean_delta_cd_m2": 0.0,
+          "n_events_by_kind": {},
+          "veiled_fraction_of_runtime": 0.0
+        },
+        "unresolved_segments": [],
+        "veils": [],
+        "verifier": {
+          "engine_version": "0.1.0",
+          "offsets_checked_s": [
+            -0.15,
+            0.0,
+            0.15
+          ],
+          "params_hash": "14b825f91e0477aeabe01a0491ec83ce00d1b4096a43c5d582d5895ca4490538",
+          "passes": true,
+          "residual_events": []
+        }
+      },
+      "truth": {
+        "intervals": [
+          {
+            "t_end": 2.44,
+            "t_start": 1.36
+          }
+        ],
+        "must_fail": true
+      }
+    },
+    {
+      "analyze_s": 0.12292183400131762,
+      "decode_s": 0.8928540000342764,
+      "detect_s": 0.28094174998113886,
+      "duration_s": 3.0,
+      "events": [],
+      "name": "shape_024",
+      "profile": "kids",
+      "source_sha256": "5d3be83fee8402ff42640ff8c422b61a176b8d334bb79df56fbfac2415c7fb7c",
+      "suite": "shapes",
+      "trace": null,
+      "track": {
+        "events": [],
+        "format": "hazardtrack",
+        "format_version": "1.0",
+        "generated_at": "2000-01-01T00:00:00Z",
+        "media": {
+          "content_id": "HAZARD_shapes_shape_024",
+          "duration_s": 3.0,
+          "fps": 25.0,
+          "height": 360,
+          "source_sha256": "5d3be83fee8402ff42640ff8c422b61a176b8d334bb79df56fbfac2415c7fb7c",
+          "transfer": "sdr",
+          "width": 640
+        },
+        "profile": "kids",
+        "stats": {
+          "mean_alpha": 0.0,
+          "mean_delta_cd_m2": 0.0,
+          "n_events_by_kind": {},
+          "veiled_fraction_of_runtime": 0.0
+        },
+        "unresolved_segments": [],
+        "veils": [],
+        "verifier": {
+          "engine_version": "0.1.0",
+          "offsets_checked_s": [
+            -0.15,
+            0.0,
+            0.15
+          ],
+          "params_hash": "eba16e78fcd87c00137e0d37641526314d2d4fe80aad5bbf6f54add615054832",
+          "passes": true,
+          "residual_events": []
+        }
+      },
+      "truth": {
+        "intervals": [
+          {
+            "t_end": 2.72,
+            "t_start": 1.08
+          }
+        ],
+        "must_fail": true
+      }
+    },
+    {
+      "analyze_s": 4.476707416004501,
+      "decode_s": 1.5506380420411006,
+      "detect_s": 1.2813177080242895,
+      "duration_s": 3.0,
+      "events": [],
+      "name": "shape_014",
+      "profile": "local",
+      "source_sha256": "aee6c2b7af67bfbff43776e8e67e235dea61c3b407eecceb11058a5137a8fae2",
+      "suite": "shapes",
+      "trace": null,
+      "track": {
+        "events": [],
+        "format": "hazardtrack",
+        "format_version": "1.0",
+        "generated_at": "2000-01-01T00:00:00Z",
+        "media": {
+          "content_id": "HAZARD_shapes_shape_014",
+          "duration_s": 3.0,
+          "fps": 50.0,
+          "height": 360,
+          "source_sha256": "aee6c2b7af67bfbff43776e8e67e235dea61c3b407eecceb11058a5137a8fae2",
+          "transfer": "sdr",
+          "width": 640
+        },
+        "profile": "local",
+        "stats": {
+          "mean_alpha": 0.0,
+          "mean_delta_cd_m2": 0.0,
+          "n_events_by_kind": {},
+          "veiled_fraction_of_runtime": 0.0
+        },
+        "unresolved_segments": [],
+        "veils": [],
+        "verifier": {
+          "engine_version": "0.1.0",
+          "offsets_checked_s": [
+            -0.15,
+            0.0,
+            0.15
+          ],
+          "params_hash": "14b825f91e0477aeabe01a0491ec83ce00d1b4096a43c5d582d5895ca4490538",
+          "passes": true,
+          "residual_events": []
+        }
+      },
+      "truth": {
+        "intervals": [
+          {
+            "t_end": 2.8,
+            "t_start": 1.16
+          }
+        ],
+        "must_fail": true
+      }
+    },
+    {
+      "analyze_s": 4.476707416004501,
+      "decode_s": 1.5506380420411006,
+      "detect_s": 1.2813177080242895,
+      "duration_s": 3.0,
+      "events": [],
+      "name": "shape_014",
+      "profile": "kids",
+      "source_sha256": "aee6c2b7af67bfbff43776e8e67e235dea61c3b407eecceb11058a5137a8fae2",
+      "suite": "shapes",
+      "trace": null,
+      "track": {
+        "events": [],
+        "format": "hazardtrack",
+        "format_version": "1.0",
+        "generated_at": "2000-01-01T00:00:00Z",
+        "media": {
+          "content_id": "HAZARD_shapes_shape_014",
+          "duration_s": 3.0,
+          "fps": 50.0,
+          "height": 360,
+          "source_sha256": "aee6c2b7af67bfbff43776e8e67e235dea61c3b407eecceb11058a5137a8fae2",
+          "transfer": "sdr",
+          "width": 640
+        },
+        "profile": "kids",
+        "stats": {
+          "mean_alpha": 0.0,
+          "mean_delta_cd_m2": 0.0,
+          "n_events_by_kind": {},
+          "veiled_fraction_of_runtime": 0.0
+        },
+        "unresolved_segments": [],
+        "veils": [],
+        "verifier": {
+          "engine_version": "0.1.0",
+          "offsets_checked_s": [
+            -0.15,
+            0.0,
+            0.15
+          ],
+          "params_hash": "eba16e78fcd87c00137e0d37641526314d2d4fe80aad5bbf6f54add615054832",
+          "passes": true,
+          "residual_events": []
+        }
+      },
+      "truth": {
+        "intervals": [
+          {
+            "t_end": 3.0,
+            "t_start": 0.96
+          }
+        ],
+        "must_fail": true
+      }
+    },
+    {
+      "analyze_s": 0.26880541699938476,
+      "decode_s": 1.8645414580241777,
+      "detect_s": 0.6763789580436423,
+      "duration_s": 3.0,
+      "events": [],
+      "name": "shape_034",
+      "profile": "local",
+      "source_sha256": "195eaea5bfb6121d0ce91453f5a07d3e8072c280209d2a45b40c91437dd35b86",
+      "suite": "shapes",
+      "trace": null,
+      "track": {
+        "events": [],
+        "format": "hazardtrack",
+        "format_version": "1.0",
+        "generated_at": "2000-01-01T00:00:00Z",
+        "media": {
+          "content_id": "HAZARD_shapes_shape_034",
+          "duration_s": 3.0,
+          "fps": 60.0,
+          "height": 360,
+          "source_sha256": "195eaea5bfb6121d0ce91453f5a07d3e8072c280209d2a45b40c91437dd35b86",
+          "transfer": "sdr",
+          "width": 640
+        },
+        "profile": "local",
+        "stats": {
+          "mean_alpha": 0.0,
+          "mean_delta_cd_m2": 0.0,
+          "n_events_by_kind": {},
+          "veiled_fraction_of_runtime": 0.0
+        },
+        "unresolved_segments": [],
+        "veils": [],
+        "verifier": {
+          "engine_version": "0.1.0",
+          "offsets_checked_s": [
+            -0.15,
+            0.0,
+            0.15
+          ],
+          "params_hash": "14b825f91e0477aeabe01a0491ec83ce00d1b4096a43c5d582d5895ca4490538",
+          "passes": true,
+          "residual_events": []
+        }
+      },
+      "truth": {
+        "intervals": [
+          {
+            "t_end": 3.0,
+            "t_start": 0.95
+          }
+        ],
+        "must_fail": true
+      }
+    },
+    {
+      "analyze_s": 0.26880541699938476,
+      "decode_s": 1.8645414580241777,
+      "detect_s": 0.6763789580436423,
+      "duration_s": 3.0,
+      "events": [],
+      "name": "shape_034",
+      "profile": "kids",
+      "source_sha256": "195eaea5bfb6121d0ce91453f5a07d3e8072c280209d2a45b40c91437dd35b86",
+      "suite": "shapes",
+      "trace": null,
+      "track": {
+        "events": [],
+        "format": "hazardtrack",
+        "format_version": "1.0",
+        "generated_at": "2000-01-01T00:00:00Z",
+        "media": {
+          "content_id": "HAZARD_shapes_shape_034",
+          "duration_s": 3.0,
+          "fps": 60.0,
+          "height": 360,
+          "source_sha256": "195eaea5bfb6121d0ce91453f5a07d3e8072c280209d2a45b40c91437dd35b86",
+          "transfer": "sdr",
+          "width": 640
+        },
+        "profile": "kids",
+        "stats": {
+          "mean_alpha": 0.0,
+          "mean_delta_cd_m2": 0.0,
+          "n_events_by_kind": {},
+          "veiled_fraction_of_runtime": 0.0
+        },
+        "unresolved_segments": [],
+        "veils": [],
+        "verifier": {
+          "engine_version": "0.1.0",
+          "offsets_checked_s": [
+            -0.15,
+            0.0,
+            0.15
+          ],
+          "params_hash": "eba16e78fcd87c00137e0d37641526314d2d4fe80aad5bbf6f54add615054832",
+          "passes": true,
+          "residual_events": []
+        }
+      },
+      "truth": {
+        "intervals": [
+          {
+            "t_end": 3.0,
+            "t_start": 0.8166666666666667
+          }
+        ],
+        "must_fail": true
+      }
+    }
+  ],
+  "source": "ITU-R BT.1702-3 Annex 1 Guideline 1, printed page 3",
+  "status": "superseded oracle assumption; not an accepted evaluation",
+  "url": "https://www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.1702-3-202311-I!!PDF-E.pdf"
+}

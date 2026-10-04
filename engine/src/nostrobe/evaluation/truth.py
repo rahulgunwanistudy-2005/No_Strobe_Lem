@@ -1,7 +1,9 @@
 """Offline oracle: enumerate raw state reversals, paired flashes and windows.
 
 No production detector, counter, area helper or event builder is imported.
-Threshold values express the documented product interpretations, not certification.
+SDR threshold follows BT.1702-3 Annex 1 Guideline 1, printed p.3:
+darker state below 160 cd/m² and delta at least 20. Relative contrast is HDR-only.
+Temporal/area choices follow the documented product interpretations, not certification.
 """
 
 from collections.abc import Sequence
@@ -67,7 +69,7 @@ def _changes(values: FloatArray, red: bool) -> list[int]:
 
     def qualifies(a: FloatArray, b: FloatArray) -> bool:
         if not red:
-            return bool(abs(float(a - b)) >= max(20, min(float(a), float(b)) / 8))
+            return bool(min(float(a), float(b)) < 160 and abs(float(a - b)) >= 20)
         ratios = [float(v[0] / v.sum()) if v.sum() else 0 for v in (a, b)]
         return max(ratios) >= 0.8 and float(np.linalg.norm(_uv(a) - _uv(b))) > 0.2
 
