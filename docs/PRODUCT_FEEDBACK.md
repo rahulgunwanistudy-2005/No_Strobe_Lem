@@ -47,3 +47,20 @@ W3C Media, Vega overlay animation, AWS, Kiro and physical Fire TV hardware were 
   measurements on this host, not controlled isolated performance claims.
 - Would build again: yes, with more profiling and an isolated benchmark before
   production ingestion. No new Vega/AWS/device-media claims are made in S2.
+
+## Session 3 — numerical verification and reporting
+
+- Used ffmpeg/ffprobe 7.1.1 to retain synchronized original code samples and PTS
+  in source-keyed memory maps. NumPy computes blends before transfer/averaging;
+  exact sample-history grouping avoids repeated identical cell work while
+  preserving the original grid for global/local area rules.
+- Worked: one decoder pass reused across candidate loops, no raw playback,
+  source binding, continuous-ramp checks, explicit unresolved outputs, and
+  self-contained Jinja2/matplotlib Agg reports inspected in the in-app browser.
+- Needs work: real-content candidate search can be expensive. Original sample
+  fidelity requires substantial disk cache space; timing/cost measurements
+  belong in the S3 report. The final film run uses a warm cache and concurrent
+  validation, so it cannot establish isolated cold-start performance.
+- Would build again: yes; retain the full-file publication gate and profile
+  truth distinctions while profiling candidate search. Vega overlay, measured
+  synchronization/compositing and AWS were not exercised in this session.

@@ -68,13 +68,32 @@ Detection/accuracy/quality gates are verified; the 20× performance target is
 Scope: execute S3_veil_verifier_track_cli.md. User authorizes logical commits
 without attribution tags. Preserve S2 standards corrections and existing truth.
 
-- [ ] Implement validated display-code compositing, deterministic ramps and
+- [x] Implement validated display-code compositing, deterministic ramps and
   padded/merged segments; document shared playback semantics.
-- [ ] Cache source-hash-keyed decoded samples without losing subcell variation;
+- [x] Cache source-hash-keyed decoded samples without losing subcell variation;
   implement all-offset full-detector verification and distortion search.
-- [ ] Add final whole-file verification, one retry and explicit unresolved reasons;
+- [x] Add final whole-file verification, one retry and explicit unresolved reasons;
   refuse publication of failing tracks.
-- [ ] Implement JSON/WebVTT readers/writers, stats, CLI and trace-only HTML report.
-- [ ] Test encoded synthetic cases at all supported frame rates, record viewing
+- [x] Implement JSON/WebVTT readers/writers, stats, CLI and trace-only HTML report.
+- [x] Test encoded synthetic cases at all supported frame rates, record viewing
   costs, run a ten-minute film analysis and record actual time/limitations.
-- [ ] Self-review, pass quality/contract gates, document outcomes and commit stages.
+- [x] Self-review, pass quality/contract gates, document outcomes and commit stages.
+
+
+## S3 results
+
+Implemented the S3 engine/contract/CLI/report scope. See docs/S3_REPORT.md.
+
+- 359 tests passed in 319.50 s; lint/format, strict mypy, schema/generated-type
+  drift and TypeScript checks pass. Static sample report inspected visually.
+- All 80 encoded smoke clips across five fps values and three profiles pass:
+  240 verifier outcomes, zero unresolved smoke cases, FN=0/FP=0 against unchanged
+  profile expectations. Broadcast must-pass clips receive zero veils.
+- The separate Kids extended-warning regression correctly refuses publication
+  when fixed timing cannot clear the trailing history before the warning.
+- The 596.458333 s Broadcast film pipeline completed in 3,015.374 s from a warm
+  cache, with three unresolved segments and two final residual failures. Only
+  debug JSON/report were written. No clean-control accuracy claim is made.
+- Real-content mitigation/throughput, the wider S4 suite, S5 device calibration,
+  TV and AWS remain deferred. The original source is preserved; the generated
+  12.3 GiB benchmark cache was removed. No history rewrite or external publishing.

@@ -29,3 +29,5 @@ Fire TV track (Vega OS) · AWS Builder mini · Open Source mini — Amazon "Buil
 - You commit after each session passes its gates. The agent never rewrites git history.
 - Every number in the video and the write-up comes from `eval/RESULTS.md`. No invented figures.
 - Never put an unmitigated hazardous sequence at full speed in the video or in the default app build (bible §14).
+
+Session sources archived in this checkout: `S1.md`, `S2.md`, and `S3.md`.

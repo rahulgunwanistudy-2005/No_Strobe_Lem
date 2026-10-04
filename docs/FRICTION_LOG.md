@@ -20,3 +20,15 @@ separate decodes byte for byte. No new external-tool blocker was reproduced.
 The detection throughput target remains unmet; profiling and measured results
 are recorded in S2_REPORT.md and s2_benchmark.json as an implementation
 limitation, rather than attributed to a vendor without evidence.
+
+## Session 3 update — 2026-10-04
+
+No new external-tool blocker was reproduced. Repeated verification on the
+encoded area cases was slow, so exact sample-history grouping was added:
+byte-identical cell histories share change counters, then counts expand back
+to the original grid for global/local area decisions. Equivalence checks use
+exact array equality and all-profile event equality. This is an implementation
+optimization, not vendor friction. The first film cache preparation completed;
+that analysis was interrupted during development, so the recorded final film
+benchmark explicitly starts with a warm decode cache. Concurrent validation
+activity is recorded rather than presenting the timing as an isolated run.

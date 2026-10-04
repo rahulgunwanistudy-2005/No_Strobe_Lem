@@ -1,0 +1,328 @@
+{
+  "decode_cache": "warm; prepared by preceding interrupted cold run",
+  "media": {
+    "content_id": "big_buck_bunny_1080p_h264",
+    "duration_s": 596.458333,
+    "fps": 24.0,
+    "height": 1080,
+    "source_sha256": "dc2146a2b1172def56730143ad80cd1825b7fad15f1fc9c23a4e7d01a741ac11",
+    "transfer": "sdr",
+    "width": 1920
+  },
+  "notes": "Full solve/final verification/report pipeline; raw film flags remain unreviewed.",
+  "platform": "macOS-26.3-arm64-arm-64bit",
+  "profile": "broadcast",
+  "python": "3.12.11",
+  "tracks": [
+    {
+      "events": [
+        {
+          "id": "evt_0001",
+          "kind": "luma_flash",
+          "peak_area_fraction": 0.26430555555555557,
+          "peak_changes_per_s": 22,
+          "peak_delta_cd_m2": 181.4565,
+          "regime": "absolute",
+          "severity": "warn",
+          "t_end": 187.5,
+          "t_start": 186.416667
+        },
+        {
+          "id": "evt_0002",
+          "kind": "luma_flash",
+          "peak_area_fraction": 0.48659722222222224,
+          "peak_changes_per_s": 13,
+          "peak_delta_cd_m2": 195.012875,
+          "regime": "absolute",
+          "severity": "warn",
+          "t_end": 197.041667,
+          "t_start": 196.083333
+        },
+        {
+          "id": "evt_0003",
+          "kind": "luma_flash",
+          "peak_area_fraction": 0.2707638888888889,
+          "peak_changes_per_s": 14,
+          "peak_delta_cd_m2": 193.44875,
+          "regime": "absolute",
+          "severity": "fail",
+          "t_end": 196.5,
+          "t_start": 196.166667
+        },
+        {
+          "id": "evt_0004",
+          "kind": "luma_flash",
+          "peak_area_fraction": 0.22826388888888888,
+          "peak_changes_per_s": 15,
+          "peak_delta_cd_m2": 174.408625,
+          "regime": "absolute",
+          "severity": "warn",
+          "t_end": 213.416667,
+          "t_start": 212.791667
+        },
+        {
+          "id": "evt_0005",
+          "kind": "extended_flashing",
+          "peak_area_fraction": 0.3154166666666667,
+          "peak_changes_per_s": 9,
+          "peak_delta_cd_m2": null,
+          "regime": "absolute",
+          "severity": "warn",
+          "t_end": 214.333333,
+          "t_start": 214.125
+        },
+        {
+          "id": "evt_0006",
+          "kind": "luma_flash",
+          "peak_area_fraction": 0.4534722222222222,
+          "peak_changes_per_s": 19,
+          "peak_delta_cd_m2": 189.8485,
+          "regime": "absolute",
+          "severity": "warn",
+          "t_end": 421.708333,
+          "t_start": 420.625
+        },
+        {
+          "id": "evt_0007",
+          "kind": "luma_flash",
+          "peak_area_fraction": 0.2579166666666667,
+          "peak_changes_per_s": 19,
+          "peak_delta_cd_m2": 187.20049999999998,
+          "regime": "absolute",
+          "severity": "fail",
+          "t_end": 421.166667,
+          "t_start": 421.0
+        },
+        {
+          "id": "evt_0008",
+          "kind": "luma_flash",
+          "peak_area_fraction": 0.6397222222222222,
+          "peak_changes_per_s": 18,
+          "peak_delta_cd_m2": 191.90599999999998,
+          "regime": "absolute",
+          "severity": "warn",
+          "t_end": 445.583333,
+          "t_start": 442.416667
+        },
+        {
+          "id": "evt_0009",
+          "kind": "luma_flash",
+          "peak_area_fraction": 0.6547222222222222,
+          "peak_changes_per_s": 16,
+          "peak_delta_cd_m2": 195.65487499999998,
+          "regime": "absolute",
+          "severity": "fail",
+          "t_end": 443.416667,
+          "t_start": 442.625
+        },
+        {
+          "id": "evt_0010",
+          "kind": "luma_flash",
+          "peak_area_fraction": 0.2654166666666667,
+          "peak_changes_per_s": 17,
+          "peak_delta_cd_m2": 191.822125,
+          "regime": "absolute",
+          "severity": "fail",
+          "t_end": 445.083333,
+          "t_start": 444.875
+        },
+        {
+          "id": "evt_0011",
+          "kind": "luma_flash",
+          "peak_area_fraction": 0.4710416666666667,
+          "peak_changes_per_s": 16,
+          "peak_delta_cd_m2": 196.606,
+          "regime": "absolute",
+          "severity": "warn",
+          "t_end": 453.875,
+          "t_start": 453.041667
+        },
+        {
+          "id": "evt_0012",
+          "kind": "luma_flash",
+          "peak_area_fraction": 0.43527777777777776,
+          "peak_changes_per_s": 14,
+          "peak_delta_cd_m2": 198.0395,
+          "regime": "absolute",
+          "severity": "warn",
+          "t_end": 554.791667,
+          "t_start": 534.875
+        },
+        {
+          "id": "evt_0013",
+          "kind": "extended_flashing",
+          "peak_area_fraction": 0.7803472222222222,
+          "peak_changes_per_s": 15,
+          "peak_delta_cd_m2": null,
+          "regime": "absolute",
+          "severity": "warn",
+          "t_end": 565.375,
+          "t_start": 538.666667
+        },
+        {
+          "id": "evt_0014",
+          "kind": "luma_flash",
+          "peak_area_fraction": 0.2965277777777778,
+          "peak_changes_per_s": 14,
+          "peak_delta_cd_m2": 184.70712500000002,
+          "regime": "absolute",
+          "severity": "fail",
+          "t_end": 556.875,
+          "t_start": 553.583333
+        },
+        {
+          "id": "evt_0015",
+          "kind": "luma_flash",
+          "peak_area_fraction": 0.43875,
+          "peak_changes_per_s": 15,
+          "peak_delta_cd_m2": 178.06875,
+          "regime": "absolute",
+          "severity": "warn",
+          "t_end": 558.666667,
+          "t_start": 556.875
+        },
+        {
+          "id": "evt_0016",
+          "kind": "luma_flash",
+          "peak_area_fraction": 0.28319444444444447,
+          "peak_changes_per_s": 13,
+          "peak_delta_cd_m2": 177.106,
+          "regime": "absolute",
+          "severity": "fail",
+          "t_end": 560.125,
+          "t_start": 558.666667
+        },
+        {
+          "id": "evt_0017",
+          "kind": "luma_flash",
+          "peak_area_fraction": 0.42736111111111114,
+          "peak_changes_per_s": 11,
+          "peak_delta_cd_m2": 60.79212499999999,
+          "regime": "absolute",
+          "severity": "warn",
+          "t_end": 563.791667,
+          "t_start": 560.125
+        }
+      ],
+      "passes": false,
+      "stats": {
+        "mean_alpha": 0.4676947114018662,
+        "mean_delta_cd_m2": 14.142928646340312,
+        "n_events_by_kind": {
+          "extended_flashing": 2,
+          "luma_flash": 15
+        },
+        "veiled_fraction_of_runtime": 0.02242403074952094
+      },
+      "unresolved": [
+        {
+          "covers": [
+            "evt_0014"
+          ],
+          "end": 557.125,
+          "reason": "no candidate passes all sync offsets at or below max_alpha",
+          "start": 553.333333
+        },
+        {
+          "covers": [],
+          "end": 196.5,
+          "reason": "residual fail after final whole-file verification and one retry",
+          "start": 196.166667
+        },
+        {
+          "covers": [],
+          "end": 443.083333,
+          "reason": "residual fail after final whole-file verification and one retry",
+          "start": 442.958333
+        }
+      ],
+      "veils": [
+        {
+          "alpha": 0.16499999999999998,
+          "covers": [
+            "evt_0007"
+          ],
+          "gray": 0.5,
+          "id": "veil_0002",
+          "ramp_in_s": 0.5,
+          "ramp_out_s": 0.5,
+          "t_off": 421.416667,
+          "t_on": 420.75
+        },
+        {
+          "alpha": 0.645,
+          "covers": [
+            "evt_0009",
+            "evt_0010"
+          ],
+          "gray": 0.5,
+          "id": "veil_0003",
+          "ramp_in_s": 0.5,
+          "ramp_out_s": 0.5,
+          "t_off": 445.333333,
+          "t_on": 442.375
+        },
+        {
+          "alpha": 0.85,
+          "covers": [
+            "evt_0014"
+          ],
+          "gray": 0.25,
+          "id": "veil_0004",
+          "ramp_in_s": 0.5,
+          "ramp_out_s": 0.5,
+          "t_off": 557.125,
+          "t_on": 553.333333
+        },
+        {
+          "alpha": 0.07500000000000001,
+          "covers": [
+            "evt_0016"
+          ],
+          "gray": 0.25,
+          "id": "veil_0005",
+          "ramp_in_s": 0.5,
+          "ramp_out_s": 0.5,
+          "t_off": 560.375,
+          "t_on": 558.416667
+        }
+      ],
+      "verifier": {
+        "engine_version": "0.1.0",
+        "offsets_checked_s": [
+          -0.15,
+          0.0,
+          0.15
+        ],
+        "params_hash": "70dcc50ff260aa1abcb1137f7ca022293f27dbcdc6c694c49b1c3ed79455de6a",
+        "passes": false,
+        "residual_events": [
+          {
+            "id": "evt_0001",
+            "kind": "luma_flash",
+            "peak_area_fraction": 0.2707638888888889,
+            "peak_changes_per_s": 14,
+            "peak_delta_cd_m2": 193.44875,
+            "regime": "absolute",
+            "severity": "fail",
+            "t_end": 196.5,
+            "t_start": 196.166667
+          },
+          {
+            "id": "evt_0002",
+            "kind": "luma_flash",
+            "peak_area_fraction": 0.25625,
+            "peak_changes_per_s": 14,
+            "peak_delta_cd_m2": 63.27814324999616,
+            "regime": "absolute",
+            "severity": "fail",
+            "t_end": 443.083333,
+            "t_start": 442.958333
+          }
+        ]
+      }
+    }
+  ],
+  "wall_s": 3015.373784541036,
+  "x_realtime": 0.19780576990417317
+}
