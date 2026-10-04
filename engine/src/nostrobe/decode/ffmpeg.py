@@ -5,7 +5,7 @@ import json
 import re
 import subprocess
 from collections import deque
-from collections.abc import Iterator
+from collections.abc import Generator
 from fractions import Fraction
 from pathlib import Path
 from queue import Empty, Full, Queue
@@ -24,6 +24,7 @@ from nostrobe.luminance.curve import FloatArray, code10_to_cd_m2
 
 ByteArray = NDArray[np.uint8]
 _PTS = re.compile(rb"\bn:\s*\d+.*?pts_time:([^ ]+)")
+_LUMA_LUT = code10_to_cd_m2(np.arange(256, dtype=np.float64) * 4)
 
 
 def probe(path: Path, *, settings: Settings | None = None) -> MediaInfo:
@@ -84,8 +85,8 @@ def probe(path: Path, *, settings: Settings | None = None) -> MediaInfo:
 
 
 def _frames(
-    path: Path, grid: tuple[int, int], mode: Literal["luma", "rgb"], config: Settings
-) -> Iterator[tuple[ByteArray, float]]:
+    path: Path, grid: tuple[int, int], mode: Literal["luma", "rgb", "analysis"], config: Settings
+) -> Generator[tuple[ByteArray, float], None, None]:
     probe(path, settings=config)
     width, height = grid
     if width <= 0 or height <= 0:
@@ -95,12 +96,24 @@ def _frames(
         # Extract Y before conversion, then preserve numerical limited-range codes.
         filters = f"extractplanes=y,scale={width}:{height}:flags=area:in_range=full:out_range=full"
         pixel_format, shape = "gray", (height, width)
-    else:
+    elif mode == "rgb":
         filters = (
             f"scale={width}:{height}:flags=area:in_color_matrix=bt709:"
             "out_color_matrix=bt709:in_range=limited:out_range=full,format=rgb24"
         )
         pixel_format, shape = "rgb24", (height, width, 3)
+    else:
+        # One input decoder feeds both branches; the left RGB triplet stores
+        # unexpanded numerical Y codes, the right triplet carries actual RGB.
+        filters = (
+            "split=2[y][rgb];[y]extractplanes=y,"
+            f"scale={width}:{height}:flags=area:in_range=full:out_range=full,"
+            "format=rgb24[yc];[rgb]"
+            f"scale={width}:{height}:flags=area:in_color_matrix=bt709:"
+            "out_color_matrix=bt709:in_range=limited:out_range=full,"
+            "format=rgb24[rc];[yc][rc]hstack=inputs=2"
+        )
+        pixel_format, shape = "rgb24", (height, width * 2, 3)
     filters += ",setpts=PTS-STARTPTS,showinfo"
     command = [
         config.ffmpeg,
@@ -109,6 +122,8 @@ def _frames(
         "-loglevel",
         "info",
         "-noautorotate",
+        "-threads",
+        "1",
         "-i",
         str(path),
         "-map",
@@ -118,6 +133,8 @@ def _frames(
         "-dn",
         "-vf",
         filters,
+        "-filter_threads",
+        "1",
         "-fps_mode",
         "passthrough",
         "-pix_fmt",
@@ -191,16 +208,24 @@ def _frames(
 
 def iter_luma(
     path: Path, grid: tuple[int, int] = (640, 360), *, settings: Settings | None = None
-) -> Iterator[tuple[ByteArray, float]]:
+) -> Generator[tuple[ByteArray, float], None, None]:
     """Limited-range Y' frames; close the iterator/contextlib.closing on early exit."""
     yield from _frames(path, grid, "luma", settings or Settings())
 
 
 def iter_rgb(
     path: Path, grid: tuple[int, int] = (640, 360), *, settings: Settings | None = None
-) -> Iterator[tuple[ByteArray, float]]:
+) -> Generator[tuple[ByteArray, float], None, None]:
     """Full-range BT.709 rgb24 frames and media-timeline PTS."""
     yield from _frames(path, grid, "rgb", settings or Settings())
+
+
+def iter_analysis(
+    path: Path, grid: tuple[int, int] = (640, 360), *, settings: Settings | None = None
+) -> Generator[tuple[ByteArray, ByteArray, float], None, None]:
+    """Synchronized Y/RGB from one bounded ffmpeg decoding pass."""
+    for frame, t in _frames(path, grid, "analysis", settings or Settings()):
+        yield frame[:, : grid[0], 0], frame[:, grid[0] :, :], t
 
 
 def to_cells(luma_frame: ByteArray, cells: tuple[int, int] = (160, 90)) -> FloatArray:
@@ -211,8 +236,21 @@ def to_cells(luma_frame: ByteArray, cells: tuple[int, int] = (160, 90)) -> Float
     rows, cols = luma_frame.shape
     if width <= 0 or height <= 0 or rows % height or cols % width:
         raise ValueError("decode dimensions must be multiples of cell dimensions")
-    linear = code10_to_cd_m2(luma_frame.astype(np.float64) * 4)
-    return np.asarray(
-        linear.reshape(height, rows // height, width, cols // width).mean(axis=(1, 3)),
-        dtype=np.float64,
-    )
+    return block_mean(_LUMA_LUT[luma_frame], cells)
+
+
+def block_mean(linear: FloatArray, cells: tuple[int, int] = (160, 90)) -> FloatArray:
+    """Linear-light reduction with contiguous row sums, no per-cell loops."""
+    width, height = cells
+    rows, cols = linear.shape[:2]
+    if min(cells) <= 0 or rows % height or cols % width:
+        raise ValueError("decode dimensions must be multiples of cell dimensions")
+    sx, sy = cols // width, rows // height
+    horizontal = linear[:, ::sx].copy()
+    for offset in range(1, sx):
+        horizontal += linear[:, offset::sx]
+    result = horizontal[::sy].copy()
+    for offset in range(1, sy):
+        result += horizontal[offset::sy]
+    result /= sx * sy
+    return result

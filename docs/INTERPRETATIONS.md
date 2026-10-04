@@ -34,3 +34,39 @@ and adaptive quantization, with maximum QP 6. The cap is an encoding-quality
 choice to preserve analytic test stimuli (not a hazard threshold). Matching
 input/output BT.709 and range tags prevents an implicit color conversion.
 Explicit x264 VUI tags preserve transfer/primaries metadata across encoders.
+
+## S2 detection decisions
+
+Re-read BT.1702-3 Annex 1 Guideline 1 (printed p.3), Ofcom Section 2
+Guidance Notes Issue Twelve Annex 1 §§2,3,3.1.1 (printed p.18), and WCAG 2.2
+flash-threshold Notes 2/3 on 2026-10-04. Source wording overrides the brief.
+
+- SDR luma changes require darker luminance <160 cd/m² and delta ≥20 cd/m².
+  The relative helper is retained for continuity tests/future HDR; SDR events
+  never use it or report a relative regime.
+- Zigzag threshold crossings in the same direction are not opposing changes.
+  Rate counting coalesces those crossings and pairs alternating directions.
+  The >6-change product reading includes a pending leading change only after
+  a dense sequence of opposing flashes is established, preserving the S1
+  independent sampled truth. A first flash is included when its successor is
+  close enough; flashes at ≥0.36 s leading spacing are excluded from rate
+  counts, but included in extended-flashing counts.
+- The 0.36 s spacing remains a conservative display-environment assumption,
+  not a rule inferred from source fps. Windows are (t-1,t], with a 1e-9 s
+  tolerance solely for floating-point/PTS equality, not a relaxed threshold.
+- Warning proximity requires both spatial and temporal evidence: at least
+  80% of both limits, without a fail on that frame. Extended flashing uses
+  unfiltered opposing changes (≥3/s), area >25%, continuously for >5 s;
+  only warnings are emitted. Kids can warn/fail on isolated three flashes
+  under its intentionally stricter product policy; the broadcast isolated
+  ≤3-flash guarantee cannot also hold for Kids' >4-change limit.
+- Adding isolated flashes *inside an existing burst* can exceed the rate
+  threshold; the requested unrestricted property is mathematically false.
+  Test isolated bursts separated from other flashes by more than one second.
+- RGB cells are averaged after BT.709 inverse transfer, then classified in
+  linear RGB. Opposing red transitions use the sign of the dominant u′v′
+  displacement component; same-direction chromatic ramps are coalesced.
+  Either endpoint can be saturated red, including two saturated endpoints.
+  This pairing method is a product interpretation, not ISO certification.
+- Detection-only JSON is an unverified event report, never a HazardTrack.
+  Full analyze/publishing remains gated on the S3 verifier.

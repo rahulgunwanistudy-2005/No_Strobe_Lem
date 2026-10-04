@@ -1,5 +1,6 @@
 """Thin command entry points. Unimplemented stages refuse to produce tracks."""
 
+import json
 import logging
 from collections.abc import Callable
 from pathlib import Path
@@ -8,6 +9,8 @@ from typing import Annotated
 import typer
 
 from nostrobe.config import Settings
+from nostrobe.detect.pipeline import analyze_detect_all
+from nostrobe.domain.profiles import get_profile
 from nostrobe.domain.schema import write_schema
 from nostrobe.errors import (
     DecodeError,
@@ -48,9 +51,40 @@ def _deferred(stage: str) -> None:
 
 
 @app.command()
-def analyze(path: Path) -> None:
-    """Analyze a video (S3)."""
-    _run(lambda: _deferred("analyze"))
+def analyze(
+    path: Path,
+    detect_only: Annotated[bool, typer.Option()] = False,
+    profile: Annotated[str, typer.Option()] = "all",
+    output: Annotated[Path | None, typer.Option()] = None,
+) -> None:
+    """Emit unverified detection events; track publishing requires S3."""
+
+    def action() -> None:
+        if not detect_only:
+            _deferred("verified analyze")
+        params = None if profile == "all" else [get_profile(profile)]
+        events = analyze_detect_all(path, profiles=params)
+        payload = {
+            "format": "nostrobe-detection",
+            "format_version": "1.0",
+            "verified": False,
+            "profiles": {
+                key: {
+                    "params_hash": get_profile(key).params_hash(),
+                    "events": [event.model_dump(mode="json") for event in values],
+                }
+                for key, values in events.items()
+            },
+        }
+        serialized = json.dumps(payload, indent=2, sort_keys=True, allow_nan=False) + "\n"
+        if output is None:
+            typer.echo(serialized, nl=False)
+        else:
+            if output.name.endswith((".hzt.json", ".hzt.vtt")):
+                raise ValueError("detection output cannot use a HazardTrack extension")
+            output.write_text(serialized)
+
+    _run(action)
 
 
 @app.command()

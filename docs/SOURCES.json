@@ -10,5 +10,17 @@
     "url": "https://www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.1702-2-201910-S!!PDF-E.pdf",
     "sha256": "69d2c1e8d35e7b9add37654c94bbc8672cebfda44f11b3e8631652890499534f",
     "retrieved": "2026-10-04"
+  },
+  {
+    "name": "ofcom-section-2-issue-twelve",
+    "url": "https://www.ofcom.org.uk/siteassets/resources/documents/tv-radio-and-on-demand/broadcast-guidance/programme-guidance/broadcast-code-guidance/section-2-guidance-notes.pdf?v=322622",
+    "sha256": "3d31a66925fde099ff554dac0defefdfa5b4bdff81120ac0551454cf874e545a",
+    "retrieved": "2026-10-04"
+  },
+  {
+    "name": "wcag22",
+    "url": "https://www.w3.org/TR/WCAG22/",
+    "sha256": "6e3c5fe397257cae509a2fb4752b73062cf8cbeb92c2cec618989b17e4cf7057",
+    "retrieved": "2026-10-04"
   }
 ]
