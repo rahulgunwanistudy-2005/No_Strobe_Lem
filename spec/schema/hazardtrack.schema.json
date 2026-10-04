@@ -137,6 +137,12 @@
           "title": "Mean Alpha",
           "type": "number"
         },
+        "mean_delta_cd_m2": {
+          "default": 0.0,
+          "minimum": 0,
+          "title": "Mean Delta Cd M2",
+          "type": "number"
+        },
         "n_events_by_kind": {
           "additionalProperties": {
             "minimum": 0,
@@ -165,6 +171,40 @@
         "n_events_by_kind"
       ],
       "title": "TrackStats",
+      "type": "object"
+    },
+    "UnresolvedSegment": {
+      "properties": {
+        "covers": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Covers",
+          "type": "array"
+        },
+        "end": {
+          "minimum": 0,
+          "title": "End",
+          "type": "number"
+        },
+        "reason": {
+          "minLength": 1,
+          "title": "Reason",
+          "type": "string"
+        },
+        "start": {
+          "minimum": 0,
+          "title": "Start",
+          "type": "number"
+        }
+      },
+      "required": [
+        "start",
+        "end",
+        "covers",
+        "reason"
+      ],
+      "title": "UnresolvedSegment",
       "type": "object"
     },
     "VeilCue": {
@@ -303,6 +343,13 @@
     },
     "stats": {
       "$ref": "#/$defs/TrackStats"
+    },
+    "unresolved_segments": {
+      "items": {
+        "$ref": "#/$defs/UnresolvedSegment"
+      },
+      "title": "Unresolved Segments",
+      "type": "array"
     },
     "veils": {
       "items": {

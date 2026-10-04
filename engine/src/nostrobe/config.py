@@ -13,6 +13,10 @@ class Settings(BaseSettings):
     log_level: str = "INFO"
 
     @property
+    def cache_dir(self) -> Path:
+        return self.repo_root / ".nostrobe_cache"
+
+    @property
     def synth_dir(self) -> Path:
         return self.repo_root / "synth_out"
 

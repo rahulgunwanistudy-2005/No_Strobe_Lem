@@ -22,9 +22,15 @@ export type Transfer = "sdr";
 export type Width = number;
 export type Profile = "broadcast" | "local" | "kids";
 export type MeanAlpha = number;
+export type MeanDeltaCdM2 = number;
 export type VeiledFractionOfRuntime = number;
-export type Alpha = number;
 export type Covers = string[];
+export type End = number;
+export type Reason = string;
+export type Start = number;
+export type UnresolvedSegments = UnresolvedSegment[];
+export type Alpha = number;
+export type Covers1 = string[];
 export type Gray = number;
 export type Id1 = string;
 export type RampInS = number;
@@ -46,6 +52,7 @@ export interface HazardTrack {
   media: MediaInfo;
   profile: Profile;
   stats: TrackStats;
+  unresolved_segments?: UnresolvedSegments;
   veils: Veils;
   verifier: VerifierResult;
   [k: string]: unknown;
@@ -74,6 +81,7 @@ export interface MediaInfo {
 }
 export interface TrackStats {
   mean_alpha: MeanAlpha;
+  mean_delta_cd_m2?: MeanDeltaCdM2;
   n_events_by_kind: NEventsByKind;
   veiled_fraction_of_runtime: VeiledFractionOfRuntime;
   [k: string]: unknown;
@@ -81,9 +89,16 @@ export interface TrackStats {
 export interface NEventsByKind {
   [k: string]: number;
 }
+export interface UnresolvedSegment {
+  covers: Covers;
+  end: End;
+  reason: Reason;
+  start: Start;
+  [k: string]: unknown;
+}
 export interface VeilCue {
   alpha: Alpha;
-  covers: Covers;
+  covers: Covers1;
   gray: Gray;
   id: Id1;
   ramp_in_s: RampInS;

@@ -57,6 +57,12 @@ class EventBuilder:
                 }
             )
 
+    def has_evidence(self, include_warnings: bool = False) -> bool:
+        return any(
+            e.severity == "fail" or include_warnings
+            for e in [*self.events, *([self._active] if self._active else [])]
+        )
+
     def finish(self, end: float) -> list[HazardEvent]:
         if end <= self._last_t:
             raise ValueError("media end must follow the last frame")

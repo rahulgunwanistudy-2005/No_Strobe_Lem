@@ -79,6 +79,20 @@ class TrackStats(FrozenModel):
     veiled_fraction_of_runtime: Fraction
     mean_alpha: Fraction
     n_events_by_kind: dict[HazardKind, Annotated[int, Field(ge=0)]]
+    mean_delta_cd_m2: Nonnegative = 0.0
+
+
+class UnresolvedSegment(FrozenModel):
+    start: Nonnegative
+    end: Nonnegative
+    covers: list[str]
+    reason: Annotated[str, Field(min_length=1)]
+
+    @model_validator(mode="after")
+    def ordered_times(self) -> Self:
+        if self.end <= self.start:
+            raise ValueError("unresolved segment end must exceed start")
+        return self
 
 
 class HazardTrack(FrozenModel):
@@ -91,6 +105,7 @@ class HazardTrack(FrozenModel):
     verifier: VerifierResult
     generated_at: datetime
     stats: TrackStats
+    unresolved_segments: list[UnresolvedSegment] = Field(default_factory=list)
 
     @field_validator("generated_at")
     @classmethod
@@ -101,6 +116,8 @@ class HazardTrack(FrozenModel):
 
     @model_validator(mode="after")
     def event_references(self) -> Self:
+        if self.verifier.passes and self.unresolved_segments:
+            raise ValueError("passing tracks cannot contain unresolved segments")
         ids = [event.id for event in self.events]
         if len(set(ids)) != len(ids):
             raise ValueError("event ids must be unique")

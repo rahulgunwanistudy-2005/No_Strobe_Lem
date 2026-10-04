@@ -82,3 +82,40 @@ flash-threshold Notes 2/3 on 2026-10-04. Source wording overrides the brief.
   onset cannot be compared directly to S1 Broadcast >6-change intervals.
 - Detection-only JSON is an unverified event report, never a HazardTrack.
   Full analyze/publishing remains gated on the S3 verifier.
+
+## S3 mitigation and publication
+
+- Display-code blending follows the build pack literally: numerical limited Y
+  codes divide by 255; gray is the same normalized code in Y and full-range
+  RGB. This is not a measured device fit. S5 must calibrate the actual overlay.
+- Cache raw 640×360 pre-average Y/RGB bytes in source-SHA-keyed `.npy` shards.
+  Caching only average luminance and reversing the transfer would lose spatial
+  information and understate simulation error. Shards preserve VFR timestamps,
+  bound memory, and require about 0.88 MiB/frame of disk. Ignored caches can be
+  removed at any time. Cache format/resolution are versioned in the key.
+- Exactly identical rows/columns across a verification interval may be reduced
+  before detection; area fractions and one-third windows remain identical under
+  this replication. No approximate spatial subsampling is introduced.
+- Local candidate checks include 1.5 s beyond ramp supports on either side.
+  Candidate checks stop on their first observed failure; final full-file checks
+  collect all failures at every offset. No-cue offsets are identical, so one
+  full detector pass establishes all of them.
+- Search every gray independently along increasing 0.02 alpha steps, including
+  max_alpha. Distortion increases monotonically with alpha at fixed gray under
+  the monotone table, so the first passing grid value is that gray's minimum
+  grid distortion even if pass/fail is nonmonotone. Refine its preceding bracket
+  to <=0.005, then compare actual active-support distortion across grays; ties
+  choose lower alpha, then gray. This is a finite-grid result, not a continuous
+  global-optimality proof.
+- Kids warning targets must disappear in local candidate checks; a zero-alpha
+  'pass' that merely leaves a warning intact does not implement veil_warn.
+  The final publication criterion remains zero fail events, plus no unresolved
+  segments. Broadcast/Local warnings alone receive no veil.
+- JSON extends the 1.0 object with unresolved reasons and mean luminance cost;
+  defaults preserve old fixtures. WebVTT stores event provenance in a separate
+  NOTE, leaving its metadata NOTE exactly without events/veils. This permits
+  complete round trips and validation of covers references.
+- Reports re-run luma/red counters in each event context, selecting the cells
+  whose peak qualifying-change count is maximal during the event interval.
+  Before/after luminance traces use that same group. Extended events use raw
+  opposing-change counts. Neither source frames nor video are embedded.
