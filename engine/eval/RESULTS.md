@@ -1,5 +1,13 @@
 # Evaluation results
 
-Not yet run. The detection, mitigation and evaluation pipeline starts in S2-S4.
-No missed-hazard, verifier, false-positive, cost or performance figures are claimed.
-Session 1 build checks are recorded in docs/S1_REPORT.md.
+The full S4 detection/mitigation evaluation has not run. No verifier pass rate,
+viewing-cost result, PEAT comparison or clean-film false-alarm rate is claimed.
+
+S2 detection validation passed the unchanged S1 smoke truth across five frame
+rates and the documented Local/Kids policies. See [the S2 report](../../docs/S2_REPORT.md)
+for synthetic accuracy, interval/property checks, tool gates and the unmet
+20× throughput target. The approximately ten-minute CC-BY film benchmark and
+unreviewed events are saved in [s2_benchmark.json](../../docs/s2_benchmark.json).
+These build checks do not replace the broader S4 evaluation.
+
+S1 build checks are recorded in [S1_REPORT.md](../../docs/S1_REPORT.md).

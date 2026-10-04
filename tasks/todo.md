@@ -23,14 +23,42 @@ Scope: execute S2_detection_engine.md under the project bible, with source
 corrections preserved from S1. The user's explicit commit request overrides
 the manual-commit default. Commit logical stages without attribution trailers.
 
-- [ ] Re-read ITU/Ofcom/WCAG sources and record detection interpretations.
-- [ ] Build vectorized opposing-change and bounded rate counters, luma/red
+- [x] Re-read ITU/Ofcom/WCAG sources and record detection interpretations.
+- [x] Build vectorized opposing-change and bounded rate counters, luma/red
   detection, summed-area rules, interval merging and extended warnings.
-- [ ] Wire one decoding pass shared by all profiles to analyze --detect-only;
+- [x] Wire one decoding pass shared by all profiles to analyze --detect-only;
   emit detection results only, with no verified-track claim.
-- [ ] Add independent boundary/property/encoded integration checks across
+- [x] Add independent boundary/property/encoded integration checks across
   24/25/30/50/60 fps; preserve S1 truth and investigate every mismatch.
-- [ ] Benchmark a ten-minute 1080p CC-BY film, profile bottlenecks and record
+- [x] Benchmark a ten-minute 1080p CC-BY film, profile bottlenecks and record
   actual machine/tool versions and throughput.
-- [ ] Self-review; run lint/format/strict types/full tests and contract checks;
+- [x] Self-review; run lint/format/strict types/full tests and contract checks;
   document results, friction, limitations and commit each finished stage.
+
+## S2 results
+
+Detection/accuracy/quality gates are verified; the 20× performance target is
+**not met**. See docs/S2_REPORT.md for scope and limits.
+
+- Final full-suite run: 338 tests passed in 299.97 s. Startup luma/red
+  regressions and non-BT.709 metadata refusal are included.
+- All 80 encoded smoke cases pass at 24/25/30/50/60 fps. Per-profile expected
+  positives: Broadcast 35, Local 40, Kids 50; FN=0 and FP=0 against those
+  documented expectations. Interval IoU >=0.9 on every must-fail case with
+  independent profile timing. S1 generator/truth/manifest remain unchanged.
+- ruff check/format, strict mypy (38 source files), schema/generated-type
+  drift checks and TypeScript typecheck pass.
+- Apple M1, 8 GiB RAM, macOS 26.3 arm64, Python 3.12.11, ffmpeg 7.1.1;
+  1080p/24 fps Big Buck Bunny, 596.458333 s, 14,315 frames. All profiles,
+  one decoding pass, one ffmpeg decoder/filter thread.
+- Final benchmark: 257.683 s wall, 2.315× end-to-end; 122.677 s detector wall,
+  4.862× detector throughput; 112.547 s detector CPU, 5.300× per CPU second.
+  Includes concurrent host/test activity; no isolated-system claim.
+- Profiling improvements: curve lookup tables, contiguous block means,
+  empty/full-area shortcuts, expiry caching, and frame-batched flash histories.
+  Film events are identical before/after the latter optimization.
+- Film flags: Broadcast 6 fail/11 warn, Local 29 fail/72 warn, Kids 40 fail/
+  109 warn. These are unreviewed detections, not an accuracy/clean-control score.
+- S3 mitigation/verifier/publishing, S4 broader evaluation and film-flag review,
+  TV/media calibration and AWS remain future sessions. No verified track is
+  emitted by S2. Performance requires further work before production claims.

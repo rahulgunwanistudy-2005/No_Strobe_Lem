@@ -1,11 +1,11 @@
 {
-  "decode_and_cells_wall_s": 132.6632447653683,
+  "decode_and_cells_wall_s": 134.98035586613696,
   "decoder_threads": 1,
-  "detector_cpu_s": 92.09538600000042,
-  "detector_cpu_x_realtime": 6.476527857758231,
-  "detector_wall_s": 96.96329490165226,
-  "detector_wall_x_realtime": 6.151382681508241,
-  "end_to_end_x_realtime": 2.5974287890366545,
+  "detector_cpu_s": 112.54712900000197,
+  "detector_cpu_x_realtime": 5.299631703621596,
+  "detector_wall_s": 122.67663050891133,
+  "detector_wall_x_realtime": 4.862037133932145,
+  "end_to_end_x_realtime": 2.3146999839559714,
   "events": {
     "broadcast": [
       {
@@ -2952,7 +2952,7 @@
     ]
   },
   "ffmpeg": "ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers",
-  "ffmpeg_cpu_s": 280.66213000000005,
+  "ffmpeg_cpu_s": 276.201498,
   "frames": 14315,
   "machine": {
     "cpu": "Apple M1",
@@ -2976,8 +2976,8 @@
     "local",
     "kids"
   ],
-  "python_cpu_s": 210.61100399999998,
+  "python_cpu_s": 228.703938,
   "speed_target": 20,
   "speed_target_met": false,
-  "wall_s": 229.6341426250292
+  "wall_s": 257.68278270802693
 }

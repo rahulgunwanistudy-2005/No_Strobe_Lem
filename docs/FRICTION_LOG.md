@@ -12,3 +12,11 @@ Entries below describe reproduced issues only. SDK availability and test results
 - Severity: Minor
 - Workaround: `--args '{"documentType":"WORKFLOW","target_platform":{"device_os":["vega"]}}'` retrieves the workflow inventory. `read_document` uses `document_uri`, not `name`.
 - Suggestion: Add `exec <tool> --schema` and print required argument types plus an example on validation failure.
+
+## Session 2 update — 2026-10-04
+
+Standards PDFs were readable and the combined ffmpeg Y/RGB stream matched
+separate decodes byte for byte. No new external-tool blocker was reproduced.
+The detection throughput target remains unmet; profiling and measured results
+are recorded in S2_REPORT.md and s2_benchmark.json as an implementation
+limitation, rather than attributed to a vendor without evidence.

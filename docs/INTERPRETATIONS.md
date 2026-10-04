@@ -63,10 +63,22 @@ flash-threshold Notes 2/3 on 2026-10-04. Source wording overrides the brief.
 - Adding isolated flashes *inside an existing burst* can exceed the rate
   threshold; the requested unrestricted property is mathematically false.
   Test isolated bursts separated from other flashes by more than one second.
+- Before the first qualified change, luma follows both extrema and red widens
+  a pair of observed color endpoints. Initial mid-level samples cannot mask
+  qualifying two-state excursions. Once initialized, extrema follow direction.
 - RGB cells are averaged after BT.709 inverse transfer, then classified in
   linear RGB. Opposing red transitions use the sign of the dominant u′v′
   displacement component; same-direction chromatic ramps are coalesced.
   Either endpoint can be saturated red, including two saturated endpoints.
   This pairing method is a product interpretation, not ISO certification.
+- All-profile RGB analysis refuses unspecified/non-BT.709 transfer, primaries
+  or matrix metadata rather than apply the wrong color model. S1 luma-only
+  reading retains its earlier transfer scope.
+- Per-cell threshold history retains the fixed 64-entry timestamp ring. Flash
+  rate histories additionally batch cells by shared frame PTS to reduce memory
+  traffic; count equivalence, retroactive insertion and expiry are tested.
+  Capacity overflow raises an error rather than truncate evidence.
+- Kids interval timing uses an independent >4-change oracle. Its earlier
+  onset cannot be compared directly to S1 Broadcast >6-change intervals.
 - Detection-only JSON is an unverified event report, never a HazardTrack.
   Full analyze/publishing remains gated on the S3 verifier.

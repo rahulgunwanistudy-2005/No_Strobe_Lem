@@ -28,3 +28,22 @@ Date: 2026-10-04. Host: macOS 26.3 (25D125), arm64. Lane A.
 - Downsampling signal values before linearization failed the hard-edge gate. Raised decode resolution to 640×360. Disabled psychovisual/adaptive quantization and capped QP at 6 to keep lossy synthetic encoding within the numerical fidelity gate.
 
 W3C Media, Vega overlay animation, AWS, Kiro and physical Fire TV hardware were not exercised in S1; no feedback or measurements are invented for them.
+
+## Session 2 — ffmpeg and numerical tooling
+
+- Used ffmpeg/ffprobe 7.1.1 for 80 encoded smoke cases and the original 1080p
+  Big Buck Bunny film; no playback was used. One input decoder splits Y and
+  RGB into a synchronized raw stream shared by all three profile detectors.
+  Independent Y/RGB decodes match this stream byte for byte.
+- Worked: explicit source/output color metadata, shared PTS, bounded streams,
+  source hashing, early cleanup and deterministic numerical traces. Non-BT.709
+  color tags are refused for RGB analysis instead of silently converted using
+  the wrong matrix/transfer.
+- Profiling identified repeated table interpolation, spatial reduction and
+  history traffic. Lookup tables, contiguous block sums, early area exits and
+  frame-batched flash windows improved measured throughput. The final film run
+  took 257.68 s (2.31× end-to-end); detector-only wall time was 122.68 s (4.86×).
+  The 20× detection target is unmet. Concurrent test activity means timings are
+  measurements on this host, not controlled isolated performance claims.
+- Would build again: yes, with more profiling and an isolated benchmark before
+  production ingestion. No new Vega/AWS/device-media claims are made in S2.
