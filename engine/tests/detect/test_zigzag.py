@@ -94,3 +94,19 @@ def test_frame_mask_window_matches_per_cell_ring():
         reference.expire(time)
         batched.expire(time)
         np.testing.assert_array_equal(batched.counts, reference.counts)
+
+
+def test_initial_mid_level_does_not_hide_peak_to_valley_changes():
+    assert crossings([100, 119, 99, 119, 99], sdr_threshold) == [False, False, True, True, True]
+    assert crossings([100, 81, 101, 81, 101], sdr_threshold) == [False, False, True, True, True]
+    # Different cells can begin on opposite sides of their future range.
+    detector = ChangeDetector((1, 2), sdr_threshold)
+    for i, (values, expected) in enumerate(
+        [
+            ([100, 100], [False, False]),
+            ([119, 81], [False, False]),
+            ([99, 101], [True, True]),
+            ([119, 81], [True, True]),
+        ]
+    ):
+        np.testing.assert_array_equal(detector.update(np.array([values]), i / 25), [expected])

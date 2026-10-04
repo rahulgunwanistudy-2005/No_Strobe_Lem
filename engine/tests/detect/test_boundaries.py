@@ -110,3 +110,11 @@ def test_separated_isolated_bursts_never_add_broadcast_fail(pulses, fps, gap):
 def test_monotone_luminance_does_not_count_as_flashes():
     frames = np.broadcast_to(np.linspace(0, 159, 60)[:, None, None], (60, 9, 12))
     assert not detect_arrays(frames, np.arange(60) / 60)["broadcast"]
+
+
+@pytest.mark.parametrize("fps", FPS)
+def test_initial_mid_level_hazard_is_detected(fps):
+    frames, times = wave(fps, dark=99, delta=20)
+    frames[0] = 100
+    for events in detect_arrays(frames, times).values():
+        assert fails(events)

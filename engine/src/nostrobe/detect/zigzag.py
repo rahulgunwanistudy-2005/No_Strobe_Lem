@@ -97,17 +97,22 @@ class ChangeDetector:
             return np.zeros(self.shape, dtype=np.bool_)
         forward = (values - self.extreme) * self.direction >= 0
         reference = np.where(forward, self.anchor, self.extreme)
+        # Before the first registered direction, anchor/extreme are the
+        # running minimum/maximum. An initial mid-level must not hide a
+        # later qualifying peak-to-valley excursion.
+        unset = self.direction == 0
+        farther_high = np.abs(values - self.extreme) > np.abs(values - self.anchor)
+        reference = np.where(unset & farther_high, self.extreme, reference)
         signed = values - reference
         self.delta = np.abs(signed)
         changes = self.delta >= self.thr_fn(np.minimum(values, reference))
         self.direction[changes] = np.sign(signed[changes]).astype(np.int8)
         self.anchor[changes] = values[changes]
-        extend = forward | changes | (self.direction == 0)
-        self.extreme[extend] = values[extend]
-        # Before the first crossing, keep the initial anchor but follow extremes
-        # in either direction so a reversal can be measured from its peak.
         unset = self.direction == 0
-        self.extreme[unset] = self.anchor[unset]
+        extend = (forward | changes) & ~unset
+        self.extreme[extend] = values[extend]
+        self.anchor[unset] = np.minimum(self.anchor[unset], values[unset])
+        self.extreme[unset] = np.maximum(self.extreme[unset], values[unset])
         self.history.add(changes, t)
         return changes
 

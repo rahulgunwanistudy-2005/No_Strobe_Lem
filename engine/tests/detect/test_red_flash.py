@@ -51,3 +51,17 @@ def test_red_rule_can_be_disabled():
         rgb=rgb,
     )
     assert not events["broadcast"]
+
+
+@pytest.mark.parametrize("fps", (24, 25, 30, 50, 60))
+def test_initial_mid_color_does_not_hide_red_flash(fps):
+    colors = np.array([[1.0, 0, 0], [0.8, 0, 0.2], [0.5, 0, 0.5]])
+    uv = cie1976_uv(colors)
+    assert np.linalg.norm(uv[0] - uv[2]) > 0.2
+    assert np.max(np.linalg.norm(uv - uv[1], axis=-1)) < 0.2
+    t = np.arange(fps * 3) / fps
+    rgb = colors[[0, 2]][(t * 3.5 % 1 >= 0.5).astype(int), None, None, :]
+    rgb[0] = colors[1]
+    result = detect_arrays(np.full(rgb.shape[:-1], 100.0), t, rgb=rgb)
+    for events in result.values():
+        assert any(e.kind == "red_flash" and e.severity == "fail" for e in events)
