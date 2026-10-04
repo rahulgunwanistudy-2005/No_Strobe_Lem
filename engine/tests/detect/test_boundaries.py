@@ -91,14 +91,14 @@ def test_red_rules_and_extended(fps):
     fps=st.sampled_from(FPS),
     rate=st.floats(min_value=1, max_value=10),
 )
-@settings(max_examples=35, deadline=None)
+@settings(max_examples=35, deadline=None, derandomize=True)
 def test_subthreshold_luminance_never_fails(delta, fps, rate):
     frames, times = wave(fps, rate=rate, delta=delta)
     assert all(not fails(events) for events in detect_arrays(frames, times).values())
 
 
 @given(pulses=st.integers(1, 3), fps=st.sampled_from(FPS), gap=st.floats(1.1, 2.5))
-@settings(max_examples=20, deadline=None)
+@settings(max_examples=20, deadline=None, derandomize=True)
 def test_separated_isolated_bursts_never_add_broadcast_fail(pulses, fps, gap):
     frames, times = wave(fps, pulses=pulses)
     pause = np.full((round(gap * fps), *frames.shape[1:]), 100.0)
