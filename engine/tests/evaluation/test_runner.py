@@ -5,7 +5,7 @@ from typer.testing import CliRunner
 from nostrobe.cli import app
 from nostrobe.evaluation import runner
 from nostrobe.evaluation.manifest import Source, fetch, read_manifest
-from nostrobe.evaluation.suites import shape_specs
+from nostrobe.synth.generator import ClipSpec
 
 
 def tiny_manifest(tmp_path):
@@ -48,7 +48,19 @@ def test_two_eval_runs_produce_byte_identical_artifacts(tmp_path, monkeypatch):
     )
     monkeypatch.setattr(runner, "code_hash", lambda _: "0" * 64)
     monkeypatch.setattr(runner, "boundary_specs", lambda *_: [])
-    monkeypatch.setattr(runner, "shape_specs", lambda *_: [shape_specs(7, 1, [25])[0]])
+    monkeypatch.setattr(
+        runner,
+        "shape_specs",
+        lambda *_: [ClipSpec("determinism", "full_flash", duration_s=2, rate=4)],
+    )
+    calls = []
+    original_analyze = runner.analyze_cache
+
+    def analyze_spy(*args, **kwargs):
+        calls.append(True)
+        return original_analyze(*args, **kwargs)
+
+    monkeypatch.setattr(runner, "analyze_cache", analyze_spy)
     out = tmp_path / "out"
     cli = CliRunner()
     args = ["eval", "--manifest", str(manifest), "--out", str(out)]
@@ -61,6 +73,8 @@ def test_two_eval_runs_produce_byte_identical_artifacts(tmp_path, monkeypatch):
     result = json.loads(original[0])
     assert result["gates_pass"]
     assert len(result["observations"]) == 3
+    assert len(calls) == 2
+    assert all(row["track"]["veils"] for row in result["observations"])
     assert "<video" not in (out / "RESULTS.md").read_text()
 
 
