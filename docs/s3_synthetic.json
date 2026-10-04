@@ -1,0 +1,3915 @@
+{
+  "elapsed_s": 1684.0062072079745,
+  "rows": [
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 24,
+      "n_veils": 0,
+      "name": "flat",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 24,
+      "n_veils": 0,
+      "name": "flat",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 24,
+      "n_veils": 0,
+      "name": "flat",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 24,
+      "n_veils": 0,
+      "name": "rate_3",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {
+          "luma_flash": 1
+        },
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 24,
+      "n_veils": 0,
+      "name": "rate_3",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {
+          "luma_flash": 1
+        },
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 24,
+      "n_veils": 1,
+      "name": "rate_3",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.5417244837962749,
+        "mean_delta_cd_m2": 56.91641652034672,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 24,
+      "n_veils": 1,
+      "name": "rate_3_5",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.4954545454545455,
+        "mean_delta_cd_m2": 51.19349272417221,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 24,
+      "n_veils": 1,
+      "name": "rate_3_5",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.4954545454545455,
+        "mean_delta_cd_m2": 51.19349272417221,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 24,
+      "n_veils": 1,
+      "name": "rate_3_5",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.524814855185165,
+        "mean_delta_cd_m2": 53.8719550737597,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 24,
+      "n_veils": 0,
+      "name": "area_24",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {
+          "luma_flash": 1
+        },
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 24,
+      "n_veils": 1,
+      "name": "area_24",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.4954545454545455,
+        "mean_delta_cd_m2": 37.62672950859827,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 24,
+      "n_veils": 1,
+      "name": "area_24",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.524814855185165,
+        "mean_delta_cd_m2": 39.8298141148291,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 24,
+      "n_veils": 1,
+      "name": "area_26",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.4954545454545455,
+        "mean_delta_cd_m2": 37.98375220019744,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 24,
+      "n_veils": 1,
+      "name": "area_26",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.4954545454545455,
+        "mean_delta_cd_m2": 37.98375220019744,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 24,
+      "n_veils": 1,
+      "name": "area_26",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.524814855185165,
+        "mean_delta_cd_m2": 40.19934697172852,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 24,
+      "n_veils": 1,
+      "name": "tiles_26",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.22272727272727275,
+        "mean_delta_cd_m2": 18.396202000606955,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 24,
+      "n_veils": 1,
+      "name": "tiles_26",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.22272727272727275,
+        "mean_delta_cd_m2": 18.396202000606955,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 24,
+      "n_veils": 1,
+      "name": "tiles_26",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.23592594407406497,
+        "mean_delta_cd_m2": 19.483523766975924,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 24,
+      "n_veils": 0,
+      "name": "delta_19",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 24,
+      "n_veils": 0,
+      "name": "delta_19",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 24,
+      "n_veils": 0,
+      "name": "delta_19",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 24,
+      "n_veils": 1,
+      "name": "delta_21",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.05,
+        "mean_delta_cd_m2": 4.503896195523904,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 24,
+      "n_veils": 1,
+      "name": "delta_21",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.05,
+        "mean_delta_cd_m2": 4.503896195523904,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 24,
+      "n_veils": 1,
+      "name": "delta_21",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.05296296703703499,
+        "mean_delta_cd_m2": 4.767772267354158,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 24,
+      "n_veils": 1,
+      "name": "red_blue",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.5863636363636363,
+        "mean_delta_cd_m2": 1.053451467010256,
+        "n_events_by_kind": {
+          "red_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 24,
+      "n_veils": 1,
+      "name": "red_blue",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.5863636363636363,
+        "mean_delta_cd_m2": 1.053451467010256,
+        "n_events_by_kind": {
+          "red_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 24,
+      "n_veils": 1,
+      "name": "red_blue",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.58740745259257,
+        "mean_delta_cd_m2": 1.0095387824226323,
+        "n_events_by_kind": {
+          "red_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 24,
+      "n_veils": 0,
+      "name": "moving_bar",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 24,
+      "n_veils": 0,
+      "name": "moving_bar",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 24,
+      "n_veils": 0,
+      "name": "moving_bar",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 24,
+      "n_veils": 1,
+      "name": "camera_burst",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.49309523809523814,
+        "mean_delta_cd_m2": 47.225608624723506,
+        "n_events_by_kind": {
+          "luma_flash": 3
+        },
+        "veiled_fraction_of_runtime": 0.875
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 24,
+      "n_veils": 1,
+      "name": "camera_burst",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.49309523809523814,
+        "mean_delta_cd_m2": 47.225608624723506,
+        "n_events_by_kind": {
+          "luma_flash": 3
+        },
+        "veiled_fraction_of_runtime": 0.875
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 24,
+      "n_veils": 1,
+      "name": "camera_burst",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.4982857196244892,
+        "mean_delta_cd_m2": 47.509604725986755,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9722223333333333
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 24,
+      "n_veils": 0,
+      "name": "lightning",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 24,
+      "n_veils": 0,
+      "name": "lightning",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 24,
+      "n_veils": 0,
+      "name": "lightning",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 24,
+      "n_veils": 1,
+      "name": "police",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.5863636363636363,
+        "mean_delta_cd_m2": 1.053451467010256,
+        "n_events_by_kind": {
+          "red_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 24,
+      "n_veils": 1,
+      "name": "police",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.5863636363636363,
+        "mean_delta_cd_m2": 1.053451467010256,
+        "n_events_by_kind": {
+          "red_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 24,
+      "n_veils": 1,
+      "name": "police",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.58740745259257,
+        "mean_delta_cd_m2": 1.0095387824226323,
+        "n_events_by_kind": {
+          "red_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 24,
+      "n_veils": 0,
+      "name": "isolated_1",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 24,
+      "n_veils": 0,
+      "name": "isolated_1",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 24,
+      "n_veils": 0,
+      "name": "isolated_1",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 24,
+      "n_veils": 0,
+      "name": "isolated_2",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 24,
+      "n_veils": 0,
+      "name": "isolated_2",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 24,
+      "n_veils": 1,
+      "name": "isolated_2",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.44231892162566316,
+        "mean_delta_cd_m2": 35.204617000784204,
+        "n_events_by_kind": {
+          "luma_flash": 1
+        },
+        "veiled_fraction_of_runtime": 0.6388889999999999
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 24,
+      "n_veils": 0,
+      "name": "isolated_3",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {
+          "luma_flash": 1
+        },
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 24,
+      "n_veils": 0,
+      "name": "isolated_3",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {
+          "luma_flash": 1
+        },
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 24,
+      "n_veils": 1,
+      "name": "isolated_3",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.45588054453540067,
+        "mean_delta_cd_m2": 37.74353201139191,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.7361110000000001
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 25,
+      "n_veils": 0,
+      "name": "flat",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 25,
+      "n_veils": 0,
+      "name": "flat",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 25,
+      "n_veils": 0,
+      "name": "flat",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 25,
+      "n_veils": 0,
+      "name": "rate_3",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {
+          "luma_flash": 1
+        },
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 25,
+      "n_veils": 0,
+      "name": "rate_3",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {
+          "luma_flash": 1
+        },
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 25,
+      "n_veils": 1,
+      "name": "rate_3",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.5301771666666667,
+        "mean_delta_cd_m2": 55.20332088799997,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 25,
+      "n_veils": 1,
+      "name": "rate_3_5",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.4954545454545455,
+        "mean_delta_cd_m2": 52.03687071127273,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 25,
+      "n_veils": 1,
+      "name": "rate_3_5",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.4954545454545455,
+        "mean_delta_cd_m2": 52.03687071127273,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 25,
+      "n_veils": 1,
+      "name": "rate_3_5",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.5419291666666667,
+        "mean_delta_cd_m2": 56.7382256733333,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 25,
+      "n_veils": 0,
+      "name": "area_24",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {
+          "luma_flash": 1
+        },
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 25,
+      "n_veils": 1,
+      "name": "area_24",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.4954545454545455,
+        "mean_delta_cd_m2": 37.838493623214724,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 25,
+      "n_veils": 1,
+      "name": "area_24",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.5419291666666667,
+        "mean_delta_cd_m2": 41.27770662786337,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 25,
+      "n_veils": 1,
+      "name": "area_26",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.4954545454545455,
+        "mean_delta_cd_m2": 38.212137595817026,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 25,
+      "n_veils": 1,
+      "name": "area_26",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.4954545454545455,
+        "mean_delta_cd_m2": 38.212137595817026,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 25,
+      "n_veils": 1,
+      "name": "area_26",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.5419291666666667,
+        "mean_delta_cd_m2": 41.68456468510721,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 25,
+      "n_veils": 1,
+      "name": "tiles_26",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.22272727272727275,
+        "mean_delta_cd_m2": 18.50856297883554,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 25,
+      "n_veils": 1,
+      "name": "tiles_26",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.22272727272727275,
+        "mean_delta_cd_m2": 18.50856297883554,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 25,
+      "n_veils": 1,
+      "name": "tiles_26",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.23499583333333332,
+        "mean_delta_cd_m2": 19.588079500551316,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 25,
+      "n_veils": 0,
+      "name": "delta_19",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 25,
+      "n_veils": 0,
+      "name": "delta_19",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 25,
+      "n_veils": 0,
+      "name": "delta_19",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 25,
+      "n_veils": 1,
+      "name": "delta_21",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.05,
+        "mean_delta_cd_m2": 4.539466400000014,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 25,
+      "n_veils": 1,
+      "name": "delta_21",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.05,
+        "mean_delta_cd_m2": 4.539466400000014,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 25,
+      "n_veils": 1,
+      "name": "delta_21",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.052754166666666664,
+        "mean_delta_cd_m2": 4.808221058666681,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 25,
+      "n_veils": 1,
+      "name": "red_blue",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.5772727272727273,
+        "mean_delta_cd_m2": 1.064196292363636,
+        "n_events_by_kind": {
+          "red_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 25,
+      "n_veils": 1,
+      "name": "red_blue",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.5772727272727273,
+        "mean_delta_cd_m2": 1.064196292363636,
+        "n_events_by_kind": {
+          "red_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 25,
+      "n_veils": 1,
+      "name": "red_blue",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.5850916666666667,
+        "mean_delta_cd_m2": 1.0706178680000003,
+        "n_events_by_kind": {
+          "red_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 25,
+      "n_veils": 0,
+      "name": "moving_bar",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 25,
+      "n_veils": 0,
+      "name": "moving_bar",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 25,
+      "n_veils": 0,
+      "name": "moving_bar",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 25,
+      "n_veils": 1,
+      "name": "camera_burst",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.49319391634980986,
+        "mean_delta_cd_m2": 44.66824571254756,
+        "n_events_by_kind": {
+          "luma_flash": 3
+        },
+        "veiled_fraction_of_runtime": 0.8766666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 25,
+      "n_veils": 1,
+      "name": "camera_burst",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.49319391634980986,
+        "mean_delta_cd_m2": 44.66824571254756,
+        "n_events_by_kind": {
+          "luma_flash": 3
+        },
+        "veiled_fraction_of_runtime": 0.8766666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 25,
+      "n_veils": 1,
+      "name": "camera_burst",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.498813559322034,
+        "mean_delta_cd_m2": 44.70463126779662,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9833333333333334
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 25,
+      "n_veils": 0,
+      "name": "lightning",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 25,
+      "n_veils": 0,
+      "name": "lightning",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 25,
+      "n_veils": 0,
+      "name": "lightning",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 25,
+      "n_veils": 1,
+      "name": "police",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.5772727272727273,
+        "mean_delta_cd_m2": 1.064196292363636,
+        "n_events_by_kind": {
+          "red_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 25,
+      "n_veils": 1,
+      "name": "police",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.5772727272727273,
+        "mean_delta_cd_m2": 1.064196292363636,
+        "n_events_by_kind": {
+          "red_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 25,
+      "n_veils": 1,
+      "name": "police",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.5850916666666667,
+        "mean_delta_cd_m2": 1.0706178680000003,
+        "n_events_by_kind": {
+          "red_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 25,
+      "n_veils": 0,
+      "name": "isolated_1",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 25,
+      "n_veils": 0,
+      "name": "isolated_1",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 25,
+      "n_veils": 0,
+      "name": "isolated_1",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 25,
+      "n_veils": 0,
+      "name": "isolated_2",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 25,
+      "n_veils": 0,
+      "name": "isolated_2",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 25,
+      "n_veils": 1,
+      "name": "isolated_2",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.45481020942408384,
+        "mean_delta_cd_m2": 37.441140534031405,
+        "n_events_by_kind": {
+          "luma_flash": 1
+        },
+        "veiled_fraction_of_runtime": 0.6366666666666667
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 25,
+      "n_veils": 0,
+      "name": "isolated_3",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {
+          "luma_flash": 1
+        },
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 25,
+      "n_veils": 0,
+      "name": "isolated_3",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {
+          "luma_flash": 1
+        },
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 25,
+      "n_veils": 1,
+      "name": "isolated_3",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.4688984018264841,
+        "mean_delta_cd_m2": 40.59743224657535,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.73
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 30,
+      "n_veils": 0,
+      "name": "flat",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 30,
+      "n_veils": 0,
+      "name": "flat",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 30,
+      "n_veils": 0,
+      "name": "flat",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 30,
+      "n_veils": 0,
+      "name": "rate_3",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {
+          "luma_flash": 1
+        },
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 30,
+      "n_veils": 0,
+      "name": "rate_3",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {
+          "luma_flash": 1
+        },
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 30,
+      "n_veils": 1,
+      "name": "rate_3",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.551145779166645,
+        "mean_delta_cd_m2": 57.777463394740344,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 30,
+      "n_veils": 1,
+      "name": "rate_3_5",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.4954545454545455,
+        "mean_delta_cd_m2": 51.72999484871825,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 30,
+      "n_veils": 1,
+      "name": "rate_3_5",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.4954545454545455,
+        "mean_delta_cd_m2": 51.72999484871825,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 30,
+      "n_veils": 1,
+      "name": "rate_3_5",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.5611125,
+        "mean_delta_cd_m2": 57.813682946342546,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 30,
+      "n_veils": 0,
+      "name": "area_24",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {
+          "luma_flash": 1
+        },
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 30,
+      "n_veils": 1,
+      "name": "area_24",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.4954545454545455,
+        "mean_delta_cd_m2": 37.798913357607375,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 30,
+      "n_veils": 1,
+      "name": "area_24",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.5611125,
+        "mean_delta_cd_m2": 42.397240457220875,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 30,
+      "n_veils": 1,
+      "name": "area_26",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.4954545454545455,
+        "mean_delta_cd_m2": 38.16552319820036,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 30,
+      "n_veils": 1,
+      "name": "area_26",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.4954545454545455,
+        "mean_delta_cd_m2": 38.16552319820036,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 30,
+      "n_veils": 1,
+      "name": "area_26",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.5611125,
+        "mean_delta_cd_m2": 42.80293916226177,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 30,
+      "n_veils": 1,
+      "name": "tiles_26",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.22272727272727275,
+        "mean_delta_cd_m2": 18.4836118518249,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 30,
+      "n_veils": 1,
+      "name": "tiles_26",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.22272727272727275,
+        "mean_delta_cd_m2": 18.4836118518249,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 30,
+      "n_veils": 1,
+      "name": "tiles_26",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.23979166666666665,
+        "mean_delta_cd_m2": 19.901619008118413,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 30,
+      "n_veils": 0,
+      "name": "delta_19",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 30,
+      "n_veils": 0,
+      "name": "delta_19",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 30,
+      "n_veils": 0,
+      "name": "delta_19",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 30,
+      "n_veils": 1,
+      "name": "delta_21",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.05,
+        "mean_delta_cd_m2": 4.529226812677695,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 30,
+      "n_veils": 1,
+      "name": "delta_21",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.05,
+        "mean_delta_cd_m2": 4.529226812677695,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 30,
+      "n_veils": 1,
+      "name": "delta_21",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.052754166666666664,
+        "mean_delta_cd_m2": 4.787127829950155,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 30,
+      "n_veils": 1,
+      "name": "red_blue",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.5954545454545456,
+        "mean_delta_cd_m2": 1.0968687313727354,
+        "n_events_by_kind": {
+          "red_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 30,
+      "n_veils": 1,
+      "name": "red_blue",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.5954545454545456,
+        "mean_delta_cd_m2": 1.0968687313727354,
+        "n_events_by_kind": {
+          "red_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 30,
+      "n_veils": 1,
+      "name": "red_blue",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.5850916666666667,
+        "mean_delta_cd_m2": 1.0448387732191184,
+        "n_events_by_kind": {
+          "red_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 30,
+      "n_veils": 0,
+      "name": "moving_bar",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 30,
+      "n_veils": 0,
+      "name": "moving_bar",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 30,
+      "n_veils": 0,
+      "name": "moving_bar",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 30,
+      "n_veils": 1,
+      "name": "camera_burst",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.4935849056603774,
+        "mean_delta_cd_m2": 47.58205291195328,
+        "n_events_by_kind": {
+          "luma_flash": 3
+        },
+        "veiled_fraction_of_runtime": 0.8833333333333333
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 30,
+      "n_veils": 1,
+      "name": "camera_burst",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.4935849056603774,
+        "mean_delta_cd_m2": 47.58205291195328,
+        "n_events_by_kind": {
+          "luma_flash": 3
+        },
+        "veiled_fraction_of_runtime": 0.8833333333333333
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 30,
+      "n_veils": 1,
+      "name": "camera_burst",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.498813559322034,
+        "mean_delta_cd_m2": 47.50892487107143,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9833333333333334
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 30,
+      "n_veils": 0,
+      "name": "lightning",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 30,
+      "n_veils": 0,
+      "name": "lightning",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 30,
+      "n_veils": 0,
+      "name": "lightning",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 30,
+      "n_veils": 1,
+      "name": "police",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.5954545454545456,
+        "mean_delta_cd_m2": 1.0968687313727354,
+        "n_events_by_kind": {
+          "red_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 30,
+      "n_veils": 1,
+      "name": "police",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.5954545454545456,
+        "mean_delta_cd_m2": 1.0968687313727354,
+        "n_events_by_kind": {
+          "red_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 30,
+      "n_veils": 1,
+      "name": "police",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.5850916666666667,
+        "mean_delta_cd_m2": 1.0448387732191184,
+        "n_events_by_kind": {
+          "red_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 30,
+      "n_veils": 0,
+      "name": "isolated_1",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 30,
+      "n_veils": 0,
+      "name": "isolated_1",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 30,
+      "n_veils": 0,
+      "name": "isolated_1",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 30,
+      "n_veils": 0,
+      "name": "isolated_2",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 30,
+      "n_veils": 0,
+      "name": "isolated_2",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 30,
+      "n_veils": 1,
+      "name": "isolated_2",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.47130654151190576,
+        "mean_delta_cd_m2": 38.21457172824559,
+        "n_events_by_kind": {
+          "luma_flash": 1
+        },
+        "veiled_fraction_of_runtime": 0.6388889999999999
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 30,
+      "n_veils": 0,
+      "name": "isolated_3",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {
+          "luma_flash": 1
+        },
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 30,
+      "n_veils": 0,
+      "name": "isolated_3",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {
+          "luma_flash": 1
+        },
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 30,
+      "n_veils": 1,
+      "name": "isolated_3",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.4851927328538522,
+        "mean_delta_cd_m2": 40.97563318395832,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.7277776666666668
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 50,
+      "n_veils": 0,
+      "name": "flat",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 50,
+      "n_veils": 0,
+      "name": "flat",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 50,
+      "n_veils": 0,
+      "name": "flat",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 50,
+      "n_veils": 0,
+      "name": "rate_3",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {
+          "luma_flash": 1
+        },
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 50,
+      "n_veils": 0,
+      "name": "rate_3",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {
+          "luma_flash": 1
+        },
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 50,
+      "n_veils": 1,
+      "name": "rate_3",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.5817873333333333,
+        "mean_delta_cd_m2": 60.53751227199996,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 50,
+      "n_veils": 1,
+      "name": "rate_3_5",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.4954545454545455,
+        "mean_delta_cd_m2": 51.70033044872723,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 50,
+      "n_veils": 1,
+      "name": "rate_3_5",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.4954545454545455,
+        "mean_delta_cd_m2": 51.70033044872723,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 50,
+      "n_veils": 1,
+      "name": "rate_3_5",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.5444905,
+        "mean_delta_cd_m2": 56.28099455266666,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 50,
+      "n_veils": 0,
+      "name": "area_24",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {
+          "luma_flash": 1
+        },
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 50,
+      "n_veils": 1,
+      "name": "area_24",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.4954545454545455,
+        "mean_delta_cd_m2": 37.85947782178801,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 50,
+      "n_veils": 1,
+      "name": "area_24",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.5444905,
+        "mean_delta_cd_m2": 41.364046629458784,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 50,
+      "n_veils": 1,
+      "name": "area_26",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.4954545454545455,
+        "mean_delta_cd_m2": 38.2237114265908,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 50,
+      "n_veils": 1,
+      "name": "area_26",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.4954545454545455,
+        "mean_delta_cd_m2": 38.2237114265908,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 50,
+      "n_veils": 1,
+      "name": "area_26",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.5444905,
+        "mean_delta_cd_m2": 41.75659865650127,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 50,
+      "n_veils": 1,
+      "name": "tiles_26",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.22272727272727275,
+        "mean_delta_cd_m2": 18.512379496047014,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 50,
+      "n_veils": 1,
+      "name": "tiles_26",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.22272727272727275,
+        "mean_delta_cd_m2": 18.512379496047014,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 50,
+      "n_veils": 1,
+      "name": "tiles_26",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.24092499999999997,
+        "mean_delta_cd_m2": 19.997145806242738,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 50,
+      "n_veils": 0,
+      "name": "delta_19",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 50,
+      "n_veils": 0,
+      "name": "delta_19",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 50,
+      "n_veils": 0,
+      "name": "delta_19",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 50,
+      "n_veils": 1,
+      "name": "delta_21",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.05,
+        "mean_delta_cd_m2": 4.5348926000000205,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 50,
+      "n_veils": 1,
+      "name": "delta_21",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.05,
+        "mean_delta_cd_m2": 4.5348926000000205,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 50,
+      "n_veils": 1,
+      "name": "delta_21",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.0530035,
+        "mean_delta_cd_m2": 4.807960952666691,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 50,
+      "n_veils": 1,
+      "name": "red_blue",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.6045454545454546,
+        "mean_delta_cd_m2": 1.11938964909091,
+        "n_events_by_kind": {
+          "red_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 50,
+      "n_veils": 1,
+      "name": "red_blue",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.6045454545454546,
+        "mean_delta_cd_m2": 1.11938964909091,
+        "n_events_by_kind": {
+          "red_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 50,
+      "n_veils": 1,
+      "name": "red_blue",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.587857,
+        "mean_delta_cd_m2": 1.0405279313333318,
+        "n_events_by_kind": {
+          "red_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 50,
+      "n_veils": 0,
+      "name": "moving_bar",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 50,
+      "n_veils": 0,
+      "name": "moving_bar",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 50,
+      "n_veils": 0,
+      "name": "moving_bar",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 50,
+      "n_veils": 1,
+      "name": "camera_burst",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.4935849056603774,
+        "mean_delta_cd_m2": 47.7140787449056,
+        "n_events_by_kind": {
+          "luma_flash": 3
+        },
+        "veiled_fraction_of_runtime": 0.8833333333333333
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 50,
+      "n_veils": 1,
+      "name": "camera_burst",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.4935849056603774,
+        "mean_delta_cd_m2": 47.7140787449056,
+        "n_events_by_kind": {
+          "luma_flash": 3
+        },
+        "veiled_fraction_of_runtime": 0.8833333333333333
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 50,
+      "n_veils": 1,
+      "name": "camera_burst",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.498813559322034,
+        "mean_delta_cd_m2": 47.60119776135594,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9833333333333334
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 50,
+      "n_veils": 0,
+      "name": "lightning",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 50,
+      "n_veils": 0,
+      "name": "lightning",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 50,
+      "n_veils": 0,
+      "name": "lightning",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 50,
+      "n_veils": 1,
+      "name": "police",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.6045454545454546,
+        "mean_delta_cd_m2": 1.11938964909091,
+        "n_events_by_kind": {
+          "red_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 50,
+      "n_veils": 1,
+      "name": "police",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.6045454545454546,
+        "mean_delta_cd_m2": 1.11938964909091,
+        "n_events_by_kind": {
+          "red_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 50,
+      "n_veils": 1,
+      "name": "police",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.587857,
+        "mean_delta_cd_m2": 1.0405279313333318,
+        "n_events_by_kind": {
+          "red_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 50,
+      "n_veils": 0,
+      "name": "isolated_1",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 50,
+      "n_veils": 0,
+      "name": "isolated_1",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 50,
+      "n_veils": 0,
+      "name": "isolated_1",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 50,
+      "n_veils": 0,
+      "name": "isolated_2",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 50,
+      "n_veils": 0,
+      "name": "isolated_2",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 50,
+      "n_veils": 1,
+      "name": "isolated_2",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.45883324607329845,
+        "mean_delta_cd_m2": 36.96636001989532,
+        "n_events_by_kind": {
+          "luma_flash": 1
+        },
+        "veiled_fraction_of_runtime": 0.6366666666666667
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 50,
+      "n_veils": 0,
+      "name": "isolated_3",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {
+          "luma_flash": 1
+        },
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 50,
+      "n_veils": 0,
+      "name": "isolated_3",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {
+          "luma_flash": 1
+        },
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 50,
+      "n_veils": 1,
+      "name": "isolated_3",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.47240707762557077,
+        "mean_delta_cd_m2": 39.797887186301345,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.73
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 60,
+      "n_veils": 0,
+      "name": "flat",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 60,
+      "n_veils": 0,
+      "name": "flat",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 60,
+      "n_veils": 0,
+      "name": "flat",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 60,
+      "n_veils": 0,
+      "name": "rate_3",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {
+          "luma_flash": 1
+        },
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 60,
+      "n_veils": 0,
+      "name": "rate_3",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {
+          "luma_flash": 1
+        },
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 60,
+      "n_veils": 1,
+      "name": "rate_3",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.569988369907385,
+        "mean_delta_cd_m2": 59.50596857828712,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 60,
+      "n_veils": 1,
+      "name": "rate_3_5",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.4954545454545455,
+        "mean_delta_cd_m2": 51.955066459917774,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 60,
+      "n_veils": 1,
+      "name": "rate_3_5",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.4954545454545455,
+        "mean_delta_cd_m2": 51.955066459917774,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 60,
+      "n_veils": 1,
+      "name": "rate_3_5",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.563333376666645,
+        "mean_delta_cd_m2": 58.285948554861754,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 60,
+      "n_veils": 0,
+      "name": "area_24",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {
+          "luma_flash": 1
+        },
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 60,
+      "n_veils": 1,
+      "name": "area_24",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.4954545454545455,
+        "mean_delta_cd_m2": 37.93737610366474,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 60,
+      "n_veils": 1,
+      "name": "area_24",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.563333376666645,
+        "mean_delta_cd_m2": 42.67931063331247,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 60,
+      "n_veils": 1,
+      "name": "area_26",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.4954545454545455,
+        "mean_delta_cd_m2": 38.30626415895078,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 60,
+      "n_veils": 1,
+      "name": "area_26",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.4954545454545455,
+        "mean_delta_cd_m2": 38.30626415895078,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 60,
+      "n_veils": 1,
+      "name": "area_26",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.563333376666645,
+        "mean_delta_cd_m2": 43.0900131702071,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 60,
+      "n_veils": 1,
+      "name": "tiles_26",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.22272727272727275,
+        "mean_delta_cd_m2": 18.553279284808156,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 60,
+      "n_veils": 1,
+      "name": "tiles_26",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.22272727272727275,
+        "mean_delta_cd_m2": 18.553279284808156,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 60,
+      "n_veils": 1,
+      "name": "tiles_26",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.25037038962962,
+        "mean_delta_cd_m2": 20.79279551228019,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 60,
+      "n_veils": 0,
+      "name": "delta_19",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 60,
+      "n_veils": 0,
+      "name": "delta_19",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 60,
+      "n_veils": 0,
+      "name": "delta_19",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 60,
+      "n_veils": 1,
+      "name": "delta_21",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.05,
+        "mean_delta_cd_m2": 4.547203456410478,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 60,
+      "n_veils": 1,
+      "name": "delta_21",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.05,
+        "mean_delta_cd_m2": 4.547203456410478,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 60,
+      "n_veils": 1,
+      "name": "delta_21",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.05296296703703499,
+        "mean_delta_cd_m2": 4.82195020651637,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 60,
+      "n_veils": 1,
+      "name": "red_blue",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.5954545454545456,
+        "mean_delta_cd_m2": 1.1055095724351942,
+        "n_events_by_kind": {
+          "red_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 60,
+      "n_veils": 1,
+      "name": "red_blue",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.5954545454545456,
+        "mean_delta_cd_m2": 1.1055095724351942,
+        "n_events_by_kind": {
+          "red_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 60,
+      "n_veils": 1,
+      "name": "red_blue",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.58740745259257,
+        "mean_delta_cd_m2": 1.0569330888762563,
+        "n_events_by_kind": {
+          "red_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 60,
+      "n_veils": 0,
+      "name": "moving_bar",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 60,
+      "n_veils": 0,
+      "name": "moving_bar",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 60,
+      "n_veils": 0,
+      "name": "moving_bar",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 60,
+      "n_veils": 1,
+      "name": "camera_burst",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.4935849056603774,
+        "mean_delta_cd_m2": 47.74689925789173,
+        "n_events_by_kind": {
+          "luma_flash": 3
+        },
+        "veiled_fraction_of_runtime": 0.8833333333333333
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 60,
+      "n_veils": 1,
+      "name": "camera_burst",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.4935849056603774,
+        "mean_delta_cd_m2": 47.74689925789173,
+        "n_events_by_kind": {
+          "luma_flash": 3
+        },
+        "veiled_fraction_of_runtime": 0.8833333333333333
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 60,
+      "n_veils": 1,
+      "name": "camera_burst",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.498813559322034,
+        "mean_delta_cd_m2": 47.62465222568065,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9833333333333334
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 60,
+      "n_veils": 0,
+      "name": "lightning",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 60,
+      "n_veils": 0,
+      "name": "lightning",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 60,
+      "n_veils": 0,
+      "name": "lightning",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 60,
+      "n_veils": 1,
+      "name": "police",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.5954545454545456,
+        "mean_delta_cd_m2": 1.1055095724351942,
+        "n_events_by_kind": {
+          "red_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 60,
+      "n_veils": 1,
+      "name": "police",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.5954545454545456,
+        "mean_delta_cd_m2": 1.1055095724351942,
+        "n_events_by_kind": {
+          "red_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.9166666666666666
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_fail",
+      "fps": 60,
+      "n_veils": 1,
+      "name": "police",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.58740745259257,
+        "mean_delta_cd_m2": 1.0569330888762563,
+        "n_events_by_kind": {
+          "red_flash": 2
+        },
+        "veiled_fraction_of_runtime": 1.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 60,
+      "n_veils": 0,
+      "name": "isolated_1",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 60,
+      "n_veils": 0,
+      "name": "isolated_1",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 60,
+      "n_veils": 0,
+      "name": "isolated_1",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 60,
+      "n_veils": 0,
+      "name": "isolated_2",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 60,
+      "n_veils": 0,
+      "name": "isolated_2",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {},
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 60,
+      "n_veils": 1,
+      "name": "isolated_2",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.47381585789470254,
+        "mean_delta_cd_m2": 38.39929402950413,
+        "n_events_by_kind": {
+          "luma_flash": 1
+        },
+        "veiled_fraction_of_runtime": 0.6333333333333333
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 60,
+      "n_veils": 0,
+      "name": "isolated_3",
+      "passes": true,
+      "profile": "broadcast",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {
+          "luma_flash": 1
+        },
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 60,
+      "n_veils": 0,
+      "name": "isolated_3",
+      "passes": true,
+      "profile": "local",
+      "stats": {
+        "mean_alpha": 0.0,
+        "mean_delta_cd_m2": 0.0,
+        "n_events_by_kind": {
+          "luma_flash": 1
+        },
+        "veiled_fraction_of_runtime": 0.0
+      },
+      "unresolved": []
+    },
+    {
+      "broadcast_truth": "must_pass",
+      "fps": 60,
+      "n_veils": 1,
+      "name": "isolated_3",
+      "passes": true,
+      "profile": "kids",
+      "stats": {
+        "mean_alpha": 0.48824431957925557,
+        "mean_delta_cd_m2": 41.47432124924276,
+        "n_events_by_kind": {
+          "luma_flash": 2
+        },
+        "veiled_fraction_of_runtime": 0.7277776666666668
+      },
+      "unresolved": []
+    }
+  ]
+}
