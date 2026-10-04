@@ -103,12 +103,13 @@ Implemented the S3 engine/contract/CLI/report scope. See docs/S3_REPORT.md.
 Scope: implement S4_evaluation.md; user authorizes systematic commits without
 attribution tags, overriding the manual-commit default. Preserve existing truth.
 
-- [ ] Define versioned seeded boundary/shape suites and independent profile truth.
-- [ ] Verify official Blender licenses, pin downloads by checksum, composite five
-  realistic scenarios, and retain unmodified films as detection controls.
-- [ ] Implement checksum decode caching, per-profile analysis, interval/confusion/
+- [x] Define versioned seeded boundary/shape suites and independent profile truth.
+- [x] Verify official Blender licenses, pin downloads by checksum, composite five
+  realistic scenarios, retain the eligible unmodified film control and record
+  source-metadata exclusions.
+- [x] Implement checksum decode caching, per-profile analysis, interval/confusion/
   verifier/viewing-cost metrics, honest clean traces and reproducible reports.
-- [ ] Persist provenance-bound timing observations separately from deterministic
+- [x] Persist provenance-bound timing observations separately from deterministic
   accuracy; invalidate caches when code, manifest, source or parameters change.
 - [ ] Run the full suite, investigate misses without changing truth, verify repeat
   determinism and required quality gates; document evidence and commit stages.

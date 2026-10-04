@@ -64,3 +64,26 @@ W3C Media, Vega overlay animation, AWS, Kiro and physical Fire TV hardware were 
 - Would build again: yes; retain the full-file publication gate and profile
   truth distinctions while profiling candidate search. Vega overlay, measured
   synchronization/compositing and AWS were not exercised in this session.
+
+## Session 4 — reproducible evaluation tooling
+
+- Used ffmpeg/ffprobe 7.1.1, NumPy and matplotlib Agg for seeded encoded
+  boundaries/shapes, explicitly tagged realistic composites and static control
+  traces. No raw playback was used. Source checksums and official license
+  snapshots make reference acquisition auditable.
+- Worked: lossless compression of decoded sample bytes, bounded temporary
+  extraction, repeat accuracy runs, separate retained timing observations,
+  provenance invalidation and resumable evidence. Performance remains a
+  measurement of this host with concurrent validation, not an isolated claim.
+- Needs work: repeated candidate verification is expensive for spatially
+  varied scenes. Older official movie releases omit source color metadata;
+  strict input refusal is appropriate but narrows the unmodified control set.
+- Composite encoding initially repeated the output-only metadata mistake:
+  transfer/primaries tags were dropped. Matched raw-input tags and x264 VUI
+  metadata resolved it; encoded-output metadata/color regression and actual
+  five-scenario preflight now pass. Decoder checks remain strict.
+- Firecrawl: official-page scrape requests were blocked by exhausted credits;
+  the web reader also returned 402. Direct HTTPS worked. Would use again with
+  available credits, retaining a direct official-source fallback.
+- Would build again with the same deterministic pipeline and publication gate.
+  Device synchronization/compositing and AWS remain unmeasured S5+ work.
