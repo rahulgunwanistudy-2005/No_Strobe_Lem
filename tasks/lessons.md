@@ -42,3 +42,7 @@
   Guideline 1 applies relative contrast at/above 160 cd/m² to HDR only. Preserve
   erroneous provisional observations as an audit, retain every clip/seed/gate,
   and add explicit 159/160/170 regime tests before rerunning evaluation.
+- S4: every encoder needs a real encoded-output preflight before a long suite.
+  The composite encoder omitted the matching input/codec VUI metadata already
+  required by the S1 encoder. Output flags alone again lost transfer/primaries;
+  preserve strict decoder refusal and test metadata plus decoded RGB fidelity.
