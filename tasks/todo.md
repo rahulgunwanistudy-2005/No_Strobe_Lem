@@ -176,3 +176,23 @@ The >=20x all-profile detection target is met on the original 596.458333 s,
   cost. PEAT, natural-film adjudication and S5 device/cloud work remain open.
 - Source, tools, benchmark evidence, audit and documentation are committed in
   logical stages without attribution trailers or history rewrites.
+
+# Session 5 plan
+
+Scope: execute S5_vega_player_veil_sync.md using Lane A and the installed
+Vega SDK. User authorizes systematic commits without attribution trailers,
+overriding CLAUDE.md §22.2. Device measurements must come from recordings;
+no simulated value will be labeled as measured.
+
+- [ ] Generate the current Vega template, pin dependencies and move generated
+  HazardTrack types into tv/src/types with drift checks.
+- [ ] Implement the isolated W3C player/surface lifecycle, validated track loader,
+  drift-corrected clock, deterministic scheduler and minimal protected player.
+- [ ] Export a Python/TypeScript timeline conformance fixture (500 samples);
+  test clock, scheduler, loading, lifecycle and platform-import boundaries.
+- [ ] Generate nonhazardous sync/compositing stimuli and recording-analysis tools;
+  run on VVD, record real timing, seeks/pause/resume and compositor evidence.
+- [ ] Apply the measured tolerance/model only after valid capture, rerun S3/S4
+  verification, preserve historical evidence and report fresh gates honestly.
+- [ ] Self-review, run quality/build/device gates, document reproduced friction
+  and product feedback, and commit logical stages.
