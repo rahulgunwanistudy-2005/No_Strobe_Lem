@@ -139,8 +139,22 @@ than accessed for every row (each property access copies the full frame).
   than reset it. Frame counters exposed this: a supposed fresh pause/resume run
   began at frame 228 and only yielded four timing pairs; it was rejected. Use
   `vlcm terminate-app --pkg-id com.nostrobe.tv`, then launch a new instance and
-  verify frame zero before every controlled recording. Invoke the SDK's direct
+  verify a fresh paused player and initial source position before recording. Invoke the SDK's direct
   vda executable during recordings to avoid repeated host CLI startup overhead.
 - Unpaced screenshot polling plus host work delayed a seek-run onset beyond
-  500 ms. Keep acquisition at 75 requests/s with original timestamps and perform
+  500 ms. Pace acquisition with original timestamps and perform
   heavy analysis after capture. Retain the rejected recordings as diagnostics.
+
+- The 75-request/s setting achieved only 45.469 fps in one paused run. It was
+  rejected. Reducing sync acquisition to 640×360 with a 110-request/s ceiling
+  produced 96.648 actual fps; the capture retains timing jitter and does not
+  duplicate frames. Larger requested rate is only a ceiling, not evidence.
+- React Native’s generic “Open debugger to view warnings” banner and the SDK’s
+  “Running debug build of JavaScript” notification remained after filtering the
+  forwardRef warning. Filter those exact Debug notifications too; native logs
+  retain diagnostics and actual exceptions remain visible. Repeat the captures
+  with the patch unobscured; do not infer timing through the banner.
+- Initial paused native seek returned seeked after ~4.8 s while host evaluations
+  were running. Preroll remained black until Play, then the excerpt ended at the
+  requested target’s remaining duration. The app’s black seek shield remained
+  present during the wait; this is functional evidence, not a latency benchmark.

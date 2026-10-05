@@ -1,13 +1,13 @@
 {
   "date": "2026-10-05",
-  "source_commit": "17753ea357867a07ad151a1bd618d96984953176",
+  "source_commit": "c2372f2",
   "sdk": "0.24.12112",
   "cli": "1.4.2",
   "engine_full_suite": {
-    "passed": 408,
-    "wall_s": 446.77
+    "passed": 421,
+    "wall_s": 526.26
   },
-  "post_refinement_calibration_conformance_tests": 6,
+  "post_refinement_calibration_conformance_tests": 10,
   "tv_tests": {
     "passed": 30,
     "suites": 7
@@ -26,41 +26,40 @@
   "builds": [
     {
       "package": "tv/build/aarch64-debug/nostrobetv_aarch64.vpkg",
-      "sha256": "62aa7ff1270734aa70a40af03a6ff8b61d80d9dd6fc4251fcdbbeea3fad2b0d4",
-      "bytes": 6057752
+      "sha256": "8d7526922f359f236cb955a5ccbd274ae604fcf35f82dd7ea0e9f4153944bf0f",
+      "bytes": 6058506
     },
     {
       "package": "tv/build/aarch64-release/nostrobetv_aarch64.vpkg",
-      "sha256": "82be3888ea201bfa7620520e25ab71f0791730cd343590b8e21f3c2946b7c411",
-      "bytes": 5694566
+      "sha256": "461929f46029803ddf573e04ea1e989966726698503a3ebeec4adf9056f3f303",
+      "bytes": 5694646
     },
     {
       "package": "tv/build/armv7-debug/nostrobetv_armv7.vpkg",
-      "sha256": "108be5050780fb83cbd835151367047c67e999feda55063c8437fe04876f36ed",
-      "bytes": 6057745
+      "sha256": "301a4787be500aed5de760d06f6c0a1915c6e68cc7cfff8a80da6dda60537458",
+      "bytes": 6058510
     },
     {
       "package": "tv/build/armv7-release/nostrobetv_armv7.vpkg",
-      "sha256": "8f3826ccd55024a9826368beccbbeb99f00d0318c0ce17fdf80a8785fb4a3ec0",
-      "bytes": 5694601
+      "sha256": "7af6fe7f62ba753d07253b28bf9b1e76f327906f4c5dcdd5496b95bf0dc43e19",
+      "bytes": 5694570
     },
     {
       "package": "tv/build/x86_64-debug/nostrobetv_x86_64.vpkg",
-      "sha256": "d7a84e1d866edd0d4539aeb726c523ef7d4900d56bdf4ae39e145f481055ca79",
-      "bytes": 6057750
+      "sha256": "2f5cb151bcac4c9bc8bc8d2a123c8ad453ebf30a5d786c4495daf9a6da2f9850",
+      "bytes": 6058508
     },
     {
       "package": "tv/build/x86_64-release/nostrobetv_x86_64.vpkg",
-      "sha256": "453a0e5ce95cd61cebc58b59c4b78eab12ca6b98841545a8bb1cfc515e517839",
-      "bytes": 5694546
+      "sha256": "ab241f7ae6e9df38e31ecd84f29056d03c87a18700f6f2740c0ff95f1cfa0a9d",
+      "bytes": 5694571
     }
   ],
   "native_device_events": "device_events.log",
-  "rendered_visual_qa": "pending",
+  "rendered_visual_qa": "passed; actual SDK screenshots in evidence/s5",
   "calibration": "../engine/eval/s5_calibration_status.json",
-  "saved_tracks_reverified": 975,
-  "sync_tolerance_s": 0.15,
-  "sync_tolerance_origin": "default simulation; not device measured",
+  "sync_tolerance_s": 0.26887499999999925,
+  "sync_tolerance_origin": "maximum per-scenario p95 absolute offset",
   "tv_npm_audit": {
     "info": 0,
     "low": 0,
@@ -76,5 +75,29 @@
     "demo.mp4",
     "sync.mp4",
     "compositing.mp4"
-  ]
+  ],
+  "capture_frames": 11070,
+  "capture_average_fps_range": [
+    62.245623102267594,
+    134.35757175136456
+  ],
+  "sync_median_s": 0.09650000000000025,
+  "sync_p95_abs_s": 0.1792499999999995,
+  "sync_max_abs_s": 0.22299999999999986,
+  "compositing_max_error_codes": 0.75,
+  "engine_y_max_error_codes": 0.9529411764706026,
+  "original_engine_y_max_error_codes": 12.535294117647055,
+  "fresh_smoke": {
+    "cases": 80,
+    "outcomes": 240,
+    "gates_pass": true,
+    "report": "../engine/eval/s5_smoke_verification.json"
+  },
+  "fresh_s4_status": "running",
+  "historical_saved_track_audit": {
+    "report": "../engine/eval/s5_verification.json",
+    "tracks": 975,
+    "sync_tolerance_s": 0.15,
+    "origin": "initial S5 checkpoint; superseded by fresh calibrated rerun"
+  }
 }

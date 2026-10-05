@@ -138,3 +138,28 @@ W3C Media, Vega overlay animation, AWS, Kiro and physical Fire TV hardware were 
 - Would build again: yes, but actual >=60 fps screen capture and measured
   RGB/limited-Y compositing are required before completing S5 or shipping a
   mitigation claim. No AWS, physical Fire TV or cloud work was exercised.
+
+
+## S5 continuation — measured device loop
+
+- The SDK-bundled, authenticated EmulatorController screenshot API resolved the
+  capture blocker. Amazon staff’s VVD screenshooter limitation and the local
+  SDK proto were more useful than QMP, which captured the wrong framebuffer.
+  Actual pixels establish native Animated opacity above the video surface; no
+  JS fallback is needed on this SDK/device combination.
+- Counter-based observations prevented false measurements: package relaunch
+  reused an existing process; a debug banner covered the pulse; high-rate
+  capture plus host work introduced large delay; paused capture at one setting
+  dropped below 60 fps. Reject those recordings, terminate between runs, use
+  direct VDA input and reduce capture resolution/pace. Keep actual timestamps.
+- The nine-case fit exposed RGB/limited-Y range confusion in the engine:
+  original Y error 12.535 codes; corrected maximum RGB/Y errors 0.750/0.953.
+  The largest scenario p95 determines the bound so steady sample count cannot
+  dilute seek latency. Valid captures establish a 268.875 ms verifier tolerance.
+- Release visual checks show video/veil/focus/disclaimer, refusal of failed
+  tracks and a covered/stopped screen after background return. Initial paused
+  native seek took about 4.8 s under concurrent host evaluation and retained a
+  preroll image until Play. The app covers seeking and resumes at the target;
+  startup/seek performance should be profiled separately on physical hardware.
+- Would build again: yes. This resolves the S5 measurement blocker on VVD;
+  it is not evidence for another SDK, display backend or physical Fire TV.

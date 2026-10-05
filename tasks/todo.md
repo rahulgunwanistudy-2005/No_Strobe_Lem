@@ -219,7 +219,7 @@ See docs/S5_REPORT.md and engine/eval/s5_calibration_status.json.
 
 ## S5 continuation — device measurements
 
-- [ ] Recheck host/device capture availability and obtain real rendered frames.
-- [ ] Complete visual QA and >=60 fps steady/seek/pause-resume sync captures.
-- [ ] Measure all compositor cases; apply the measured tolerance/model.
+- [x] Recheck host/device capture availability and obtain real rendered frames.
+- [x] Complete visual QA and >=60 fps steady/seek/pause-resume sync captures.
+- [x] Measure all compositor cases; apply the measured tolerance/model.
 - [ ] Rerun S3/S4 and quality/build gates; update results and commit evidence.

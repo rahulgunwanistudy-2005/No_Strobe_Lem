@@ -1,13 +1,13 @@
 {
   "format_version": 1,
   "date": "2026-10-05",
-  "status": "blocked_pending_real_device_capture",
+  "status": "measured_waiting_complete_evaluation",
   "s5_acceptance_complete": false,
-  "sync_measurement": null,
-  "compositing_measurement": null,
-  "engine_sync_tolerance_s": 0.15,
-  "tolerance_origin": "default simulation; not device measured",
-  "blend_model_changed": false,
+  "sync_measurement": "sync_calibration.json",
+  "compositing_measurement": "compositing_calibration.json",
+  "engine_sync_tolerance_s": 0.26887499999999925,
+  "tolerance_origin": "measured VVD; max(per-scenario p95 absolute offset)*1.5, minimum 0.1 s",
+  "blend_model_changed": true,
   "recording_attempts": [
     {
       "method": "host ffmpeg AVFoundation screen device 1 at 60 fps",
@@ -24,6 +24,15 @@
     {
       "method": "VVD GStreamer display capture",
       "result": "no valid completed stream"
+    },
+    {
+      "method": "authenticated SDK EmulatorController.getScreenshot, actual rendered RGB samples",
+      "result": "four accepted recordings; 62.246\u2013134.358 fps; original timestamps preserved within 0.5 ms in FFV1",
+      "reports": "sync_calibration.json, compositing_calibration.json"
+    },
+    {
+      "method": "unpaced/high-load and reused-process recordings",
+      "result": "rejected: one onset >500 ms, missing distinct seek onset, wrong starting frame, insufficient pairs or rate <60 fps; retained in ignored synth_out/s5/captures"
     }
   ],
   "source_preflight": {
@@ -37,22 +46,22 @@
         "profiles": {
           "broadcast": {
             "events": [],
-            "params_hash": "70dcc50ff260aa1abcb1137f7ca022293f27dbcdc6c694c49b1c3ed79455de6a"
+            "params_hash": "a9a3a0b32dc6adbc3ed56629267c79ad73363ffbca96999abcd9fe84ad5f3f94"
           },
           "kids": {
             "events": [],
-            "params_hash": "eba16e78fcd87c00137e0d37641526314d2d4fe80aad5bbf6f54add615054832"
+            "params_hash": "134f76ec2fe221ad3e34c239805112825d152f986a83517598307bf898f6ee94"
           },
           "local": {
             "events": [],
-            "params_hash": "14b825f91e0477aeabe01a0491ec83ce00d1b4096a43c5d582d5895ca4490538"
+            "params_hash": "d7a84ea89591a7758880e901cf24f0d83c10e4a5f2e0eb05dd7e7181b3290a1d"
           }
         },
         "verified": false
       }
     },
     "compositing": {
-      "source_sha256": "37675429943053200c7124600099395a24e5104befe0771b2edc4c42db572a40",
+      "source_sha256": "f18a2acfa51c7cb0d94a550ea8a2262dfd862b7cf3dd66c414ce79b7c82abd98",
       "duration_s": 30,
       "fps": 30,
       "encoded_source_detection": {
@@ -61,15 +70,15 @@
         "profiles": {
           "broadcast": {
             "events": [],
-            "params_hash": "70dcc50ff260aa1abcb1137f7ca022293f27dbcdc6c694c49b1c3ed79455de6a"
+            "params_hash": "a9a3a0b32dc6adbc3ed56629267c79ad73363ffbca96999abcd9fe84ad5f3f94"
           },
           "kids": {
             "events": [],
-            "params_hash": "eba16e78fcd87c00137e0d37641526314d2d4fe80aad5bbf6f54add615054832"
+            "params_hash": "134f76ec2fe221ad3e34c239805112825d152f986a83517598307bf898f6ee94"
           },
           "local": {
             "events": [],
-            "params_hash": "14b825f91e0477aeabe01a0491ec83ce00d1b4096a43c5d582d5895ca4490538"
+            "params_hash": "d7a84ea89591a7758880e901cf24f0d83c10e4a5f2e0eb05dd7e7181b3290a1d"
           }
         },
         "verified": false
@@ -77,10 +86,10 @@
     }
   },
   "required_remaining": [
-    "rendered visual QA",
-    "sync recordings: steady, seek, pause_resume",
-    "compositing recording and RGB/limited-Y model fit",
-    "measured tolerance/model application and complete S3/S4 rerun"
+    "complete fresh S3 smoke and S4 evaluation; final evidence review/commit"
   ],
-  "saved_track_audit": "s5_verification.json"
+  "saved_track_audit": "s5_verification.json",
+  "params_version": "1.1",
+  "capture_provenance": "../../docs/evidence/s5/capture_provenance.json",
+  "rendered_visual_qa": "passed: demo/pause, refusing failed verifier, covered return from background, native calibration seek at target opacity"
 }

@@ -91,14 +91,15 @@ uv run --project engine python tools/measure_sync.py --combine synth_out/s5/stea
 uv run --project engine python tools/measure_compositing.py --recording /path/compositing.mov --descriptor tv/calibration-assets/compositing.json --crop W:H:X:Y --output engine/eval/compositing_calibration.json
 ```
 
-The sync report records signed offsets, absolute p95/max and capture frame
-quantization. The prescribed tolerance is `max(p95_abs * 1.5, 0.1)`; observed
+The sync report records signed offsets, each scenario’s absolute p95/max and
+capture quantization. The combined p95 is the largest scenario p95; the pooled
+p95 is retained separately so extra steady samples cannot dilute seek latency. The prescribed tolerance is `max(p95_abs * 1.5, 0.1)`; observed
 outliers beyond it cause refusal. The compositing report fits captured RGB
-codes and separately tests the engine's original limited-Y code model using
-actual decoded stimulus luma. A good RGB fit alone does not pass the engine
+codes and separately tests the corrected limited-Y code model using actual decoded
+stimulus luma, retaining the original model error for comparison. A good RGB fit alone does not pass the engine
 model gate. Retain recordings/checksums, investigate >2-code errors, apply
 measured tolerance/model, then rerun the complete S3/S4 evaluation and update
-its headline with the measured value. That final gate has not been performed.
+its headline with the measured value. Current measurements and rerun evidence are linked in the S5 report.
 
 To regenerate stimuli, use an available local TrueType font:
 
@@ -110,3 +111,49 @@ Copy the new MP4/JSON pairs to `tv/calibration-assets/` and rebuild Debug;
 font or encoder changes produce new hashes. `tools/prepare_demo.py --help`
 describes reproduction from the checksum-pinned original film. See
 [asset attribution](assets/README.md) and [measurement status](../engine/eval/s5_calibration_status.json).
+
+
+## SDK capture fallback used in S5
+
+AVFoundation yielded no frames on this host. The installed VVD’s authenticated
+`EmulatorController.getScreenshot` API returns actual rendered pixels. Use the
+SDK’s `emulator_controller.proto` and existing emulator discovery file; the
+recorder never prints or saves the authentication token. Enable the local gRPC
+endpoint through the authenticated emulator console and keep it on loopback.
+The installed proto is under `vvd/images/tv/vmtools/agent/lib/`; discovery files
+are under `~/Library/Caches/TemporaryItems/avd/running/` on this host.
+
+Before each run, terminate the previous application instance, then launch it:
+
+```sh
+vega exec vda shell vlcm terminate-app --pkg-id com.nostrobe.tv
+vega device launch-app --appName com.nostrobe.tv.main
+```
+
+Reinstalling the same package may reuse its process and old playback position.
+Use the direct executable returned by `vega which vda` for timed remote input;
+this avoids the host CLI’s startup cost. Select the lab, wait for its paused
+player, then start playback and acquisition. Analyze after acquisition to keep
+host contention down. Capture dimensions may be reduced for sync while keeping
+the patch/counter readable; require actual average and median rates >=59.9 fps.
+
+```sh
+env -u PYTHONPATH uv run --no-project --with grpcio==1.76.0 --with grpcio-tools==1.76.0 python tools/capture_vvd.py --proto-dir /absolute/sdk/proto/directory --discovery /absolute/pid-discovery.ini --output synth_out/s5/captures/run --duration 31 --width 960 --max-fps 110
+ffmpeg -v error -f concat -safe 0 -i synth_out/s5/captures/run/frames.ffconcat -fps_mode passthrough -enc_time_base 1:1000000 -c:v ffv1 -level 3 -pix_fmt gbrp -threads 1 synth_out/s5/captures/run.mkv
+```
+
+The rate option paces requests; it never assigns nominal timestamps or creates
+frames. SDK timestamps remain in `capture.json`. The accepted S5 recordings
+have 11,070 real samples; FFV1 timestamps differ from the original timestamps
+by at most 0.5 ms. Exact crops, rates, hashes and remote input observations are
+in `docs/evidence/s5/capture_provenance.json`. At 960×540 the lab video crop is
+`770:434:94:0`; at 640×360 it is `514:289:63:0` on this layout. Re-measure after
+layout/device changes. Native paused seek can keep the previous/preroll image
+until Play; the clock and target veil are primed before playback resumes.
+
+The analyzer requires an actual source-counter jump for a seek run and an
+interior frame hold for pause/resume. A flash already covered at its exact
+seek frame is retained as pixel coverage evidence, with no invented onset
+offset. Every scenario still requires at least five distinct timed onsets.
+Debug-only filters remove the vendor forwardRef warning and SDK startup/warning
+banners from the video; underlying device logs and playback errors remain.
