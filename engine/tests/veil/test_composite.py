@@ -2,7 +2,7 @@ import numpy as np
 import pytest
 
 from nostrobe.domain.profiles import get_profile
-from nostrobe.veil.composite import apply_veil, composite, veil_timeline
+from nostrobe.veil.composite import apply_veil, composite, composite_luts, veil_timeline
 from nostrobe.veil.segments import segments
 
 
@@ -13,12 +13,30 @@ def test_composite_identity_gray_and_validation():
     np.testing.assert_array_equal(a, y)
     np.testing.assert_array_equal(b, rgb)
     a, b = apply_veil(y, rgb, 1, 0.25)
-    assert np.all(a == 0.25) and np.all(b == 0.25)
+    assert np.all(a == (16 + 219 * 64 / 255) / 255) and np.all(b == 64 / 255)
     for alpha, gray in ((-0.1, 0), (1.1, 0), (0, -1), (0, np.nan)):
         with pytest.raises(ValueError):
             composite(y, alpha, gray)
     with pytest.raises(ValueError):
         composite(np.array([np.inf]), 0.5, 0.5)
+
+
+@pytest.mark.parametrize("alpha", [0.25, 0.5, 0.75])
+@pytest.mark.parametrize("gray,rgb_gray", [(0, 0), (0.25, 64), (0.5, 128)])
+def test_limited_y_and_rgb_against_independent_range_oracle(alpha, gray, rgb_gray):
+    rgb_codes = np.arange(16, 236, dtype=float)
+    y_codes = 16 + 219 * rgb_codes / 255
+    y, rgb = apply_veil(y_codes / 255, np.repeat(rgb_codes[:, None] / 255, 3, axis=1), alpha, gray)
+    expected_rgb = (1 - alpha) * rgb_codes + alpha * rgb_gray
+    expected_y = 16 + 219 * expected_rgb / 255
+    np.testing.assert_allclose(y * 255, expected_y, atol=1e-12)
+    np.testing.assert_allclose(rgb[:, 0] * 255, expected_rgb, atol=1e-12)
+    lut_y, lut_rgb = composite_luts(alpha, gray)
+    np.testing.assert_allclose(
+        lut_y * 255, (1 - alpha) * np.arange(256) + alpha * (16 + 219 * rgb_gray / 255)
+    )
+    np.testing.assert_allclose(lut_rgb * 255, (1 - alpha) * np.arange(256) + alpha * rgb_gray)
+    assert not lut_y.flags.writeable and not lut_rgb.flags.writeable
 
 
 def test_linear_continuous_ramps_and_support(track):

@@ -2,6 +2,7 @@
 
 from collections.abc import Sequence
 
+from nostrobe.domain.profiles import get_profile
 from nostrobe.evaluation.metrics import Observation, summarize
 
 
@@ -26,9 +27,18 @@ def markdown(result: dict[str, object], rows: Sequence[Observation]) -> str:
             "must-pass clips."
         )
     tracks = [r.track for r in rows if r.track is not None]
+    provenance = result["provenance"]
+    assert isinstance(provenance, dict)
+    tolerance_ms = get_profile("broadcast").sync_tolerance_s * 1000
+    calibration = provenance.get("device_calibration")
+    origin = (
+        "measured VVD tolerance; see sync_calibration.json and compositing_calibration.json"
+        if calibration
+        else "device calibration evidence unavailable in this evaluation root"
+    )
     lines += [
         f"- {sum(t.verifier.passes for t in tracks)}/{len(tracks)} profile tracks "
-        "re-verify at −150, 0, +150 ms (default simulation tolerance; not device calibration).",
+        f"re-verify at −{tolerance_ms:g}, 0, +{tolerance_ms:g} ms ({origin}).",
         f"- {sum(len(t.unresolved_segments) for t in tracks)} unresolved segments retained "
         "with reasons; publication refused for affected profile tracks.",
         "",
@@ -37,6 +47,21 @@ def markdown(result: dict[str, object], rows: Sequence[Observation]) -> str:
         "| Profile | TP | TN | FP | **FN** | IoU median | IoU p10 |",
         "|---|---:|---:|---:|---:|---:|---:|",
     ]
+    if isinstance(calibration, dict):
+        lines[
+            lines.index("## Accuracy and interval overlap") : lines.index(
+                "## Accuracy and interval overlap"
+            )
+        ] = [
+            f"VVD calibration: worst-scenario absolute p95 "
+            f"{calibration['sync_p95_abs_s'] * 1000:.3f} ms; maximum "
+            f"{calibration['sync_max_abs_s'] * 1000:.3f} ms. "
+            f"Measured RGB/model-Y maximum errors: "
+            f"{calibration['compositing_max_error_codes']:.3f}/"
+            f"{calibration['engine_y_max_error_codes']:.3f} codes. "
+            "Calibration file checksums are in provenance.",
+            "",
+        ]
     for profile, value in summary.items():
         assert isinstance(value, dict)
         c = value["confusion"]

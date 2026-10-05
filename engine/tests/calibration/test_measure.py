@@ -26,6 +26,7 @@ def descriptor(kind: str) -> dict[str, object]:
         "kind": kind,
         "production": False,
         "fps": FPS,
+        "duration_s": 24 if kind == "sync" else 30,
         "source_sha256": "0" * 64,
         "patch_times_s": SYNC_TIMES,
         "display_codes": list(range(16, 236)),
@@ -56,6 +57,8 @@ def test_source_pulse_is_exactly_one_frame_and_small_area() -> None:
     frame = next(composite_frames())
     assert frame[100, 100, 0] == 16
     assert frame[100, 539, 0] == 235
+    assert np.all(frame[80:220, 92:102] == 16)
+    assert np.all(frame[80:220, 538:548] == 235)
     assert measure_frame(frame).ramp.tolist() == list(range(16, 236))
 
 
@@ -105,6 +108,61 @@ def test_sync_refuses_missing_edges_and_outlier_bound() -> None:
         combine_sync(runs)
 
 
+def test_combined_bound_does_not_dilute_a_slower_playback_scenario() -> None:
+    runs = [
+        {"status": "measured", "scenario": "steady", "samples": [{"offset_s": 0.01}] * 1000},
+        {"status": "measured", "scenario": "seek", "samples": [{"offset_s": 0.2}] * 10},
+        {"status": "measured", "scenario": "pause_resume", "samples": [{"offset_s": 0.1}] * 10},
+    ]
+    combined = combine_sync(runs)
+    assert combined["pooled_p95_abs_s"] == 0.01
+    assert combined["p95_abs_s"] == 0.2
+    assert combined["sync_tolerance_s"] == pytest.approx(0.3)
+
+
+def test_scenario_requires_an_actual_counter_jump_or_interior_pause() -> None:
+    times = np.arange(0, 24, 1 / 60)
+    frames = [FrameSignals(int(t * FPS), 48, 48, np.zeros(220)) for t in times]
+    capture = Capture(times.tolist(), frames, "test", 60)
+    with pytest.raises(ValueError, match="counter jump"):
+        sync_measurement(capture, descriptor("sync"), "seek")
+    with pytest.raises(ValueError, match="hold an interior"):
+        sync_measurement(capture, descriptor("sync"), "pause_resume")
+    eof = [FrameSignals(718, 48, 48, np.zeros(220)) for _ in times]
+    with pytest.raises(ValueError, match="hold an interior"):
+        sync_measurement(
+            Capture(times.tolist(), eof, "test", 60), descriptor("sync"), "pause_resume"
+        )
+
+
+def test_seek_into_existing_veil_is_coverage_evidence_not_an_invented_offset() -> None:
+    spec = descriptor("sync")
+    spec["cues"] = [
+        {"id": f"sync_{t}", "t_on": t, "t_off": t + 0.5, "alpha": 0.5, "gray": 0.5}
+        for t in SYNC_TIMES
+    ]
+    times = np.arange(0, 24, 1 / 60)
+
+    def media(t):
+        return min(t if t < 2.2 else t + 5.8, 23.99)
+
+    frames = []
+    for t in times:
+        m = media(t)
+        index = int(np.floor(m * FPS + 1e-6))
+        pulse = index in {v * FPS for v in SYNC_TIMES}
+        veil = any(v <= media(t - 1 / 60) < v + 0.5 for v in SYNC_TIMES)
+        alpha = 0.5 if veil else 0
+        background = (1 - alpha) * 48 + alpha * 128
+        patch = background + ((1 - alpha) * 187 if pulse else 0)
+        frames.append(FrameSignals(index, patch, background, np.zeros(220)))
+    run = sync_measurement(Capture(times.tolist(), frames, "test", 60), spec, "seek")
+    assert len(run["already_veiled_seek_flashes"]) == 1
+    assert run["already_veiled_seek_flashes"][0]["media_frame"] == 240
+    assert all(s["media_frame"] != 240 for s in run["samples"])
+    assert len(run["samples"]) >= 5
+
+
 def test_compositor_fit_recovers_all_nine_cases_and_refuses_bad_baseline() -> None:
     spec = descriptor("compositing")
     times = np.arange(0, 30, 1 / 60)
@@ -119,10 +177,11 @@ def test_compositor_fit_recovers_all_nine_cases_and_refuses_bad_baseline() -> No
     capture = Capture(times.tolist(), frames, "test-only", 60)
     result = compositing_measurement(capture, spec)
     assert len(result["cases"]) == 9
-    # Even a perfect RGB fit does not prove the limited-Y simulation is correct.
-    assert not result["model_passes_two_code_gate"]
-    assert result["engine_y_max_error_codes"] > 2
-    assert result["max_error_codes"] == pytest.approx(0)
+    # A perfect RGB blend exposes the old range error independently of fitting.
+    assert result["model_passes_two_code_gate"]
+    assert result["original_engine_y_max_error_codes"] > 2
+    assert result["engine_y_max_error_codes"] < 1
+    assert result["max_error_codes"] < 1
     for case in result["cases"]:
         assert case["fit_slope"] == pytest.approx(1 - case["alpha"])
         assert case["fit_intercept"] == pytest.approx(case["alpha"] * case["gray"] * 255)

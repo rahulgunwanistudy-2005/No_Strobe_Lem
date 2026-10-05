@@ -1,7 +1,8 @@
 """Record actual VVD rendered samples via the SDK's authenticated screenshot API.
 
-Run with grpcio==1.76.0 and grpcio-tools==1.76.0. Frames are sampled as fast as
-returned, with original SDK timestamps, never interpolated or duplicated.
+Run with grpcio==1.76.0 and grpcio-tools==1.76.0. Acquisition is paced to leave the
+emulator time to render; original SDK timestamps are never retimed, and frames
+are never interpolated or duplicated.
 """
 
 import argparse
@@ -45,7 +46,12 @@ def png_rgb(pixels: bytes, width: int, height: int) -> bytes:
 
 
 def record(
-    proto_dir: Path, discovery: Path, output: Path, duration: float, width: int
+    proto_dir: Path,
+    discovery: Path,
+    output: Path,
+    duration: float,
+    width: int,
+    max_fps: float = 110,
 ) -> None:
     import grpc
 
@@ -130,6 +136,11 @@ def record(
                     pending.put((len(samples) - 1, pixels))
                     if failures:
                         raise failures[0]
+                    # Pace acquisition to leave the emulator time to render.
+                    # Actual SDK timestamps remain authoritative; no retiming.
+                    remaining = 1 / max_fps - (time.monotonic_ns() - sent) / 1e9
+                    if remaining > 0:
+                        time.sleep(remaining)
             finally:
                 pending.put(None)
                 pending.join()
@@ -149,6 +160,7 @@ def record(
                 "width": width,
                 "height": height,
                 "effective_fps": fps,
+                "requested_max_fps": max_fps,
                 "frames": samples,
             },
             indent=2,
@@ -176,7 +188,17 @@ if __name__ == "__main__":
     parser.add_argument(
         "--width", type=int, default=960, choices=[640, 960, 1280, 1920]
     )
+    parser.add_argument("--max-fps", type=float, default=110)
     args = parser.parse_args()
     if not 0 < args.duration <= 120:
         parser.error("capture duration must be between 0 and 120 seconds")
-    record(args.proto_dir, args.discovery, args.output, args.duration, args.width)
+    if not 60 <= args.max_fps <= 240:
+        parser.error("maximum capture rate must be between 60 and 240 fps")
+    record(
+        args.proto_dir,
+        args.discovery,
+        args.output,
+        args.duration,
+        args.width,
+        args.max_fps,
+    )

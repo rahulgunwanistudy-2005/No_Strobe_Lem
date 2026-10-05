@@ -26,11 +26,15 @@ the greatest current opacity; ties choose lower gray, then lexical cue id.
 Apply a single uniform overlay, never stack overlapping overlays.
 
 A positive verification offset means the veil is late: evaluate the timeline
-at `media_time - offset`. Source Y codes are normalized as `code8 / 255`,
-RGB channels as `channel8 / 255`; both blend toward the same normalized
-code gray. Y returns to 10-bit table coordinates using `*255*4` without
-quantizing the simulated output. RGB uses inverse BT.709 before averaging.
-This is the specified simulation model; actual device fit is an S5 gate.
+at `media_time - offset`. Source limited-range BT.709 Y codes are normalized
+as `code8 / 255`, RGB channels as `channel8 / 255`. The player's overlay uses
+the full-range RGB code `q = floor(gray*255 + 0.5) / 255`. RGB blends toward
+`q`; decoded Y blends toward `(16 + 219*q) / 255`. Both use
+`(1-alpha)*source + alpha*target`. Y returns to 10-bit table coordinates using
+`*255*4` without quantizing the simulated output. RGB uses inverse BT.709
+before averaging. S5 measured this range distinction on VVD; blending decoded
+Y toward the raw RGB gray caused errors greater than two codes. The profile
+parameter version is changed when calibration changes verification semantics.
 
 Event padding defines the full-opacity plateau (lead/tail). Ramp supports
 add `min_ramp_s` outside this plateau. Plateaus clip to the media timeline;

@@ -21,6 +21,7 @@ from nostrobe.config import Settings
 from nostrobe.decode.ffmpeg import ByteArray
 from nostrobe.decode.process import StderrTail, stop
 from nostrobe.errors import DecodeError
+from nostrobe.veil.composite import apply_veil, veil_gray
 
 
 @dataclass(frozen=True)
@@ -154,10 +155,29 @@ def sync_measurement(capture: Capture, descriptor: dict[str, Any], scenario: str
     patch_edges = np.flatnonzero((patch[1:] > 40) & (patch[:-1] <= 40)) + 1
     veil_edges = np.flatnonzero(np.diff(baseline) > 15) + 1
     samples = []
+    already_veiled_seek_flashes = []
     matched: set[int] = set()
     fps = float(descriptor["fps"])
+    counters = np.array([frame.counter for frame in capture.frames])
+    jumps = np.diff(counters) / fps - np.diff(capture.times)
+    seek_indices = np.flatnonzero(np.abs(jumps) > 0.25) + 1
+    holds = []
+    first = 0
+    for index in range(1, len(counters) + 1):
+        if index == len(counters) or counters[index] != counters[first]:
+            # End-of-media may retain either of the final decoded frames.
+            # Startup/EOF holds are not evidence of a deliberate pause.
+            if fps <= counters[first] < (descriptor["duration_s"] - 1) * fps:
+                holds.append(capture.times[index - 1] - capture.times[first])
+            first = index
+    longest_hold = max(holds, default=0.0)
+    if scenario == "seek" and not len(seek_indices):
+        raise ValueError("seek recording must contain a measured media-counter jump")
+    if scenario == "pause_resume" and longest_hold < 1:
+        raise ValueError("pause/resume recording must hold an interior media frame for one second")
     expected = set(round(t * fps) for t in descriptor["patch_times_s"])
-    for index in patch_edges:
+    for patch_index in patch_edges:
+        index = int(patch_index)
         media_frame = capture.frames[int(index)].counter
         if media_frame not in expected:
             raise ValueError("observed patch does not match the source frame counter")
@@ -168,6 +188,33 @@ def sync_measurement(capture: Capture, descriptor: dict[str, Any], scenario: str
             and abs(capture.times[int(v)] - capture.times[int(index)]) <= 0.5
         ]
         if not candidates:
+            # Seeking to an instant cue can reveal its pulse after the veil is
+            # already at target. That has no onset offset; retain pixel evidence
+            # separately, never invent a zero-delay timing sample.
+            cue = next(c for c in descriptor["cues"] if round(c["t_on"] * fps) == media_frame)
+            frame = capture.frames[index]
+            at_seek = any(
+                abs(capture.times[int(j)] - capture.times[index]) <= 0.1 for j in seek_indices
+            )
+            alpha = cue["alpha"]
+            expected_background = (1 - alpha) * 48 + alpha * veil_gray(cue["gray"]) * 255
+            expected_contrast = (1 - alpha) * (235 - 48)
+            if (
+                scenario == "seek"
+                and at_seek
+                and abs(frame.background - expected_background) <= 2
+                and abs(frame.patch - frame.background - expected_contrast) <= 2
+            ):
+                already_veiled_seek_flashes.append(
+                    {
+                        "media_frame": media_frame,
+                        "capture_s": capture.times[index],
+                        "background_code": frame.background,
+                        "patch_code": frame.patch,
+                        "reason": "target veil already visible on seek pulse; no new onset",
+                    }
+                )
+                continue
             raise ValueError("patch has no matching veil onset within 500 ms")
         edge = min(candidates, key=lambda v: abs(capture.times[v] - capture.times[int(index)]))
         matched.add(edge)
@@ -189,11 +236,18 @@ def sync_measurement(capture: Capture, descriptor: dict[str, Any], scenario: str
         "capture_sha256": capture.source_sha256,
         "stimulus_sha256": descriptor["source_sha256"],
         "capture_fps": capture.effective_fps,
+        "capture_average_fps": (len(capture.times) - 1) / (capture.times[-1] - capture.times[0]),
+        "capture_frames": len(capture.times),
         "samples": samples,
+        "already_veiled_seek_flashes": already_veiled_seek_flashes,
         "median_s": float(np.median(values)),
         "p95_abs_s": float(np.percentile(absolute, 95)),
         "max_abs_s": float(absolute.max()),
         "quantization_bound_s": float(max(np.diff(capture.times))),
+        "playback_evidence": {
+            "media_counter_jumps_s": jumps[seek_indices - 1].tolist(),
+            "longest_interior_frame_hold_s": longest_hold,
+        },
     }
 
 
@@ -203,7 +257,12 @@ def combine_sync(runs: list[dict[str, Any]]) -> dict[str, Any]:
     if any(run["status"] != "measured" for run in runs):
         raise ValueError("every recording must have measured samples")
     values = np.array([s["offset_s"] for run in runs for s in run["samples"]])
-    p95 = float(np.percentile(np.abs(values), 95))
+    pooled_p95 = float(np.percentile(np.abs(values), 95))
+    # Treat each playback state as a separate latency distribution. Pooling
+    # more steady samples must not dilute a slower seek/pause distribution.
+    p95 = max(
+        float(np.percentile(np.abs([s["offset_s"] for s in run["samples"]]), 95)) for run in runs
+    )
     tolerance = max(p95 * 1.5, 0.1)
     # Do not silently use the requested p95 formula if observed outliers exceed
     # it. The verifier needs a bound for every observed delay.
@@ -216,6 +275,8 @@ def combine_sync(runs: list[dict[str, Any]]) -> dict[str, Any]:
         "runs": runs,
         "median_s": float(np.median(values)),
         "p95_abs_s": p95,
+        "pooled_p95_abs_s": pooled_p95,
+        "p95_basis": "maximum per-scenario p95 absolute offset",
         "max_abs_s": observed_max,
         "sync_tolerance_s": tolerance,
         "formula": "max(p95 absolute offset * 1.5, 0.1)",
@@ -250,12 +311,21 @@ def compositing_measurement(capture: Capture, descriptor: dict[str, Any]) -> dic
         if len(samples.get(cue["id"], [])) < 10:
             raise ValueError(f"missing stable capture samples for {cue['id']}")
         measured = np.median(samples[cue["id"]], axis=0)
-        predicted = (1 - cue["alpha"]) * observed_source + cue["alpha"] * cue["gray"] * 255
+        predicted = (1 - cue["alpha"]) * observed_source + cue["alpha"] * veil_gray(
+            cue["gray"]
+        ) * 255
         fit = np.polyfit(observed_source, measured, 1)
         # Gray pixels captured in full-range RGB map back to limited BT.709 Y.
         # Compare this separately to the engine's original decoded code-space model.
         captured_y = 16 + measured * 219 / 255
-        predicted_y = (1 - cue["alpha"]) * luma_codes + cue["alpha"] * cue["gray"] * 255
+        original_y = (1 - cue["alpha"]) * luma_codes + cue["alpha"] * cue["gray"] * 255
+        predicted_y, _ = apply_veil(
+            luma_codes / 255,
+            np.repeat(observed_source[:, None] / 255, 3, axis=1),
+            cue["alpha"],
+            cue["gray"],
+        )
+        predicted_y *= 255
         y_fit = np.polyfit(luma_codes, captured_y, 1)
         cases.append(
             {
@@ -269,6 +339,7 @@ def compositing_measurement(capture: Capture, descriptor: dict[str, Any]) -> dic
                 "fit_slope": float(fit[0]),
                 "fit_intercept": float(fit[1]),
                 "engine_y_max_error_codes": float(np.max(np.abs(captured_y - predicted_y))),
+                "original_engine_y_max_error_codes": float(np.max(np.abs(captured_y - original_y))),
                 "engine_y_fit_slope": float(y_fit[0]),
                 "engine_y_fit_intercept": float(y_fit[1]),
             }
@@ -283,10 +354,16 @@ def compositing_measurement(capture: Capture, descriptor: dict[str, Any]) -> dic
         "capture_sha256": capture.source_sha256,
         "stimulus_sha256": descriptor["source_sha256"],
         "capture_fps": capture.effective_fps,
+        "capture_average_fps": (len(capture.times) - 1) / (capture.times[-1] - capture.times[0]),
+        "capture_frames": len(capture.times),
         "domain": "captured full-range RGB display code; baseline checked before overlay fit",
-        "model": "(1-alpha)*source_code + alpha*gray*255",
+        "model": "RGB: (1-alpha)*source_code + alpha*round(gray*255); "
+        "limited Y: (1-alpha)*decoded_y + alpha*(16+219*round(gray*255)/255)",
         "cases": cases,
         "max_error_codes": maximum,
         "engine_y_max_error_codes": y_maximum,
+        "original_engine_y_max_error_codes": max(
+            case["original_engine_y_max_error_codes"] for case in cases
+        ),
         "model_passes_two_code_gate": maximum <= 2 and y_maximum <= 2,
     }

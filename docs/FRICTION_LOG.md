@@ -134,3 +134,13 @@ so it cannot contaminate calibration pixels; retain other diagnostics.
 Initial capture attempts below 60 fps are rejected. Sampling and encoding
 are measured separately; protobuf image bytes must be cached once rather
 than accessed for every row (each property access copies the full frame).
+
+- Reinstall/launch of the same package can foreground an existing process rather
+  than reset it. Frame counters exposed this: a supposed fresh pause/resume run
+  began at frame 228 and only yielded four timing pairs; it was rejected. Use
+  `vlcm terminate-app --pkg-id com.nostrobe.tv`, then launch a new instance and
+  verify frame zero before every controlled recording. Invoke the SDK's direct
+  vda executable during recordings to avoid repeated host CLI startup overhead.
+- Unpaced screenshot polling plus host work delayed a seek-run onset beyond
+  500 ms. Keep acquisition at 75 requests/s with original timestamps and perform
+  heavy analysis after capture. Retain the rejected recordings as diagnostics.

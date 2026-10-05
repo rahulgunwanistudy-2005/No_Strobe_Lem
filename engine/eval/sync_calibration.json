@@ -1,0 +1,266 @@
+{
+  "status": "measured",
+  "format_version": 1,
+  "runs": [
+    {
+      "status": "measured",
+      "scenario": "steady",
+      "capture_sha256": "b2fba75f02d1b482b3d5a8229340f78ac0639fcacdbd0782c1033b5db8527ad3",
+      "stimulus_sha256": "044d87e9b09ffc1094d7aeb3251ed10158ff7591eeba7629907f1c24a04bd30c",
+      "capture_fps": 142.8571428571314,
+      "capture_average_fps": 134.35762013363743,
+      "capture_frames": 3359,
+      "samples": [
+        {
+          "media_frame": 60,
+          "patch_capture_s": 1.337,
+          "veil_capture_s": 1.456,
+          "offset_s": 0.119
+        },
+        {
+          "media_frame": 120,
+          "patch_capture_s": 3.335,
+          "veil_capture_s": 3.443,
+          "offset_s": 0.1080000000000001
+        },
+        {
+          "media_frame": 180,
+          "patch_capture_s": 5.338,
+          "veil_capture_s": 5.432,
+          "offset_s": 0.0940000000000003
+        },
+        {
+          "media_frame": 240,
+          "patch_capture_s": 7.334,
+          "veil_capture_s": 7.431,
+          "offset_s": 0.09700000000000042
+        },
+        {
+          "media_frame": 300,
+          "patch_capture_s": 9.33,
+          "veil_capture_s": 9.439,
+          "offset_s": 0.10899999999999999
+        },
+        {
+          "media_frame": 360,
+          "patch_capture_s": 11.346,
+          "veil_capture_s": 11.442,
+          "offset_s": 0.09600000000000009
+        },
+        {
+          "media_frame": 420,
+          "patch_capture_s": 13.348,
+          "veil_capture_s": 13.491,
+          "offset_s": 0.1429999999999989
+        },
+        {
+          "media_frame": 480,
+          "patch_capture_s": 15.347,
+          "veil_capture_s": 15.469,
+          "offset_s": 0.12199999999999989
+        },
+        {
+          "media_frame": 540,
+          "patch_capture_s": 17.331,
+          "veil_capture_s": 17.441,
+          "offset_s": 0.10999999999999943
+        },
+        {
+          "media_frame": 600,
+          "patch_capture_s": 19.334,
+          "veil_capture_s": 19.434,
+          "offset_s": 0.10000000000000142
+        },
+        {
+          "media_frame": 660,
+          "patch_capture_s": 21.34,
+          "veil_capture_s": 21.442,
+          "offset_s": 0.10200000000000031
+        }
+      ],
+      "already_veiled_seek_flashes": [],
+      "median_s": 0.1080000000000001,
+      "p95_abs_s": 0.1324999999999994,
+      "max_abs_s": 0.1429999999999989,
+      "quantization_bound_s": 0.038000000000000256,
+      "playback_evidence": {
+        "media_counter_jumps_s": [],
+        "longest_interior_frame_hold_s": 0.134
+      }
+    },
+    {
+      "status": "measured",
+      "scenario": "seek",
+      "capture_sha256": "9b83b20e1156adc2f716006b0f3047301960ecbc1e53453baa075cc41a00240e",
+      "stimulus_sha256": "044d87e9b09ffc1094d7aeb3251ed10158ff7591eeba7629907f1c24a04bd30c",
+      "capture_fps": 62.49999999999994,
+      "capture_average_fps": 62.245623102267594,
+      "capture_frames": 1928,
+      "samples": [
+        {
+          "media_frame": 60,
+          "patch_capture_s": 1.356,
+          "veil_capture_s": 1.579,
+          "offset_s": 0.22299999999999986
+        },
+        {
+          "media_frame": 300,
+          "patch_capture_s": 5.757,
+          "veil_capture_s": 5.822,
+          "offset_s": 0.06500000000000039
+        },
+        {
+          "media_frame": 360,
+          "patch_capture_s": 7.766,
+          "veil_capture_s": 7.827,
+          "offset_s": 0.06099999999999994
+        },
+        {
+          "media_frame": 420,
+          "patch_capture_s": 9.766,
+          "veil_capture_s": 9.821,
+          "offset_s": 0.054999999999999716
+        },
+        {
+          "media_frame": 480,
+          "patch_capture_s": 11.759,
+          "veil_capture_s": 11.857,
+          "offset_s": 0.09799999999999898
+        },
+        {
+          "media_frame": 540,
+          "patch_capture_s": 13.768,
+          "veil_capture_s": 13.831,
+          "offset_s": 0.06299999999999883
+        },
+        {
+          "media_frame": 600,
+          "patch_capture_s": 15.748,
+          "veil_capture_s": 15.827,
+          "offset_s": 0.07900000000000063
+        },
+        {
+          "media_frame": 660,
+          "patch_capture_s": 17.752,
+          "veil_capture_s": 17.836,
+          "offset_s": 0.08399999999999963
+        }
+      ],
+      "already_veiled_seek_flashes": [
+        {
+          "media_frame": 240,
+          "capture_s": 3.965,
+          "background_code": 88.0,
+          "patch_code": 181.0,
+          "reason": "target veil already visible on seek pulse; no new onset"
+        }
+      ],
+      "median_s": 0.07200000000000051,
+      "p95_abs_s": 0.1792499999999995,
+      "max_abs_s": 0.22299999999999986,
+      "quantization_bound_s": 0.040000000000000036,
+      "playback_evidence": {
+        "media_counter_jumps_s": [
+          4.751666666666667
+        ],
+        "longest_interior_frame_hold_s": 1.3360000000000003
+      }
+    },
+    {
+      "status": "measured",
+      "scenario": "pause_resume",
+      "capture_sha256": "102d3321f84edd6ea0e4ed2511518cd49f6fa029712492444e349cadc9631457",
+      "stimulus_sha256": "044d87e9b09ffc1094d7aeb3251ed10158ff7591eeba7629907f1c24a04bd30c",
+      "capture_fps": 90.90909090909724,
+      "capture_average_fps": 96.64802663477388,
+      "capture_frames": 2991,
+      "samples": [
+        {
+          "media_frame": 60,
+          "patch_capture_s": 0.951,
+          "veil_capture_s": 1.075,
+          "offset_s": 0.124
+        },
+        {
+          "media_frame": 120,
+          "patch_capture_s": 2.935,
+          "veil_capture_s": 3.039,
+          "offset_s": 0.10400000000000009
+        },
+        {
+          "media_frame": 180,
+          "patch_capture_s": 4.935,
+          "veil_capture_s": 5.029,
+          "offset_s": 0.0940000000000003
+        },
+        {
+          "media_frame": 240,
+          "patch_capture_s": 11.291,
+          "veil_capture_s": 11.381,
+          "offset_s": 0.08999999999999986
+        },
+        {
+          "media_frame": 300,
+          "patch_capture_s": 13.292,
+          "veil_capture_s": 13.391,
+          "offset_s": 0.0990000000000002
+        },
+        {
+          "media_frame": 360,
+          "patch_capture_s": 15.285,
+          "veil_capture_s": 15.379,
+          "offset_s": 0.09399999999999942
+        },
+        {
+          "media_frame": 420,
+          "patch_capture_s": 17.287,
+          "veil_capture_s": 17.389,
+          "offset_s": 0.10200000000000031
+        },
+        {
+          "media_frame": 480,
+          "patch_capture_s": 19.295,
+          "veil_capture_s": 19.387,
+          "offset_s": 0.09199999999999875
+        },
+        {
+          "media_frame": 540,
+          "patch_capture_s": 21.297,
+          "veil_capture_s": 21.393,
+          "offset_s": 0.09600000000000009
+        },
+        {
+          "media_frame": 600,
+          "patch_capture_s": 23.287,
+          "veil_capture_s": 23.379,
+          "offset_s": 0.0920000000000023
+        },
+        {
+          "media_frame": 660,
+          "patch_capture_s": 25.289,
+          "veil_capture_s": 25.384,
+          "offset_s": 0.09499999999999886
+        }
+      ],
+      "already_veiled_seek_flashes": [],
+      "median_s": 0.09499999999999886,
+      "p95_abs_s": 0.11400000000000005,
+      "max_abs_s": 0.124,
+      "quantization_bound_s": 0.024,
+      "playback_evidence": {
+        "media_counter_jumps_s": [
+          1.0223333333333335,
+          0.5566666666666666
+        ],
+        "longest_interior_frame_hold_s": 4.329000000000001
+      }
+    }
+  ],
+  "median_s": 0.09650000000000025,
+  "p95_abs_s": 0.1792499999999995,
+  "pooled_p95_abs_s": 0.13444999999999935,
+  "p95_basis": "maximum per-scenario p95 absolute offset",
+  "max_abs_s": 0.22299999999999986,
+  "sync_tolerance_s": 0.26887499999999925,
+  "formula": "max(p95 absolute offset * 1.5, 0.1)"
+}

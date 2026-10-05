@@ -8,7 +8,7 @@ from typing import Literal
 from nostrobe.domain.models import ProfileId
 from nostrobe.errors import ProfileError
 
-PARAMS_VERSION = "1.0"
+PARAMS_VERSION = "1.1"
 
 
 @dataclass(frozen=True)
@@ -23,7 +23,7 @@ class ProfileParams:
     lead_s: float = 0.25
     tail_s: float = 0.25
     merge_gap_s: float = 1.0
-    sync_tolerance_s: float = 0.15  # Replace with eval/sync_calibration.json in S5.
+    sync_tolerance_s: float = 0.26887499999999925  # eval/sync_calibration.json, VVD S5.
     gray_candidates: tuple[float, ...] = (0.0, 0.25, 0.5)
     alpha_step: float = 0.02
     max_alpha: float = 0.85

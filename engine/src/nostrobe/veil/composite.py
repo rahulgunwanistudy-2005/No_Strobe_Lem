@@ -2,6 +2,7 @@
 
 import math
 from collections.abc import Sequence
+from functools import lru_cache
 
 import numpy as np
 
@@ -24,7 +25,28 @@ def apply_veil(
 ) -> tuple[FloatArray, FloatArray]:
     if rgb_norm.shape != (*luma_code_norm.shape, 3):
         raise ValueError("RGB shape must match luma with three channels")
-    return composite(luma_code_norm, alpha, gray), composite(rgb_norm, alpha, gray)
+    display_gray = veil_gray(gray)
+    return composite(luma_code_norm, alpha, (16 + 219 * display_gray) / 255), composite(
+        rgb_norm, alpha, display_gray
+    )
+
+
+def veil_gray(gray: float) -> float:
+    """Vega View's RGB code, matching Math.round(gray * 255)."""
+    if not math.isfinite(gray) or not 0 <= gray <= 1:
+        raise ValueError("gray must be finite and in [0, 1]")
+    return math.floor(gray * 255 + 0.5) / 255
+
+
+@lru_cache(maxsize=1024)
+def composite_luts(alpha: float, gray: float) -> tuple[FloatArray, FloatArray]:
+    """Separate decoded limited BT.709 Y and full-range RGB display-code LUTs."""
+    codes = np.arange(256, dtype=np.float64) / 255
+    display_gray = veil_gray(gray)
+    y = composite(codes, alpha, (16 + 219 * display_gray) / 255)
+    rgb = composite(codes, alpha, display_gray)
+    y.flags.writeable = rgb.flags.writeable = False
+    return y, rgb
 
 
 def veil_timeline(cues: Sequence[VeilCue], t: float) -> tuple[float, float]:

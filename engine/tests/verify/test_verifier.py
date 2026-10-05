@@ -45,7 +45,11 @@ def test_closed_loop_ramps_offsets_and_unresolved(tmp_path):
     result = solve(cache, events, params)
     assert result.cues and not result.unresolved
     checked = verify(cache, result.cues, params)
-    assert checked.passes and checked.offsets_checked_s == [-0.15, 0.0, 0.15]
+    assert checked.passes and checked.offsets_checked_s == [
+        -params.sync_tolerance_s,
+        0.0,
+        params.sync_tolerance_s,
+    ]
     assert not checked.residual_events
     too_weak = solve(cache, events, replace(params, max_alpha=0.02))
     assert too_weak.unresolved and too_weak.cues[0].alpha == 0.02

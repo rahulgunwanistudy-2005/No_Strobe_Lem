@@ -63,6 +63,7 @@ def environment(config: Settings) -> dict[str, object]:
         "platform": platform.platform(),
         "memory_bytes": int(hardware.stdout) if hardware and hardware.returncode == 0 else None,
         "params_hash": {p: get_profile(p).params_hash() for p in PROFILES},
+        "sync_tolerance_s": get_profile("broadcast").sync_tolerance_s,
     }
 
 
@@ -75,6 +76,31 @@ def code_hash(config: Settings) -> str:
     hasher.update((root / "luminance/bt1702_sdr_curve.csv").read_bytes())
     hasher.update((config.repo_root / "engine/uv.lock").read_bytes())
     return hasher.hexdigest()
+
+
+def calibration_evidence(config: Settings) -> dict[str, object] | None:
+    sync_file = config.eval_output / "sync_calibration.json"
+    composite_file = config.eval_output / "compositing_calibration.json"
+    if not sync_file.exists() or not composite_file.exists():
+        return None
+    sync = json.loads(sync_file.read_text())
+    compositing = json.loads(composite_file.read_text())
+    if (
+        sync.get("status") != "measured"
+        or compositing.get("status") != "measured"
+        or not compositing.get("model_passes_two_code_gate")
+        or any(sync["sync_tolerance_s"] != get_profile(p).sync_tolerance_s for p in PROFILES)
+    ):
+        raise ValueError("device calibration must pass and match the current engine tolerance")
+    return {
+        "sync_sha256": digest(sync_file),
+        "compositing_sha256": digest(composite_file),
+        "sync_tolerance_s": sync["sync_tolerance_s"],
+        "sync_p95_abs_s": sync["p95_abs_s"],
+        "sync_max_abs_s": sync["max_abs_s"],
+        "compositing_max_error_codes": compositing["max_error_codes"],
+        "engine_y_max_error_codes": compositing["engine_y_max_error_codes"],
+    }
 
 
 def _rows(
@@ -196,6 +222,8 @@ def run_eval(
         "memory_bytes": env.get("memory_bytes"),
         "platform": env.get("platform"),
         "params_hash": env["params_hash"],
+        "sync_tolerance_s": get_profile("broadcast").sync_tolerance_s,
+        "device_calibration": calibration_evidence(config),
     }
     fingerprint = hashlib.sha256(canonical(provenance).encode()).hexdigest()
     evidence = config.synth_dir / "s4/evidence" / fingerprint

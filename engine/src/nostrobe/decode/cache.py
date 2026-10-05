@@ -17,6 +17,7 @@ from nostrobe.domain.models import MediaInfo
 from nostrobe.errors import DecodeError, NostrobeError
 from nostrobe.luminance.color import bt709_to_linear
 from nostrobe.luminance.curve import FloatArray, code10_to_cd_m2
+from nostrobe.veil.composite import composite_luts
 
 CACHE_VERSION = "s3-code-grid-640-v1"
 
@@ -57,10 +58,9 @@ class FrameCache:
     ) -> tuple[FloatArray, FloatArray]:
         blocks = frame.reshape(90, 4, 160, 4, 4).transpose(0, 2, 1, 3, 4)
         samples = blocks.reshape(90 * 160, 4, 4, 4)[indices]
-        codes = np.arange(256, dtype=np.float64) / 255
-        blended = (1 - alpha) * codes + alpha * gray
-        y = code10_to_cd_m2(blended * 255 * 4)[samples[..., 0]]
-        rgb = bt709_to_linear(blended)[samples[..., 1:]]
+        y_codes, rgb_codes = composite_luts(alpha, gray)
+        y = code10_to_cd_m2(y_codes * 255 * 4)[samples[..., 0]]
+        rgb = bt709_to_linear(rgb_codes)[samples[..., 1:]]
 
         def average(values: FloatArray) -> FloatArray:
             rows = values[:, :, 0].copy()
@@ -103,8 +103,8 @@ class FrameCache:
                     yield frame, float(t)
 
     def luminance(self, frame: ByteArray, alpha: float = 0, gray: float = 0) -> FloatArray:
-        codes = np.arange(256, dtype=np.float64) / 255
-        lut = code10_to_cd_m2(((1 - alpha) * codes + alpha * gray) * 255 * 4)
+        y_codes, _ = composite_luts(alpha, gray)
+        lut = code10_to_cd_m2(y_codes * 255 * 4)
         cells = (frame.shape[1] // 4, frame.shape[0] // 4)
         return block_mean(lut[frame[..., 0]], cells)
 
@@ -112,10 +112,9 @@ class FrameCache:
         self, frame: ByteArray, alpha: float = 0, gray: float = 0
     ) -> tuple[FloatArray, FloatArray]:
         # Evaluate transfer on each original sample BEFORE block averaging.
-        codes = np.arange(256, dtype=np.float64) / 255
-        blended = (1 - alpha) * codes + alpha * gray
-        y_lut = code10_to_cd_m2(blended * 255 * 4)
-        rgb_lut = bt709_to_linear(blended)
+        y_codes, rgb_codes = composite_luts(alpha, gray)
+        y_lut = code10_to_cd_m2(y_codes * 255 * 4)
+        rgb_lut = bt709_to_linear(rgb_codes)
         cells = (frame.shape[1] // 4, frame.shape[0] // 4)
         return block_mean(y_lut[frame[..., 0]], cells), block_mean(rgb_lut[frame[..., 1:]], cells)
 
