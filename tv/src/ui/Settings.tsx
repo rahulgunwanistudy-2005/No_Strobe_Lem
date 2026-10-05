@@ -11,12 +11,14 @@ export function Settings({preferences, items, onChange, onBack, message}: {
 }) {
   const [credits, setCredits] = useState(false);
   const [disclaimerFocused, setDisclaimerFocused] = useState(false);
+  const scroll = React.useRef<ScrollView>(null);
+  React.useEffect(() => {scroll.current?.scrollTo({y: 0, animated: false});}, [credits]);
   React.useEffect(() => {
     if (!credits) {return;}
     const back = BackHandler.addEventListener('hardwareBackPress', () => {setCredits(false); return true;});
     return () => back.remove();
   }, [credits]);
-  return <ScrollView style={styles.page}>
+  return <ScrollView ref={scroll} style={styles.page}>
     <Text style={styles.title}>{credits ? 'Attribution' : 'Viewing settings'}</Text>
     <FocusButton label={credits ? 'Back to settings' : 'Back'} preferred onPress={() => credits ? setCredits(false) : onBack()} />
     {credits ? items.filter((item, i) => items.findIndex(other => other.attribution.credit === item.attribution.credit) === i)

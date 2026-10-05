@@ -8,6 +8,7 @@ import {VegaW3CPlayer} from '../src/player/VegaW3CPlayer';
 import {defaultPreferences} from '../src/settings/preferences';
 import type {CatalogItem} from '../src/catalog/api';
 import type {PlayerEvent} from '../src/player/PlayerAdapter';
+import {AsyncStorage} from '../src/player/TVPlatform';
 
 jest.mock('react-native', () => {
   const actual = jest.requireActual('react-native');
@@ -54,6 +55,24 @@ test('catalog selection with failing verifier keeps video blocked and never load
   const player = (VegaW3CPlayer as jest.Mock).mock.results[0].value;
   expect(player.load).not.toHaveBeenCalled(); expect(player.play).not.toHaveBeenCalled();
   screen.unmount(); expect(player.dispose).toHaveBeenCalledTimes(1);
+});
+test('stored Kids household is restored before the catalog becomes interactive', async () => {
+  (AsyncStorage.getItem as jest.Mock).mockResolvedValueOnce('{"profile":"broadcast","household":"kids","warnAhead":false}');
+  jest.spyOn(global, 'fetch').mockResolvedValueOnce({ok: true, json: async () => ({version: 1, items: [item]})} as Response);
+  const screen = render(<App />);
+  await waitFor(() => expect(screen.getByLabelText('Settings · kids')).toBeTruthy());
+  fireEvent.press(screen.getByLabelText('Settings · kids'));
+  expect(screen.getByLabelText('Warn me before hazards · Off')).toBeTruthy();
+  screen.unmount();
+});
+test('storage read failure applies Kids and explains the fallback', async () => {
+  (AsyncStorage.getItem as jest.Mock).mockRejectedValueOnce(new Error('disk read'));
+  jest.spyOn(global, 'fetch').mockResolvedValueOnce({ok: true, json: async () => ({version: 1, items: [item]})} as Response);
+  const screen = render(<App />);
+  await waitFor(() => expect(screen.getByText(/Saved settings could not be read/)).toBeTruthy());
+  expect(screen.getByLabelText('✓ Kids household')).toBeTruthy();
+  expect(screen.getByLabelText('✓ Kids')).toBeTruthy();
+  screen.unmount();
 });
 test('missing track defaults to pause for Kids, explicit choice keeps banner and does not autoplay', async () => {
   const screen = render(<PlayerScreen {...props} item={{...item, tracks: {}}}

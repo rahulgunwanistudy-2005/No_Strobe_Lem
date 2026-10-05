@@ -24,6 +24,7 @@
   "dependencies": {
     "@amazon-devices/react-native-kepler": "~4.0.0",
     "@amazon-devices/react-native-w3cmedia": "~2.3.2",
+    "@react-native-async-storage/async-storage": "npm:@amazon-devices/react-native-async-storage__async-storage@2.1.9000000001",
     "ajv": "8.20.0",
     "ajv-formats": "3.0.1",
     "react": "19.2.0",

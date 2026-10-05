@@ -4,7 +4,7 @@ import type {MediaClock} from './mediaClock';
 import type {TimelineScheduler} from './scheduler';
 
 /** No extra easing: each frame applies the already-ramped media timeline value. */
-export function VeilLayer({clock, scheduler, blocked, onReady, onError, nativeDriver = true}: {
+export const VeilLayer = React.memo(function VeilLayer({clock, scheduler, blocked, onReady, onError, nativeDriver = true}: {
   clock: MediaClock; scheduler?: TimelineScheduler; blocked: boolean;
   onReady: () => void; onError: (error: unknown) => void; nativeDriver?: boolean;
 }) {
@@ -20,7 +20,6 @@ export function VeilLayer({clock, scheduler, blocked, onReady, onError, nativeDr
     // Native is the default; the explicit driver option is for device calibration/fallback.
     // eslint-disable-next-line @amazon-devices/kepler/animated
     const animation = Animated.timing(opacity, {toValue: 1, duration: 0, useNativeDriver: nativeDriver});
-    animation.start();
     const tick = () => {
       if (!live) {return;}
       try {
@@ -40,7 +39,9 @@ export function VeilLayer({clock, scheduler, blocked, onReady, onError, nativeDr
         onError(error);
       }
     };
-    frame = requestAnimationFrame(tick);
+    // The native ownership animation must finish before exact targets are sent;
+    // otherwise its delayed completion can overwrite a constant cue with 1.
+    animation.start(() => {if (live) {frame = requestAnimationFrame(tick);}});
     return () => {live = false; cancelAnimationFrame(frame); animation.stop();};
   }, [clock, scheduler, blocked, opacity, onReady, onError, nativeDriver]);
   const code = Math.round(gray * 255);
@@ -49,5 +50,5 @@ export function VeilLayer({clock, scheduler, blocked, onReady, onError, nativeDr
     <Animated.View pointerEvents="none" testID="veil-layer"
     style={[styles.veil, {opacity, backgroundColor: `rgb(${code},${code},${code})`}]} />
   </>;
-}
+});
 const styles = StyleSheet.create({shield: {...StyleSheet.absoluteFillObject, zIndex: 11, backgroundColor: '#000000'}, veil: {...StyleSheet.absoluteFillObject, zIndex: 10}});

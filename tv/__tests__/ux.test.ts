@@ -4,6 +4,7 @@ import {ProfileSwap} from '../src/track/profileSwap';
 import {chooseHousehold, defaultPreferences, parsePreferences, PreferenceStore, preferenceKey} from '../src/settings/preferences';
 import {assetUrl, parseCatalog} from '../src/catalog/api';
 import type {HazardTrack} from '../src/types/hazardtrack';
+jest.mock('../src/player/TVPlatform', () => ({AsyncStorage: {getItem: jest.fn(), setItem: jest.fn()}}));
 const track = fixture as HazardTrack;
 
 test('chip boundaries, warning toggle, pause-equivalent time and unresolved priority', () => {

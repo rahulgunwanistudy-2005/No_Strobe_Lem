@@ -262,9 +262,11 @@ track while fetching; the latest successful response stages until a render
 frame, then a shield covers native propagation of the new scheduler. No media
 reload or seek occurs. Failed or mismatched profile requests pause and block.
 
-Vega 0.83 documentation explicitly endorses core AsyncStorage as its interim
-supported SQLite-backed implementation. Use only getItem/setItem with an
-app-scoped key, behind the platform boundary; no additional storage package.
+Vega’s React Native 0.83 page endorses the core AsyncStorage stopgap, but
+it did not retain settings across native process restarts here. Use the SDK
+0.24 library guide’s recommended RN 0.83 alias instead, pinned to the vendor
+2.1.9000000001 release. Use only getItem/setItem with an app-scoped key behind
+the platform boundary, serialize writes, and verify persistence on VVD.
 D-pad focus uses native navigation and visible borders. Input listeners do not
 override native directional focus; scrubber horizontal trapping uses a focus
 guide. Release has no raw-playback toggle or calibration route.

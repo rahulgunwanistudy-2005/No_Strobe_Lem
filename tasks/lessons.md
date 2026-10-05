@@ -96,3 +96,13 @@
 - S6: the Kepler Jest preset's BackHandler mock differs from its default
   runtime export. Mock that boundary without spreading the entire lazy
   platform export object (which eagerly invokes unrelated native getters).
+
+- S6: Verify stored settings by terminating and relaunching the native process,
+  with no intervening reinstall. The supported SDK AsyncStorage extension
+  retained Kids/Off; the legacy core API did not on this VVD.
+- S6: Await native Animated initialization completion before sending exact
+  cached opacity targets. A delayed zero-duration initialization can overwrite
+  a constant Kids cue. Regression tests cover ordering and repeated writes.
+- S6: Memoize native surface/veil components against the chrome clock updates;
+  stable props avoid unnecessary native surface renders. Performance traces
+  must still establish actual drops; render optimization alone is not a pass.
