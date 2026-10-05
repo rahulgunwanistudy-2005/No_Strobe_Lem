@@ -21,5 +21,25 @@
     "empty_at_start": true,
     "files_after": 6
   },
+  "quality": {
+    "mypy": "passed",
+    "pytest_exit_code": 0,
+    "pytest_wall_s": 348.7,
+    "ruff_check": "passed",
+    "ruff_format": "passed",
+    "schema_type_drift": "passed",
+    "source_files_checked": 52,
+    "tests_passed": 402,
+    "typescript": "passed"
+  },
+  "regression": {
+    "all_events_identical": true,
+    "all_saved_veils_reverified": true,
+    "cases": 325,
+    "exit_code": 0,
+    "sha256": "5545f564fd9c81856c833042652418a4a53a9ca8c74697b7f7422b2baa7e781c",
+    "tracks": 975,
+    "tracks_with_veils": 355
+  },
   "scope": "All three profiles; original full-film source; full 160x90 grid. Detection wall and CPU gates >=20x; decode/cell conversion and full mitigation have separate costs."
 }
