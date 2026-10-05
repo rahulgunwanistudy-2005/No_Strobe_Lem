@@ -174,3 +174,35 @@ HDR-capable helper's predicate. The erroneous observations remain unchanged in
 `engine/eval/audits/sdr_oracle_correction.json`. The SDR oracle is corrected from
 the source, with explicit 159/160/170 tests. No production detector, source clip,
 seed, randomized parameters, original S1 truth, or acceptance gate is changed.
+
+## Detection performance follow-up
+
+The offline Python/NumPy architecture, all three profiles, source decoding,
+160×90 spatial grid, thresholds and publication gate are unchanged. State
+updates and summed-area scans now use single-core Numba kernels within that
+engine. This replaces the brief's per-frame NumPy implementation detail to
+meet the user's explicit performance request. There are no Python loops over
+cells, worker pools, GPU kernels or approximate spatial reductions. Every
+kernel explicitly disables `parallel` and `fastmath`; the original NumPy
+BT.709 matrix multiplication is retained to preserve its rounding behavior.
+
+Numba 0.67.0 and llvmlite 0.49.0 are pinned in uv.lock; NumPy remains 2.5.3.
+The [Numba compatibility table](https://numba.readthedocs.io/en/latest/user/installing.html#version-support-information)
+supports Python 3.12 and NumPy 2.5 in that release. Strict arithmetic and compiled
+loops follow the [Numba performance documentation](https://numba.readthedocs.io/en/stable/user/performance-tips.html).
+Compilation and loading cached kernels have startup costs. Cold and warm
+whole-film measurements account for kernel work inside detection, including
+first-call compilation; decoding/cell conversion and full mitigation are
+reported separately.
+
+Standalone ChangeDetector retains its crossing timestamp ring. LumaFlashDetector
+skips that unused duplicate history because FlashCounter already retains the
+opposing-edge histories used for rate and extended detection. Retroactive
+history insertion touches only selected cells while retaining the same masks,
+expiration, 64-change capacity and 1024 distinct-timestamp limit. Profile area
+calculations share only identical per-frame count thresholds and spatial rules.
+
+A frozen pre-optimization reference from dd980e5 checks exact state, counters
+and timestamp masks at all five supported frame rates, irregular timestamps,
+strict red and SDR boundaries, and the full grid. New compiled counter inputs
+also reject mismatched shapes before accessing native array memory.

@@ -9,13 +9,18 @@ import time
 from contextlib import closing
 from pathlib import Path
 
+import llvmlite
+import numba
+import numpy as np
+
 from nostrobe.config import Settings
 from nostrobe.decode.ffmpeg import probe
 from nostrobe.detect.pipeline import PROFILES, DetectionPipeline, _cell_frames
 from nostrobe.domain.profiles import get_profile
+from nostrobe.evaluation.runner import code_hash
 
 
-def benchmark(path: Path) -> dict[str, object]:
+def benchmark(path: Path, jit_cache_mode: str = "unspecified") -> dict[str, object]:
     config = Settings()
     media = probe(path, settings=config)
     pipeline = DetectionPipeline((90, 160), [get_profile(p) for p in PROFILES])
@@ -36,11 +41,23 @@ def benchmark(path: Path) -> dict[str, object]:
             detector_wall += done - ready
             previous = done
             frames += 1
+    finish_wall, finish_cpu = time.perf_counter(), time.process_time()
     events = pipeline.finish(media.duration_s)
+    detector_cpu += time.process_time() - finish_cpu
+    detector_wall += time.perf_counter() - finish_wall
     elapsed = time.perf_counter() - start
     cpu_elapsed = time.process_time() - cpu_start
     child_after = resource.getrusage(resource.RUSAGE_CHILDREN)
     result: dict[str, object] = {
+        "code_sha256": code_hash(config),
+        "git_sha": subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(),
+        "numpy": np.__version__,
+        "numba": numba.__version__,
+        "llvmlite": llvmlite.__version__,
+        "jit_cache_mode": jit_cache_mode,
+        "kernel_parallel": False,
+        "kernel_fastmath": False,
+        "params_hash": {p: get_profile(p).params_hash() for p in PROFILES},
         "media": media.model_dump(mode="json"),
         "frames": frames,
         "machine": {
@@ -68,7 +85,8 @@ def benchmark(path: Path) -> dict[str, object]:
         "detector_wall_x_realtime": media.duration_s / detector_wall,
         "detector_cpu_x_realtime": media.duration_s / detector_cpu,
         "speed_target": 20,
-        "speed_target_met": media.duration_s / detector_wall >= 20,
+        "speed_target_met": min(media.duration_s / detector_wall, media.duration_s / detector_cpu)
+        >= 20,
         "events": {p: [e.model_dump(mode="json") for e in items] for p, items in events.items()},
         "notes": (
             "All profiles in one decoding pass. Film flags are unreviewed detections; "
@@ -82,9 +100,13 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("video", type=Path)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument(
+        "--jit-cache-mode", choices=("cold", "warm", "unspecified"), default="unspecified"
+    )
     args = parser.parse_args()
-    measurement = benchmark(args.video)
+    measurement = benchmark(args.video, args.jit_cache_mode)
     args.output.write_text(json.dumps(measurement, indent=2, sort_keys=True) + "\n")
     print(
         json.dumps({k: v for k, v in measurement.items() if k not in ("events", "media")}, indent=2)
     )
+    raise SystemExit(0 if measurement["speed_target_met"] else 2)
