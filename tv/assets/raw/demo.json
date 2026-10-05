@@ -1,0 +1,10 @@
+{
+  "title": "Big Buck Bunny \u00b7 gentle veil demonstration",
+  "video": "/demo.mp4",
+  "track": "/demo.hzt.json",
+  "content_id": "demo",
+  "source_sha256": "76b285a3ad17130adefbfa19f3aa9700f4c6152e181f8d5e7114fc17f1dd3a41",
+  "attribution": "Big Buck Bunny (2008), Blender Foundation / Peach team, CC-BY-3.0",
+  "license_url": "https://peach.blender.org/about/",
+  "scope": "12-second opening excerpt; all profiles checked with and without overlay. The overlay demonstrates playback; it does not represent a source hazard."
+}

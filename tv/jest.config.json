@@ -1,0 +1,14 @@
+{
+  "preset": "@amazon-devices/react-native-kepler",
+  "testMatch": [
+    "<rootDir>/__tests__/**/*.test.ts",
+    "<rootDir>/__tests__/**/*.test.tsx"
+  ],
+  "moduleNameMapper": {
+    "^react-native$": "@amazon-devices/react-native-kepler",
+    "^react-native/(.*)$": "@amazon-devices/react-native-kepler/$1"
+  },
+  "transformIgnorePatterns": [
+    "node_modules/(?!(react-native|@react-native|@amazon-devices)/)"
+  ]
+}

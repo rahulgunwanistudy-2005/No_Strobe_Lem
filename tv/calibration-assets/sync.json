@@ -1,0 +1,202 @@
+{
+  "format": "nostrobe-calibration",
+  "version": 1,
+  "production": false,
+  "kind": "sync",
+  "video": "/calibration/sync.mp4",
+  "fps": 30,
+  "duration_s": 24,
+  "source_sha256": "044d87e9b09ffc1094d7aeb3251ed10158ff7591eeba7629907f1c24a04bd30c",
+  "cues": [
+    {
+      "id": "sync_2",
+      "t_on": 2,
+      "t_off": 2.5,
+      "alpha": 0.5,
+      "gray": 0.5
+    },
+    {
+      "id": "sync_4",
+      "t_on": 4,
+      "t_off": 4.5,
+      "alpha": 0.5,
+      "gray": 0.5
+    },
+    {
+      "id": "sync_6",
+      "t_on": 6,
+      "t_off": 6.5,
+      "alpha": 0.5,
+      "gray": 0.5
+    },
+    {
+      "id": "sync_8",
+      "t_on": 8,
+      "t_off": 8.5,
+      "alpha": 0.5,
+      "gray": 0.5
+    },
+    {
+      "id": "sync_10",
+      "t_on": 10,
+      "t_off": 10.5,
+      "alpha": 0.5,
+      "gray": 0.5
+    },
+    {
+      "id": "sync_12",
+      "t_on": 12,
+      "t_off": 12.5,
+      "alpha": 0.5,
+      "gray": 0.5
+    },
+    {
+      "id": "sync_14",
+      "t_on": 14,
+      "t_off": 14.5,
+      "alpha": 0.5,
+      "gray": 0.5
+    },
+    {
+      "id": "sync_16",
+      "t_on": 16,
+      "t_off": 16.5,
+      "alpha": 0.5,
+      "gray": 0.5
+    },
+    {
+      "id": "sync_18",
+      "t_on": 18,
+      "t_off": 18.5,
+      "alpha": 0.5,
+      "gray": 0.5
+    },
+    {
+      "id": "sync_20",
+      "t_on": 20,
+      "t_off": 20.5,
+      "alpha": 0.5,
+      "gray": 0.5
+    },
+    {
+      "id": "sync_22",
+      "t_on": 22,
+      "t_off": 22.5,
+      "alpha": 0.5,
+      "gray": 0.5
+    }
+  ],
+  "patch": [
+    32,
+    32,
+    64,
+    32
+  ],
+  "background": [
+    160,
+    32,
+    64,
+    32
+  ],
+  "black_reference": [
+    16,
+    328,
+    16,
+    8
+  ],
+  "white_reference": [
+    40,
+    328,
+    16,
+    8
+  ],
+  "counter_bits": [
+    [
+      64,
+      328,
+      16,
+      8
+    ],
+    [
+      88,
+      328,
+      16,
+      8
+    ],
+    [
+      112,
+      328,
+      16,
+      8
+    ],
+    [
+      136,
+      328,
+      16,
+      8
+    ],
+    [
+      160,
+      328,
+      16,
+      8
+    ],
+    [
+      184,
+      328,
+      16,
+      8
+    ],
+    [
+      208,
+      328,
+      16,
+      8
+    ],
+    [
+      232,
+      328,
+      16,
+      8
+    ],
+    [
+      256,
+      328,
+      16,
+      8
+    ],
+    [
+      280,
+      328,
+      16,
+      8
+    ],
+    [
+      304,
+      328,
+      16,
+      8
+    ],
+    [
+      328,
+      328,
+      16,
+      8
+    ]
+  ],
+  "patch_times_s": [
+    2,
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20,
+    22
+  ],
+  "display_codes": [],
+  "decoded_luma_codes": []
+}
