@@ -18,7 +18,7 @@ WCAG's working-definition note does not explicitly specify the transfer function
 
 Pydantic models are frozen with the field names and list containers required by §9. Freezing prevents attribute reassignment, not mutation inside lists/dicts. Readers must revalidate incoming JSON. Unknown fields are ignored. `generated_at` must be aware and is normalized to UTC. Veil times may be negative near the start of media; app clipping belongs to S5. `TrackStats` constrains fractions and counts.
 
-S1 asks for only a TV README, whereas the bible places generated types inside TV. The generated contract is temporarily `spec/generated/hazardtrack.ts`; S5 will move it into `tv/src/types/`. Schema and TypeScript drift checks run in tests/CI. Unimplemented later-stage modules fail explicitly with `NotImplementedError`.
+S1 asks for only a TV README, whereas the bible places generated types inside TV. In S1 the generated contract was temporarily `spec/generated/hazardtrack.ts`; S5 moved it into `tv/src/types/` and added a standalone runtime validator. Schema and TypeScript drift checks run in tests/CI. Unimplemented later-stage modules fail explicitly with `NotImplementedError`.
 
 Synthetic truth describes sampled raw primitives under the Broadcast product interpretation, independently of the future detector. It records quantized luma pairs, not requested ideal values alone. Lossy H.264 can alter spatial boundaries/color: S2/S4 must measure this rather than relabel ground truth to fit detection. Smoke clips are not the full S4 evaluation suite.
 

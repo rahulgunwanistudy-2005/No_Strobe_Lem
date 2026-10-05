@@ -54,3 +54,14 @@
 - Performance: profiling a quiet opening is insufficient. Measure every frame
   of the full film, all profiles, both detector CPU and wall time, and an empty
   JIT cache. Keep decoding/cell conversion and full mitigation costs separate.
+
+- S5: inspect final package contents after switching Debug to Release. SDK raw
+  asset staging can retain files removed from the source tree; clean generated
+  Release staging before packaging calibration-sensitive assets.
+- S5: full-range captured RGB and original limited-range Y are different code
+  domains. A perfect RGB alpha blend can still disagree with the engine's Y
+  simulation by more than two codes. Compare both using actual decoded source
+  samples; change the production model only after real device measurement.
+- S5: native media success and VISIBLE lifecycle state do not prove rendered
+  overlay pixels or sync. Reject empty/black captures and keep calibration
+  parameters explicitly unmeasured. Restore device port reverse after reboot.

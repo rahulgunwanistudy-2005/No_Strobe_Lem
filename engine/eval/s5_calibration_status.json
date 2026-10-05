@@ -1,0 +1,86 @@
+{
+  "format_version": 1,
+  "date": "2026-10-05",
+  "status": "blocked_pending_real_device_capture",
+  "s5_acceptance_complete": false,
+  "sync_measurement": null,
+  "compositing_measurement": null,
+  "engine_sync_tolerance_s": 0.15,
+  "tolerance_origin": "default simulation; not device measured",
+  "blend_model_changed": false,
+  "recording_attempts": [
+    {
+      "method": "host ffmpeg AVFoundation screen device 1 at 60 fps",
+      "result": "no frames; bounded 10-second retry timed out and was killed"
+    },
+    {
+      "method": "VVD screenshooter",
+      "result": "buffer-file Permission denied, then stalled"
+    },
+    {
+      "method": "QMP screendump",
+      "result": "entirely black framebuffer; rejected"
+    },
+    {
+      "method": "VVD GStreamer display capture",
+      "result": "no valid completed stream"
+    }
+  ],
+  "source_preflight": {
+    "sync": {
+      "source_sha256": "044d87e9b09ffc1094d7aeb3251ed10158ff7591eeba7629907f1c24a04bd30c",
+      "duration_s": 24,
+      "fps": 30,
+      "encoded_source_detection": {
+        "format": "nostrobe-detection",
+        "format_version": "1.0",
+        "profiles": {
+          "broadcast": {
+            "events": [],
+            "params_hash": "70dcc50ff260aa1abcb1137f7ca022293f27dbcdc6c694c49b1c3ed79455de6a"
+          },
+          "kids": {
+            "events": [],
+            "params_hash": "eba16e78fcd87c00137e0d37641526314d2d4fe80aad5bbf6f54add615054832"
+          },
+          "local": {
+            "events": [],
+            "params_hash": "14b825f91e0477aeabe01a0491ec83ce00d1b4096a43c5d582d5895ca4490538"
+          }
+        },
+        "verified": false
+      }
+    },
+    "compositing": {
+      "source_sha256": "37675429943053200c7124600099395a24e5104befe0771b2edc4c42db572a40",
+      "duration_s": 30,
+      "fps": 30,
+      "encoded_source_detection": {
+        "format": "nostrobe-detection",
+        "format_version": "1.0",
+        "profiles": {
+          "broadcast": {
+            "events": [],
+            "params_hash": "70dcc50ff260aa1abcb1137f7ca022293f27dbcdc6c694c49b1c3ed79455de6a"
+          },
+          "kids": {
+            "events": [],
+            "params_hash": "eba16e78fcd87c00137e0d37641526314d2d4fe80aad5bbf6f54add615054832"
+          },
+          "local": {
+            "events": [],
+            "params_hash": "14b825f91e0477aeabe01a0491ec83ce00d1b4096a43c5d582d5895ca4490538"
+          }
+        },
+        "verified": false
+      }
+    }
+  },
+  "required_remaining": [
+    "rendered visual QA",
+    "sync recordings: steady, seek, pause_resume",
+    "compositing recording and RGB/limited-Y model fit",
+    "measured tolerance/model application and complete S3/S4 rerun"
+  ],
+  "saved_track_audit": "s5_verification.json"
+}

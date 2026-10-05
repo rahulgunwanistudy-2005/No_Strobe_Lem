@@ -1,0 +1,80 @@
+{
+  "date": "2026-10-05",
+  "source_commit": "17753ea357867a07ad151a1bd618d96984953176",
+  "sdk": "0.24.12112",
+  "cli": "1.4.2",
+  "engine_full_suite": {
+    "passed": 408,
+    "wall_s": 446.77
+  },
+  "post_refinement_calibration_conformance_tests": 6,
+  "tv_tests": {
+    "passed": 30,
+    "suites": 7
+  },
+  "shared_timeline_samples": 500,
+  "timeline_abs_tolerance": 1e-06,
+  "checks_passed": [
+    "root generated drift",
+    "root TypeScript",
+    "TV TypeScript",
+    "TV eslint",
+    "Python ruff check",
+    "Python ruff format",
+    "Python strict mypy"
+  ],
+  "builds": [
+    {
+      "package": "tv/build/aarch64-debug/nostrobetv_aarch64.vpkg",
+      "sha256": "62aa7ff1270734aa70a40af03a6ff8b61d80d9dd6fc4251fcdbbeea3fad2b0d4",
+      "bytes": 6057752
+    },
+    {
+      "package": "tv/build/aarch64-release/nostrobetv_aarch64.vpkg",
+      "sha256": "82be3888ea201bfa7620520e25ab71f0791730cd343590b8e21f3c2946b7c411",
+      "bytes": 5694566
+    },
+    {
+      "package": "tv/build/armv7-debug/nostrobetv_armv7.vpkg",
+      "sha256": "108be5050780fb83cbd835151367047c67e999feda55063c8437fe04876f36ed",
+      "bytes": 6057745
+    },
+    {
+      "package": "tv/build/armv7-release/nostrobetv_armv7.vpkg",
+      "sha256": "8f3826ccd55024a9826368beccbbeb99f00d0318c0ce17fdf80a8785fb4a3ec0",
+      "bytes": 5694601
+    },
+    {
+      "package": "tv/build/x86_64-debug/nostrobetv_x86_64.vpkg",
+      "sha256": "d7a84e1d866edd0d4539aeb726c523ef7d4900d56bdf4ae39e145f481055ca79",
+      "bytes": 6057750
+    },
+    {
+      "package": "tv/build/x86_64-release/nostrobetv_x86_64.vpkg",
+      "sha256": "453a0e5ce95cd61cebc58b59c4b78eab12ca6b98841545a8bb1cfc515e517839",
+      "bytes": 5694546
+    }
+  ],
+  "native_device_events": "device_events.log",
+  "rendered_visual_qa": "pending",
+  "calibration": "../engine/eval/s5_calibration_status.json",
+  "saved_tracks_reverified": 975,
+  "sync_tolerance_s": 0.15,
+  "sync_tolerance_origin": "default simulation; not device measured",
+  "tv_npm_audit": {
+    "info": 0,
+    "low": 0,
+    "moderate": 10,
+    "high": 65,
+    "critical": 0,
+    "total": 75
+  },
+  "release_raw_media": [
+    "demo.mp4"
+  ],
+  "debug_raw_media": [
+    "demo.mp4",
+    "sync.mp4",
+    "compositing.mp4"
+  ]
+}

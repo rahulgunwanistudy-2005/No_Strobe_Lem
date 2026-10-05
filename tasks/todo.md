@@ -184,15 +184,35 @@ Vega SDK. User authorizes systematic commits without attribution trailers,
 overriding CLAUDE.md §22.2. Device measurements must come from recordings;
 no simulated value will be labeled as measured.
 
-- [ ] Generate the current Vega template, pin dependencies and move generated
+- [x] Generate the current Vega template, pin dependencies and move generated
   HazardTrack types into tv/src/types with drift checks.
-- [ ] Implement the isolated W3C player/surface lifecycle, validated track loader,
+- [x] Implement the isolated W3C player/surface lifecycle, validated track loader,
   drift-corrected clock, deterministic scheduler and minimal protected player.
-- [ ] Export a Python/TypeScript timeline conformance fixture (500 samples);
+- [x] Export a Python/TypeScript timeline conformance fixture (500 samples);
   test clock, scheduler, loading, lifecycle and platform-import boundaries.
-- [ ] Generate nonhazardous sync/compositing stimuli and recording-analysis tools;
-  run on VVD, record real timing, seeks/pause/resume and compositor evidence.
+- [x] Generate and numerically preflight nonhazardous sync/compositing stimuli,
+  plus bounded recording-analysis tools and an isolated Debug lab.
+- [ ] Obtain real >=60 fps VVD recordings for timing, seeks/pause/resume and
+  compositing; visual QA and recording access remain blocked.
 - [ ] Apply the measured tolerance/model only after valid capture, rerun S3/S4
   verification, preserve historical evidence and report fresh gates honestly.
-- [ ] Self-review, run quality/build/device gates, document reproduced friction
+- [x] Self-review, run quality/build/device gates, document reproduced friction
   and product feedback, and commit logical stages.
+
+
+## S5 results
+
+Player/calibration infrastructure is committed; S5 acceptance is **incomplete**.
+See docs/S5_REPORT.md and engine/eval/s5_calibration_status.json.
+
+- 408 engine tests and 30 TV tests passed; six calibration/conformance tests
+  rechecked after final measurement-tool refinements. Quality/type/drift gates
+  and Release/Debug builds pass. Release excludes calibration media.
+- Actual VVD native playback confirmed loadedmetadata/canplay, play/playing,
+  timeupdate, pause, seeked and ended. Rendered layout/opacity are unverified.
+- Fresh 975-track audit passes at the existing simulated ±150 ms tolerance,
+  FN=FP=0, exact events, zero unresolved/residuals. No fresh solver claim.
+- Screen capture receives no usable frames; device screenshots/capture did
+  not yield valid evidence. Real sync/compositing reports are absent, engine
+  parameters unchanged, and measured-tolerance S3/S4 rerun remains open.
+- No AI attribution tags, external publication or AWS deployment.

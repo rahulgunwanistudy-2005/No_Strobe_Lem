@@ -87,3 +87,54 @@ W3C Media, Vega overlay animation, AWS, Kiro and physical Fire TV hardware were 
   available credits, retaining a direct official-source fallback.
 - Would build again with the same deterministic pipeline and publication gate.
   Device synchronization/compositing and AWS remain unmeasured S5+ work.
+
+## Session 5 — W3C playback and calibration
+
+- SDK/VVD 0.24.12112, CLI 1.4.2, RN 0.83.0 / React 19.2.0,
+  Kepler 4.0.1, W3C Media 2.3.2; macOS 26.3 arm64. Generated the current
+  helloWorld template. Release and Debug builds succeed on aarch64/x86_64/armv7.
+- Amazon Devices Builder Tools MCP worked directly in this session. Used
+  project context, documentation inventory/search, the simple-media workflow,
+  media API/surface initialization, manifest references and troubleshooting.
+  Useful: headless player import, awaited initialization, module-version mapping
+  and surface teardown guidance. The core manifest example omitted the
+  player-session service that its reference table listed; runtime logs made
+  that missing permission explicit. Search also confirmed the system audio
+  service needed by D-pad focus sounds. Would use again: yes, with device-log
+  verification of snippets.
+- W3C URL playback rejects HTTP even on forwarded loopback, with native error
+  code 4 and an empty message. JSON fetch over the same connection works.
+  Amazon staff's local-asset guidance resolved media loading with literal
+  `/pkg/assets/raw/demo.mp4`; startup now reaches loadedmetadata/canplay.
+  The adapter surfaces a useful code-based error when the native message is
+  empty. No insecure-protocol override was used.
+- Remote input through inputd-cli worked: Enter triggered play/playing,
+  advancing timeupdate events, ended, pause and seeked. After VVD restart the
+  device-to-host port reverse must be reinstated. Dynamically preferred focus
+  after controls become ready prevents startup focus from targeting disabled
+  controls. Native playback logs are evidence of playback, not rendered UI QA.
+- Native Animated setup produces no unsupported-driver error. Pixel-level
+  opacity, relative surface stacking and actual timing remain unmeasured;
+  there is no evidence to select a JS fallback yet. Native media also logs
+  repeated no-time-update warnings at 11.999 s after emitting ended; the clock
+  explicitly holds end-of-media. No unsupported end workaround was invented.
+- SDK incremental staging retained removed Debug calibration raw assets in a
+  subsequent Release package. A fresh generated Release staging tree resolves
+  this; vpt package inspection confirms demo only in Release and three clips
+  in Debug. JavaScript elimination alone is insufficient for raw-asset isolation.
+- Capture blocker: host AVFoundation screen recording receives no frames
+  (bounded retry after VVD restart); Finder inspection has no accessible
+  window. Device screenshooter reports buffer permission failure/stalls and
+  QMP screendump is black. Device capture attempts produced no valid stream.
+  Recordings and calibrated engine parameters remain open. This is not a
+  measured zero offset, a verified blend model or a native animation failure.
+- The vendor template graph retains npm audit findings: 75 total (65 high,
+  10 moderate), with an earlier production-only query reporting 42 (33 high,
+  9 moderate; vendor packages also classify tooling as production dependencies).
+  Root contract tooling audit returned zero. Ajv is pinned to 8.20.0. Avoided
+  force-upgrading framework packages across the SDK's compatibility mapping.
+  A later offline audit reported zero without fetching advisory data; that
+  offline result is not used as a clean-security claim.
+- Would build again: yes, but actual >=60 fps screen capture and measured
+  RGB/limited-Y compositing are required before completing S5 or shipping a
+  mitigation claim. No AWS, physical Fire TV or cloud work was exercised.

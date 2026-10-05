@@ -1,0 +1,8 @@
+Oct 05 16:30:07.890902 amazon-72748f2940af3470 local0.info com.nostrobe.tv[672245]: 104 I W3CMEDIA:Emitting event: source = HtmlMediaElement name = loadedmetadata
+Oct 05 16:30:07.890960 amazon-72748f2940af3470 local0.info com.nostrobe.tv[672245]: 104 I W3CMEDIA:Emitting event: source = HtmlMediaElement name = canplay
+Oct 05 16:30:58.439105 amazon-72748f2940af3470 local0.info com.nostrobe.tv[672245]: 104 I W3CMEDIA:Emitting event: source = HtmlMediaElement name = play
+Oct 05 16:30:58.441970 amazon-72748f2940af3470 local0.info com.nostrobe.tv[672245]: 104 I W3CMEDIA:Emitting event: source = HtmlMediaElement name = playing
+Oct 05 16:30:58.445690 amazon-72748f2940af3470 local0.info com.nostrobe.tv[672245]: 104 I W3CMEDIA:Emitting event: source = HtmlMediaElement name = timeupdate
+Oct 05 16:25:57.855841 amazon-72748f2940af3470 local0.info com.nostrobe.tv[239849]: 74 I W3CMEDIA:Emitting event: source = HtmlMediaElement name = pause
+Oct 05 10:25:57.923204 amazon-72748f2940af3470 local0.info com.nostrobe.tv[782486]: 65 I W3CMEDIA:Emitting event: source = HtmlMediaElement name = seeked
+Oct 05 16:31:10.650490 amazon-72748f2940af3470 local0.info com.nostrobe.tv[672245]: 104 I W3CMEDIA:Emitting event: source = HtmlMediaElement name = ended

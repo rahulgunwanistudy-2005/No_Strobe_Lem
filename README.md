@@ -1,8 +1,8 @@
 # No Strobe-lem
 
-Offline SDR video analysis with portable HazardTrack sidecars and a planned Vega OS viewing aid.
+Offline SDR video analysis with portable HazardTrack sidecars and a Vega OS player prototype.
 
-**Engine and S4 evaluation:** detects SDR luminance/red flashes and prolonged flashing, solves display-code veils, verifies the complete simulated output at −0.15/0/+0.15 s offsets, and writes HazardTrack JSON/WebVTT plus a static trace report. Profiles are Broadcast, Local and Kids. Unresolved profiles produce debugging JSON only. Device calibration, the TV app, AWS processing remain later work. S4 evaluation covers seeded boundaries/shapes, licensed-footage composites and an unmodified full-film detection control. Verification describes the simulation model and does not establish medical safety or certification.
+**Engine and S4 evaluation:** detects SDR luminance/red flashes and prolonged flashing, solves display-code veils, verifies the complete simulated output at −0.15/0/+0.15 s offsets, and writes HazardTrack JSON/WebVTT plus a static trace report. Profiles are Broadcast, Local and Kids. Unresolved profiles produce debugging JSON only. The S5 TV player builds and runs on VVD; measured device calibration and AWS processing remain open. S4 evaluation covers seeded boundaries/shapes, licensed-footage composites and an unmodified full-film detection control. Verification describes the simulation model and does not establish medical safety or certification.
 
 No Strobe-lem is a viewing aid that reduces flashing according to published broadcast guidelines. It is not a medical device and cannot guarantee that content is safe for every person with photosensitive epilepsy.
 
@@ -24,7 +24,7 @@ npm run types:check
 npm run typecheck
 ```
 
-Schema changes require `npm run types:generate` after regenerating the Python schema. Both committed outputs are checked in tests/CI. [HazardTrack contract](spec/HAZARDTRACK.md).
+Schema changes require `npm run types:generate` after regenerating the Python schema. Generated types, the bundled schema and standalone runtime validator are checked for drift. [HazardTrack contract](spec/HAZARDTRACK.md).
 
 ```sh
 cd engine
@@ -110,6 +110,6 @@ Configuration is read only in `nostrobe.config.Settings`: `NOSTROBE_REPO_ROOT`, 
 
 Luma-only media support: explicitly tagged limited-range 8-bit planar YUV SDR. Detection with RGB requires BT.709 transfer, primaries and matrix tags. Decode defaults to 640×360, then averages in cd/m² to 160×90 cells. Tests cover flat-gray recovery, full-resolution synthetic comparisons and variable presentation timestamps. Caller must close a partially consumed frame iterator (`contextlib.closing`) to reap its subprocess immediately. Wider media coverage and production evaluation are later gates.
 
-Lane A: macOS arm64, Vega SDK 0.24.12112 / CLI 1.4.2; stock hello-world built and reached VISIBLE on the Vega Virtual Device. The app directory remains a README until S5. See [Session 1 report](docs/S1_REPORT.md), [Session 2 report](docs/S2_REPORT.md), [Session 3 report](docs/S3_REPORT.md), [Session 4 report](docs/S4_REPORT.md), [detection performance](docs/PERFORMANCE.md), [interpretations](docs/INTERPRETATIONS.md), [tool feedback](docs/PRODUCT_FEEDBACK.md), and [build safety](docs/SAFETY.md).
+Lane A: macOS arm64, Vega SDK 0.24.12112 / CLI 1.4.2; stock hello-world built and reached VISIBLE on the Vega Virtual Device. See [TV setup and calibration](tv/README.md); S5 acceptance remains incomplete until real device captures are measured. See [Session 1 report](docs/S1_REPORT.md), [Session 2 report](docs/S2_REPORT.md), [Session 3 report](docs/S3_REPORT.md), [Session 4 report](docs/S4_REPORT.md), [Session 5 report](docs/S5_REPORT.md), [detection performance](docs/PERFORMANCE.md), [interpretations](docs/INTERPRETATIONS.md), [tool feedback](docs/PRODUCT_FEEDBACK.md), and [build safety](docs/SAFETY.md).
 
 Licensed under Apache-2.0. No AWS resources are deployed.

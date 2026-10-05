@@ -60,3 +60,60 @@ values but changed some 9×12-grid values by up to 1.11e-16. Reproduced with
 The change was rejected; original NumPy matrix multiplication and strict
 compiled arithmetic preserve exact measured state and event output. This is
 an implementation/numerical issue, not external-tool friction.
+
+## S5 W3C player-session permission — 2026-10-05
+
+SDK 0.24.12112, CLI 1.4.2, W3C Media 2.3.2. The Builder Tools media
+player document lists player-session service in its reference table but omits
+it from the core manifest snippet. The first installed app reached VISIBLE
+(pid 5960), but `vega exec vda shell loggingctl log -v com.nostrobe.tv` showed
+`Unable connect to 'com.amazon.media.playersession.service'. Missing the
+permissions needed to connect to the service.` Added that explicit wants
+service before the next build; no platform security checks were disabled.
+
+## S5 desktop recording unavailable — 2026-10-05
+
+`ffmpeg -f avfoundation -framerate 60 -i '1:none' -t 1` listed screen capture
+but received no frames and did not complete. Stopped the capture process.
+Computer-use Finder inspection returned `cgWindowNotFound`; the bare VVD
+executable was not an addressable app. The Mac may be locked (not proven).
+Asked the user to make the desktop available. Device `screenshooter` also
+reported buffer-file `Permission denied`; its Wayland request stalled. These
+are capture blockers, not measured timing or unsupported native animation.
+
+## S5 direct URL playback requires a secure URI — 2026-10-05
+
+The local catalog/JSON requests over the forwarded loopback server succeeded,
+but W3C URL mode refused its HTTP MP4 URI. Reproduced on VVD with the release
+app and loggingctl: `isUriSchemeSecure Got an insecure protocol/scheme http,
+return error`, followed by media error code 4 (empty native message).
+The reader's protective cover held. Investigating packaged local assets for
+the short nonhazardous demo; no insecure-protocol override or TLS bypass.
+
+Packaged local playback resolved the HTTP refusal using the Amazon-documented
+`/pkg/assets/raw/demo.mp4` path. Runtime logs now show duration 12000 ms,
+loadedmetadata and canplay; source/surface initialization is functional.
+Reference: https://community.amazondeveloper.com/t/proper-uri-handling-for-local-assets-in-kepler-toastkepler-and-w3c-media-video/27642
+
+## S5 incremental packaging retains removed raw assets — 2026-10-05
+
+A Release build after moving calibration stimuli out of the source assets
+still contained `assets/raw/sync.mp4` and `assets/raw/compositing.mp4` according
+to `vega exec vpt show-contents`. The SDK copied new assets but retained old
+staging files. The build wrapper now starts Release with a fresh generated
+build directory, then includes calibration MP4 files only during Debug.
+Package contents are checked separately from JavaScript dead-code removal.
+
+## S5 system audio permission — 2026-10-05
+
+Remote D-pad focus invoked Volta UISoundManager and failed to connect to
+`com.amazon.audio.system`: missing wants.service declaration. The initial
+manifest already included stream/control audio services. Builder Tools
+search confirmed the system-audio requirement for focus/system sounds;
+added it and rebuilt both package modes. No privilege or security override.
+
+The post-restart recording retry was bounded to ten seconds and killed when
+AVFoundation still provided no usable frames. QMP's successful screenshot
+request returned an entirely black framebuffer, which was rejected as visual
+and calibration evidence. A VVD restart also clears port reverse mappings;
+reapplying `vda reverse tcp:8765 tcp:8765` restored catalog loading.
