@@ -26,9 +26,6 @@ id = "/com.amazon.kepler.keplerscript_4@IKeplerScript_0"
 id = "/com.amazon.kepler.w3cmedia_2@IW3cmedia_3"
 
 
-
-
-
 [components]
 [[components.interactive]]
 id = "com.nostrobe.tv.main"
@@ -62,3 +59,7 @@ id = "com.amazon.gipc.uuid.*"
 
 [[wants.service]]
 id = "com.amazon.media.playersession.service"
+
+# D-pad focus sounds use the system audio manager.
+[[wants.service]]
+id = "com.amazon.audio.system"
