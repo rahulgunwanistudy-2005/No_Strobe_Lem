@@ -7,8 +7,10 @@ Headline numbers (these are the sole submission-number source):
 - broadcast: **0 missed hazards** on 96 must-fail clips; 0 false alarms on 229 must-pass clips.
 - local: **0 missed hazards** on 108 must-fail clips; 0 false alarms on 217 must-pass clips.
 - kids: **0 missed hazards** on 142 must-fail clips; 0 false alarms on 183 must-pass clips.
-- 975/975 profile tracks re-verify at −150, 0, +150 ms (default simulation tolerance; not device calibration).
+- 975/975 profile tracks re-verify at −268.875, 0, +268.875 ms (measured VVD tolerance; see sync_calibration.json and compositing_calibration.json).
 - 0 unresolved segments retained with reasons; publication refused for affected profile tracks.
+
+VVD calibration: worst-scenario absolute p95 179.250 ms; maximum 223.000 ms. Measured RGB/model-Y maximum errors: 0.750/0.953 codes. Calibration file checksums are in provenance.
 
 ## Accuracy and interval overlap
 
@@ -36,9 +38,9 @@ Duration-weighted costs include simulated unresolved fallback veils; they do not
 
 | Profile | Verified / analyzed | Unresolved segments | Veiled runtime | Mean α during veil support | Mean ΔL cd/m² |
 |---|---:|---:|---:|---:|---:|
-| broadcast | 325 / 325 | 0 | 0.278428 | 0.377614 | 15.155581 |
-| local | 325 / 325 | 0 | 0.312563 | 0.383311 | 16.941004 |
-| kids | 325 / 325 | 0 | 0.448651 | 0.387768 | 20.251869 |
+| broadcast | 325 / 325 | 0 | 0.278428 | 0.432571 | 16.789856 |
+| local | 325 / 325 | 0 | 0.312563 | 0.430608 | 18.479293 |
+| kids | 325 / 325 | 0 | 0.448651 | 0.458386 | 24.976024 |
 
 ## Throughput
 
@@ -46,10 +48,10 @@ All-profile shared passes. Full analyze includes decode/cache loading or packing
 
 | Suite | Clips | Duration s | Detect × real-time | Full analyze × real-time |
 |---|---:|---:|---:|---:|
-| boundary | 120 | 350.000000 | 3.8316 | 0.3660 |
-| shapes | 200 | 600.000000 | 2.8787 | 0.5100 |
-| realistic | 5 | 15.000000 | 2.4114 | 0.0159 |
-| clean | 1 | 596.458333 | 6.6304 | not run (detection control) |
+| boundary | 120 | 350.000000 | 5.1778 | 0.3227 |
+| shapes | 200 | 600.000000 | 4.6285 | 0.6273 |
+| realistic | 5 | 15.000000 | 5.5316 | 0.0257 |
+| clean | 1 | 596.458333 | 32.3924 | not run (detection control) |
 
 ## Unmodified film controls
 
@@ -97,16 +99,17 @@ The initial S4 oracle applied the HDR relative criterion to SDR high-dark states
   "cpu_model": "Apple M1",
   "engine_version": "0.1.0",
   "ffmpeg": "ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers",
-  "git_sha": "f30e7fc051147d454299a3333ef4c48e871fdd2b",
+  "git_sha": "c2372f23ba25430314748cfa02d005430761a501",
   "machine": "arm64",
   "memory_bytes": 8589934592,
   "params_hash": {
-    "broadcast": "70dcc50ff260aa1abcb1137f7ca022293f27dbcdc6c694c49b1c3ed79455de6a",
-    "kids": "eba16e78fcd87c00137e0d37641526314d2d4fe80aad5bbf6f54add615054832",
-    "local": "14b825f91e0477aeabe01a0491ec83ce00d1b4096a43c5d582d5895ca4490538"
+    "broadcast": "a9a3a0b32dc6adbc3ed56629267c79ad73363ffbca96999abcd9fe84ad5f3f94",
+    "kids": "134f76ec2fe221ad3e34c239805112825d152f986a83517598307bf898f6ee94",
+    "local": "d7a84ea89591a7758880e901cf24f0d83c10e4a5f2e0eb05dd7e7181b3290a1d"
   },
   "platform": "macOS-26.3-arm64-arm-64bit",
-  "python": "3.12.11"
+  "python": "3.12.11",
+  "sync_tolerance_s": 0.26887499999999925
 }
 ```
 
@@ -114,20 +117,30 @@ Provenance:
 
 ```json
 {
-  "code_sha256": "c54447243779ad457991d7d5698e1ecd8a7ffe29f6902518e4283fee1cef6b88",
+  "code_sha256": "f34c34ce1d68ea31ef6f37d1f6e86d02bbc4cbf8ed90cb63bb27cfbcf6a1c5b4",
   "control_review_sha256": "c05d53262c47670fc0477b1ad77db35b4e565227a312b6ba3e3b5bd5e0f3fa07",
   "cpu_model": "Apple M1",
+  "device_calibration": {
+    "compositing_max_error_codes": 0.75,
+    "compositing_sha256": "293dc4cf29f6d78f523e1297d685b9fb52115fcda64a2d00b32674b2ddc72515",
+    "engine_y_max_error_codes": 0.9529411764706026,
+    "sync_max_abs_s": 0.22299999999999986,
+    "sync_p95_abs_s": 0.1792499999999995,
+    "sync_sha256": "6a1e858f394fb33f1ad4a1d24a9e3836ace20f5006b5ff9e072532d2b9fee80c",
+    "sync_tolerance_s": 0.26887499999999925
+  },
   "ffmpeg": "ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers",
   "machine": "arm64",
   "manifest_sha256": "10206c1b910c59032a19a7bafb0561289aba2ede50dc7603302784a018505862",
   "memory_bytes": 8589934592,
   "params_hash": {
-    "broadcast": "70dcc50ff260aa1abcb1137f7ca022293f27dbcdc6c694c49b1c3ed79455de6a",
-    "kids": "eba16e78fcd87c00137e0d37641526314d2d4fe80aad5bbf6f54add615054832",
-    "local": "14b825f91e0477aeabe01a0491ec83ce00d1b4096a43c5d582d5895ca4490538"
+    "broadcast": "a9a3a0b32dc6adbc3ed56629267c79ad73363ffbca96999abcd9fe84ad5f3f94",
+    "kids": "134f76ec2fe221ad3e34c239805112825d152f986a83517598307bf898f6ee94",
+    "local": "d7a84ea89591a7758880e901cf24f0d83c10e4a5f2e0eb05dd7e7181b3290a1d"
   },
   "platform": "macOS-26.3-arm64-arm-64bit",
-  "python": "3.12.11"
+  "python": "3.12.11",
+  "sync_tolerance_s": 0.26887499999999925
 }
 ```
 

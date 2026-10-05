@@ -1,0 +1,106 @@
+{
+  "format_version": 1,
+  "status": "passed",
+  "command": "uv run --project engine nostrobe eval --fresh-measurements",
+  "exit_code": 0,
+  "scope": "One complete fresh S5 solve/verify evaluation. Original S4 two-run determinism proof is historical; current encoded determinism regression separately passes.",
+  "baseline_commit": "1e19636",
+  "baseline_comparison": "All original encoded sources, independent truth and unmitigated detected events match. Mitigation recomputed with measured model and timing.",
+  "counts": {
+    "profile_outcomes": 978,
+    "verified_tracks": 975,
+    "tracks_with_veils": 355,
+    "source_checksum_mismatches": 0,
+    "source_event_mismatches": 0,
+    "truth_mismatches": 0,
+    "bad_verifier_results": 0,
+    "unresolved_segments": 0,
+    "offset_mismatches": 0,
+    "params_hash_mismatches": 0
+  },
+  "code_sha256": "f34c34ce1d68ea31ef6f37d1f6e86d02bbc4cbf8ed90cb63bb27cfbcf6a1c5b4",
+  "device_calibration": {
+    "sync_sha256": "6a1e858f394fb33f1ad4a1d24a9e3836ace20f5006b5ff9e072532d2b9fee80c",
+    "compositing_sha256": "293dc4cf29f6d78f523e1297d685b9fb52115fcda64a2d00b32674b2ddc72515",
+    "sync_tolerance_s": 0.26887499999999925,
+    "sync_p95_abs_s": 0.1792499999999995,
+    "sync_max_abs_s": 0.22299999999999986,
+    "compositing_max_error_codes": 0.75,
+    "engine_y_max_error_codes": 0.9529411764706026
+  },
+  "report_sha256": {
+    "results.json": "8e368bdb52941e07bc38e3c5dae7e47f60006970a5777329af50799c88713237",
+    "RESULTS.md": "64c8ccd71648c0181677118534454b2c18bd846f1f62152186bc09b0fadd7900",
+    "s5_smoke_verification.json": "662ee2c2ae34a21c8f94b553846adc6550d8ce18b0336ffa18a190c5d6a9a3c2",
+    "sync_calibration.json": "6a1e858f394fb33f1ad4a1d24a9e3836ace20f5006b5ff9e072532d2b9fee80c",
+    "compositing_calibration.json": "293dc4cf29f6d78f523e1297d685b9fb52115fcda64a2d00b32674b2ddc72515"
+  },
+  "summary": {
+    "broadcast": {
+      "analyzed_tracks": 325,
+      "clips": 325,
+      "confusion": {
+        "fn": 0,
+        "fp": 0,
+        "tn": 229,
+        "tp": 96
+      },
+      "gate_passes": true,
+      "iou_median": 1.0,
+      "iou_p10": 0.9999998684210526,
+      "mean_alpha": 0.4325709775587575,
+      "mean_delta_cd_m2": 16.789855841497847,
+      "unresolved_segments": 0,
+      "veiled_fraction": 0.2784283243523316,
+      "verified_tracks": 325,
+      "verifier_pass_rate": 1.0
+    },
+    "kids": {
+      "analyzed_tracks": 325,
+      "clips": 325,
+      "confusion": {
+        "fn": 0,
+        "fp": 0,
+        "tn": 183,
+        "tp": 142
+      },
+      "gate_passes": true,
+      "iou_median": 1.0,
+      "iou_p10": 0.9999998461538698,
+      "mean_alpha": 0.4583855390186263,
+      "mean_delta_cd_m2": 24.97602441488963,
+      "unresolved_segments": 0,
+      "veiled_fraction": 0.44865112435233157,
+      "verified_tracks": 325,
+      "verifier_pass_rate": 1.0
+    },
+    "local": {
+      "analyzed_tracks": 325,
+      "clips": 325,
+      "confusion": {
+        "fn": 0,
+        "fp": 0,
+        "tn": 217,
+        "tp": 108
+      },
+      "gate_passes": true,
+      "iou_median": 1.0,
+      "iou_p10": 0.9999998684210526,
+      "mean_alpha": 0.43060818842405396,
+      "mean_delta_cd_m2": 18.47929299763188,
+      "unresolved_segments": 0,
+      "veiled_fraction": 0.31256303937823837,
+      "verified_tracks": 325,
+      "verifier_pass_rate": 1.0
+    }
+  },
+  "unadjudicated_film_control": "All three profile detections retained and baseline-equal; excluded from confusion scores and mitigation-track counts.",
+  "physical_device_scope": "Vega Virtual Device / SDK 0.24.12112; no physical Fire TV measurement claimed",
+  "package_hashes_match": true,
+  "fresh_smoke": {
+    "cases": 80,
+    "outcomes": 240,
+    "all_current_profiles_offsets_calibration_match": true,
+    "gates_pass": true
+  }
+}
