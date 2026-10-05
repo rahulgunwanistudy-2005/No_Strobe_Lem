@@ -138,3 +138,18 @@ submission-number sources engine/eval/RESULTS.md / results.json.
 - The 20× performance target remains unmet; host timings include prepared
   synthetic samples and concurrent host activity. PEAT was not run. Natural-film
   accuracy, measured device timing/compositing, TV and AWS remain open S5+ work.
+
+# Performance follow-up plan
+
+Scope: meet S2's >=20x real-time detection per core on the full 596.458333 s
+1080p CC-BY film, using the 160x90 grid and all three profiles. User authorizes
+systematic commits without attribution tags. Preserve standards, original truth,
+red detection, spatial fidelity and mitigation verification.
+
+- [ ] Profile a representative decoded film sample and establish a current baseline.
+- [ ] Optimize measured hot spots with exact-output differential regressions.
+- [ ] Measure the entire original film, detector wall/CPU and end-to-end costs;
+  require >=20x detector throughput and report remaining processing costs.
+- [ ] Run accuracy/verifier and quality gates; refresh provenance-bound evaluation
+  evidence where engine changes invalidate the prior evidence.
+- [ ] Review, document performance evidence and commit logical stages.
