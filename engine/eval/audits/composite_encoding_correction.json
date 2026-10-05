@@ -1,0 +1,20 @@
+{
+  "changed_engine_files": [
+    "engine/src/nostrobe/synth/composite_real.py"
+  ],
+  "corrected_evidence_fingerprint": "08c771e187fe74f7c8e76855a325c3ebdd23c4c09f5cc1a8c42a520d07748671",
+  "corrected_revision": "f30e7fc051147d454299a3333ef4c48e871fdd2b",
+  "failed_revision": "8f6b21520c134aa4e89865c72889c487610334f6",
+  "input_source_bindings_sha256": "89dc99634c64f6400a08b09ffc306d402a721dd369fe6592dd9a80e089ad18b2",
+  "old_evidence_fingerprint": "1992ed631c85fc79ef95178e03c7cd08f289026a5b0e3b724358f421c98a453b",
+  "original_composite_sha256": "aba3d8b824e69e02bbe6ccd76496e4b5f56c4a72dd396da0b43e5a6f189504f5",
+  "original_probe_tags": {
+    "color_primaries": "unspecified",
+    "color_range": "tv",
+    "color_space": "bt709",
+    "color_transfer": "unspecified"
+  },
+  "reason": "Composite output flags omitted transfer/primaries metadata. Strict decoder refused it; matched input metadata and x264 VUI were added.",
+  "reused_inputs": "Unchanged generator/oracle/decoder/manifest verified against failed revision; source hashes verified individually. Only truth and lossless decoded inputs copied. No observations, timing measurements or environment reused.",
+  "reused_synthetic_input_count": 320
+}

@@ -1,0 +1,34 @@
+{
+  "command": "cd engine && uv run nostrobe eval",
+  "mode": "Two complete default runs recomputed accuracy and mitigation; neither used --resume",
+  "origin_git_sha": "f30e7fc051147d454299a3333ef4c48e871fdd2b",
+  "provenance": {
+    "code_sha256": "c54447243779ad457991d7d5698e1ecd8a7ffe29f6902518e4283fee1cef6b88",
+    "control_review_sha256": "c05d53262c47670fc0477b1ad77db35b4e565227a312b6ba3e3b5bd5e0f3fa07",
+    "cpu_model": "Apple M1",
+    "ffmpeg": "ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers",
+    "machine": "arm64",
+    "manifest_sha256": "10206c1b910c59032a19a7bafb0561289aba2ede50dc7603302784a018505862",
+    "memory_bytes": 8589934592,
+    "params_hash": {
+      "broadcast": "70dcc50ff260aa1abcb1137f7ca022293f27dbcdc6c694c49b1c3ed79455de6a",
+      "kids": "eba16e78fcd87c00137e0d37641526314d2d4fe80aad5bbf6f54add615054832",
+      "local": "14b825f91e0477aeabe01a0491ec83ce00d1b4096a43c5d582d5895ca4490538"
+    },
+    "platform": "macOS-26.3-arm64-arm-64bit",
+    "python": "3.12.11"
+  },
+  "exit_codes": [
+    0,
+    0
+  ],
+  "profile_outcomes_per_run": 978,
+  "byte_identical": {
+    "results.json": true,
+    "RESULTS.md": true
+  },
+  "sha256": {
+    "results.json": "f6b9f3da435e5a6b6a5fc0430740e0657a336379b6a8d9c0606b4a73beda1c93",
+    "RESULTS.md": "0c756dcca34d1b459650ca7473cf7c625febcead43aba78c0e2f173c8fc62e6d"
+  }
+}
