@@ -1,5 +1,6 @@
 """KPI Visualizer scenario: play the verified demo while its veil ramps run."""
 
+import os
 import shutil
 import subprocess
 import time
@@ -26,18 +27,32 @@ class TestRunner:
         )
 
     def prep(self) -> None:
-        # KPI Visualizer can reuse an existing singleton process between iterations.
-        vda = shutil.which("vda")
-        if not vda:
-            raise RuntimeError("Put the SDK vda executable on PATH")
-        for command in (
-            ["vlcm", "terminate-app", "--pkg-id", "com.nostrobe.tv"],
-            ["vlcm", "launch-app", "pkg://com.nostrobe.tv.main"],
-        ):
-            subprocess.run([vda, "-s", self.device, "shell", *command], check=True)
-        time.sleep(3)
+        time.sleep(1)
 
     def run(self) -> None:
+        # The perf runner launches after prep; let the catalog become focusable.
+        time.sleep(3)
+        if os.environ.get("NOSTROBE_PERF_SCENE") == "focus":
+            subprocess.run(
+                [
+                    shutil.which("vda"),
+                    "-s",
+                    self.device,
+                    "shell",
+                    "inputd-cli",
+                    "button_press",
+                    "KEY_MENU",
+                ],
+                check=True,
+            )
+            time.sleep(1)
+            for key in (108, 105, 106, 108, 105, 106, 103, 105, 106, 103, 108, 103):
+                self.driver.execute_script(
+                    "jsonrpc: injectInputKeyEvent",
+                    [{"inputKeyEvent": str(key), "holdDuration": 80}],
+                )
+                time.sleep(0.5)
+            return
         self.driver.execute_script(
             "jsonrpc: injectInputKeyEvent",
             [{"inputKeyEvent": "96", "holdDuration": 80}],
