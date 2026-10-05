@@ -20,7 +20,7 @@
         },
         "kids": {
           "url": "/demo.kids.hzt.json",
-          "hazard_count": 0
+          "hazard_count": 2
         }
       },
       "attribution": {

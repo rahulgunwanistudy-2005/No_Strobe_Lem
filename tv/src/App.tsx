@@ -8,6 +8,7 @@ import {Catalog} from './ui/Catalog';
 import {FocusButton} from './ui/FocusButton';
 import {PlayerScreen} from './ui/PlayerScreen';
 import {Settings} from './ui/Settings';
+import {useTVEventHandler} from './player/TVPlatform';
 
 export function App() {
   const [store] = useState(() => new PreferenceStore());
@@ -26,7 +27,10 @@ export function App() {
   useEffect(() => {
     let live = true;
     store.load().then(value => {if (live) {setPreferences(value);}})
-      .catch(() => {if (live) {setMessage('Saved settings could not be read. Choose a household and profile before playback.'); setSettings(true);}})
+      .catch(() => {if (live) {
+        setPreferences({...defaultPreferences, household: 'kids', profile: 'kids'});
+        setMessage('Saved settings could not be read. The Kids profile applies until you choose your settings.'); setSettings(true);
+      }})
       .finally(() => {if (live) {setSettingsReady(true);}});
     return () => {live = false;};
   }, [store]);
@@ -47,6 +51,9 @@ export function App() {
     });
     return () => back.remove();
   }, [settings, selected, calibration]);
+  useTVEventHandler(event => {
+    if (!selected && !settings && event.eventType === 'menu' && event.eventKeyAction !== 1) {setSettings(true);}
+  });
   const changePreferences = (value: Preferences) => {
     setPreferences(value); setMessage('');
     store.save(value).catch(() => setMessage('Settings could not be saved. Your current choice applies until the app closes.'));

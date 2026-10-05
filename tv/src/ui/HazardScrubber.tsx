@@ -8,7 +8,8 @@ export function HazardScrubber({track, duration, time, onFocus, onBlur, onSeek, 
 }) {
   const [focused, setFocused] = React.useState(false);
   const ticks = track ? hazardTicks(track) : [];
-  return <TVFocusGuideView trapFocusLeft trapFocusRight><View focusable={!disabled} accessible
+  return <TVFocusGuideView trapFocusLeft trapFocusRight><View focusable accessible
+    accessibilityState={{disabled}}
     onFocus={() => {setFocused(true); onFocus();}} onBlur={() => {setFocused(false); onBlur();}} accessibilityRole="adjustable"
     accessibilityLabel={`Playback position ${formatTime(time)} of ${formatTime(duration)}. Left or right seeks ten seconds.`}
     accessibilityActions={[{name: 'increment'}, {name: 'decrement'}]}

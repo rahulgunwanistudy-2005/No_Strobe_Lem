@@ -24,6 +24,10 @@ export function parseTrack(value: unknown, binding?: MediaBinding): HazardTrack 
       track.veils.some(cue => cue.t_on >= cue.t_off || cue.covers.some(id => !ids.has(id)))) {
     throw new TrackError('HazardTrack timing or event references are invalid');
   }
+  const covered = new Set(track.veils.filter(cue => cue.alpha > 0).flatMap(cue => cue.covers));
+  if (track.events.some(event => (event.severity === 'fail' || track.profile === 'kids') && !covered.has(event.id))) {
+    throw new TrackError('HazardTrack does not cover all events required by this viewing profile');
+  }
   return track;
 }
 

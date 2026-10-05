@@ -38,13 +38,16 @@
   "veils": [
     {
       "id": "illustrative_overlay",
-      "t_on": 3.0,
-      "t_off": 7.0,
-      "ramp_in_s": 1.0,
-      "ramp_out_s": 1.0,
-      "alpha": 0.25,
+      "t_on": 0.0,
+      "t_off": 12.0,
+      "ramp_in_s": 0.5,
+      "ramp_out_s": 0.5,
+      "alpha": 0.1,
       "gray": 0.25,
-      "covers": []
+      "covers": [
+        "evt_0001",
+        "evt_0002"
+      ]
     }
   ],
   "verifier": {
@@ -58,10 +61,10 @@
     "engine_version": "0.1.0",
     "params_hash": "134f76ec2fe221ad3e34c239805112825d152f986a83517598307bf898f6ee94"
   },
-  "generated_at": "2026-10-05T21:10:01.333847Z",
+  "generated_at": "2026-10-05T21:25:43.898211Z",
   "stats": {
-    "veiled_fraction_of_runtime": 0.5,
-    "mean_alpha": 0.20833333333333334,
+    "veiled_fraction_of_runtime": 1.0,
+    "mean_alpha": 0.10000000000000002,
     "n_events_by_kind": {
       "luma_flash": 1,
       "extended_flashing": 1

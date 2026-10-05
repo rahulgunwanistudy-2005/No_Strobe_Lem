@@ -268,3 +268,13 @@ app-scoped key, behind the platform boundary; no additional storage package.
 D-pad focus uses native navigation and visible borders. Input listeners do not
 override native directional focus; scrubber horizontal trapping uses a focus
 guide. Release has no raw-playback toggle or calibration route.
+
+The S6 demo has no FAIL events, but Local/Kids detect warning candidates in
+ordinary motion. Kids now uses a whole-excerpt illustrative veil, searched
+on the profile's alpha grid at gray 0.25 and checked with reject_warnings=True
+at every measured offset. It covers both warning ids. This is a demo recipe,
+not a new production solver or minimum-distortion claim. Uncovered required
+FAIL events (or any Kids events) are rejected by the TV reader even when a
+sidecar carries a passes=true flag. Source detection and the S5 engine model
+remain unchanged. The disclaimer is a focusable scroll destination so a
+D-pad viewer can read the complete exact text.

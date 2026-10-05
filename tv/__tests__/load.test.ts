@@ -41,3 +41,9 @@ test('WebVTT portability reader preserves canonical cue payloads', () => {
     veils.map(cue => `\n\n${cue.id}\n00:00:00.000 --> 00:00:09.000\n${JSON.stringify(cue)}`).join('');
   expect(parseWebvtt(vtt).veils).toEqual(veils);
 });
+
+test('Kids refuses a verified flag with an uncovered warning; bundled Kids track covers its warnings', () => {
+  const kids = require('../assets/raw/demo.kids.hzt.json');
+  expect(parseTrack(kids).events).toHaveLength(2);
+  expect(() => parseTrack({...kids, veils: kids.veils.map((cue: object) => ({...cue, covers: []}))})).toThrow('does not cover all events');
+});

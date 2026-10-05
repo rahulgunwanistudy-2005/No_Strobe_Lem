@@ -10,6 +10,7 @@ export function Settings({preferences, items, onChange, onBack, message}: {
   preferences: Preferences; items: CatalogItem[]; onChange: (p: Preferences) => void; onBack: () => void; message: string;
 }) {
   const [credits, setCredits] = useState(false);
+  const [disclaimerFocused, setDisclaimerFocused] = useState(false);
   React.useEffect(() => {
     if (!credits) {return;}
     const back = BackHandler.addEventListener('hardwareBackPress', () => {setCredits(false); return true;});
@@ -33,7 +34,10 @@ export function Settings({preferences, items, onChange, onBack, message}: {
       <FocusButton label={`Warn me before hazards · ${preferences.warnAhead ? 'On' : 'Off'}`}
         onPress={() => onChange({...preferences, warnAhead: !preferences.warnAhead})} />
       <FocusButton label="Attribution and licenses" onPress={() => setCredits(true)} />
-      <Text style={styles.disclaimer}>{disclaimer}</Text>
+      <View focusable accessible accessibilityLabel={disclaimer} onFocus={() => setDisclaimerFocused(true)} onBlur={() => setDisclaimerFocused(false)}
+        style={[styles.disclaimerBox, disclaimerFocused && styles.focus]}>
+        <Text style={styles.disclaimer}>{disclaimer}</Text>
+      </View>
     </>}
     {!!message && <Text accessibilityRole="alert" style={styles.body}>{message}</Text>}
   </ScrollView>;
@@ -41,5 +45,6 @@ export function Settings({preferences, items, onChange, onBack, message}: {
 const styles = StyleSheet.create({page: {flex: 1, backgroundColor: '#0e1823', padding: 40},
   title: {color: '#fff', fontSize: 32, marginBottom: 16}, body: {color: '#c6d3df', fontSize: 19, marginVertical: 10},
   row: {flexDirection: 'row'}, disclaimer: {color: '#c6d3df', fontSize: 18, margin: 12, lineHeight: 26},
-  credit: {marginVertical: 16},
+  credit: {marginVertical: 16}, focus: {borderColor: '#8cf0d1'},
+  disclaimerBox: {borderWidth: 2, borderColor: '#536d80', borderRadius: 8, marginVertical: 12},
 });

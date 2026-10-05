@@ -85,3 +85,14 @@
   perturb the emulator. Reject insufficient/obscured/overloaded records, retain
   diagnostics, record actual rates/intervals and preserve SDK timestamps. Use
   the worst scenario p95 so extra steady observations cannot dilute its bound.
+
+- S6: the launcher can report VVD ready even though its process dies when
+  its parent tool terminal closes. Keep a terminal alive, then independently
+  check device discovery before using readiness as evidence.
+- S6: TVEventHandler observes navigation but cannot override native focus.
+  Keep the scrubber focusable during a guarded seek; disabling its focus
+  eligibility moves focus to another control. Ignore input while seeking
+  instead. Preserve actual screenshots and seeked events as evidence.
+- S6: the Kepler Jest preset's BackHandler mock differs from its default
+  runtime export. Mock that boundary without spreading the entire lazy
+  platform export object (which eagerly invokes unrelated native getters).

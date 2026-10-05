@@ -15,6 +15,7 @@ export function VeilLayer({clock, scheduler, blocked, onReady, onError, nativeDr
     let frame = 0;
     let live = true;
     let primed = false;
+    let lastOpacity: number | undefined;
     // Establish native ownership; subsequent setValue calls send exact targets.
     // Native is the default; the explicit driver option is for device calibration/fallback.
     // eslint-disable-next-line @amazon-devices/kepler/animated
@@ -28,7 +29,10 @@ export function VeilLayer({clock, scheduler, blocked, onReady, onError, nativeDr
           currentGray.current = target.gray;
           setGray(target.gray);
         }
-        opacity.setValue(target.opacity);
+        if (target.opacity !== lastOpacity) {
+          opacity.setValue(target.opacity);
+          lastOpacity = target.opacity;
+        }
         if (!primed && scheduler && !blocked) {primed = true; onReady();}
         frame = requestAnimationFrame(tick);
       } catch (error: unknown) {

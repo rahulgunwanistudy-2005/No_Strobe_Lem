@@ -9,13 +9,60 @@ from datetime import UTC, datetime
 from pathlib import Path
 
 from nostrobe.config import Settings
-from nostrobe.decode.cache import load_cache
+from nostrobe.decode.cache import FrameCache, load_cache
 from nostrobe.decode.ffmpeg import probe
 from nostrobe.domain.models import HazardTrack, VeilCue
-from nostrobe.domain.profiles import get_profile
+from nostrobe.domain.profiles import ProfileParams, get_profile
 from nostrobe.track.jsonio import write
 from nostrobe.track.stats import track_stats
 from nostrobe.verify.verifier import detect_cached, verify
+
+
+def demo_track(cache: FrameCache, params: ProfileParams) -> HazardTrack:
+    """The illustrative Kids veil spans the excerpt and must suppress warnings."""
+    events = detect_cached(cache, [], [params])[params.profile]
+    if any(event.severity == "fail" for event in events):
+        raise ValueError("demo excerpt has unmitigated failures; do not play it")
+    cue = VeilCue(
+        id="illustrative_overlay",
+        t_on=3,
+        t_off=7,
+        ramp_in_s=1,
+        ramp_out_s=1,
+        alpha=0.25,
+        gray=0.25,
+        covers=[],
+    )
+    if params.veil_warn and events:
+        cue = cue.model_copy(
+            update={
+                "t_on": 0.0,
+                "t_off": cache.media.duration_s,
+                "ramp_in_s": params.min_ramp_s,
+                "ramp_out_s": params.min_ramp_s,
+                "covers": [event.id for event in events],
+            }
+        )
+        for step in range(1, int(params.max_alpha / params.alpha_step) + 2):
+            cue = cue.model_copy(
+                update={"alpha": min(params.max_alpha, step * params.alpha_step)}
+            )
+            if verify(cache, [cue], params, reject_warnings=True).passes:
+                break
+    result = verify(cache, [cue], params, reject_warnings=params.veil_warn)
+    if not result.passes:
+        raise ValueError("demo overlay failed the profile verifier; do not publish")
+    return HazardTrack(
+        format="hazardtrack",
+        format_version="1.0",
+        profile=params.profile,
+        media=cache.media,
+        events=events,
+        veils=[cue],
+        verifier=result,
+        generated_at=datetime.now(UTC),
+        stats=track_stats(events, [cue], cache.media.duration_s),
+    )
 
 
 def prepare(source: Path, output: Path) -> None:
@@ -74,38 +121,10 @@ def prepare(source: Path, output: Path) -> None:
     )
     cache = load_cache(video, settings=config)
     params = [get_profile(p) for p in ("broadcast", "local", "kids")]
-    events = detect_cached(cache, [], params)
-    if any(event.severity == "fail" for values in events.values() for event in values):
-        raise ValueError("demo excerpt has unmitigated failures; do not play it")
-    cues = [
-        VeilCue(
-            id="illustrative_overlay",
-            t_on=3,
-            t_off=7,
-            ramp_in_s=1,
-            ramp_out_s=1,
-            alpha=0.25,
-            gray=0.25,
-            covers=[],
-        )
-    ]
-    verified = [verify(cache, cues, p) for p in params]
-    if any(not result.passes for result in verified):
-        raise ValueError("illustrative overlay failed the verifier; do not publish")
-    for profile, result in zip(params, verified, strict=True):
-        track = HazardTrack(
-            format="hazardtrack",
-            format_version="1.0",
-            profile=profile.profile,
-            media=cache.media,
-            events=events[profile.profile],
-            veils=cues,
-            verifier=result,
-            generated_at=datetime.now(UTC),
-            stats=track_stats(events[profile.profile], cues, cache.media.duration_s),
-        )
-        write(output / f"demo.{profile.profile}.hzt.json", track)
-        if profile.profile == "broadcast":
+    tracks = [demo_track(cache, profile) for profile in params]
+    for track in tracks:
+        write(output / f"demo.{track.profile}.hzt.json", track)
+        if track.profile == "broadcast":
             write(output / "demo.hzt.json", track)
     subprocess.run(
         [
@@ -142,11 +161,13 @@ def prepare(source: Path, output: Path) -> None:
                         "video": "/demo.mp4",
                         "poster": "/demo.jpg",
                         "tracks": {
-                            p.profile: {
-                                "url": f"/demo.{p.profile}.hzt.json",
-                                "hazard_count": 0,
+                            t.profile: {
+                                "url": f"/demo.{t.profile}.hzt.json",
+                                "hazard_count": len(
+                                    {event for cue in t.veils for event in cue.covers}
+                                ),
                             }
-                            for p in params
+                            for t in tracks
                         },
                         "attribution": {
                             "credit": "Big Buck Bunny (2008), Blender Foundation / Peach team",
