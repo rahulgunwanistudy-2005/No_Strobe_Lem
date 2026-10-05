@@ -17,3 +17,19 @@ test('platform dependencies are isolated inside player', () => {
   };
   scan(join(process.cwd(), 'src'));
 });
+
+test('viewer copy avoids prohibited claims and default/raw playback has no release path', () => {
+  const sources: string[] = [];
+  const scan = (directory: string) => {
+    for (const entry of readdirSync(directory, {withFileTypes: true})) {
+      const path = join(directory, entry.name);
+      if (entry.isDirectory()) {scan(path);}
+      else if (/\.[jt]sx?$/.test(path)) {sources.push(readFileSync(path, 'utf8'));}
+    }
+  };
+  scan(join(process.cwd(), 'src'));
+  expect(sources.join('\n')).not.toMatch(/seizure-proof|prevents seizures|medically safe|certified|Harding-compliant/i);
+  expect(sources.join('\n')).not.toMatch(/rawMode|rawPlayback|allowRaw|unmitigatedMode/);
+  const app = readFileSync(join(process.cwd(), 'src/App.tsx'), 'utf8');
+  expect(app).toMatch(/if \(__DEV__ && calibration\)/);
+});

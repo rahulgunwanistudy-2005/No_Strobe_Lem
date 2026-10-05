@@ -1,7 +1,7 @@
 /** VVD forwards port 8765 to the host's dedicated calibration/demo server. */
 export const config = {
   catalogBaseUrl: 'http://127.0.0.1:8765',
-  itemPath: '/demo.json',
+  catalogPath: '/catalog.json',
   mediaBaseUrl: '/pkg/assets/raw',
   nativeVeilDriver: true,
 };

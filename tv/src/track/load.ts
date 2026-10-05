@@ -2,7 +2,7 @@ import validate from '../types/validateHazardTrack';
 import type {HazardTrack} from '../types/hazardtrack';
 
 export class TrackError extends Error {
-  constructor(message: string) {super(message); this.name = 'TrackError';}
+  constructor(message: string, public readonly kind: 'invalid' | 'missing' | 'network' = 'invalid') {super(message); this.name = 'TrackError';}
 }
 export interface MediaBinding {contentId: string; sourceSha256: string}
 
@@ -29,6 +29,7 @@ export function parseTrack(value: unknown, binding?: MediaBinding): HazardTrack 
 
 export async function loadTrack(url: string, binding: MediaBinding, signal?: AbortSignal): Promise<HazardTrack> {
   const response = await fetch(url, {signal});
-  if (!response.ok) {throw new TrackError(`Cannot load HazardTrack (${response.status})`);}
+  if (!response.ok) {throw new TrackError(`Cannot load HazardTrack (${response.status})`,
+    response.status === 404 || response.status === 410 ? 'missing' : 'network');}
   return parseTrack(await response.json(), binding);
 }

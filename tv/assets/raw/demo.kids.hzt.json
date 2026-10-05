@@ -1,0 +1,72 @@
+{
+  "format": "hazardtrack",
+  "format_version": "1.0",
+  "profile": "kids",
+  "media": {
+    "content_id": "demo",
+    "duration_s": 12.0,
+    "fps": 24.0,
+    "width": 640,
+    "height": 360,
+    "transfer": "sdr",
+    "source_sha256": "76b285a3ad17130adefbfa19f3aa9700f4c6152e181f8d5e7114fc17f1dd3a41"
+  },
+  "events": [
+    {
+      "id": "evt_0001",
+      "kind": "luma_flash",
+      "severity": "warn",
+      "t_start": 3.833333,
+      "t_end": 6.625,
+      "peak_changes_per_s": 10,
+      "peak_area_fraction": 0.30377358490566037,
+      "peak_delta_cd_m2": 87.61350000000002,
+      "regime": "absolute"
+    },
+    {
+      "id": "evt_0002",
+      "kind": "extended_flashing",
+      "severity": "warn",
+      "t_start": 7.875,
+      "t_end": 8.916667,
+      "peak_changes_per_s": 8,
+      "peak_area_fraction": 0.389937106918239,
+      "peak_delta_cd_m2": null,
+      "regime": "absolute"
+    }
+  ],
+  "veils": [
+    {
+      "id": "illustrative_overlay",
+      "t_on": 3.0,
+      "t_off": 7.0,
+      "ramp_in_s": 1.0,
+      "ramp_out_s": 1.0,
+      "alpha": 0.25,
+      "gray": 0.25,
+      "covers": []
+    }
+  ],
+  "verifier": {
+    "passes": true,
+    "offsets_checked_s": [
+      -0.26887499999999925,
+      0.0,
+      0.26887499999999925
+    ],
+    "residual_events": [],
+    "engine_version": "0.1.0",
+    "params_hash": "134f76ec2fe221ad3e34c239805112825d152f986a83517598307bf898f6ee94"
+  },
+  "generated_at": "2026-10-05T21:10:01.333847Z",
+  "stats": {
+    "veiled_fraction_of_runtime": 0.5,
+    "mean_alpha": 0.20833333333333334,
+    "n_events_by_kind": {
+      "luma_flash": 1,
+      "extended_flashing": 1
+    },
+    "mean_delta_cd_m2": 0.0
+  },
+  "unresolved_segments": []
+}

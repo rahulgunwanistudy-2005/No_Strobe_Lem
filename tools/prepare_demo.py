@@ -92,18 +92,75 @@ def prepare(source: Path, output: Path) -> None:
     verified = [verify(cache, cues, p) for p in params]
     if any(not result.passes for result in verified):
         raise ValueError("illustrative overlay failed the verifier; do not publish")
-    track = HazardTrack(
-        format="hazardtrack",
-        format_version="1.0",
-        profile="broadcast",
-        media=cache.media,
-        events=events["broadcast"],
-        veils=cues,
-        verifier=verified[0],
-        generated_at=datetime.now(UTC),
-        stats=track_stats(events["broadcast"], cues, cache.media.duration_s),
+    for profile, result in zip(params, verified, strict=True):
+        track = HazardTrack(
+            format="hazardtrack",
+            format_version="1.0",
+            profile=profile.profile,
+            media=cache.media,
+            events=events[profile.profile],
+            veils=cues,
+            verifier=result,
+            generated_at=datetime.now(UTC),
+            stats=track_stats(events[profile.profile], cues, cache.media.duration_s),
+        )
+        write(output / f"demo.{profile.profile}.hzt.json", track)
+        if profile.profile == "broadcast":
+            write(output / "demo.hzt.json", track)
+    subprocess.run(
+        [
+            config.ffmpeg,
+            "-nostdin",
+            "-v",
+            "error",
+            "-y",
+            "-ss",
+            "1",
+            "-i",
+            str(video),
+            "-frames:v",
+            "1",
+            "-threads",
+            "1",
+            str(output / "demo.jpg"),
+        ],
+        check=True,
+        capture_output=True,
+        timeout=30,
     )
-    write(output / "demo.hzt.json", track)
+    (output / "catalog.json").write_text(
+        json.dumps(
+            {
+                "version": 1,
+                "items": [
+                    {
+                        "content_id": cache.media.content_id,
+                        "source_sha256": cache.media.source_sha256,
+                        "title": "Big Buck Bunny · gentle veil demonstration",
+                        "description": "12-second opening excerpt. Illustrative overlay; no source hazard is claimed.",
+                        "duration_s": cache.media.duration_s,
+                        "video": "/demo.mp4",
+                        "poster": "/demo.jpg",
+                        "tracks": {
+                            p.profile: {
+                                "url": f"/demo.{p.profile}.hzt.json",
+                                "hazard_count": 0,
+                            }
+                            for p in params
+                        },
+                        "attribution": {
+                            "credit": "Big Buck Bunny (2008), Blender Foundation / Peach team",
+                            "license": "CC-BY-3.0",
+                            "url": "https://peach.blender.org/about/",
+                            "changes": "12-second excerpt, resized to 640×360, audio removed; illustrative viewing overlay.",
+                        },
+                    }
+                ],
+            },
+            indent=2,
+        )
+        + "\n"
+    )
     (output / "demo.json").write_text(
         json.dumps(
             {

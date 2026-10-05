@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "content_id": "demo",
+      "source_sha256": "76b285a3ad17130adefbfa19f3aa9700f4c6152e181f8d5e7114fc17f1dd3a41",
+      "title": "Big Buck Bunny \u00b7 gentle veil demonstration",
+      "description": "12-second opening excerpt. Illustrative overlay; no source hazard is claimed.",
+      "duration_s": 12.0,
+      "video": "/demo.mp4",
+      "poster": "/demo.jpg",
+      "tracks": {
+        "broadcast": {
+          "url": "/demo.broadcast.hzt.json",
+          "hazard_count": 0
+        },
+        "local": {
+          "url": "/demo.local.hzt.json",
+          "hazard_count": 0
+        },
+        "kids": {
+          "url": "/demo.kids.hzt.json",
+          "hazard_count": 0
+        }
+      },
+      "attribution": {
+        "credit": "Big Buck Bunny (2008), Blender Foundation / Peach team",
+        "license": "CC-BY-3.0",
+        "url": "https://peach.blender.org/about/",
+        "changes": "12-second excerpt, resized to 640\u00d7360, audio removed; illustrative viewing overlay."
+      }
+    }
+  ]
+}
