@@ -46,3 +46,11 @@
   The composite encoder omitted the matching input/codec VUI metadata already
   required by the S1 encoder. Output flags alone again lost transfer/primaries;
   preserve strict decoder refusal and test metadata plus decoded RGB fidelity.
+
+- Performance: changing the shape of an otherwise equivalent matrix product
+  can change its rounding. A transposed RGB-to-XYZ product differed by up to
+  1.11e-16 on the 9x12 differential grid. Retain the original NumPy matrix
+  multiplication; compile the following state work with fastmath disabled.
+- Performance: profiling a quiet opening is insufficient. Measure every frame
+  of the full film, all profiles, both detector CPU and wall time, and an empty
+  JIT cache. Keep decoding/cell conversion and full mitigation costs separate.

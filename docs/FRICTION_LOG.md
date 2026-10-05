@@ -51,3 +51,12 @@ transfer: unknown`. Reproduced via ffprobe stream color metadata fields.
 No detector checks were weakened. Retained the explicitly BT.709-tagged
 Big Buck Bunny original as the full-film control; Tears of Steel is only
 an artistic background to explicitly tagged synthetic composites.
+
+## Detection performance follow-up — 2026-10-05
+
+An attempted transposed RGB-to-XYZ matrix multiplication preserved most test
+values but changed some 9×12-grid values by up to 1.11e-16. Reproduced with
+`engine/tests/detect/test_equivalence.py` against the frozen dd980e5 reference.
+The change was rejected; original NumPy matrix multiplication and strict
+compiled arithmetic preserve exact measured state and event output. This is
+an implementation/numerical issue, not external-tool friction.

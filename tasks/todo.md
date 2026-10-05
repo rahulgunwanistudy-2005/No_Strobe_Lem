@@ -146,10 +146,33 @@ Scope: meet S2's >=20x real-time detection per core on the full 596.458333 s
 systematic commits without attribution tags. Preserve standards, original truth,
 red detection, spatial fidelity and mitigation verification.
 
-- [ ] Profile a representative decoded film sample and establish a current baseline.
-- [ ] Optimize measured hot spots with exact-output differential regressions.
-- [ ] Measure the entire original film, detector wall/CPU and end-to-end costs;
+- [x] Profile a representative decoded film sample and establish a current baseline.
+- [x] Optimize measured hot spots with exact-output differential regressions.
+- [x] Measure the entire original film, detector wall/CPU and end-to-end costs;
   require >=20x detector throughput and report remaining processing costs.
-- [ ] Run accuracy/verifier and quality gates; refresh provenance-bound evaluation
+- [x] Run accuracy/verifier and quality gates; refresh provenance-bound evaluation
   evidence where engine changes invalidate the prior evidence.
-- [ ] Review, document performance evidence and commit logical stages.
+- [x] Review, document performance evidence and commit logical stages.
+
+
+## Performance follow-up results
+
+The >=20x all-profile detection target is met on the original 596.458333 s,
+14,315-frame 1080p film at the full 160x90 grid. See docs/PERFORMANCE.md.
+
+- Cold JIT cache: detector wall 25.833 s / 23.089x; CPU 24.561 s / 24.285x.
+- Warm JIT cache: detector wall 23.677 s / 25.191x; CPU 22.566 s / 26.432x.
+- Both benchmark gates return exit 0; every full-film event field matches S4.
+  Apple M1, 8 GiB RAM; single-core kernels, strict arithmetic, all profiles.
+- 402 tests pass in 348.70 s; lint/format, strict types (52 source files),
+  schema/generated-type drift and TypeScript checks pass.
+- Fresh audit: 325 cases / 975 tracks, exact source-event equality, FN=FP=0
+  all profiles; all saved veils reverified at -150/0/+150 ms, including 355
+  tracks with veils; zero residual failures or unresolved segments.
+- Original S4 reports, source truth and two-run determinism proof are retained
+  unchanged. The new audit has its own source/code hashes and fresh verifier
+  outcomes. It does not claim fresh solving or new full-analyze timings.
+- Decode + detection remains about 4x end-to-end; full mitigation has separate
+  cost. PEAT, natural-film adjudication and S5 device/cloud work remain open.
+- Source, tools, benchmark evidence, audit and documentation are committed in
+  logical stages without attribution trailers or history rewrites.

@@ -111,9 +111,11 @@ realistic timings retain their first measured decode/analysis observations.
   detection, solving and verification. The film is a detection-only control.
   Timing excludes media generation, truth calculation and report rendering;
   the host was not reserved for benchmarking.
-- The earlier 20× detector-throughput target remains unmet. The generated
-  report retains actual detect/full-analyze measurements, including slow
-  realistic candidate searches, rather than a production-speed claim.
+- The S4 revision did not meet the earlier 20× detector-throughput target.
+  Its generated report retains those historical detect/full-analyze timings,
+  including slow realistic candidate searches. The subsequent
+  [performance follow-up](PERFORMANCE.md) records passing cold/warm full-film
+  detection measurements and a separate accuracy/verifier audit.
 - Verification at −150/0/+150 ms uses the existing simulation tolerance. It
   does not establish measured device timing, compositing fidelity, clinical
   safety or standards certification. Failed tracks cannot be published.
