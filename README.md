@@ -94,8 +94,10 @@ strict tagged-media requirement is unchanged. The report states the scope,
 measured throughput, simulation tolerance and unresolved reasons. PEAT is
 reported as not run. No player-ready tracks are published by evaluation.
 
-Only numbers from the committed S4 report may be quoted in submission copy.
-Read its gate and limitations before using the headline block.
+Only numbers from [RESULTS.md](engine/eval/RESULTS.md) and
+[results.json](engine/eval/results.json) may be quoted in submission copy.
+Read the gate and limitations before using the headline block. The two complete
+runs' byte comparison is in [determinism.json](engine/eval/determinism.json).
 
 Decoded Y/RGB bytes are cached in ignored `.nostrobe_cache/`, keyed by source
 SHA-256 and decode format. Each frame takes about 0.88 MiB; a ten-minute
@@ -108,6 +110,6 @@ Configuration is read only in `nostrobe.config.Settings`: `NOSTROBE_REPO_ROOT`, 
 
 Luma-only media support: explicitly tagged limited-range 8-bit planar YUV SDR. Detection with RGB requires BT.709 transfer, primaries and matrix tags. Decode defaults to 640×360, then averages in cd/m² to 160×90 cells. Tests cover flat-gray recovery, full-resolution synthetic comparisons and variable presentation timestamps. Caller must close a partially consumed frame iterator (`contextlib.closing`) to reap its subprocess immediately. Wider media coverage and production evaluation are later gates.
 
-Lane A: macOS arm64, Vega SDK 0.24.12112 / CLI 1.4.2; stock hello-world built and reached VISIBLE on the Vega Virtual Device. The app directory remains a README until S5. See [Session 1 report](docs/S1_REPORT.md), [Session 2 report](docs/S2_REPORT.md), [Session 3 report](docs/S3_REPORT.md), [interpretations](docs/INTERPRETATIONS.md), [tool feedback](docs/PRODUCT_FEEDBACK.md), and [build safety](docs/SAFETY.md).
+Lane A: macOS arm64, Vega SDK 0.24.12112 / CLI 1.4.2; stock hello-world built and reached VISIBLE on the Vega Virtual Device. The app directory remains a README until S5. See [Session 1 report](docs/S1_REPORT.md), [Session 2 report](docs/S2_REPORT.md), [Session 3 report](docs/S3_REPORT.md), [Session 4 report](docs/S4_REPORT.md), [interpretations](docs/INTERPRETATIONS.md), [tool feedback](docs/PRODUCT_FEEDBACK.md), and [build safety](docs/SAFETY.md).
 
 Licensed under Apache-2.0. No AWS resources are deployed.

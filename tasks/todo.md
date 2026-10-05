@@ -111,5 +111,30 @@ attribution tags, overriding the manual-commit default. Preserve existing truth.
   verifier/viewing-cost metrics, honest clean traces and reproducible reports.
 - [x] Persist provenance-bound timing observations separately from deterministic
   accuracy; invalidate caches when code, manifest, source or parameters change.
-- [ ] Run the full suite, investigate misses without changing truth, verify repeat
+- [x] Run the full suite, investigate misses without changing original truth, verify repeat
   determinism and required quality gates; document evidence and commit stages.
+
+## S4 results
+
+Implemented the supplied S4 scope. See docs/S4_REPORT.md and the sole
+submission-number sources engine/eval/RESULTS.md / results.json.
+
+- Two complete default runs each returned exit 0 with 978 profile outcomes;
+  both JSON and Markdown are byte-identical. No --resume or excluded timestamp
+  field was used. Provenance and hashes are in engine/eval/determinism.json.
+- 120 boundaries, 200 seeded shape variations and five realistic composites:
+  FN=0 and FP=0 against independent per-profile truth; all 975 tracks verified
+  under simulated −150/0/+150 ms, including all 355 tracks with veils;
+  unresolved=0. There are 305 distinct source checksums across 326 case files.
+- 374 tests passed in 734.26 s; lint/format, strict types (50 source files),
+  schema/generated-TypeScript drift and TypeScript checks pass.
+- The SDR oracle source correction and composite encoder tag failure are
+  preserved as audits. No original S1 truth, source seed or production detector
+  threshold was changed to fit a result; decoder checks remain strict.
+- One eligible unmodified full-film control was streamed per run. Its flags
+  and trace are retained and explained as unadjudicated motion/text candidates;
+  it is excluded from confusion scores. Tears of Steel's inspected originals
+  lack required source color tags and are excluded from unmodified controls.
+- The 20× performance target remains unmet; host timings include prepared
+  synthetic samples and concurrent host activity. PEAT was not run. Natural-film
+  accuracy, measured device timing/compositing, TV and AWS remain open S5+ work.
