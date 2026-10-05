@@ -1,0 +1,71 @@
+{
+  "session": "S6",
+  "status": "implementation and functional gates passed; zero-drop performance gate open",
+  "app_source_commit": "2b7d55a",
+  "tests": {
+    "jest": {
+      "suites": 9,
+      "passed": 47
+    },
+    "typecheck": "passed",
+    "eslint": "passed",
+    "generated_contracts": "passed",
+    "python_tool_checks": "passed",
+    "ui_copy_audit_hits": 0
+  },
+  "builds": {
+    "architectures": [
+      "aarch64",
+      "armv7",
+      "x86_64"
+    ],
+    "modes": [
+      "Debug",
+      "Release"
+    ],
+    "status": "passed",
+    "release_raw_or_calibration_mode": false
+  },
+  "device": {
+    "lane": "A",
+    "sdk": "0.24.12112",
+    "os": "1.2 TV Ship/102282480",
+    "functional_dpad_flow": "passed",
+    "native_preferences_restart": "passed",
+    "error_states": "passed",
+    "chrome_hide_show": "passed on VVD"
+  },
+  "safety": {
+    "invalid_or_failed_tracks": "refused",
+    "unresolved_tracks": "refused; chip/tick logic exists for diagnostics",
+    "missing_track": "explicit consent, defaults pause, banner, no autoplay",
+    "kids_required_warning_coverage": "enforced",
+    "engine_sync_tolerance_s": 0.268875,
+    "engine_model_changed": false
+  },
+  "performance_reference": "evidence/s6/performance-final.json",
+  "zero_drop_gate": "not met",
+  "next_session_started": false,
+  "evidence": "evidence/s6/README.md",
+  "performance": {
+    "app_first_frame_ms": [
+      362.5028860001564,
+      201.0366029996872,
+      789.3906110000611
+    ],
+    "focus_last_input_to_frame_ms": {
+      "min": 8,
+      "median": 17,
+      "mean": 25,
+      "max": 129,
+      "samples": 39
+    },
+    "ui_fluidity_percent": [
+      100,
+      100,
+      100
+    ],
+    "video_fluidity_percent": "76.7\u201381.7",
+    "launch_fully_drawn_marker": "absent; KPI validator failed"
+  }
+}

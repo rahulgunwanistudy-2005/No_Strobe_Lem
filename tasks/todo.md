@@ -258,19 +258,30 @@ Scope: execute S6_vega_ux.md on the S1-selected Lane A. The user's explicit
 commit request overrides the bible's manual-commit default. No attribution
 trailers. Preserve measured S5 clock/veil semantics and verification refusal.
 
-- [ ] Consult official Vega focus, remote input, storage and performance APIs.
-- [ ] Build validated catalog, persisted household/profile/warning settings,
+- [x] Consult official Vega focus, remote input, storage and performance APIs.
+- [x] Build validated catalog, persisted household/profile/warning settings,
   attribution, chip/tick logic and race-safe profile swaps.
-- [ ] Integrate D-pad catalog/player/settings flow, protected autoplay, guarded
+- [x] Integrate D-pad catalog/player/settings flow, protected autoplay, guarded
   seeking/skipping, four-second chrome and distinct missing/invalid/network states.
-- [ ] Add meaningful timing/mapping/swap/safety regressions; run type, lint,
+- [x] Add meaningful timing/mapping/swap/safety regressions; run type, lint,
   test, generated-contract and release-content gates.
-- [ ] Run and inspect on VVD; measure launch/focus/frame performance using
+- [x] Run and inspect on VVD; measure launch/focus/frame performance using
   available tooling, record actual evidence and any unresolved limitations.
-- [ ] Self-review, document friction/decisions/results and commit logical stages.
+- [x] Self-review, document friction/decisions/results and commit logical stages.
 
 Safety interpretation: §14 forbids default unmitigated playback. A missing
 track stays paused behind an explicit unprotected-playback choice and a
 persistent 'Not analyzed — no protection' banner; Kids defaults to cancel.
 Invalid/failing/unresolved tracks refuse playback. Unresolved tick/chip mapping
 is supported for diagnostics, but does not bypass the verified-track gate.
+
+S6 implementation validation: 47 TV tests / 9 suites, types/lint/generated drift,
+copy audit, Python tool checks and six architecture/mode builds pass. Real VVD
+flow and native storage restart pass. Final performance reports retain measured
+limitations; S7 remains unstarted pending S6's performance gate.
+
+S6 final: native focus last-input metric 8–129 ms (39 inputs; median 17 ms),
+three UI runs at 100% fluidity; app first frame 201–789 ms. First video frame
+0.923–1.376 s, but 76.7–81.7% video fluidity and nonzero drops. The zero-drop
+objective is open; missing fully-drawn markers are explicitly reported. No
+complete performance pass is asserted. See docs/S6_REPORT.md / S6_VALIDATION.json.

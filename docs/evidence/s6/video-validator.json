@@ -1,0 +1,204 @@
+[
+    {
+        "operation": "!=",
+        "assert_if": null,
+        "calculation": "P100",
+        "expressions": [
+            {
+                "operation": "!=",
+                "metadata": {
+                    "input_kpi": {
+                        "name": "3+ Video Consecutive Dropped Frames",
+                        "value": -1
+                    },
+                    "output_kpi": {
+                        "name": "3+ Video Consecutive Dropped Frames",
+                        "value": 2
+                    }
+                },
+                "function": null,
+                "result": true
+            },
+            {
+                "operation": "!=",
+                "metadata": {
+                    "input_kpi": {
+                        "name": "5+ Video Consecutive Dropped Frames",
+                        "value": -1
+                    },
+                    "output_kpi": {
+                        "name": "5+ Video Consecutive Dropped Frames",
+                        "value": 2
+                    }
+                },
+                "function": null,
+                "result": true
+            },
+            {
+                "operation": "!=",
+                "metadata": {
+                    "input_kpi": {
+                        "name": "App Proportional Memory",
+                        "value": -1
+                    },
+                    "output_kpi": {
+                        "name": "App Proportional Memory",
+                        "value": 110704
+                    }
+                },
+                "function": null,
+                "result": true
+            },
+            {
+                "operation": "!=",
+                "metadata": {
+                    "input_kpi": {
+                        "name": "CPU %",
+                        "value": -1
+                    },
+                    "output_kpi": {
+                        "name": "CPU %",
+                        "value": 153.3
+                    }
+                },
+                "function": null,
+                "result": true
+            },
+            {
+                "operation": "!=",
+                "metadata": {
+                    "input_kpi": {
+                        "name": "First Input to Frame Latency",
+                        "value": -1
+                    },
+                    "output_kpi": {
+                        "name": "First Input to Frame Latency",
+                        "value": 346.0
+                    }
+                },
+                "function": null,
+                "result": true
+            },
+            {
+                "operation": "!=",
+                "metadata": {
+                    "input_kpi": {
+                        "name": "Key pressed latency",
+                        "value": -1
+                    },
+                    "output_kpi": {
+                        "name": "Key pressed latency",
+                        "value": 5.3
+                    }
+                },
+                "function": null,
+                "result": true
+            },
+            {
+                "operation": "!=",
+                "metadata": {
+                    "input_kpi": {
+                        "name": "Key released latency",
+                        "value": -1
+                    },
+                    "output_kpi": {
+                        "name": "Key released latency",
+                        "value": 2.1
+                    }
+                },
+                "function": null,
+                "result": true
+            },
+            {
+                "operation": "!=",
+                "metadata": {
+                    "input_kpi": {
+                        "name": "Last Input to Frame Latency",
+                        "value": -1
+                    },
+                    "output_kpi": {
+                        "name": "Last Input to Frame Latency",
+                        "value": 265.0
+                    }
+                },
+                "function": null,
+                "result": true
+            },
+            {
+                "operation": "!=",
+                "metadata": {
+                    "input_kpi": {
+                        "name": "Player start to first video frame",
+                        "value": -1
+                    },
+                    "output_kpi": {
+                        "name": "Player start to first video frame",
+                        "value": 1161.3
+                    }
+                },
+                "function": null,
+                "result": true
+            },
+            {
+                "operation": "!=",
+                "metadata": {
+                    "input_kpi": {
+                        "name": "Time to first video frame",
+                        "value": -1
+                    },
+                    "output_kpi": {
+                        "name": "Time to first video frame",
+                        "value": 1376.4
+                    }
+                },
+                "function": null,
+                "result": true
+            },
+            {
+                "operation": "!=",
+                "metadata": {
+                    "input_kpi": {
+                        "name": "Time to player start",
+                        "value": -1
+                    },
+                    "output_kpi": {
+                        "name": "Time to player start",
+                        "value": 253.7
+                    }
+                },
+                "function": null,
+                "result": true
+            },
+            {
+                "operation": "!=",
+                "metadata": {
+                    "input_kpi": {
+                        "name": "Video FPS",
+                        "value": -1
+                    },
+                    "output_kpi": {
+                        "name": "Video FPS",
+                        "value": 18.4
+                    }
+                },
+                "function": null,
+                "result": true
+            },
+            {
+                "operation": "!=",
+                "metadata": {
+                    "input_kpi": {
+                        "name": "Video Fluidity",
+                        "value": -1
+                    },
+                    "output_kpi": {
+                        "name": "Video Fluidity",
+                        "value": 76.7
+                    }
+                },
+                "function": null,
+                "result": true
+            }
+        ]
+    }
+]

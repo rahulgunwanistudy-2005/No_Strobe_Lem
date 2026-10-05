@@ -1,0 +1,69 @@
+[
+    {
+        "operation": "!=",
+        "assert_if": null,
+        "calculation": "P100",
+        "expressions": [
+            {
+                "operation": "!=",
+                "metadata": {
+                    "input_kpi": {
+                        "name": "Application launch to first frame",
+                        "value": -1
+                    },
+                    "output_kpi": {
+                        "name": "Application launch to first frame",
+                        "value": 789.4
+                    }
+                },
+                "function": null,
+                "result": true
+            },
+            {
+                "operation": "!=",
+                "metadata": {
+                    "input_kpi": {
+                        "name": "Application launch to fully drawn",
+                        "value": -1
+                    },
+                    "output_kpi": {
+                        "name": "Application launch to fully drawn",
+                        "value": -1
+                    }
+                },
+                "function": null,
+                "result": false
+            },
+            {
+                "operation": "!=",
+                "metadata": {
+                    "input_kpi": {
+                        "name": "JavaScript bundle load time",
+                        "value": -1
+                    },
+                    "output_kpi": {
+                        "name": "JavaScript bundle load time",
+                        "value": 19.0
+                    }
+                },
+                "function": null,
+                "result": true
+            },
+            {
+                "operation": "!=",
+                "metadata": {
+                    "input_kpi": {
+                        "name": "Network calls time",
+                        "value": -1
+                    },
+                    "output_kpi": {
+                        "name": "Network calls time",
+                        "value": 34.2
+                    }
+                },
+                "function": null,
+                "result": true
+            }
+        ]
+    }
+]

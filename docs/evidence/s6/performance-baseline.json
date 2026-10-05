@@ -1,0 +1,396 @@
+{
+  "status": "diagnostic baseline; not final release zero-drop evidence",
+  "sdk": "0.24.12112",
+  "perf_cli": "0.24.0",
+  "trace": "synth_out/s6/perf-flow-tty/2026-10-06_02-46-33/iter_2_vs_trace",
+  "trace_sha256": "a8b521674d221f7a99a62cfab6b88e4e07adb3537281be09eef8f73ad1d948b7",
+  "pid": 65214,
+  "last_input_to_frame_latency_ms": [
+    74.0,
+    81.0,
+    70.0,
+    34.0,
+    126.0,
+    223.0,
+    21.0,
+    77.0
+  ],
+  "median_last_input_ms": 75.5,
+  "max_last_input_ms": 223.0,
+  "raw_counters": [
+    {
+      "metric": "latency",
+      "name": "first_input_to_frame_latency",
+      "value": "74.000000",
+      "pid": "65214"
+    },
+    {
+      "metric": "latency",
+      "name": "first_input_to_frame_latency",
+      "value": "81.000000",
+      "pid": "65214"
+    },
+    {
+      "metric": "latency",
+      "name": "first_input_to_frame_latency",
+      "value": "254.000000",
+      "pid": "65214"
+    },
+    {
+      "metric": "latency",
+      "name": "first_input_to_frame_latency",
+      "value": "34.000000",
+      "pid": "65214"
+    },
+    {
+      "metric": "latency",
+      "name": "first_input_to_frame_latency",
+      "value": "4037.000000",
+      "pid": "65214"
+    },
+    {
+      "metric": "latency",
+      "name": "first_input_to_frame_latency",
+      "value": "13424.000000",
+      "pid": "65214"
+    },
+    {
+      "metric": "latency",
+      "name": "first_input_to_frame_latency",
+      "value": "547.000000",
+      "pid": "65214"
+    },
+    {
+      "metric": "latency",
+      "name": "first_input_to_frame_latency",
+      "value": "15675.000000",
+      "pid": "65214"
+    },
+    {
+      "metric": "latency",
+      "name": "last_input_to_frame_latency",
+      "value": "74.000000",
+      "pid": "65214"
+    },
+    {
+      "metric": "latency",
+      "name": "last_input_to_frame_latency",
+      "value": "81.000000",
+      "pid": "65214"
+    },
+    {
+      "metric": "latency",
+      "name": "last_input_to_frame_latency",
+      "value": "70.000000",
+      "pid": "65214"
+    },
+    {
+      "metric": "latency",
+      "name": "last_input_to_frame_latency",
+      "value": "34.000000",
+      "pid": "65214"
+    },
+    {
+      "metric": "latency",
+      "name": "last_input_to_frame_latency",
+      "value": "126.000000",
+      "pid": "65214"
+    },
+    {
+      "metric": "latency",
+      "name": "last_input_to_frame_latency",
+      "value": "223.000000",
+      "pid": "65214"
+    },
+    {
+      "metric": "latency",
+      "name": "last_input_to_frame_latency",
+      "value": "21.000000",
+      "pid": "65214"
+    },
+    {
+      "metric": "latency",
+      "name": "last_input_to_frame_latency",
+      "value": "77.000000",
+      "pid": "65214"
+    },
+    {
+      "metric": "counter",
+      "name": "gwsi_avgFPS",
+      "value": "24.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "counter",
+      "name": "gwsi_avgFPS",
+      "value": "25.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "counter",
+      "name": "gwsi_avgFPS",
+      "value": "56.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "counter",
+      "name": "gwsi_avgFPS",
+      "value": "6.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "counter",
+      "name": "gwsi_avgFPS",
+      "value": "19.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "counter",
+      "name": "gwsi_avgFPS",
+      "value": "7.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "counter",
+      "name": "gwsi_avgFPS",
+      "value": "1.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "counter",
+      "name": "gwsi_avgFPS",
+      "value": "6.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "counter",
+      "name": "gwsi_droppedFramesPerSec",
+      "value": "2.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "counter",
+      "name": "gwsi_droppedFramesPerSec",
+      "value": "0.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "counter",
+      "name": "gwsi_droppedFramesPerSec",
+      "value": "10.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "counter",
+      "name": "gwsi_droppedFramesPerSec",
+      "value": "0.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "counter",
+      "name": "gwsi_droppedFramesPerSec",
+      "value": "1.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "counter",
+      "name": "gwsi_droppedFramesPerSec",
+      "value": "0.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "counter",
+      "name": "gwsi_droppedFramesPerSec",
+      "value": "0.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "counter",
+      "name": "gwsi_droppedFramesPerSec",
+      "value": "0.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "counter",
+      "name": "gwsi_submittedFPS",
+      "value": "24.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "counter",
+      "name": "gwsi_submittedFPS",
+      "value": "25.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "counter",
+      "name": "gwsi_submittedFPS",
+      "value": "54.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "counter",
+      "name": "gwsi_submittedFPS",
+      "value": "6.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "counter",
+      "name": "gwsi_submittedFPS",
+      "value": "19.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "counter",
+      "name": "gwsi_submittedFPS",
+      "value": "7.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "counter",
+      "name": "gwsi_submittedFPS",
+      "value": "1.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "counter",
+      "name": "gwsi_submittedFPS",
+      "value": "6.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "jank",
+      "name": "gwsi_frameTimeline",
+      "value": "0.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "jank",
+      "name": "gwsi_frameTimeline",
+      "value": "0.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "jank",
+      "name": "gwsi_frameTimeline",
+      "value": "0.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "jank",
+      "name": "gwsi_frameTimeline",
+      "value": "0.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "jank",
+      "name": "gwsi_frameTimeline",
+      "value": "0.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "jank",
+      "name": "gwsi_frameTimeline",
+      "value": "0.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "jank",
+      "name": "gwsi_frameTimeline",
+      "value": "0.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "jank",
+      "name": "gwsi_frameTimeline",
+      "value": "0.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "jank",
+      "name": "gwsi_frameTimeline",
+      "value": "0.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "jank",
+      "name": "gwsi_frameTimeline",
+      "value": "0.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "jank",
+      "name": "gwsi_frameTimeline",
+      "value": "0.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "jank",
+      "name": "gwsi_frameTimeline",
+      "value": "0.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "jank",
+      "name": "gwsi_frameTimeline",
+      "value": "0.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "jank",
+      "name": "gwsi_frameTimeline",
+      "value": "0.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "jank",
+      "name": "gwsi_frameTimeline",
+      "value": "0.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "jank",
+      "name": "gwsi_frameTimeline",
+      "value": "0.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "jank",
+      "name": "gwsi_frameTimeline",
+      "value": "0.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "jank",
+      "name": "gwsi_frameTimeline",
+      "value": "0.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "jank",
+      "name": "gwsi_frameTimeline",
+      "value": "0.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "jank",
+      "name": "gwsi_frameTimeline",
+      "value": "0.000000",
+      "pid": "0"
+    },
+    {
+      "metric": "jank",
+      "name": "gwsi_frameTimeline",
+      "value": "0.000000",
+      "pid": "0"
+    }
+  ],
+  "ttff_ms": [
+    264.0346830000132,
+    178.53252399998902,
+    257.16057400000096
+  ],
+  "launch_report_sha256": "2419ebaed3bde5c2423f8fd1ee5e08dcf7dacc0009a0b911889d83784d97f3e6",
+  "launch_validator": "FAILED; TTFD absent",
+  "limits": "VVD only; includes capture/input and concurrent host work. Input-to-frame is a native render metric, not pure JS focus callback scheduling. Nonzero dropped UI-frame counters are preserved; no causal attribution to veil."
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "key": "KEY_DOWN",
+    "sent_ns": 319336126767083,
+    "completed_ns": 319336525345750
+  },
+  {
+    "key": "KEY_LEFT",
+    "sent_ns": 319336785394416,
+    "completed_ns": 319337122653250
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "key": "KEY_DOWN",
+    "sent_ns": 318792481612958,
+    "completed_ns": 318792873190875
+  },
+  {
+    "key": "KEY_DOWN",
+    "sent_ns": 318793128298083,
+    "completed_ns": 318793481492375
+  },
+  {
+    "key": "KEY_DOWN",
+    "sent_ns": 318793731990791,
+    "completed_ns": 318794087834541
+  },
+  {
+    "key": "KEY_DOWN",
+    "sent_ns": 318794342951916,
+    "completed_ns": 318794679206958
+  },
+  {
+    "key": "KEY_DOWN",
+    "sent_ns": 318794934346958,
+    "completed_ns": 318795413010916
+  }
+]

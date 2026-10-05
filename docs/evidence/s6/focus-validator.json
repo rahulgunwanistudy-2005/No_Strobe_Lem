@@ -1,0 +1,129 @@
+[
+    {
+        "operation": "!=",
+        "assert_if": null,
+        "calculation": "P100",
+        "expressions": [
+            {
+                "operation": "!=",
+                "metadata": {
+                    "input_kpi": {
+                        "name": "3+ Consecutive Dropped Frames",
+                        "value": -1
+                    },
+                    "output_kpi": {
+                        "name": "3+ Consecutive Dropped Frames",
+                        "value": 0
+                    }
+                },
+                "function": null,
+                "result": true
+            },
+            {
+                "operation": "!=",
+                "metadata": {
+                    "input_kpi": {
+                        "name": "5+ Consecutive Dropped Frames",
+                        "value": -1
+                    },
+                    "output_kpi": {
+                        "name": "5+ Consecutive Dropped Frames",
+                        "value": 0
+                    }
+                },
+                "function": null,
+                "result": true
+            },
+            {
+                "operation": "!=",
+                "metadata": {
+                    "input_kpi": {
+                        "name": "First Input to Frame Latency",
+                        "value": -1
+                    },
+                    "output_kpi": {
+                        "name": "First Input to Frame Latency",
+                        "value": 1191.0
+                    }
+                },
+                "function": null,
+                "result": true
+            },
+            {
+                "operation": "!=",
+                "metadata": {
+                    "input_kpi": {
+                        "name": "Fluidity %",
+                        "value": -1
+                    },
+                    "output_kpi": {
+                        "name": "Fluidity %",
+                        "value": 100.0
+                    }
+                },
+                "function": null,
+                "result": true
+            },
+            {
+                "operation": "!=",
+                "metadata": {
+                    "input_kpi": {
+                        "name": "Granular Fluidity %",
+                        "value": -1
+                    },
+                    "output_kpi": {
+                        "name": "Granular Fluidity %",
+                        "value": 100.0
+                    }
+                },
+                "function": null,
+                "result": true
+            },
+            {
+                "operation": "!=",
+                "metadata": {
+                    "input_kpi": {
+                        "name": "Key pressed latency",
+                        "value": -1
+                    },
+                    "output_kpi": {
+                        "name": "Key pressed latency",
+                        "value": 9.8
+                    }
+                },
+                "function": null,
+                "result": true
+            },
+            {
+                "operation": "!=",
+                "metadata": {
+                    "input_kpi": {
+                        "name": "Key released latency",
+                        "value": -1
+                    },
+                    "output_kpi": {
+                        "name": "Key released latency",
+                        "value": 4.6
+                    }
+                },
+                "function": null,
+                "result": true
+            },
+            {
+                "operation": "!=",
+                "metadata": {
+                    "input_kpi": {
+                        "name": "Last Input to Frame Latency",
+                        "value": -1
+                    },
+                    "output_kpi": {
+                        "name": "Last Input to Frame Latency",
+                        "value": 129.0
+                    }
+                },
+                "function": null,
+                "result": true
+            }
+        ]
+    }
+]

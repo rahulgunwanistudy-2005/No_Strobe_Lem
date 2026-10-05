@@ -1,0 +1,17 @@
+[
+  {
+    "key": "KEY_DOWN",
+    "sent_ns": 319090551739125,
+    "completed_ns": 319090931643541
+  },
+  {
+    "key": "KEY_DOWN",
+    "sent_ns": 319091188503333,
+    "completed_ns": 319091625088208
+  },
+  {
+    "key": "KEY_ENTER",
+    "sent_ns": 319091885139375,
+    "completed_ns": 319092286950833
+  }
+]

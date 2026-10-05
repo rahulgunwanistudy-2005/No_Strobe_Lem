@@ -163,3 +163,30 @@ W3C Media, Vega overlay animation, AWS, Kiro and physical Fire TV hardware were 
   startup/seek performance should be profiled separately on physical hardware.
 - Would build again: yes. This resolves the S5 measurement blocker on VVD;
   it is not evidence for another SDK, display backend or physical Fire TV.
+
+## S6 — TV UX and performance tools
+
+- Builder Tools MCP supplied the focus guide, TVEventHandler, storage and
+  performance workflows. A native focus guide fixed scrubber horizontal escape;
+  border feedback and actual remote tests caught layout/scroll issues that Jest
+  cannot establish. SDK captures provided readable actual pixels without a
+  desktop lock/recording dependency.
+- The RN 0.83 reference still endorses legacy core AsyncStorage while the SDK
+  0.24 library guide recommends its replacement. The legacy API did not persist
+  settings on this VVD; the RN 0.83 alias of the vendor AsyncStorage extension
+  does, verified by native termination/relaunch. Cross-link/migrate those docs.
+- The performance workflow's exact Appium/driver versions worked when installed
+  in local isolated directories. `perf record` requires a TTY. MCP's processor
+  lookup failed; the SDK's native processor and KPI Visualizer remained usable.
+  Input latency lives in the debug JSON argument, not the trace slice duration.
+- Preparation/start logging is not sufficient to infer when a scenario can
+  send remote input. Wait for the post-launch catalog before Select. Terminating
+  an app in the scenario's prep caused its selected process to be reported as
+  crashed; discard that harness run, without claiming an application defect.
+- Avoid timed tests alongside host-heavy builds. Retain missing video samples,
+  frame drops and absent fully-drawn metrics rather than counting CLI exit zero
+  as a performance pass. VVD performance cannot substitute for physical TV.
+- Would build again: yes. Native D-pad, W3C, focus guide, storage and authenticated
+  SDK screenshot capture support the full product flow. Better aligned storage
+  docs, lifecycle-aware scenario readiness and self-contained trace-processor
+  discovery would shorten onboarding.

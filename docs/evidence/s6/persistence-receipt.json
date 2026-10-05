@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "storage_package": "@amazon-devices/react-native-async-storage__async-storage@2.1.9000000001",
+  "procedure": "Select Kids household, toggle warnings Off, terminate via vlcm, launch same installed release package, open settings via Menu; no device reboot or reinstall.",
+  "observed": {"household": "kids", "profile": "kids", "warnAhead": false},
+  "screenshots": ["kids-household.png", "settings-kids.png", "persistence-kids.png"]
+}

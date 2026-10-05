@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "architectures": [
+    "aarch64",
+    "armv7",
+    "x86_64"
+  ],
+  "modes": [
+    "Debug",
+    "Release"
+  ],
+  "release_packages": {
+    "tv/build/aarch64-release/nostrobetv_aarch64.vpkg": "0cf33c4b87e2c578092c01651e1235225ebfc66eb3a207145bcb8ee5bc10eb95",
+    "tv/build/armv7-release/nostrobetv_armv7.vpkg": "61c5c088535cc75a3b13660b371da1c70c0c722f986e50a6a2b49690462b96e3",
+    "tv/build/x86_64-release/nostrobetv_x86_64.vpkg": "fc99221128ff625e499b18239f6a5aea18bee9f4f2bfa8810d73c6ed7a5a512c"
+  },
+  "release_contents": "release-contents.txt",
+  "debug_contents": "debug-contents.txt",
+  "release_calibration_or_raw_controls": false
+}

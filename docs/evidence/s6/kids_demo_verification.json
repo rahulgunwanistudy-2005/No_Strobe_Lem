@@ -1,0 +1,55 @@
+{
+  "source_sha256": "76b285a3ad17130adefbfa19f3aa9700f4c6152e181f8d5e7114fc17f1dd3a41",
+  "source_events": [
+    {
+      "id": "evt_0001",
+      "kind": "luma_flash",
+      "severity": "warn",
+      "t_start": 3.833333,
+      "t_end": 6.625,
+      "peak_changes_per_s": 10,
+      "peak_area_fraction": 0.30377358490566037,
+      "peak_delta_cd_m2": 87.61350000000002,
+      "regime": "absolute"
+    },
+    {
+      "id": "evt_0002",
+      "kind": "extended_flashing",
+      "severity": "warn",
+      "t_start": 7.875,
+      "t_end": 8.916667,
+      "peak_changes_per_s": 8,
+      "peak_area_fraction": 0.389937106918239,
+      "peak_delta_cd_m2": null,
+      "regime": "absolute"
+    }
+  ],
+  "veil": [
+    {
+      "id": "illustrative_overlay",
+      "t_on": 0.0,
+      "t_off": 12.0,
+      "ramp_in_s": 0.5,
+      "ramp_out_s": 0.5,
+      "alpha": 0.1,
+      "gray": 0.25,
+      "covers": [
+        "evt_0001",
+        "evt_0002"
+      ]
+    }
+  ],
+  "verifier": {
+    "passes": true,
+    "offsets_checked_s": [
+      -0.26887499999999925,
+      0.0,
+      0.26887499999999925
+    ],
+    "residual_events": [],
+    "engine_version": "0.1.0",
+    "params_hash": "134f76ec2fe221ad3e34c239805112825d152f986a83517598307bf898f6ee94"
+  },
+  "reject_warnings": true,
+  "track_sha256": "e6b5b759ab0ed6b80d8c2c756f89d6c2cc918351e800de1be591fbb3747f3253"
+}

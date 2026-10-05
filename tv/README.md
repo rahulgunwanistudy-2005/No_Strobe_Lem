@@ -1,13 +1,16 @@
 # No Strobe-lem on Vega
 
-S5 provides a protected W3C player and a deterministic veil scheduler. It builds
-and plays the bundled CC-BY demonstration on the Vega Virtual Device. Device
-sync/compositing calibration is measured: ±268.875 ms verification tolerance,
-with maximum blend errors of 0.750 RGB / 0.953 Y codes. See the
-[S5 report](../docs/S5_REPORT.md) for recordings and fresh evaluation status.
-The demo is a 12-second Big Buck Bunny opening excerpt checked numerically on
-all three profiles. Its gentle cue demonstrates the overlay; it does not
-represent a source hazard. No autoplay.
+S6 adds a D-pad catalog, persisted household/profile/warning settings, hazard-ahead
+skip, hazard scrubber and four-second playback chrome. Selecting a title starts
+playback only after the matching verified track, surface and veil are ready.
+Kids household selects Kids automatically. See the [S6 report](../docs/S6_REPORT.md)
+for device evidence and measured performance limits.
+
+S5 device calibration remains ±268.875 ms, with maximum blend errors of
+0.750 RGB / 0.953 Y codes. See the [S5 report](../docs/S5_REPORT.md).
+The 12-second CC-BY demo has no FAIL events. Broadcast/Local show an illustrative
+cue; Kids covers and numerically suppresses its two warning events. This is a
+viewing aid demonstration, not a claim about other titles.
 
 ## Run the demonstration
 
@@ -36,9 +39,10 @@ Keep the server running; in another terminal at the repository root:
 vega run-app tv/build/aarch64-release/nostrobetv_aarch64.vpkg com.nostrobe.tv.main -d VirtualDevice
 ```
 
-Select Play with the remote. Left/right selects the ±10-second controls;
-Enter activates the focused control. Invalid, unresolved or mismatched
-sidecars keep playback covered and disabled. Seek pauses playback, covers the
+Select the first catalog card with the remote. Menu opens settings. Focus the
+scrubber and use left/right to seek by ten seconds; focus the hazard chip and
+press OK to skip beyond its tail. Back returns through settings/player/catalog.
+Invalid, unresolved or mismatched sidecars keep playback covered and disabled. Seek pauses playback, covers the
 surface and primes the new veil before uncovering/resuming. Backgrounding
 stops the player; reopen the app to continue.
 

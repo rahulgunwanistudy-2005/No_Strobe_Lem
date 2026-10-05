@@ -1,0 +1,218 @@
+{
+  "status": "measured; zero-drop gate not met",
+  "app_source_commit": "2b7d55a",
+  "scenario": "tools/perf_s6_scenario.py",
+  "scenario_sha256": "3e08e16a14cfe072ff195d0881987fe80cfb7eaf83c7750a84203513bea82354",
+  "video": {
+    "Video FPS": [
+      18.4,
+      19.3,
+      19.6
+    ],
+    "Video Fluidity": [
+      76.67,
+      80.42,
+      81.67
+    ],
+    "Time to first video frame": [
+      1376.4167090001106,
+      982.7798340001107,
+      923.4092510001659
+    ],
+    "3+ Video Consecutive Dropped Frames": [
+      2,
+      2,
+      2
+    ],
+    "5+ Video Consecutive Dropped Frames": [
+      2,
+      1,
+      1
+    ],
+    "Last Input to Frame Latency": [
+      264.0,
+      265.0,
+      245.0
+    ]
+  },
+  "trace_sha256": {
+    "synth_out/s6/perf-video-measured/2026-10-06_03-25-26/iter_1_vs_trace": "4f248124f78ac0fc4bdb5c24a1e6eef45f5a4f572a162b65491ec0b4e90285d6",
+    "synth_out/s6/perf-video-measured/2026-10-06_03-25-26/iter_2_vs_trace": "44662c7707632396efd16b35ef7bc283d229fee25a35b4915cd1fb2c7e099e71",
+    "synth_out/s6/perf-video-measured/2026-10-06_03-25-26/iter_3_vs_trace": "d6ed790afbf379c793961d61f95144a36fb50c82e7c40dce8e8f7fd9734f4fcb"
+  },
+  "application_pids": [
+    789280,
+    797240,
+    805930
+  ],
+  "limits": [
+    "VVD only, not physical TV",
+    "Three iterations, short 12-second verified fixture",
+    "No concurrent capture, build or evaluation",
+    "KPI validator checks values are present, not zero drops or a speed threshold",
+    "Title-opening latency includes verification/player initialization; separate focus run retained",
+    "No attribution of every frame drop to the rAF loop"
+  ],
+  "focus": {
+    "First Input to Frame Latency": [
+      535.0,
+      565.0,
+      530.0,
+      524.0,
+      548.0,
+      545.0,
+      537.0,
+      65.0,
+      1191.0,
+      541.0,
+      539.0,
+      542.0,
+      539.0,
+      549.0,
+      538.0,
+      541.0,
+      530.0,
+      535.0,
+      549.0,
+      535.0,
+      533.0,
+      1125.0,
+      52.0,
+      547.0,
+      540.0,
+      535.0,
+      1120.0,
+      539.0,
+      39.0,
+      544.0,
+      529.0,
+      527.0,
+      546.0,
+      548.0,
+      530.0,
+      531.0,
+      545.0,
+      529.0,
+      541.0
+    ],
+    "Last Input to Frame Latency": [
+      21.0,
+      16.0,
+      65.0,
+      18.0,
+      15.0,
+      26.0,
+      10.0,
+      18.0,
+      27.0,
+      17.0,
+      12.0,
+      129.0,
+      25.0,
+      25.0,
+      23.0,
+      12.0,
+      69.0,
+      13.0,
+      52.0,
+      12.0,
+      23.0,
+      16.0,
+      17.0,
+      12.0,
+      17.0,
+      14.0,
+      10.0,
+      16.0,
+      66.0,
+      12.0,
+      30.0,
+      9.0,
+      20.0,
+      15.0,
+      9.0,
+      39.0,
+      8.0,
+      16.0,
+      21.0
+    ],
+    "last_input_median_ms": 17.0,
+    "last_input_mean_ms": 25.0,
+    "sample_count": 39,
+    "trace_sha256": {
+      "synth_out/s6/perf-focus-final/2026-10-06_03-27-44/iter_1_vs_trace": "6b182887441beee0c874a401ac1bf5fe3ab9673eebc23926574b4e3accf40171",
+      "synth_out/s6/perf-focus-final/2026-10-06_03-27-44/iter_2_vs_trace": "fdeca9371008e1b0d84d4c20f7c968f38ef83f89a8805e7624882506d7672794",
+      "synth_out/s6/perf-focus-final/2026-10-06_03-27-44/iter_3_vs_trace": "67e92279a7180c659c569473342a8b081df975ca10ed8a8d12236d2a7965e3da"
+    },
+    "Fluidity %": [
+      100.0,
+      100.0,
+      100.0
+    ],
+    "Granular Fluidity %": [
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0
+    ],
+    "3+ Consecutive Dropped Frames": [
+      0,
+      0,
+      0
+    ],
+    "5+ Consecutive Dropped Frames": [
+      0,
+      0,
+      0
+    ]
+  },
+  "launch": {
+    "application_first_frame_ms": [
+      362.5028860001564,
+      201.0366029996872,
+      789.3906110000611
+    ],
+    "fully_drawn": null,
+    "validator": "failed: fully-drawn marker absent",
+    "trace_sha256": {
+      "synth_out/s6/perf-launch-final/2026-10-06_03-29-55/iter_1_vs_trace": "33dbe84d1e9a7d6c62b198b089967c054c00151959fa486db287d716d0dc88f2",
+      "synth_out/s6/perf-launch-final/2026-10-06_03-29-55/iter_2_vs_trace": "44fdd8f0edb8c7a3f2c9b8bf932732d0063254961fd560a5becba82b0adb9afa",
+      "synth_out/s6/perf-launch-final/2026-10-06_03-29-55/iter_3_vs_trace": "9bfa8b260cc473bd73b35e01448e1fae4aea68b88e42e06ddd785500b32e1e66"
+    }
+  }
+}

@@ -1,0 +1,3 @@
+SELECT 'latency' AS metric, s.name AS name, CAST(json_extract(extract_arg(s.arg_set_id,'debug.value'),'$.latencyMs') AS REAL) AS value, p.pid AS pid FROM slice s JOIN thread_track tt ON tt.id=s.track_id JOIN thread t ON t.utid=tt.utid JOIN process p ON p.upid=t.upid WHERE p.pid=65214 AND s.name IN ('first_input_to_frame_latency','last_input_to_frame_latency')
+UNION ALL SELECT 'counter',ct.name,c.value,0 FROM counter c JOIN counter_track ct ON ct.id=c.track_id WHERE ct.name IN ('gwsi_droppedFramesPerSec','gwsi_avgFPS','gwsi_submittedFPS')
+UNION ALL SELECT 'jank','gwsi_frameTimeline', CAST(extract_arg(s.arg_set_id,'debug.JankyFrame') AS REAL),0 FROM slice s WHERE s.name='gwsi_frameTimeline';

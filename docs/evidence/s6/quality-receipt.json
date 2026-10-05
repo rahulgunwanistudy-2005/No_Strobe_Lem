@@ -1,0 +1,12 @@
+{
+  "app_source_commit": "2b7d55a",
+  "status": "passed",
+  "tv_tests": 47,
+  "tv_suites": 9,
+  "checks": ["npm run typecheck", "npm run lint", "npm test", "npm run check:types", "ruff check tools/prepare_demo.py tools/snapshot_vvd.py tools/perf_s6_scenario.py", "ruff format --check tools/prepare_demo.py tools/snapshot_vvd.py tools/perf_s6_scenario.py", "UI forbidden-phrase audit: zero hits", "git diff --check"],
+  "engine_implementation_changed": false,
+  "full_engine_evaluation_rerun": false,
+  "engine_evaluation_reference": "docs/S5_REPORT.md",
+  "node_for_final_validation": "22.22.0",
+  "regressions": ["chip timing/toggle and unresolved priority", "red/amber/striped tick mapping", "overlap-aware skip target", "stale/cancelled/mismatched profile swaps", "serialized preference writes", "Kids household and stored settings", "storage failure applies Kids", "invalid/failed track refusal", "explicit unprotected choice does not autoplay", "native metadata/autoplay readiness and seek shield", "native veil initialization completes before exact cached opacity"]
+}

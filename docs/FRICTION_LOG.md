@@ -158,3 +158,81 @@ than accessed for every row (each property access copies the full frame).
   were running. Preroll remained black until Play, then the excerpt ended at the
   requested target’s remaining duration. The app’s black seek shield remained
   present during the wait; this is functional evidence, not a latency benchmark.
+
+## S6 — virtual-device launch lifetime (2026-10-06 IST)
+
+- Tool/version: Vega SDK 0.24.12112, CLI 1.4.2, macOS arm64.
+- Reproduction: `vega virtual-device start` (also `--no-gui`) reports
+  'Virtual device ready'; immediately after the invocation completes,
+  `vega virtual-device status` reports running=false and `vega device list`
+  reports no devices. Reproduced twice. Performance doctor consequently
+  reports 'No supported devices found'.
+- Expected: the device remains available for install, remote and capture checks.
+- Impact: CLI readiness alone cannot establish an S6 device gate.
+- Investigation: keep the launch terminal open to distinguish session lifetime
+  from an emulator failure. Outcome recorded in the S6 report.
+
+## S6 — performance tooling prerequisites and trace fallback (2026-10-06 IST)
+
+- Vega Perf CLI 0.24.0 initially reports Appium absent. Installed the documented
+  Appium 2.2.2 / Vega driver 3.30.0 in ignored, task-local directories; no global
+  installation or existing tool removal. The generated scenario uses official
+  `jsonrpc: injectInputKeyEvent` select code 96.
+- `perf record` without a TTY errors `(19, 'Operation not supported by device')`.
+  A terminal plus its documented `s`/`q` controls records actual traces.
+- Builder Tools `analyze_perfetto_traces` cannot find its trace processor even
+  though local `vega exec perf` works. Used the SDK-bundled processor directly.
+  Its `-q` flag takes a file; multiple result-producing statements require
+  separate queries. Both errors were reproduced, then corrected.
+- Initial 40-second UI/player trace includes concurrent screenshot/input work:
+  native last-input latency spans 21–223 ms and dropped UI-frame counters are
+  nonzero. Retained as diagnostic evidence, not a zero-drop gate. Repeated
+  unchanged opacity writes were removed before the final measurement.
+- Three launch runs return real TTFF values but their combined validator fails
+  because TTFD is absent. S6 does not label that report a complete KPI pass.
+
+## S6 — legacy settings did not survive process restart (2026-10-06 IST)
+
+- Core Kepler AsyncStorage returned without a visible error, but selecting Kids
+  household and warnings Off, terminating with `vlcm terminate-app`, launching
+  the same installed package and opening Settings restored Family/Broadcast/On.
+  Reproduced on a fresh Release install with no intervening reinstall or VVD reboot.
+- The React Native 0.83 AsyncStorage page recommends the core stopgap; the SDK
+  0.24 library page instead recommends its autolinked AsyncStorage extension.
+  Migrated to the documented RN 0.83 npm alias, pinned to 2.1.9000000001, whose
+  compatibility map targets IAsyncStorage__AsyncStorage_1. Repeat the exact
+  native restart test; unit mocks alone cannot establish persistence.
+- The first final Jest run overlapped a native build and timed out finding the
+  catalog. The isolated test passed without changing its assertion or timeout;
+  the later full 46-test run passed. Keep host-heavy builds out of timed checks.
+- Attribution inherited Settings' scroll offset, hiding its Back control.
+  Reset the scroll position when changing views; the disclaimer remains a
+  D-pad focus destination. Catalog posters were reduced to keep card focus
+  borders visible on the 1080p TV viewport.
+
+- Constant Kids cue initially displayed opaque gray: cached opacity was sent
+  before native zero-duration initialization completed, allowing its final 1
+  to overwrite the cue. Await native completion before rAF priming; add a
+  regression for completion ordering, constant-target caching and teardown.
+
+## S6 — performance scenario readiness
+
+- The first video run completed three iterations but only one produced video
+  KPIs; Select was sent immediately after native launch, before the catalog was
+  necessarily focusable. Discard the aggregate as repeated video evidence.
+- A trial reset inside prep terminated the process selected by the KPI runner,
+  which reported a crash with no crash log; that harness run was interrupted
+  and is not application crash evidence. Keep prep passive and wait three
+  seconds after launch in run before remote Select; measure again exclusively.
+- Rapid manual termination/relaunch can return status 255. A bounded lifecycle
+  settling interval and tolerating “not running” termination allowed the
+  remaining error-state checks to complete. All temporary fixture bytes restored.
+- The supported AsyncStorage extension retained Kids/Off across native restart;
+  the repeat on the final Release passed. Constant Kids veil now shows video
+  rather than opaque gray after the initialization-order fix.
+
+- Corrected final video scenario produced three usable iterations: 18.4–19.6
+  fps for the 24-fps excerpt, 76.7–81.7% fluidity, first video frame
+  923.4–1376.4 ms. Consecutive dropped-frame metrics remain nonzero. The
+  zero-drop gate is not met; this VVD result is not a physical-TV estimate or
+  proof that the rAF loop caused every drop. Preserve the raw reports/traces.

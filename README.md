@@ -4,6 +4,11 @@ Offline SDR video analysis with portable HazardTrack sidecars and a Vega OS play
 
 **Engine and measured Vega playback:** detects SDR luminance/red flashes and prolonged flashing, solves display-code veils, verifies the complete simulated output at −0.268875/0/+0.268875 s offsets, and writes HazardTrack JSON/WebVTT plus a static trace report. Profiles are Broadcast, Local and Kids. Unresolved profiles produce debugging JSON only. The S5 TV player builds and plays on VVD; real device captures establish the timing bound and calibrated compositing model. S4 evaluation covers seeded boundaries/shapes, licensed-footage composites and an unmodified full-film detection control. Its fresh calibrated rerun is tracked in [the S5 report](docs/S5_REPORT.md). Verification describes the simulation model and does not establish medical safety or certification. AWS processing remains future work.
 
+**S6 viewing experience:** D-pad catalog, profile and household settings,
+hazard skip/map, guarded seeking and attribution are implemented. Settings
+survive native process restarts on VVD. Validation and performance limits are
+recorded in [the S6 report](docs/S6_REPORT.md).
+
 No Strobe-lem is a viewing aid that reduces flashing according to published broadcast guidelines. It is not a medical device and cannot guarantee that content is safe for every person with photosensitive epilepsy.
 
 ## Development
