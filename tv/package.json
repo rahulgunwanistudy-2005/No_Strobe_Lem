@@ -11,7 +11,7 @@
     "test": "jest --runInBand",
     "test:snapshot": "jest --colors --updateSnapshot",
     "lint": "eslint src __tests__ --ext .ts,.tsx",
-    "lint:fix": "eslint src test package.json --ext .ts,.tsx --fix",
+    "lint:fix": "eslint src __tests__ --ext .ts,.tsx --fix",
     "build:release": "node ../scripts/build-tv.cjs Release",
     "build:debug": "node ../scripts/build-tv.cjs Debug",
     "build:app": "npm-run-all build:release",
