@@ -8,6 +8,7 @@ import numpy as np
 
 from nostrobe.config import Settings
 from nostrobe.decode.ffmpeg import block_mean, iter_analysis, probe, to_cells
+from nostrobe.detect.area import CountAreas
 from nostrobe.detect.events import EventBuilder, merge_events
 from nostrobe.detect.extended import ExtendedDetector
 from nostrobe.detect.luma_flash import LumaFlashDetector, flash_evidence
@@ -58,14 +59,19 @@ class DetectionPipeline:
                 values.reshape(-1)[self.cell_index] for values in (counts, raw, red_counts, red_raw)
             )
             deltas = deltas.reshape(-1)[self.cell_index]
+        luma_areas, red_areas = CountAreas(counts), CountAreas(red_counts)
+        combined_raw = np.maximum(raw, red_raw)
+        raw_areas, combined_areas = CountAreas(raw), CountAreas(combined_raw)
         for params in self.profiles:
             builders = self.builders[params.profile]
-            builders["luma_flash"].update(flash_evidence(counts, t, params, deltas))
+            builders["luma_flash"].update(flash_evidence(counts, t, params, deltas, luma_areas))
             if params.red_rule:
-                builders["red_flash"].update(flash_evidence(red_counts, t, params))
+                builders["red_flash"].update(flash_evidence(red_counts, t, params, areas=red_areas))
             builders["extended_flashing"].update(
                 self.extended[params.profile].update(
-                    np.maximum(raw, red_raw) if params.red_rule else raw, t
+                    combined_raw if params.red_rule else raw,
+                    t,
+                    combined_areas if params.red_rule else raw_areas,
                 )
             )
 

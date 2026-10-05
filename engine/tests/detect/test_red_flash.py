@@ -4,7 +4,7 @@ import pytest
 from nostrobe.detect.pipeline import detect_arrays
 from nostrobe.detect.red_flash import RedFlashDetector
 from nostrobe.domain.profiles import get_profile
-from nostrobe.luminance.color import cie1976_uv
+from nostrobe.luminance.color import cie1976_uv, red_ratio
 
 
 @pytest.mark.parametrize("fps", (24, 25, 30, 50, 60))
@@ -29,7 +29,10 @@ def test_strict_chromaticity_boundary(monkeypatch, distance, expected):
         result[..., 0] = rgb[..., 2] * distance
         return result
 
-    monkeypatch.setattr("nostrobe.detect.red_flash.cie1976_uv", uv)
+    monkeypatch.setattr(
+        "nostrobe.detect.red_flash.red_features",
+        lambda rgb: (np.moveaxis(uv(rgb), -1, 0), red_ratio(rgb) >= 0.8),
+    )
     detector = RedFlashDetector((1, 1))
     count = 0
     for index in range(20):

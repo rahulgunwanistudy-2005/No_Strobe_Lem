@@ -9,10 +9,11 @@ from collections.abc import Callable
 import numpy as np
 from numpy.typing import NDArray
 
+from nostrobe.detect.kernels import sdr_crossings
+from nostrobe.detect.zigzag_types import BoolArray as BoolArray
+from nostrobe.detect.zigzag_types import IntArray as IntArray
 from nostrobe.luminance.curve import FloatArray, thr
 
-BoolArray = NDArray[np.bool_]
-IntArray = NDArray[np.int64]
 Threshold = Callable[[FloatArray], FloatArray]
 TIME_EPS = 1e-9
 
@@ -73,10 +74,13 @@ class TimestampRing:
 class ChangeDetector:
     """Running extrema and registered anchors; no loops over image cells."""
 
-    def __init__(self, shape: tuple[int, int], thr_fn: Threshold = thr) -> None:
+    def __init__(
+        self, shape: tuple[int, int], thr_fn: Threshold = thr, *, keep_history: bool = True
+    ) -> None:
         self.shape = shape
         self.thr_fn = thr_fn
         self.history = TimestampRing(shape)
+        self._keep_history = keep_history
         self.extreme = np.zeros(shape)
         self.anchor = np.zeros(shape)
         self.direction = np.zeros(shape, dtype=np.int8)
@@ -85,16 +89,22 @@ class ChangeDetector:
 
     def update(self, luminance: NDArray[np.generic], t: float) -> BoolArray:
         values = np.asarray(luminance, dtype=np.float64)
-        if values.shape != self.shape or not np.isfinite(values).all() or (values < 0).any():
+        if values.shape != self.shape or not (values.min() >= 0 and math.isfinite(values.max())):
             raise ValueError("luminance must be finite, nonnegative and match detector shape")
         if not math.isfinite(t) or t < 0 or t <= self._last_t:
             raise ValueError("timestamps must be finite, nonnegative and strictly increasing")
         initial = not math.isfinite(self._last_t)
         self._last_t = t
-        self.history.expire(t)
+        if self._keep_history:
+            self.history.expire(t)
         if initial:
             self.extreme[:] = self.anchor[:] = values
             return np.zeros(self.shape, dtype=np.bool_)
+        if self.thr_fn is sdr_threshold:
+            changes = sdr_crossings(values, self.extreme, self.anchor, self.direction, self.delta)
+            if self._keep_history:
+                self.history.add(changes, t)
+            return changes
         forward = (values - self.extreme) * self.direction >= 0
         reference = np.where(forward, self.anchor, self.extreme)
         # Before the first registered direction, anchor/extreme are the
@@ -106,14 +116,15 @@ class ChangeDetector:
         signed = values - reference
         self.delta = np.abs(signed)
         changes = self.delta >= self.thr_fn(np.minimum(values, reference))
-        self.direction[changes] = np.sign(signed[changes]).astype(np.int8)
-        self.anchor[changes] = values[changes]
+        np.copyto(self.direction, np.sign(signed), where=changes, casting="unsafe")
+        np.copyto(self.anchor, values, where=changes)
         unset = self.direction == 0
         extend = (forward | changes) & ~unset
-        self.extreme[extend] = values[extend]
-        self.anchor[unset] = np.minimum(self.anchor[unset], values[unset])
-        self.extreme[unset] = np.maximum(self.extreme[unset], values[unset])
-        self.history.add(changes, t)
+        np.copyto(self.extreme, values, where=extend)
+        np.minimum(self.anchor, values, out=self.anchor, where=unset)
+        np.maximum(self.extreme, values, out=self.extreme, where=unset)
+        if self._keep_history:
+            self.history.add(changes, t)
         return changes
 
 

@@ -36,9 +36,29 @@ class MaskWindow:
             self._add(mask, float(times))
         else:
             # Retroactive leading/tail edges can differ by cell; batch by
-            # frame PTS, never loop over cells.
-            for t in np.unique(times[mask]):
-                self._add(mask & (times == t), float(t))
+            # frame PTS. Select only active cells instead of rescanning the
+            # entire image and updating every count for each distinct PTS.
+            rows, cols = np.nonzero(mask)
+            values = times[rows, cols]
+            for t in np.unique(values):
+                selected = values == t
+                self._add_sparse(rows[selected], cols[selected], float(t))
+
+    def _add_sparse(self, rows: IntArray, cols: IntArray, t: float) -> None:
+        if not math.isfinite(t):
+            raise ValueError("change timestamps must be finite")
+        existing = self._masks.get(t)
+        if existing is not None:
+            if existing[rows, cols].any():
+                raise ValueError("duplicate cell change at one timestamp")
+        else:
+            if len(self._times) >= self._max_timestamps:
+                raise ValueError("more than 1024 distinct change timestamps in one second")
+            existing = np.zeros(self.counts.shape, dtype=np.bool_)
+            self._masks[t] = existing
+            insort(self._times, t)
+        existing[rows, cols] = True
+        self.counts[rows, cols] += 1
 
     def _add(self, mask: BoolArray, t: float) -> None:
         if not math.isfinite(t):

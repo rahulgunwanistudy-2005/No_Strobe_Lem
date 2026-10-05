@@ -6,8 +6,9 @@ The >6-change convention and fixed 360 ms are documented product choices.
 import numpy as np
 from numpy.typing import NDArray
 
+from nostrobe.detect.kernels import pair_edges
 from nostrobe.detect.window import MaskWindow
-from nostrobe.detect.zigzag import TIME_EPS, BoolArray, IntArray
+from nostrobe.detect.zigzag import BoolArray, IntArray
 
 
 class FlashCounter:
@@ -26,27 +27,27 @@ class FlashCounter:
     def update(
         self, changes: BoolArray, direction: NDArray[np.signedinteger], t: float
     ) -> tuple[IntArray, IntArray]:
+        if changes.shape != self.raw.counts.shape or direction.shape != changes.shape:
+            raise ValueError("change and direction shapes must match the counter")
         self.raw.expire(t)
         self.dense.expire(t)
-        edges = changes & (direction != 0) & (direction != self.direction)
-        if not edges.any():
+        if not changes.any():
             return self.dense.counts, self.raw.counts
-        leading = edges & ~self._pending
-        trailing = edges & self._pending
-        # The second leading edge establishes dense flashing, including the
-        # immediately preceding flash; slow flashes contribute only to raw.
-        close = leading & (t - self._previous_lead < self.spacing_s - TIME_EPS)
-        retro = close & ~self._previous_counted
-        self.dense.add(retro & (self._previous_lead > t - 1 + TIME_EPS), self._previous_lead)
-        self.dense.add(retro & (self._previous_tail > t - 1 + TIME_EPS), self._previous_tail)
-        self._dense_flash[leading] = close[leading]
-        self._lead[leading] = t
-        self.dense.add(close | (trailing & self._dense_flash), t)
-        self._previous_lead[trailing] = self._lead[trailing]
-        self._previous_tail[trailing] = t
-        self._previous_counted[trailing] = self._dense_flash[trailing]
-        self._pending[leading] = True
-        self._pending[trailing] = False
-        self.direction[edges] = direction[edges]
+        edges, retro_lead, retro_tail, dense = pair_edges(
+            changes,
+            direction,
+            t,
+            self.spacing_s,
+            self.direction,
+            self._pending,
+            self._lead,
+            self._previous_lead,
+            self._previous_tail,
+            self._previous_counted,
+            self._dense_flash,
+        )
+        self.dense.add(retro_lead, self._previous_lead)
+        self.dense.add(retro_tail, self._previous_tail)
+        self.dense.add(dense, t)
         self.raw.add(edges, t)
         return self.dense.counts, self.raw.counts

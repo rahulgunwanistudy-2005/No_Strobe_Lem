@@ -3,6 +3,7 @@
 import numpy as np
 from numpy.typing import NDArray
 
+from nostrobe.detect.kernels import color_features
 from nostrobe.luminance.curve import FloatArray
 
 # BT.709 primaries / D65 to CIE XYZ; W3C CSS Color 4 §10.2.
@@ -17,7 +18,7 @@ _RGB_TO_XYZ = np.array(
 
 def _normalized(values: NDArray[np.generic]) -> FloatArray:
     result = np.asarray(values, dtype=np.float64)
-    if not np.all(np.isfinite(result)) or np.any((result < 0) | (result > 1)):
+    if result.size and not (result.min() >= 0 and result.max() <= 1):
         raise ValueError("color values must be finite and normalized to [0, 1]")
     return result
 
@@ -50,6 +51,10 @@ def red_ratio(linear_rgb: NDArray[np.generic]) -> FloatArray:
     values = _normalized(linear_rgb)
     if values.shape[-1] != 3:
         raise ValueError("expected RGB channels on the last axis")
+    return _ratio(values)
+
+
+def _ratio(values: FloatArray) -> FloatArray:
     total = values.sum(axis=-1)
     return np.divide(values[..., 0], total, out=np.zeros_like(total), where=total > 0)
 
@@ -59,11 +64,25 @@ def cie1976_uv(linear_rgb: NDArray[np.generic]) -> FloatArray:
     values = _normalized(linear_rgb)
     if values.shape[-1] != 3:
         raise ValueError("expected RGB channels on the last axis")
+    return np.moveaxis(_uv_planes(values), 0, -1)
+
+
+def _uv_planes(values: FloatArray) -> FloatArray:
+    xyz = np.moveaxis(values @ _RGB_TO_XYZ.T, -1, 0).copy()
+    den = xyz[0] + 15 * xyz[1] + 3 * xyz[2]
+    u = np.divide(4 * xyz[0], den, out=np.zeros_like(den), where=den > 0)
+    v = np.divide(9 * xyz[1], den, out=np.zeros_like(den), where=den > 0)
+    return np.stack((u, v))
+
+
+def red_features(linear_rgb: NDArray[np.generic]) -> tuple[FloatArray, NDArray[np.bool_]]:
+    """Validated, contiguous chromaticity planes and saturated-red cells."""
+    values = _normalized(linear_rgb)
+    if values.shape[-1] != 3:
+        raise ValueError("expected RGB channels on the last axis")
     xyz = values @ _RGB_TO_XYZ.T
-    den = xyz[..., 0] + 15 * xyz[..., 1] + 3 * xyz[..., 2]
-    u = np.divide(4 * xyz[..., 0], den, out=np.zeros_like(den), where=den > 0)
-    v = np.divide(9 * xyz[..., 1], den, out=np.zeros_like(den), where=den > 0)
-    return np.stack((u, v), axis=-1)
+    uv, saturated = color_features(values.reshape(-1, 3), xyz.reshape(-1, 3))
+    return uv.reshape(2, *values.shape[:-1]), saturated.reshape(values.shape[:-1])
 
 
 def red_transition(before: NDArray[np.generic], after: NDArray[np.generic]) -> NDArray[np.bool_]:
