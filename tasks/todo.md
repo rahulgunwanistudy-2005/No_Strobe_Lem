@@ -192,17 +192,18 @@ no simulated value will be labeled as measured.
   test clock, scheduler, loading, lifecycle and platform-import boundaries.
 - [x] Generate and numerically preflight nonhazardous sync/compositing stimuli,
   plus bounded recording-analysis tools and an isolated Debug lab.
-- [ ] Obtain real >=60 fps VVD recordings for timing, seeks/pause/resume and
-  compositing; visual QA and recording access remain blocked.
-- [ ] Apply the measured tolerance/model only after valid capture, rerun S3/S4
+- [x] Obtain real >=60 fps VVD recordings for timing, seeks/pause/resume and
+  compositing; rendered visual QA completed through the SDK capture fallback.
+- [x] Apply the measured tolerance/model only after valid capture, rerun S3/S4
   verification, preserve historical evidence and report fresh gates honestly.
 - [x] Self-review, run quality/build/device gates, document reproduced friction
   and product feedback, and commit logical stages.
 
 
-## S5 results
+## S5 initial checkpoint — historical
 
-Player/calibration infrastructure is committed; S5 acceptance is **incomplete**.
+At the initial checkpoint, player/calibration infrastructure was committed;
+S5 acceptance was **incomplete**. The completed continuation is recorded below.
 See docs/S5_REPORT.md and engine/eval/s5_calibration_status.json.
 
 - 408 engine tests and 30 TV tests passed; six calibration/conformance tests
@@ -222,4 +223,31 @@ See docs/S5_REPORT.md and engine/eval/s5_calibration_status.json.
 - [x] Recheck host/device capture availability and obtain real rendered frames.
 - [x] Complete visual QA and >=60 fps steady/seek/pause-resume sync captures.
 - [x] Measure all compositor cases; apply the measured tolerance/model.
-- [ ] Rerun S3/S4 and quality/build gates; update results and commit evidence.
+- [x] Rerun S3/S4 and quality/build gates; update results and commit evidence.
+
+## S5 completed continuation
+
+S5 acceptance is complete. See docs/S5_REPORT.md, docs/S5_VALIDATION.json
+and engine/eval/s5_fresh_evaluation_audit.json.
+
+- Four actual rendered SDK recordings: 11,070 samples, each >=60 fps,
+  original timestamps preserved to within 0.5 ms; native overlay and player
+  visual checks pass. Low-rate/obscured/stale/overloaded attempts retained.
+- Timing: worst per-scenario p95 179.250 ms, maximum 223.000 ms; prescribed
+  formula yields ±268.875 ms. All profiles use parameter version 1.1.
+- Compositing: all nine alpha/gray combinations over display codes 16…235;
+  original Y error 12.535 codes corrected to 0.953 Y / 0.750 RGB codes.
+  Production compositing and all cache paths share the measured model.
+- Fresh S3: 80 encoded cases / 240 outcomes, all verify with zero unresolved
+  segments and FN=FP=0; Broadcast must-pass cases receive no veils.
+- Fresh S4: 325 cases / 975 tracks verified, 355 with veils; 978 total profile
+  outcomes, full retained film control, exit 0. FN=FP=0 on all profiles,
+  zero unresolved/residual failures at −268.875/0/+268.875 ms. No saved tracks
+  reused; original source hashes, independent truth and events match exactly.
+- 421 engine tests / 30 TV tests pass; 500 shared timeline samples within
+  1e-6; lint/format/strict types/generated drift and all six architecture/mode
+  builds pass. Release contains only demo media, Debug adds calibration.
+- Changes and real evidence committed systematically without attribution
+  tags. Original S4 two-run determinism remains historical, with the new
+  calibrated full evaluation recorded separately. Physical Fire TV, AWS/S6,
+  PEAT and natural-film adjudication retain their explicit scope limits.

@@ -1,10 +1,12 @@
 # Session 5 — Vega playback and measured calibration
 
 2026-10-05 UTC. Lane A, macOS 26.3 arm64 / Apple M1, 8 GiB RAM.
-**Device, implementation, quality and S3 gates pass; the full S4 rerun is running.**
-The initial capture blocker is resolved. Both calibration reports contain actual
-rendered VVD measurements. The remaining acceptance step is the complete fresh
-S4 evaluation, followed by final evidence review and commits.
+**S5 acceptance is complete.** The protected player runs on VVD, both
+calibration reports contain actual rendered measurements, and fresh S3/S4
+solving and verification pass with the measured model and timing bound.
+Quality, package and rendered-device checks pass. The initial capture blocker
+is resolved; changes and evidence are committed in logical stages without
+attribution trailers.
 
 ## Measured device behavior
 
@@ -102,10 +104,18 @@ Machine-readable evidence is in `S5_VALIDATION.json` and `engine/eval/`.
   unresolved segments, FN=FP=0 on every profile. Broadcast must-pass cases
   receive no veils. `s5_smoke_verification.json` records fresh encoding,
   detection, solving and final whole-file verification; no saved tracks reused.
-- **Fresh S4 rerun is running.** It regenerates independent truth and encoded
-  cases, detects/solves/verifies all profiles at the measured tolerance and
-  streams the full retained film control. Its final reports will replace the
-  submission numbers only after the complete gate result is available.
+- **Fresh S4 rerun passed: 325 cases / 975 tracks verified**, including
+  355 tracks with veils; FN=FP=0 on every profile, zero residual failures
+  and unresolved segments. All 978 profile outcomes completed with exit 0,
+  including the full retained unadjudicated film control. It freshly generates
+  independent truth and encoded cases, detects, solves and performs whole-file
+  verification at −268.875/0/+268.875 ms; no saved mitigation tracks are reused.
+  `RESULTS.md` now cites the measured bound and the calibration checksums.
+- Final audit: all encoded source hashes, independent truth and unmitigated
+  detected events match the prior baseline. Current code, profile, calibration
+  and all six package hashes match. `s5_fresh_evaluation_audit.json` retains
+  this receipt and the new report hashes. No source truth or acceptance gate
+  was changed to obtain a pass.
 
 The initial S5 saved-track audit at ±0.15 s remains historical evidence in
 `s5_verification.json`. The original S4 two-run determinism proof also refers

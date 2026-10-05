@@ -93,11 +93,37 @@
     "gates_pass": true,
     "report": "../engine/eval/s5_smoke_verification.json"
   },
-  "fresh_s4_status": "running",
+  "fresh_s4_status": "passed",
   "historical_saved_track_audit": {
     "report": "../engine/eval/s5_verification.json",
     "tracks": 975,
     "sync_tolerance_s": 0.15,
     "origin": "initial S5 checkpoint; superseded by fresh calibrated rerun"
+  },
+  "s5_acceptance_complete": true,
+  "fresh_s4": {
+    "profile_outcomes": 978,
+    "scored_cases": 325,
+    "verified_tracks": 975,
+    "tracks_with_veils": 355,
+    "gates_pass": true,
+    "exit_code": 0,
+    "fn": 0,
+    "fp": 0,
+    "unresolved_segments": 0,
+    "residual_failures": 0,
+    "mode": "complete fresh encode/detect/solve/final whole-file verification; no saved tracks reused",
+    "report": "../engine/eval/results.json",
+    "audit": "../engine/eval/s5_fresh_evaluation_audit.json",
+    "code_sha256": "f34c34ce1d68ea31ef6f37d1f6e86d02bbc4cbf8ed90cb63bb27cfbcf6a1c5b4",
+    "report_sha256": {
+      "results.json": "8e368bdb52941e07bc38e3c5dae7e47f60006970a5777329af50799c88713237",
+      "RESULTS.md": "64c8ccd71648c0181677118534454b2c18bd846f1f62152186bc09b0fadd7900",
+      "s5_smoke_verification.json": "662ee2c2ae34a21c8f94b553846adc6550d8ce18b0336ffa18a190c5d6a9a3c2",
+      "sync_calibration.json": "6a1e858f394fb33f1ad4a1d24a9e3836ace20f5006b5ff9e072532d2b9fee80c",
+      "compositing_calibration.json": "293dc4cf29f6d78f523e1297d685b9fb52115fcda64a2d00b32674b2ddc72515"
+    },
+    "original_sources_truth_events_match": true,
+    "unadjudicated_film_control": "retained, baseline-equal, excluded from confusion scores"
   }
 }

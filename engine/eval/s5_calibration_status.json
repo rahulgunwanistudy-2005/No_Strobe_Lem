@@ -1,8 +1,8 @@
 {
   "format_version": 1,
   "date": "2026-10-05",
-  "status": "measured_waiting_complete_evaluation",
-  "s5_acceptance_complete": false,
+  "status": "complete",
+  "s5_acceptance_complete": true,
   "sync_measurement": "sync_calibration.json",
   "compositing_measurement": "compositing_calibration.json",
   "engine_sync_tolerance_s": 0.26887499999999925,
@@ -85,11 +85,21 @@
       }
     }
   },
-  "required_remaining": [
-    "complete fresh S3 smoke and S4 evaluation; final evidence review/commit"
-  ],
+  "required_remaining": [],
   "saved_track_audit": "s5_verification.json",
   "params_version": "1.1",
   "capture_provenance": "../../docs/evidence/s5/capture_provenance.json",
-  "rendered_visual_qa": "passed: demo/pause, refusing failed verifier, covered return from background, native calibration seek at target opacity"
+  "rendered_visual_qa": "passed: demo/pause, refusing failed verifier, covered return from background, native calibration seek at target opacity",
+  "fresh_smoke_verification": "s5_smoke_verification.json",
+  "fresh_s4_verification": "results.json",
+  "fresh_evaluation_audit": "s5_fresh_evaluation_audit.json",
+  "code_sha256": "f34c34ce1d68ea31ef6f37d1f6e86d02bbc4cbf8ed90cb63bb27cfbcf6a1c5b4",
+  "report_sha256": {
+    "results.json": "8e368bdb52941e07bc38e3c5dae7e47f60006970a5777329af50799c88713237",
+    "RESULTS.md": "64c8ccd71648c0181677118534454b2c18bd846f1f62152186bc09b0fadd7900",
+    "s5_smoke_verification.json": "662ee2c2ae34a21c8f94b553846adc6550d8ce18b0336ffa18a190c5d6a9a3c2",
+    "sync_calibration.json": "6a1e858f394fb33f1ad4a1d24a9e3836ace20f5006b5ff9e072532d2b9fee80c",
+    "compositing_calibration.json": "293dc4cf29f6d78f523e1297d685b9fb52115fcda64a2d00b32674b2ddc72515"
+  },
+  "quality_and_build_evidence": "../../docs/S5_VALIDATION.json"
 }
