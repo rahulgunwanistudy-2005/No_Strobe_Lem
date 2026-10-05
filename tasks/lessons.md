@@ -65,3 +65,23 @@
 - S5: native media success and VISIBLE lifecycle state do not prove rendered
   overlay pixels or sync. Reject empty/black captures and keep calibration
   parameters explicitly unmeasured. Restore device port reverse after reboot.
+
+## S5 measured continuation — 2026-10-05 UTC
+
+- Captured RGB display codes and decoded limited BT.709 Y use different gray
+  targets. Match the player's rounded RGB code, then convert its target to
+  limited Y with the 16-code offset and 219-code span. A good RGB fit alone
+  concealed a 12.535-code engine Y error. Share the corrected model across
+  every verifier/distortion cache path and rerun solving after the change.
+- Reinstall/launch can retain an existing native process and playback position.
+  Explicitly terminate between calibration runs; use source counters to detect
+  stale state, actual seeks and interior pause holds. EOF holds do not establish
+  pause/resume. Never rename a steady recording to claim another scenario.
+- A pulse at an already-veiled seek frame has no new onset to time. Keep its
+  measured coverage pixels separately and require enough other timed onsets;
+  do not invent a zero offset or silently drop an uncovered flash.
+- Acquisition is part of the experiment. QMP/OS/native APIs may expose different
+  buffers, debug notifications can obscure the pulse, and request overhead can
+  perturb the emulator. Reject insufficient/obscured/overloaded records, retain
+  diagnostics, record actual rates/intervals and preserve SDK timestamps. Use
+  the worst scenario p95 so extra steady observations cannot dilute its bound.

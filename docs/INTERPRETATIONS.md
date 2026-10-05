@@ -85,9 +85,10 @@ flash-threshold Notes 2/3 on 2026-10-04. Source wording overrides the brief.
 
 ## S3 mitigation and publication
 
-- Display-code blending follows the build pack literally: numerical limited Y
-  codes divide by 255; gray is the same normalized code in Y and full-range
-  RGB. This is not a measured device fit. S5 must calibrate the actual overlay.
+- Historical S3 blending followed the build pack literally: numerical limited
+  Y codes were divided by 255; gray used the same normalized code in Y and
+  full-range RGB. This was not a measured device fit; S5 supersedes it with the measured
+  range conversion described below.
 - Cache raw 640×360 pre-average Y/RGB bytes in source-SHA-keyed `.npy` shards.
   Caching only average luminance and reversing the transfer would lose spatial
   information and understate simulation error. Shards preserve VFR timestamps,
@@ -155,7 +156,8 @@ flash-threshold Notes 2/3 on 2026-10-04. Source wording overrides the brief.
   is an assumption for that artistic background, not a measured source transfer.
 - Composite effects occupy 90% of the RGB code blend, retaining 10% moving
   source detail. These stress the verifier and are not a prevalence study.
-- Default ±150 ms sync tolerance remains simulated until S5 device calibration.
+- Historical S4 used a simulated ±150 ms sync tolerance. S5 replaces it with
+  the measured ±268.875 ms bound described below.
 
 Static source-frame review corrected the real-scene selections before composite
 execution: the group scene at 450 s, street at 250 s, and dark display-lit lab at
@@ -206,3 +208,32 @@ A frozen pre-optimization reference from dd980e5 checks exact state, counters
 and timestamp masks at all five supported frame rates, irregular timestamps,
 strict red and SDR boundaries, and the full grid. New compiled counter inputs
 also reject mismatched shapes before accessing native array memory.
+
+## S5 measured Vega timing and compositing
+
+The requested host screen recorder produced no frames on this host. The
+SDK-bundled authenticated `EmulatorController.getScreenshot` API instead
+captures the rendered VVD application surface, including native video and
+the RN veil. The four accepted recordings exceed 60 actual samples/s and
+preserve original SDK timestamps in lossless FFV1; no interpolation or
+nominal-rate retiming is used. This substitutes the acquisition API, not
+synthetic frames, for the requested OS recording. Exact provenance and
+rejected attempts are retained in the S5 report.
+
+For `max(p95 * 1.5, 0.1)`, p95 is the largest absolute-offset p95 across
+steady, seek and pause/resume scenarios. This conservative interpretation
+prevents extra steady onsets from diluting the slower seek distribution.
+Measured p95 is 0.17925 s, yielding 0.268875 s; the 0.223 s observed maximum
+fits the bound. An already-veiled pulse exactly at the seek destination has
+coverage pixels but no new onset to time. It is recorded separately without
+inventing an offset; eight other seek onsets establish the timing distribution.
+
+The native view rounds its RGB gray to an integer display code. The measured
+model therefore uses `q = floor(gray * 255 + 0.5) / 255` for RGB, and
+`(16 + 219*q) / 255` for decoded limited-range BT.709 Y. Alpha blending stays
+in code space, before transfer and spatial averaging. All nine requested
+alpha/gray combinations cover input display codes 16…235, with the corresponding
+actual decoded limited Y samples retained explicitly. The former model's
+12.535-code Y error is preserved; the corrected maximum is 0.953 Y codes and
+0.750 RGB codes. Engine parameter version 1.1 and calibration hashes invalidate
+old evidence. These are VVD/backend measurements, not a physical Fire TV fit.

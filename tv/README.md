@@ -2,7 +2,9 @@
 
 S5 provides a protected W3C player and a deterministic veil scheduler. It builds
 and plays the bundled CC-BY demonstration on the Vega Virtual Device. Device
-sync/compositing calibration is **pending**; see [S5 report](../docs/S5_REPORT.md).
+sync/compositing calibration is measured: ±268.875 ms verification tolerance,
+with maximum blend errors of 0.750 RGB / 0.953 Y codes. See the
+[S5 report](../docs/S5_REPORT.md) for recordings and fresh evaluation status.
 The demo is a 12-second Big Buck Bunny opening excerpt checked numerically on
 all three profiles. Its gentle cue demonstrates the overlay; it does not
 represent a source hazard. No autoplay.

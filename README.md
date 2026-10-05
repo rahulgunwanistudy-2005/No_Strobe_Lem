@@ -2,7 +2,7 @@
 
 Offline SDR video analysis with portable HazardTrack sidecars and a Vega OS player prototype.
 
-**Engine and S4 evaluation:** detects SDR luminance/red flashes and prolonged flashing, solves display-code veils, verifies the complete simulated output at −0.15/0/+0.15 s offsets, and writes HazardTrack JSON/WebVTT plus a static trace report. Profiles are Broadcast, Local and Kids. Unresolved profiles produce debugging JSON only. The S5 TV player builds and runs on VVD; measured device calibration and AWS processing remain open. S4 evaluation covers seeded boundaries/shapes, licensed-footage composites and an unmodified full-film detection control. Verification describes the simulation model and does not establish medical safety or certification.
+**Engine and measured Vega playback:** detects SDR luminance/red flashes and prolonged flashing, solves display-code veils, verifies the complete simulated output at −0.268875/0/+0.268875 s offsets, and writes HazardTrack JSON/WebVTT plus a static trace report. Profiles are Broadcast, Local and Kids. Unresolved profiles produce debugging JSON only. The S5 TV player builds and plays on VVD; real device captures establish the timing bound and calibrated compositing model. S4 evaluation covers seeded boundaries/shapes, licensed-footage composites and an unmodified full-film detection control. Its fresh calibrated rerun is tracked in [the S5 report](docs/S5_REPORT.md). Verification describes the simulation model and does not establish medical safety or certification. AWS processing remains future work.
 
 No Strobe-lem is a viewing aid that reduces flashing according to published broadcast guidelines. It is not a medical device and cannot guarantee that content is safe for every person with photosensitive epilepsy.
 
@@ -96,8 +96,10 @@ reported as not run. No player-ready tracks are published by evaluation.
 
 Only numbers from [RESULTS.md](engine/eval/RESULTS.md) and
 [results.json](engine/eval/results.json) may be quoted in submission copy.
-Read the gate and limitations before using the headline block. The two complete
-runs' byte comparison is in [determinism.json](engine/eval/determinism.json).
+Read the gate and limitations before using the headline block. The original S4
+two-run byte comparison is in [determinism.json](engine/eval/determinism.json);
+it records historical simulated parameters. The fresh measured S5 rerun has
+separate provenance in the current results and [S5 report](docs/S5_REPORT.md).
 
 Decoded Y/RGB bytes are cached in ignored `.nostrobe_cache/`, keyed by source
 SHA-256 and decode format. Each frame takes about 0.88 MiB; a ten-minute
@@ -110,6 +112,6 @@ Configuration is read only in `nostrobe.config.Settings`: `NOSTROBE_REPO_ROOT`, 
 
 Luma-only media support: explicitly tagged limited-range 8-bit planar YUV SDR. Detection with RGB requires BT.709 transfer, primaries and matrix tags. Decode defaults to 640×360, then averages in cd/m² to 160×90 cells. Tests cover flat-gray recovery, full-resolution synthetic comparisons and variable presentation timestamps. Caller must close a partially consumed frame iterator (`contextlib.closing`) to reap its subprocess immediately. Wider media coverage and production evaluation are later gates.
 
-Lane A: macOS arm64, Vega SDK 0.24.12112 / CLI 1.4.2; stock hello-world built and reached VISIBLE on the Vega Virtual Device. See [TV setup and calibration](tv/README.md); S5 acceptance remains incomplete until real device captures are measured. See [Session 1 report](docs/S1_REPORT.md), [Session 2 report](docs/S2_REPORT.md), [Session 3 report](docs/S3_REPORT.md), [Session 4 report](docs/S4_REPORT.md), [Session 5 report](docs/S5_REPORT.md), [detection performance](docs/PERFORMANCE.md), [interpretations](docs/INTERPRETATIONS.md), [tool feedback](docs/PRODUCT_FEEDBACK.md), and [build safety](docs/SAFETY.md).
+Lane A: macOS arm64, Vega SDK 0.24.12112 / CLI 1.4.2; the protected W3C player runs on the Vega Virtual Device with measured timing/compositing and actual rendered-screen checks. See [TV setup and calibration](tv/README.md), [Session 1 report](docs/S1_REPORT.md), [Session 2 report](docs/S2_REPORT.md), [Session 3 report](docs/S3_REPORT.md), [Session 4 report](docs/S4_REPORT.md), [Session 5 report](docs/S5_REPORT.md), [detection performance](docs/PERFORMANCE.md), [interpretations](docs/INTERPRETATIONS.md), [tool feedback](docs/PRODUCT_FEEDBACK.md), and [build safety](docs/SAFETY.md).
 
 Licensed under Apache-2.0. No AWS resources are deployed.
