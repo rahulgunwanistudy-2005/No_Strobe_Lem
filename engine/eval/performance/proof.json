@@ -1,0 +1,25 @@
+{
+  "baseline_results_sha256": "f6b9f3da435e5a6b6a5fc0430740e0657a336379b6a8d9c0606b4a73beda1c93",
+  "benchmark_files": {
+    "cold": {
+      "all_film_events_identical": true,
+      "exit_code": 0,
+      "frames": 14315,
+      "sha256": "04631f14a2f2149b8958d454ac5a7509727ac3f2794b6ecefd2de74af72fad4a",
+      "speed_target_met": true
+    },
+    "warm": {
+      "all_film_events_identical": true,
+      "exit_code": 0,
+      "frames": 14315,
+      "sha256": "0af138124b42800a046d548520c308ec24ffc7c4ece4e6ecc0450808bf295ee0",
+      "speed_target_met": true
+    }
+  },
+  "code_sha256": "0094b510e64117a189c5ba74fb3b1d4eed2630c82870e982aec6a0df0901e042",
+  "cold_jit_cache": {
+    "empty_at_start": true,
+    "files_after": 6
+  },
+  "scope": "All three profiles; original full-film source; full 160x90 grid. Detection wall and CPU gates >=20x; decode/cell conversion and full mitigation have separate costs."
+}
