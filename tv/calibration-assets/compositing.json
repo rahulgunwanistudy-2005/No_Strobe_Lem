@@ -6,7 +6,7 @@
   "video": "/calibration/compositing.mp4",
   "fps": 30,
   "duration_s": 30,
-  "source_sha256": "37675429943053200c7124600099395a24e5104befe0771b2edc4c42db572a40",
+  "source_sha256": "f18a2acfa51c7cb0d94a550ea8a2262dfd862b7cf3dd66c414ce79b7c82abd98",
   "cues": [
     {
       "id": "composite_0",

@@ -117,3 +117,20 @@ AVFoundation still provided no usable frames. QMP's successful screenshot
 request returned an entirely black framebuffer, which was rejected as visual
 and calibration evidence. A VVD restart also clears port reverse mappings;
 reapplying `vda reverse tcp:8765 tcp:8765` restored catalog loading.
+
+## S5 continuation: supported capture and vendor warning — 2026-10-05
+
+Amazon staff confirm gwsi-tool-screenshooter is unsupported on VVD. The
+SDK-bundled EmulatorController.getScreenshot API, enabled through the local
+emulator console and authenticated with its existing discovery token, yields
+actual 1920×1080 rendered screenshots. The endpoint listens only on loopback;
+no token is printed, committed or authentication disabled. QMP was capturing
+a different framebuffer. Host AVFoundation remains unavailable.
+
+The Debug image exposed React's forwardRef arity warning over the video.
+W3C Media 2.3.2's bundled source map identifies SliderMetaData's one-argument
+forwardRef callback. Ignore only that exact vendor warning in Debug LogBox
+so it cannot contaminate calibration pixels; retain other diagnostics.
+Initial capture attempts below 60 fps are rejected. Sampling and encoding
+are measured separately; protobuf image bytes must be cached once rather
+than accessed for every row (each property access copies the full frame).

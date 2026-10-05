@@ -50,6 +50,10 @@ def composite_frames() -> Iterator[ByteArray]:
     for index in range(30 * FPS):
         frame = np.full((HEIGHT, WIDTH, 3), 48, dtype=np.uint8)
         frame[32:280, 100:540] = ramp[None, :, None]
+        # Endpoint guards prevent viewport resampling from mixing the first/last
+        # measured code with the surrounding background. All 220 codes remain.
+        frame[32:280, 92:100] = 16
+        frame[32:280, 540:548] = 235
         counter(frame, index)
         yield frame
 
