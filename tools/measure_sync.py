@@ -13,7 +13,8 @@ if __name__ == "__main__":
     parser.add_argument("--descriptor", type=Path)
     parser.add_argument("--scenario", choices=["steady", "seek", "pause_resume"])
     parser.add_argument(
-        "--crop", help="w:h:x:y rectangle (ffmpeg crop order) of the video surface, excluding controls"
+        "--crop",
+        help="w:h:x:y rectangle (ffmpeg crop order) of the video surface, excluding controls",
     )
     parser.add_argument("--combine", type=Path, nargs="+")
     parser.add_argument("--output", type=Path, required=True)

@@ -11,7 +11,9 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--recording", type=Path, required=True)
     parser.add_argument("--descriptor", type=Path, required=True)
-    parser.add_argument("--crop", help="w:h:x:y rectangle (ffmpeg crop order) of the video surface")
+    parser.add_argument(
+        "--crop", help="w:h:x:y rectangle (ffmpeg crop order) of the video surface"
+    )
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     result = compositing_measurement(
