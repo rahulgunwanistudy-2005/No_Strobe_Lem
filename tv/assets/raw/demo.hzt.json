@@ -27,15 +27,15 @@
   "verifier": {
     "passes": true,
     "offsets_checked_s": [
-      -0.15,
+      -0.26887499999999925,
       0.0,
-      0.15
+      0.26887499999999925
     ],
     "residual_events": [],
     "engine_version": "0.1.0",
-    "params_hash": "70dcc50ff260aa1abcb1137f7ca022293f27dbcdc6c694c49b1c3ed79455de6a"
+    "params_hash": "a9a3a0b32dc6adbc3ed56629267c79ad73363ffbca96999abcd9fe84ad5f3f94"
   },
-  "generated_at": "2026-10-05T10:11:23.542225Z",
+  "generated_at": "2026-10-05T17:49:57.459214Z",
   "stats": {
     "veiled_fraction_of_runtime": 0.5,
     "mean_alpha": 0.20833333333333334,

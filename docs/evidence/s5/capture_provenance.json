@@ -1,0 +1,133 @@
+{
+  "format_version": 1,
+  "sdk": "0.24.12112",
+  "surface": "VVD rendered application, authenticated loopback EmulatorController.getScreenshot",
+  "authentication": "existing SDK token in memory only; never stored in evidence",
+  "recordings": [
+    {
+      "scenario": "steady",
+      "recording": "synth_out/s5/captures/sync-steady-clean.mkv",
+      "capture_manifest": "synth_out/s5/captures/sync-steady-clean/capture.json",
+      "capture_manifest_sha256": "7147c9f637e3f1325fb02a4bab353625815d7aa8324c871b2c7198539cbf2486",
+      "recording_sha256": "b2fba75f02d1b482b3d5a8229340f78ac0639fcacdbd0782c1033b5db8527ad3",
+      "method": "SDK EmulatorController.getScreenshot RGB888; live rendered surface",
+      "width": 960,
+      "height": 540,
+      "frames": 3359,
+      "average_fps": 134.35757175136456,
+      "original_timestamp_start_us": 1791220827868454,
+      "original_timestamp_end_us": 1791220852861463,
+      "max_sample_interval_s": 0.037887,
+      "max_encoded_timestamp_error_s": 0.0005000000000023874,
+      "crop": "770:434:94:0",
+      "timestamp_policy": "actual SDK timestamps; variable-rate lossless FFV1; no interpolation/retiming/duplication"
+    },
+    {
+      "scenario": "seek",
+      "recording": "synth_out/s5/captures/sync-seek-controlled.mkv",
+      "capture_manifest": "synth_out/s5/captures/sync-seek-controlled/capture.json",
+      "capture_manifest_sha256": "d808b2ae578a877fa57be81c36680b16df5fb18f959aa10786eb5db03b979fad",
+      "recording_sha256": "9b83b20e1156adc2f716006b0f3047301960ecbc1e53453baa075cc41a00240e",
+      "method": "SDK EmulatorController.getScreenshot RGB888; live rendered surface",
+      "width": 960,
+      "height": 540,
+      "frames": 1928,
+      "average_fps": 62.24641128603993,
+      "original_timestamp_start_us": 1791221602228608,
+      "original_timestamp_end_us": 1791221633186216,
+      "max_sample_interval_s": 0.040308,
+      "max_encoded_timestamp_error_s": 0.0004990000000013595,
+      "crop": "770:434:94:0",
+      "timestamp_policy": "actual SDK timestamps; variable-rate lossless FFV1; no interpolation/retiming/duplication",
+      "remote_inputs": [
+        {
+          "key": "KEY_ENTER",
+          "request_ns": 305356650365875,
+          "completed_ns": 305357087050041,
+          "request_elapsed_s": 1.1249794624745846e-06,
+          "completed_elapsed_s": 0.43669704196508974
+        },
+        {
+          "key": "KEY_RIGHT",
+          "request_ns": 305359092585333,
+          "completed_ns": 305359810477625,
+          "request_elapsed_s": 2.005420207977295,
+          "completed_elapsed_s": 2.7233968329965137
+        },
+        {
+          "key": "KEY_ENTER",
+          "request_ns": 305359810491666,
+          "completed_ns": 305360195472500,
+          "request_elapsed_s": 2.7234102499787696,
+          "completed_elapsed_s": 3.10839174996363
+        },
+        {
+          "key": "KEY_LEFT",
+          "request_ns": 305360195488125,
+          "completed_ns": 305360734693916,
+          "request_elapsed_s": 3.1084066670155153,
+          "completed_elapsed_s": 3.6476132919779047
+        }
+      ]
+    },
+    {
+      "scenario": "pause_resume",
+      "recording": "synth_out/s5/captures/sync-pause_resume-640.mkv",
+      "capture_manifest": "synth_out/s5/captures/sync-pause_resume-640/capture.json",
+      "capture_manifest_sha256": "01d157ae2151930f4ccb6fef12696a43136ce1115b144dd7dd31b96dd1ac9810",
+      "recording_sha256": "102d3321f84edd6ea0e4ed2511518cd49f6fa029712492444e349cadc9631457",
+      "method": "SDK EmulatorController.getScreenshot RGB888; live rendered surface",
+      "width": 640,
+      "height": 360,
+      "frames": 2991,
+      "average_fps": 96.64777046523004,
+      "original_timestamp_start_us": 1791221891330451,
+      "original_timestamp_end_us": 1791221922267533,
+      "max_sample_interval_s": 0.024392,
+      "max_encoded_timestamp_error_s": 0.0004999999999988347,
+      "crop": "514:289:63:0",
+      "timestamp_policy": "actual SDK timestamps; variable-rate lossless FFV1; no interpolation/retiming/duplication",
+      "remote_inputs": [
+        {
+          "key": "KEY_ENTER",
+          "request_ns": 305645083514583,
+          "completed_ns": 305645835996791,
+          "request_elapsed_s": 1.1249794624745846e-06,
+          "completed_elapsed_s": 0.7524900829885155
+        },
+        {
+          "key": "KEY_ENTER",
+          "request_ns": 305652840627666,
+          "completed_ns": 305653289542791,
+          "request_elapsed_s": 7.00456445798045,
+          "completed_elapsed_s": 7.45350583299296
+        },
+        {
+          "key": "KEY_ENTER",
+          "request_ns": 305657292370250,
+          "completed_ns": 305657648679666,
+          "request_elapsed_s": 11.456331999972463,
+          "completed_elapsed_s": 11.81264254101552
+        }
+      ]
+    },
+    {
+      "scenario": "compositing",
+      "recording": "synth_out/s5/captures/compositing-unobscured.mkv",
+      "capture_manifest": "synth_out/s5/captures/compositing-unobscured/capture.json",
+      "capture_manifest_sha256": "87b8cd03e236f684ddee89cd8c28ccc3f4bc2dc366c1e6285834088f4349b205",
+      "recording_sha256": "b8eeb65d87e1a78cbe597ab9dcec884d2d6fc33060c802767bc1acc732a73617",
+      "method": "SDK EmulatorController.getScreenshot RGB888; live rendered surface",
+      "width": 960,
+      "height": 540,
+      "frames": 2792,
+      "average_fps": 90.15880904057363,
+      "original_timestamp_start_us": 1791222092440110,
+      "original_timestamp_end_us": 1791222123396597,
+      "max_sample_interval_s": 0.083349,
+      "max_encoded_timestamp_error_s": 0.0005000000000023874,
+      "crop": "770:434:94:0",
+      "timestamp_policy": "actual SDK timestamps; variable-rate lossless FFV1; no interpolation/retiming/duplication"
+    }
+  ]
+}
