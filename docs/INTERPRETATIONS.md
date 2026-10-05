@@ -237,3 +237,34 @@ actual decoded limited Y samples retained explicitly. The former model's
 12.535-code Y error is preserved; the corrected maximum is 0.953 Y codes and
 0.750 RGB codes. Engine parameter version 1.1 and calibration hashes invalidate
 old evidence. These are VVD/backend measurements, not a physical Fire TV fit.
+
+## S6 viewer behavior
+
+The user's request to commit takes precedence over §22.2's manual-commit
+baseline. S6 uses S1's Lane A and retains S5's measured playback semantics.
+
+A missing sidecar is distinct from failed verification: the former offers an
+explicit unprotected-playback choice and persistent banner, with playback
+paused by default for every profile (including Kids). The latter always
+refuses playback. S6's missing-track fallback is never automatic, because
+bible §14 forbids default unmitigated playback. Unresolved ticks and chips are
+mapped for diagnostic/future catalogs; unresolved tracks still fail the reader.
+
+Chip lookahead begins three seconds before the cue's visible ramp begins;
+skipping goes beyond its full tail/ramp, extending through overlapping cues.
+Warning-only events appear in amber without a skip chip. Unresolved lookahead
+ignores the warning toggle. This presentation does not alter veil execution.
+
+Changing a household to Kids selects and persists Kids automatically. Family
+resets to Broadcast; Kids households cannot select a less strict profile.
+Settings writes are serialized. A profile request keeps the previous verified
+track while fetching; the latest successful response stages until a render
+frame, then a shield covers native propagation of the new scheduler. No media
+reload or seek occurs. Failed or mismatched profile requests pause and block.
+
+Vega 0.83 documentation explicitly endorses core AsyncStorage as its interim
+supported SQLite-backed implementation. Use only getItem/setItem with an
+app-scoped key, behind the platform boundary; no additional storage package.
+D-pad focus uses native navigation and visible borders. Input listeners do not
+override native directional focus; scrubber horizontal trapping uses a focus
+guide. Release has no raw-playback toggle or calibration route.

@@ -251,3 +251,26 @@ and engine/eval/s5_fresh_evaluation_audit.json.
   tags. Original S4 two-run determinism remains historical, with the new
   calibrated full evaluation recorded separately. Physical Fire TV, AWS/S6,
   PEAT and natural-film adjudication retain their explicit scope limits.
+
+# Session 6 plan
+
+Scope: execute S6_vega_ux.md on the S1-selected Lane A. The user's explicit
+commit request overrides the bible's manual-commit default. No attribution
+trailers. Preserve measured S5 clock/veil semantics and verification refusal.
+
+- [ ] Consult official Vega focus, remote input, storage and performance APIs.
+- [ ] Build validated catalog, persisted household/profile/warning settings,
+  attribution, chip/tick logic and race-safe profile swaps.
+- [ ] Integrate D-pad catalog/player/settings flow, protected autoplay, guarded
+  seeking/skipping, four-second chrome and distinct missing/invalid/network states.
+- [ ] Add meaningful timing/mapping/swap/safety regressions; run type, lint,
+  test, generated-contract and release-content gates.
+- [ ] Run and inspect on VVD; measure launch/focus/frame performance using
+  available tooling, record actual evidence and any unresolved limitations.
+- [ ] Self-review, document friction/decisions/results and commit logical stages.
+
+Safety interpretation: §14 forbids default unmitigated playback. A missing
+track stays paused behind an explicit unprotected-playback choice and a
+persistent 'Not analyzed — no protection' banner; Kids defaults to cancel.
+Invalid/failing/unresolved tracks refuse playback. Unresolved tick/chip mapping
+is supported for diagnostics, but does not bypass the verified-track gate.
