@@ -167,3 +167,40 @@ def test_matching_notification_etag_is_quoted_for_conditional_get(
     ):
         assert process(event(eTag=digest), store, config)["results"][0]["state"] == "ready"
         assert download.call_args_list[0].kwargs["IfMatch"] == f'"{digest}"'
+
+
+def test_disk_preflight_refuses_before_decode(store: Store, config: Config) -> None:
+    media = tracks("fixture")[0].media
+    with (
+        patch("pipeline.probe", return_value=media),
+        patch("pipeline.shutil.disk_usage", return_value=type("Disk", (), {"free": 1})()),
+        patch("pipeline.load_cache") as decode,
+    ):
+        result = process(event(), store, config)["results"][0]
+    assert result["error"]["type"] == "InputLimitError"
+    assert not store.uploads
+    decode.assert_not_called()
+
+
+def test_stream_limit_does_not_trust_content_length(store: Store) -> None:
+    config = Config(bucket="media", public_base_url="https://example.com/public", max_input_bytes=2)
+    original = store.get_object
+
+    def underestimate(**kwargs: Any) -> dict[str, Any]:
+        response = original(**kwargs)
+        if kwargs["Key"].startswith("ingest/"):
+            response["ContentLength"] = 1
+        return response
+
+    with patch.object(store, "get_object", side_effect=underestimate):
+        result = process(event(), store, config)["results"][0]
+    assert result["error"]["type"] == "InputLimitError"
+    assert not store.uploads
+
+
+@pytest.mark.parametrize("duration", [0, -1, float("nan"), float("inf")])
+def test_misconfigured_duration_cannot_disable_input_limit(duration: float) -> None:
+    with pytest.raises(ValueError):
+        Config(
+            bucket="media", public_base_url="https://example.com/public", max_duration_s=duration
+        )
