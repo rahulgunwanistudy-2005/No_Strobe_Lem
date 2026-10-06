@@ -21,7 +21,8 @@ Findings fixed in separate commits: zero-denominator probe exceptions; React
 state-only seek serialization; native-seek exceptions and queued dispatch after
 media error; permissive catalog credentials/fragments; nonfinite ingest limits;
 size checks trusting only declared ContentLength; image-check orphan cleanup;
-and unsupported dependency versions with compatible published fixes.
+unsupported dependency versions with compatible published fixes; and a hard-coded
+container evidence host label found when reviewing the independent Linux artifact.
 
 The ingest review retains checksum/ETag binding, verified-only publication,
 streamed limits, decoded-storage preflight, catalog conflict relisting and

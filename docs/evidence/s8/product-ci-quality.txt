@@ -1,0 +1,24 @@
+aws-package	Run uv run ruff check lambda tests smoke.py check_image.py && uv run ruff format --check lambda tests smoke.py check_image.py && uv run mypy --strict lambda smoke.py check_image.py && uv run pytest -q	2026-10-06T13:45:35.9581232Z All checks passed!
+aws-package	Run uv run ruff check lambda tests smoke.py check_image.py && uv run ruff format --check lambda tests smoke.py check_image.py && uv run mypy --strict lambda smoke.py check_image.py && uv run pytest -q	2026-10-06T13:45:35.9778154Z 8 files already formatted
+aws-package	Run uv run ruff check lambda tests smoke.py check_image.py && uv run ruff format --check lambda tests smoke.py check_image.py && uv run mypy --strict lambda smoke.py check_image.py && uv run pytest -q	2026-10-06T13:45:46.7397679Z Success: no issues found in 5 source files
+aws-package	Run uv run ruff check lambda tests smoke.py check_image.py && uv run ruff format --check lambda tests smoke.py check_image.py && uv run mypy --strict lambda smoke.py check_image.py && uv run pytest -q	2026-10-06T13:45:55.8519371Z 16 passed in 8.55s
+aws-package	Run uv tool run --from aws-sam-cli==1.166.2 sam validate --lint --template-file infra/template.yaml	2026-10-06T13:46:02.8905117Z /home/runner/work/No_Strobe_Lem/No_Strobe_Lem/infra/template.yaml is a valid SAM Template
+aws-package	Run uv tool run --from aws-sam-cli==1.166.2 sam build --template-file infra/template.yaml	2026-10-06T13:46:43.3584906Z Build Succeeded
+session-one	Run uv run ruff check && uv run ruff format --check && uv run mypy --strict src && uv run pytest -q	2026-10-06T13:45:53.8193859Z All checks passed!
+session-one	Run uv run ruff check && uv run ruff format --check && uv run mypy --strict src && uv run pytest -q	2026-10-06T13:45:53.8477509Z 91 files already formatted
+session-one	Run uv run ruff check && uv run ruff format --check && uv run mypy --strict src && uv run pytest -q	2026-10-06T13:46:05.2359932Z Success: no issues found in 56 source files
+session-one	Run uv run ruff check && uv run ruff format --check && uv run mypy --strict src && uv run pytest -q	2026-10-06T13:50:33.3789349Z 431 passed in 267.21s (0:04:27)
+session-one	Run npm run types:check && npm run typecheck	﻿2026-10-06T13:50:33.7035248Z ##[group]Run npm run types:check && npm run typecheck
+session-one	Run npm run types:check && npm run typecheck	2026-10-06T13:50:33.7035676Z [36;1mnpm run types:check && npm run typecheck[0m
+session-one	Run npm run types:check && npm run typecheck	2026-10-06T13:50:33.7098750Z shell: /usr/bin/bash -e {0}
+session-one	Run npm run types:check && npm run typecheck	2026-10-06T13:50:33.7099004Z env:
+session-one	Run npm run types:check && npm run typecheck	2026-10-06T13:50:33.7099248Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+session-one	Run npm run types:check && npm run typecheck	2026-10-06T13:50:33.7099559Z ##[endgroup]
+session-one	Run npm run types:check && npm run typecheck	2026-10-06T13:50:33.8135924Z 
+session-one	Run npm run types:check && npm run typecheck	2026-10-06T13:50:33.8136442Z > nostrobe-contracts@0.1.0 types:check
+session-one	Run npm run types:check && npm run typecheck	2026-10-06T13:50:33.8137223Z > node scripts/generate-types.cjs --check
+session-one	Run npm run types:check && npm run typecheck	2026-10-06T13:50:33.8137486Z 
+session-one	Run npm run types:check && npm run typecheck	2026-10-06T13:50:34.2819495Z 
+session-one	Run npm run types:check && npm run typecheck	2026-10-06T13:50:34.2820058Z > nostrobe-contracts@0.1.0 typecheck
+session-one	Run npm run types:check && npm run typecheck	2026-10-06T13:50:34.2820480Z > tsc --noEmit
+session-one	Run npm run types:check && npm run typecheck	2026-10-06T13:50:34.2820647Z 

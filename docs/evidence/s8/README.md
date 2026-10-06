@@ -34,3 +34,9 @@ Earlier performance measurements remain under S5/S6 with their own provenance.
 The first image validation on the 12 s moving demo hit the unchanged utility
 300 s timeout. The retry on the existing constant-gray source passes the same
 assertions. Do not use either run as a live Lambda speed/cost observation.
+
+The initial Linux CI artifact `ci-container-validation-initial.json` contains an
+incorrect hard-coded Apple Silicon environment label from the old helper. The
+job URL and runner logs establish Ubuntu x86_64; its assertions and source/image
+checks are valid. The helper now records actual host_system/host_machine and the
+corrected CI receipt is retained separately. Original bytes are preserved.
