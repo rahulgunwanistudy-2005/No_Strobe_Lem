@@ -1,0 +1,1302 @@
+warning: `VIRTUAL_ENV=/Users/rahul/root_src/gsoc_venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=flat_24 outcomes=3/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=rate_3_24 outcomes=6/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=rate_3_5_24 outcomes=9/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=area_24_24 outcomes=12/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=area_26_24 outcomes=15/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=tiles_26_24 outcomes=18/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=delta_19_24 outcomes=21/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=delta_21_24 outcomes=24/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=red_blue_24 outcomes=27/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=moving_bar_24 outcomes=30/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=camera_burst_24 outcomes=33/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=lightning_24 outcomes=36/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=police_24 outcomes=39/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=isolated_1_24 outcomes=42/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=isolated_2_24 outcomes=45/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=isolated_3_24 outcomes=48/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=dark_150_24 outcomes=51/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=dark_170_24 outcomes=54/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=spacing_034_24 outcomes=57/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=spacing_038_24 outcomes=60/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=red_below_24 outcomes=63/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=red_above_24 outcomes=66/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=quadrant_24 outcomes=69/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=glitch_24 outcomes=72/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=flat_25 outcomes=75/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=rate_3_25 outcomes=78/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=rate_3_5_25 outcomes=81/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=area_24_25 outcomes=84/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=area_26_25 outcomes=87/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=tiles_26_25 outcomes=90/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=delta_19_25 outcomes=93/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=delta_21_25 outcomes=96/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=red_blue_25 outcomes=99/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=moving_bar_25 outcomes=102/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=camera_burst_25 outcomes=105/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=lightning_25 outcomes=108/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=police_25 outcomes=111/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=isolated_1_25 outcomes=114/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=isolated_2_25 outcomes=117/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=isolated_3_25 outcomes=120/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=dark_150_25 outcomes=123/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=dark_170_25 outcomes=126/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=spacing_034_25 outcomes=129/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=spacing_038_25 outcomes=132/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=red_below_25 outcomes=135/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=red_above_25 outcomes=138/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=quadrant_25 outcomes=141/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=glitch_25 outcomes=144/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=flat_30 outcomes=147/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=rate_3_30 outcomes=150/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=rate_3_5_30 outcomes=153/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=area_24_30 outcomes=156/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=area_26_30 outcomes=159/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=tiles_26_30 outcomes=162/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=delta_19_30 outcomes=165/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=delta_21_30 outcomes=168/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=red_blue_30 outcomes=171/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=moving_bar_30 outcomes=174/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=camera_burst_30 outcomes=177/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=lightning_30 outcomes=180/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=police_30 outcomes=183/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=isolated_1_30 outcomes=186/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=isolated_2_30 outcomes=189/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=isolated_3_30 outcomes=192/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=dark_150_30 outcomes=195/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=dark_170_30 outcomes=198/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=spacing_034_30 outcomes=201/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=spacing_038_30 outcomes=204/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=red_below_30 outcomes=207/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=red_above_30 outcomes=210/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=quadrant_30 outcomes=213/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=glitch_30 outcomes=216/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=flat_50 outcomes=219/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=rate_3_50 outcomes=222/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=rate_3_5_50 outcomes=225/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=area_24_50 outcomes=228/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=area_26_50 outcomes=231/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=tiles_26_50 outcomes=234/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=delta_19_50 outcomes=237/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=delta_21_50 outcomes=240/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=red_blue_50 outcomes=243/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=moving_bar_50 outcomes=246/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=camera_burst_50 outcomes=249/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=lightning_50 outcomes=252/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=police_50 outcomes=255/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=isolated_1_50 outcomes=258/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=isolated_2_50 outcomes=261/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=isolated_3_50 outcomes=264/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=dark_150_50 outcomes=267/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=dark_170_50 outcomes=270/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=spacing_034_50 outcomes=273/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=spacing_038_50 outcomes=276/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=red_below_50 outcomes=279/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=red_above_50 outcomes=282/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=quadrant_50 outcomes=285/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=glitch_50 outcomes=288/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=flat_60 outcomes=291/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=rate_3_60 outcomes=294/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=rate_3_5_60 outcomes=297/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=area_24_60 outcomes=300/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=area_26_60 outcomes=303/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=tiles_26_60 outcomes=306/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=delta_19_60 outcomes=309/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=delta_21_60 outcomes=312/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=red_blue_60 outcomes=315/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=moving_bar_60 outcomes=318/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=camera_burst_60 outcomes=321/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=lightning_60 outcomes=324/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=police_60 outcomes=327/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=isolated_1_60 outcomes=330/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=isolated_2_60 outcomes=333/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=isolated_3_60 outcomes=336/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=dark_150_60 outcomes=339/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=dark_170_60 outcomes=342/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=spacing_034_60 outcomes=345/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=spacing_038_60 outcomes=348/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=red_below_60 outcomes=351/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=red_above_60 outcomes=354/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=quadrant_60 outcomes=357/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=boundary clip=glitch_60 outcomes=360/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_000 outcomes=363/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_001 outcomes=366/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_002 outcomes=369/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_003 outcomes=372/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_004 outcomes=375/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_005 outcomes=378/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_006 outcomes=381/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_007 outcomes=384/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_008 outcomes=387/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_009 outcomes=390/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_010 outcomes=393/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_011 outcomes=396/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_012 outcomes=399/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_013 outcomes=402/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_014 outcomes=405/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_015 outcomes=408/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_016 outcomes=411/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_017 outcomes=414/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_018 outcomes=417/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_019 outcomes=420/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_020 outcomes=423/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_021 outcomes=426/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_022 outcomes=429/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_023 outcomes=432/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_024 outcomes=435/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_025 outcomes=438/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_026 outcomes=441/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_027 outcomes=444/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_028 outcomes=447/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_029 outcomes=450/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_030 outcomes=453/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_031 outcomes=456/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_032 outcomes=459/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_033 outcomes=462/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_034 outcomes=465/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_035 outcomes=468/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_036 outcomes=471/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_037 outcomes=474/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_038 outcomes=477/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_039 outcomes=480/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_040 outcomes=483/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_041 outcomes=486/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_042 outcomes=489/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_043 outcomes=492/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_044 outcomes=495/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_045 outcomes=498/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_046 outcomes=501/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_047 outcomes=504/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_048 outcomes=507/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_049 outcomes=510/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_050 outcomes=513/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_051 outcomes=516/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_052 outcomes=519/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_053 outcomes=522/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_054 outcomes=525/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_055 outcomes=528/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_056 outcomes=531/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_057 outcomes=534/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_058 outcomes=537/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_059 outcomes=540/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_060 outcomes=543/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_061 outcomes=546/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_062 outcomes=549/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_063 outcomes=552/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_064 outcomes=555/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_065 outcomes=558/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_066 outcomes=561/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_067 outcomes=564/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_068 outcomes=567/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_069 outcomes=570/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_070 outcomes=573/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_071 outcomes=576/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_072 outcomes=579/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_073 outcomes=582/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_074 outcomes=585/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_075 outcomes=588/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_076 outcomes=591/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_077 outcomes=594/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_078 outcomes=597/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_079 outcomes=600/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_080 outcomes=603/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_081 outcomes=606/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_082 outcomes=609/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_083 outcomes=612/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_084 outcomes=615/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_085 outcomes=618/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_086 outcomes=621/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_087 outcomes=624/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_088 outcomes=627/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_089 outcomes=630/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_090 outcomes=633/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_091 outcomes=636/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_092 outcomes=639/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_093 outcomes=642/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_094 outcomes=645/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_095 outcomes=648/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_096 outcomes=651/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_097 outcomes=654/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_098 outcomes=657/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_099 outcomes=660/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_100 outcomes=663/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_101 outcomes=666/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_102 outcomes=669/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_103 outcomes=672/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_104 outcomes=675/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_105 outcomes=678/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_106 outcomes=681/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_107 outcomes=684/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_108 outcomes=687/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_109 outcomes=690/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_110 outcomes=693/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_111 outcomes=696/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_112 outcomes=699/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_113 outcomes=702/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_114 outcomes=705/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_115 outcomes=708/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_116 outcomes=711/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_117 outcomes=714/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_118 outcomes=717/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_119 outcomes=720/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_120 outcomes=723/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_121 outcomes=726/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_122 outcomes=729/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_123 outcomes=732/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_124 outcomes=735/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_125 outcomes=738/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_126 outcomes=741/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_127 outcomes=744/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_128 outcomes=747/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_129 outcomes=750/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_130 outcomes=753/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_131 outcomes=756/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_132 outcomes=759/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_133 outcomes=762/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_134 outcomes=765/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_135 outcomes=768/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_136 outcomes=771/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_137 outcomes=774/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_138 outcomes=777/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_139 outcomes=780/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_140 outcomes=783/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_141 outcomes=786/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_142 outcomes=789/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_143 outcomes=792/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_144 outcomes=795/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_145 outcomes=798/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_146 outcomes=801/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_147 outcomes=804/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_148 outcomes=807/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_149 outcomes=810/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_150 outcomes=813/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_151 outcomes=816/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_152 outcomes=819/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_153 outcomes=822/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_154 outcomes=825/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_155 outcomes=828/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_156 outcomes=831/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_157 outcomes=834/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_158 outcomes=837/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_159 outcomes=840/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_160 outcomes=843/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_161 outcomes=846/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_162 outcomes=849/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_163 outcomes=852/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_164 outcomes=855/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_165 outcomes=858/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_166 outcomes=861/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_167 outcomes=864/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_168 outcomes=867/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_169 outcomes=870/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_170 outcomes=873/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_171 outcomes=876/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_172 outcomes=879/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_173 outcomes=882/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_174 outcomes=885/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_175 outcomes=888/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_176 outcomes=891/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_177 outcomes=894/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_178 outcomes=897/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_179 outcomes=900/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_180 outcomes=903/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_181 outcomes=906/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_182 outcomes=909/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_183 outcomes=912/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_184 outcomes=915/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_185 outcomes=918/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_186 outcomes=921/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_187 outcomes=924/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_188 outcomes=927/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_189 outcomes=930/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_190 outcomes=933/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_191 outcomes=936/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_192 outcomes=939/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_193 outcomes=942/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_194 outcomes=945/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_195 outcomes=948/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_196 outcomes=951/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_197 outcomes=954/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_198 outcomes=957/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=shapes clip=shape_199 outcomes=960/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=realistic clip=crowd_camera_burst outcomes=963/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=realistic clip=landscape_lightning outcomes=966/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=realistic clip=street_police outcomes=969/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=realistic clip=dark_strobe outcomes=972/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=broadcast"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=local"}
+{"level": "INFO", "logger": "nostrobe", "message": "solving profile=kids"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=realistic clip=glitch_cuts outcomes=975/978"}
+{"level": "INFO", "logger": "nostrobe", "message": "eval completed suite=clean clip=bbb outcomes=978/978"}

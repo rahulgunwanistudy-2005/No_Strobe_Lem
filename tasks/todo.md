@@ -335,15 +335,15 @@ binding evidence; the pack's unverified marketing claims are draft material.
   public-prefix restrictions and Lambda input/storage limits.
 - [x] Run engine, TV, infra and generated-contract quality gates; independently
   exercise a clean checkout README quickstart and current VVD Release.
-- [ ] Recompute complete evaluation, compare a second run for determinism,
+- [x] Recompute complete evaluation, compare a second run for determinism,
   freeze current-provenance results and synchronize every submission number.
 - [x] Build a 20-second nonflashing timeline GIF; rewrite README around runtime
   hooks, quickstarts, architecture, results, prior art, safety and attribution.
 - [x] Finalize real friction entries, per-tool feedback, source-linked feature
   requests, Devpost draft, judge Q&A and shot-by-shot demo readiness evidence.
-- [ ] Record open external gates honestly; tag v1.0.0 only if its acceptance
+- [x] Record open external gates honestly; tag v1.0.0 only if its acceptance
   gates are met, otherwise document the precise release blockers.
-- [ ] Self-review and commit coherent implementation/security/docs stages.
+- [x] Self-review and commit coherent implementation/security/docs stages.
 
 Live AWS profile/region requested; independent local hardening proceeds.
 No reviewer invitations or public submission messaging is authorized by this
@@ -352,5 +352,10 @@ request. Prepare repository access instructions for submission time instead.
 S8 implementation/security/docs checkpoints are committed. Engine 431 tests,
 TV 53 tests, infra 16 tests and reference Linux 429 tests pass. SDK advisories
 remain open after supported remediation; no v1.0.0 release pass is asserted.
-Fresh-clone environments/quality/Release/native playback pass; the complete
-current-provenance evaluation continues.
+Fresh-clone environments/quality/Release/native playback pass. Two complete
+current-provenance default evaluations each pass 978 outcomes; JSON/Markdown
+and control PNG/NPZ are byte-identical. FN=FP=0, verified=975/975, unresolved=0.
+All public tables and copy/link/evidence checks pass. Source is published in
+both public repositories; product Apache-2.0 recognition is verified. S8 local
+work is complete; live cloud/demo acceptance and upstream SDK advisories remain
+open, so v1.0.0 is deliberately withheld. See docs/S8_REPORT.md.

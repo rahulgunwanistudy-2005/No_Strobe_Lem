@@ -1,0 +1,52 @@
+{
+  "byte_identical": {
+    "RESULTS.md": true,
+    "results.json": true
+  },
+  "checked_at_commit": "e5423668312831089292baea6e3269034b0f1e4e",
+  "command": "cd engine && uv run nostrobe eval",
+  "exit_codes": [
+    0,
+    0
+  ],
+  "historical_s4_proof_preserved": "eval/determinism.json",
+  "implementation_commit": "e912e2e",
+  "mode": "Two complete default runs recomputed detection, mitigation and verification; neither used --resume. Same-provenance first timing observations retained by evaluator policy; no posthoc fields removed.",
+  "profile_outcomes_per_run": 978,
+  "provenance": {
+    "code_sha256": "838ca254b19ebe98f1a2ac64946c843e6626b8616e70599aae730c89d50bb6ec",
+    "control_review_sha256": "c05d53262c47670fc0477b1ad77db35b4e565227a312b6ba3e3b5bd5e0f3fa07",
+    "cpu_model": "Apple M1",
+    "device_calibration": {
+      "compositing_max_error_codes": 0.75,
+      "compositing_sha256": "293dc4cf29f6d78f523e1297d685b9fb52115fcda64a2d00b32674b2ddc72515",
+      "engine_y_max_error_codes": 0.9529411764706026,
+      "sync_max_abs_s": 0.22299999999999986,
+      "sync_p95_abs_s": 0.1792499999999995,
+      "sync_sha256": "6a1e858f394fb33f1ad4a1d24a9e3836ace20f5006b5ff9e072532d2b9fee80c",
+      "sync_tolerance_s": 0.26887499999999925
+    },
+    "ffmpeg": "ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers",
+    "machine": "arm64",
+    "manifest_sha256": "10206c1b910c59032a19a7bafb0561289aba2ede50dc7603302784a018505862",
+    "memory_bytes": 8589934592,
+    "params_hash": {
+      "broadcast": "a9a3a0b32dc6adbc3ed56629267c79ad73363ffbca96999abcd9fe84ad5f3f94",
+      "kids": "134f76ec2fe221ad3e34c239805112825d152f986a83517598307bf898f6ee94",
+      "local": "d7a84ea89591a7758880e901cf24f0d83c10e4a5f2e0eb05dd7e7181b3290a1d"
+    },
+    "platform": "macOS-26.3-arm64-arm-64bit",
+    "python": "3.12.11",
+    "sync_tolerance_s": 0.26887499999999925
+  },
+  "run_start_git_sha": "98a60865eef0366ee2f04197c91a40fe94615cb7",
+  "run_start_note": "The first call began with the 0.1.1 implementation changes present before their commit. The environment records checkout HEAD at that point; the implementation hash matches the committed e912e2e engine tree and current source.",
+  "sha256": {
+    "RESULTS.md": "3fcef6fa351c41936914c8d030a0b5140965836ae08cde0468781e3ac49312b9",
+    "results.json": "20cb6561e7c552ed122a725e435ad4aecd8ba6c793dd07bdc728e2b89d0de682"
+  },
+  "trace_byte_identical": {
+    "bbb.npz": true,
+    "bbb.png": true
+  }
+}

@@ -1,7 +1,7 @@
 # Session 8 — hardening and submission readiness
 
-S8 implementation, review and the first full evaluation are complete. A second
-complete default evaluation is running to confirm byte-identical output. **Submission acceptance is not yet
+S8 implementation, documentation, evaluation and local verification are
+complete, with reproducible receipts below. **Submission acceptance is not yet
 complete:** the SDK dependency graph retains high advisories; authenticated
 live AWS validation and its demo shot are unavailable; existing VVD video-drop
 and unadjudicated natural-film limitations remain. A product `v1.0.0` tag is
@@ -54,8 +54,13 @@ withheld while these gates are open.
   three profiles, 975/975 tracks verify at −268.875/0/+268.875 ms, unresolved=0.
   The 325 scored clips comprise 120 boundaries, 200 shapes and five composites;
   the full-film control's three outcomes remain outside confusion scores.
-  A second complete default run is recomputing accuracy/mitigation/verification;
-  deterministic replay mode is not used.
+  Two complete default runs recomputed accuracy/mitigation/verification without
+  --resume. Results JSON/Markdown and both numerical/image control traces are
+  byte-identical. [Current determinism proof](../engine/eval/s8_determinism.json)
+  preserves implementation/manifest/calibration hashes and timing policy.
+  The first call began with the 0.1.1 changes before committing them; its
+  recorded checkout HEAD is historical, while its implementation hash matches
+  the current committed engine tree. Original S4 proof remains unchanged.
 - Product independent Ubuntu CI passes all 431 engine tests, 16 infra tests,
   contracts, SAM validate/build and read-only image validation. The corrected
   helper records Linux x86_64, and local receipt records Darwin arm64.
@@ -101,4 +106,5 @@ container-id file in a finally block.
 
 Product source is public on main and GitHub recognizes Apache-2.0, using the
 existing owner Git account; no visibility/access-list change or invitation.
-Final frozen evaluation evidence is published after the complete repeat.
+Frozen tables, numerical results, traces and the complete-repeat proof are
+published with the final plain commits.

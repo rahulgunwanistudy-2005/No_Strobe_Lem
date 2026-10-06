@@ -34,7 +34,10 @@ Earlier performance measurements remain under S5/S6 with their own provenance.
 - `product-ci-final.json`, `product-ci-final-quality.txt`,
   `ci-container-validation.json`: independently passing Ubuntu product checks
   and actual corrected read-only image receipt.
-- Determinism receipts are added after the complete repeat.
+- `determinism.json`, `eval-first.txt`, `eval-repeat.txt`: two complete default
+  978-outcome evaluations, recomputed accuracy/solve/verification, no --resume;
+  results JSON/Markdown and control PNG/NPZ are byte-identical. Initial timing
+  observations are retained under the evaluator's documented provenance policy.
 
 The first image validation on the 12 s moving demo hit the unchanged utility
 300 s timeout. The retry on the existing constant-gray source passes the same

@@ -1,0 +1,51 @@
+{
+  "analyzed_tracks": 975,
+  "code_sha256": "838ca254b19ebe98f1a2ac64946c843e6626b8616e70599aae730c89d50bb6ec",
+  "dependency_findings": {
+    "engine_published_dependencies": 0,
+    "infra_published_dependencies": 0,
+    "local_unpublished_nostrobe": "not found on PyPI; reviewed source and tested separately",
+    "root_npm": 0,
+    "tv_critical": 0,
+    "tv_high": 60,
+    "tv_moderate": 12
+  },
+  "engine_tests": 431,
+  "eval_mode": "complete default; accuracy/mitigation/verification recomputed; no --resume",
+  "eval_runs": 2,
+  "fn": 0,
+  "fp": 0,
+  "infra_tests": 16,
+  "live_aws_measured": false,
+  "local_work_complete": true,
+  "outcomes_per_run": 978,
+  "peat_run": false,
+  "physical_tv_measured": false,
+  "product_linux_ci": "https://github.com/rahulgunwanistudy-2005/No_Strobe_Lem/actions/runs/37474690435",
+  "public_product_apache_recognized": true,
+  "reference_linux_tests": 429,
+  "reference_tagged_ci": "https://github.com/rahul-software-dev/hazardtrack/actions/runs/37448503294",
+  "release_tag_v1_0_0_created": false,
+  "remaining_acceptance": [
+    "upstream compatible braces remediation and repeat audit/build",
+    "authenticated AWS deploy/sample/anonymous policy/timing/cost/catalog/teardown",
+    "final live-cloud shot and narrated/captioned demo review/public URL"
+  ],
+  "report_sha256": "3fcef6fa351c41936914c8d030a0b5140965836ae08cde0468781e3ac49312b9",
+  "results_sha256": "20cb6561e7c552ed122a725e435ad4aecd8ba6c793dd07bdc728e2b89d0de682",
+  "scope_limits": [
+    "VVD video drops remain documented",
+    "natural-film controls are unadjudicated",
+    "physical TV/browser calibration and PEAT remain unmeasured"
+  ],
+  "submission_acceptance_complete": false,
+  "sync_offsets_ms": [
+    -268.87499999999926,
+    0,
+    268.87499999999926
+  ],
+  "tv_tests": 53,
+  "unmodified_film_adjudication_complete": false,
+  "unresolved_segments": 0,
+  "verified_tracks": 975
+}
