@@ -4,6 +4,7 @@ import argparse
 import json
 import subprocess
 from pathlib import Path
+from tempfile import TemporaryDirectory
 
 
 def check(image: str, source: Path, output: Path) -> None:
@@ -18,6 +19,7 @@ def check(image: str, source: Path, output: Path) -> None:
     script = """
 import json,hashlib,sys
 from pathlib import Path
+from tempfile import TemporaryDirectory
 sys.path.insert(0, "/checks/infra/tests")
 from config import Config
 from pipeline import process
@@ -42,31 +44,46 @@ assert Path("/var/task/nostrobe/py.typed").exists()
 assert Settings().repo_root == Path.cwd()
 print(json.dumps(outcome, sort_keys=True))
 """
-    result = subprocess.run(
-        [
-            "docker",
-            "run",
-            "--rm",
-            "--platform",
-            "linux/amd64",
-            "--read-only",
-            "--tmpfs",
-            "/tmp:rw,size=1g",
-            "--entrypoint",
-            "python",
-            "-v",
-            f"{root / 'infra/tests'}:/checks/infra/tests:ro",
-            "-v",
-            f"{source.resolve()}:/sample.mp4:ro",
-            image_id,
-            "-c",
-            script,
-        ],
-        capture_output=True,
-        text=True,
-        check=False,
-        timeout=300,
-    )
+    with TemporaryDirectory(prefix="nostrobe-image-check-") as temporary:
+        cid_file = Path(temporary) / "container.id"
+        try:
+            result = subprocess.run(
+                [
+                    "docker",
+                    "run",
+                    "--rm",
+                    "--platform",
+                    "linux/amd64",
+                    "--read-only",
+                    "--cidfile",
+                    str(cid_file),
+                    "--label",
+                    "com.nostrobe.validation=read-only",
+                    "--tmpfs",
+                    "/tmp:rw,size=1g",
+                    "--entrypoint",
+                    "python",
+                    "-v",
+                    f"{root / 'infra/tests'}:/checks/infra/tests:ro",
+                    "-v",
+                    f"{source.resolve()}:/sample.mp4:ro",
+                    image_id,
+                    "-c",
+                    script,
+                ],
+                capture_output=True,
+                text=True,
+                check=False,
+                timeout=300,
+            )
+        finally:
+            if cid_file.exists():
+                subprocess.run(
+                    ["docker", "rm", "--force", cid_file.read_text().strip()],
+                    capture_output=True,
+                    check=False,
+                    timeout=30,
+                )
     if result.returncode:
         raise RuntimeError("container smoke failed: " + result.stderr[-5000:])
     status = json.loads(result.stdout.splitlines()[-1])

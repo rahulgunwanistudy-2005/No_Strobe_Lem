@@ -23,11 +23,11 @@ COPY --from=ffmpeg /opt/ffmpeg/LICENSE.txt /opt/ffmpeg/source.tar.xz /opt/ffmpeg
 COPY infra/runtime-requirements.txt /tmp/requirements.txt
 RUN pip install --no-cache-dir --no-compile --require-hashes -r /tmp/requirements.txt --target /var/task \
     && rm /tmp/requirements.txt
-ARG NOSTROBE_WHEEL_URL=https://github.com/rahul-software-dev/hazardtrack/releases/download/v0.1.0/nostrobe-0.1.0-py3-none-any.whl
-ARG NOSTROBE_WHEEL_SHA256=56bf633697d178fed428be2276e26bfebd4ba33cc40b61a1fe4e538a96ffe92e
+ARG NOSTROBE_WHEEL_URL=https://github.com/rahul-software-dev/hazardtrack/releases/download/v0.1.1/nostrobe-0.1.1-py3-none-any.whl
+ARG NOSTROBE_WHEEL_SHA256=857d20cb8d25e5aa0c54e77bf328d07b1c5555c96d36936d2814577236404bb9
 RUN curl --fail --silent --show-error --location --retry 3 "$NOSTROBE_WHEEL_URL" \
-       -o /tmp/nostrobe-0.1.0-py3-none-any.whl \
-    && echo "$NOSTROBE_WHEEL_SHA256  /tmp/nostrobe-0.1.0-py3-none-any.whl" | sha256sum --check - \
+       -o /tmp/nostrobe-0.1.1-py3-none-any.whl \
+    && echo "$NOSTROBE_WHEEL_SHA256  /tmp/nostrobe-0.1.1-py3-none-any.whl" | sha256sum --check - \
     && pip install --no-cache-dir --no-compile --no-deps /tmp/nostrobe-*.whl --target /var/task \
     && rm /tmp/*.whl
 COPY infra/lambda/*.py /var/task/
