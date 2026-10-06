@@ -106,3 +106,16 @@
 - S6: Memoize native surface/veil components against the chrome clock updates;
   stable props avoid unnecessary native surface renders. Performance traces
   must still establish actual drops; render optimization alone is not a pass.
+
+- S7: ffmpeg's human-readable pts_time can round exact flash-window boundaries
+  differently across releases. Decode integer PTS with the filter's rational
+  time base, invalidate old decoded caches, and preserve independent truth.
+- S7: an installed wheel's module path is not a product checkout root. Use the
+  working directory for writable caches outside a source checkout; verify the
+  actual CI-built wheel inside the read-only deployment image.
+- S7: listing status objects alone does not serialize catalog publication.
+  Read the old catalog ETag before listing, condition the write on that ETag,
+  and relist after a competing write. Test the actual competing interleaving.
+- S7: measure uncompressed image size rather than release archive size. A
+  minimal static decoder build fits the budget; pin its source, binary checksum
+  and provenance so separate SAM builders avoid repeating slow compilation.

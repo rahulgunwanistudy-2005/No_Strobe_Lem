@@ -1,0 +1,141 @@
+{
+  "aws": {
+    "anonymous_ingest_http_status": null,
+    "anonymous_public_http_status": null,
+    "authenticated_profile_available": false,
+    "blocker": "AWS CLI reports no profile, access key, secret key or region. Authenticated account/profile/region requested; not provided during the session.",
+    "catalog_update_latency_s": null,
+    "cost_per_analyzed_video_hour": null,
+    "kiro_used": false,
+    "lambda_real_time_multiplier": null,
+    "live_catalog_vvd_playback_verified": false,
+    "open_acceptance_gates": [
+      "clean-checkout sam deploy",
+      "CC-BY upload and live three-track catalog inclusion",
+      "actual catalog latency, billed Lambda throughput and cost",
+      "anonymous ingest 403 and public video 200",
+      "VVD protected playback using the deployed catalog URL",
+      "empty/delete disposable stack and verify teardown"
+    ],
+    "region_available": false,
+    "resources_deployed": false,
+    "teardown_tested": false
+  },
+  "checks": {
+    "browser": {
+      "evidence": [
+        "docs/BROWSER_VALIDATION.md",
+        "docs/s7/web-fixture.json",
+        "docs/s7/web-overlay.mp4",
+        "docs/s7/web-overlay-samples.json"
+      ],
+      "fixture": "verified constant-gray source with a deliberately nonminimal test veil",
+      "in_app_browser_playback_observed": true,
+      "native_chrome_separately_tested": false,
+      "native_firefox_separately_tested": false,
+      "screenshots_observed": 24,
+      "shared_timeline_samples": 500,
+      "source_mismatch_refused": true,
+      "sync_calibration_claimed": false
+    },
+    "container": {
+      "environment": "Docker linux/amd64 on Apple Silicon with in-memory S3; not Lambda",
+      "evidence": [
+        "docs/s7/container-validation.json",
+        "docs/s7/container-hevc-validation.json"
+      ],
+      "h264_three_profiles_verified": true,
+      "h265_three_profiles_verified": true,
+      "image_budget_passes": true,
+      "image_id": "sha256:e7def619986d5c98e93586299ba449b0ce829207ffb37aa88b20f41eeb89e5b7",
+      "image_size_bytes": 901802753,
+      "read_only_runtime_passes": true,
+      "size_budget_bytes": 1000000000,
+      "static_elf_has_no_dynamic_or_interpreter_headers": true
+    },
+    "infra": {
+      "dependency": "published v0.1.0 git release",
+      "lint_format_passes": true,
+      "s3_adapter": "in-memory; not AWS",
+      "strict_types_passes": true,
+      "tests_passed": 10
+    },
+    "local_ccby_sample": {
+      "cloud_benchmark": false,
+      "duration_s": 3.0,
+      "environment": "local macOS pipeline with in-memory S3 adapter; not AWS Lambda",
+      "evidence": "docs/s7/local-ccby-pipeline.json",
+      "handler_elapsed_s": 6.155733083025552,
+      "source_sha256": "4b68046087a1798db08f36a447cb2b5c33436c181caf15a7a3672909cf24fb0f",
+      "three_profiles_verified": true
+    },
+    "product_engine": {
+      "final_full_extracted_engine_tests_passed_in_ci": 422,
+      "fresh_full_s4_evaluation": false,
+      "post_pts_correction_targeted_tests_passed": 116,
+      "pre_pts_correction_tests_passed": 421
+    },
+    "reference_ci": {
+      "commit": "4bb05e9c27d90c9b2c683248b9048e1ea893e892",
+      "conclusion": "success",
+      "quality": [
+        "ruff",
+        "ruff-format",
+        "strict-mypy",
+        "schema-drift",
+        "shared-500-sample-timeline",
+        "browser-reader",
+        "wheel-release"
+      ],
+      "tests_passed": 422,
+      "url": "https://github.com/rahul-software-dev/hazardtrack/actions/runs/37441310248"
+    },
+    "sam": {
+      "build_exit_code": 0,
+      "built_template_sha256": "288dca8aa6de050321642847ff5d97198b42969d4f9cb7596ab4cab0a3e58c2b",
+      "clean_committed_snapshot_build_passes": true,
+      "clean_snapshot_commit": "0340da17a9224c95d35228bc4e3ce312bf9c19d8",
+      "image_id": "sha256:5861e7139db33b5076ab9a9abf3fde0a879f32f6b3ab01a8cc81dd2552af93bc",
+      "image_size_bytes": 901802753,
+      "live_deploy_passes": null,
+      "normal_build_passes": true,
+      "template_lint_passes": true
+    },
+    "tv": {
+      "generated_contract_drift_passes": true,
+      "lint_passes": true,
+      "release_build_passes": true,
+      "s6_video_drop_limit_resolved": false,
+      "suites_passed": 9,
+      "tests_passed": 47,
+      "types_passes": true
+    }
+  },
+  "date": "2026-10-06",
+  "implementation_and_local_validation_complete": true,
+  "live_aws_acceptance_complete": false,
+  "provenance": {
+    "ai_attribution_trailers_added": false,
+    "ground_truth_or_thresholds_changed": false,
+    "historical_s4_s5_reports_preserved": true,
+    "systematic_commits": true
+  },
+  "reference_release": {
+    "ci_conclusion": "success",
+    "ci_run_url": "https://github.com/rahul-software-dev/hazardtrack/actions/runs/37441310248",
+    "ffmpeg_bundle_provenance": "Compiled from pinned official source using Dockerfile.source; verified static ELF and real H.264/H.265 pipelines on read-only root",
+    "ffmpeg_bundle_sha256": "cdae69e1c416c10a340be3c998bcd1a7a1d591a930c44d96c2441b5c09fd5595",
+    "ffmpeg_bundle_url": "https://github.com/rahul-software-dev/hazardtrack/releases/download/v0.1.0/ffmpeg-7.1.1-hazardtrack-linux-x86_64.tar.xz",
+    "ffmpeg_source_sha256": "733984395e0dbbe5c046abda2dc49a5544e7e0e1e2366bba849222ae9e3a03b1",
+    "ffmpeg_source_url": "https://ffmpeg.org/releases/ffmpeg-7.1.1.tar.xz",
+    "git_commit": "4bb05e9c27d90c9b2c683248b9048e1ea893e892",
+    "git_tag": "v0.1.0",
+    "lambda_base_digest": "sha256:517bcc7dc1a3ba62e324961c1563cc54a2bd6dc1060188f9d376211ecb7b2926",
+    "reference_tests_passed": 422,
+    "release_url": "https://github.com/rahul-software-dev/hazardtrack/releases/tag/v0.1.0",
+    "repository_url": "https://github.com/rahul-software-dev/hazardtrack",
+    "wheel_sha256": "56bf633697d178fed428be2276e26bfebd4ba33cc40b61a1fe4e538a96ffe92e",
+    "wheel_url": "https://github.com/rahul-software-dev/hazardtrack/releases/download/v0.1.0/nostrobe-0.1.0-py3-none-any.whl"
+  },
+  "session": "S7"
+}

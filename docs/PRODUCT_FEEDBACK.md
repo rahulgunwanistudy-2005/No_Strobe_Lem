@@ -190,3 +190,22 @@ W3C Media, Vega overlay animation, AWS, Kiro and physical Fire TV hardware were 
   SDK screenshot capture support the full product flow. Better aligned storage
   docs, lifecycle-aware scenario readiness and self-contained trace-processor
   discovery would shorten onboarding.
+
+## Session 7 — AWS SAM, Lambda packaging and S3 contracts
+
+SAM 1.166.2 and Docker 28.0.4 were used for template validation and actual image
+builds. Template lint and build work locally without cloud credentials. The
+Lambda image's real decode/verification/publication path works on a read-only
+root with `/tmp` storage, for H.264 and H.265. Minimal static codecs reduce the
+image below 1 GB; source/licensing/rebuild provenance is retained. SAM's separate
+Docker builder repeated slow source bootstrap rather than reusing the ordinary
+Docker build cache; publishing hash-pinned tested binaries makes normal builds
+more practical. Would build again: yes, with a pinned artifact build/release path.
+
+S3 was exercised through deterministic SDK-compatible adapters for publication,
+ETag/stale-event handling, pagination and competing catalog writes. Listing alone
+does not prevent an older builder from overwriting a newer catalog; conditional
+writes plus relisting do. The live Lambda/S3 deploy, public policy, costs, VVD
+catalog inclusion and teardown are untested because no AWS profile/region was
+available. Kiro was not used. Cloud service feedback is limited to these actual
+local SDK/contract/build experiences.

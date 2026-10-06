@@ -1,0 +1,57 @@
+{
+  "aws_measured": false,
+  "environment": "Docker linux/amd64 on Apple Silicon with in-memory S3; not Lambda",
+  "image": "nostrobe-lambda:s7",
+  "image_budget_passes": true,
+  "image_id": "sha256:e7def619986d5c98e93586299ba449b0ce829207ffb37aa88b20f41eeb89e5b7",
+  "image_size_bytes": 901802753,
+  "read_only_runtime_passes": true,
+  "size_budget_bytes": 1000000000,
+  "status": {
+    "content_id": "8066b2768601-sample",
+    "item": {
+      "attribution": {
+        "changes": "Source unchanged; verified HazardTrack sidecars added",
+        "credit": "Uploader supplied media",
+        "license": "Unspecified; no reuse license granted",
+        "url": "https://example.invalid/unprovided"
+      },
+      "content_id": "8066b2768601-sample",
+      "duration_s": 1.0,
+      "report": "https://example.com/public/8066b2768601-sample/report.html",
+      "source_sha256": "8066b2768601337fa61e16419c81ed5e461b7e526f6adbee9f60875622dc96dd",
+      "title": "sample",
+      "tracks": {
+        "broadcast": {
+          "hazard_count": 0,
+          "url": "https://example.com/public/8066b2768601-sample/broadcast.hzt.json"
+        },
+        "kids": {
+          "hazard_count": 0,
+          "url": "https://example.com/public/8066b2768601-sample/kids.hzt.json"
+        },
+        "local": {
+          "hazard_count": 0,
+          "url": "https://example.com/public/8066b2768601-sample/local.hzt.json"
+        }
+      },
+      "video": "https://example.com/public/8066b2768601-sample/video.mp4"
+    },
+    "metrics": {
+      "duration_s": 1.0,
+      "elapsed_s": 39.17511597599969,
+      "input_bytes": 4709,
+      "profile_event_counts": {
+        "broadcast": {},
+        "kids": {},
+        "local": {}
+      },
+      "verifier_passes": {
+        "broadcast": true,
+        "kids": true,
+        "local": true
+      }
+    },
+    "state": "ready"
+  }
+}

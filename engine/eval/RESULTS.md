@@ -151,3 +151,15 @@ Tears of Steel originals lack required BT.709 tags and are not clean controls. T
 ## PEAT cross-check
 
 not run: no Windows PEAT environment available
+
+## S7 deployment measurements
+
+No AWS credentials/profile/region was available. Live catalog latency, Lambda
+real-time multiplier, billed cost per analyzed hour, anonymous bucket policy
+checks and teardown are not measured. No cloud number is inferred from local
+results. The S7 local three-second CC-BY sample ran in 6.155733 s with all three
+profiles verified and zero events, using an in-memory S3 adapter on macOS; this
+is integration evidence, not a Lambda benchmark. Read-only image/codec and
+pipeline evidence are in docs/S7_REPORT.md and docs/s7/. Historical S4/S5 results
+and source truth above remain unchanged; no full S4 rerun is claimed for S7's
+integer-PTS parsing/cache-version correction.

@@ -236,3 +236,49 @@ than accessed for every row (each property access copies the full frame).
   923.4–1376.4 ms. Consecutive dropped-frame metrics remain nonzero. The
   zero-drop gate is not met; this VVD result is not a physical-TV estimate or
   proof that the rAF loop caused every drop. Preserve the raw reports/traces.
+
+## S7 — timestamp precision differs across ffmpeg releases
+
+GitHub Ubuntu 24.04 CI (`uv run pytest -q`) reproduced three unchanged S1
+must-pass failures at exactly 3 flashes/s (24/30/60 fps). Local macOS ffmpeg
+7.1.1 passed the same 419 extracted tests. CI logs show event boundaries such
+as 1.33333 s: the decoder consumed rounded `showinfo pts_time`, allowing one
+extra change inside the trailing window. Resolution: consume integer `pts`
+and the filter's rational time base, add exact-boundary timestamp regressions,
+and bump the decoded-cache version. No ground truth or threshold was changed.
+Failed runs: https://github.com/rahul-software-dev/hazardtrack/actions/runs/37439088441
+and https://github.com/rahul-software-dev/hazardtrack/actions/runs/37439231961.
+
+## S7 — build tooling and image budget
+
+Initial `uv tool install aws-sam-cli` and infra dependency downloads timed out,
+including botocore/awscrt wheel extraction; explicit 180 s HTTP timeouts and a
+retry using the official PyPI index completed installation (SAM 1.166.2).
+Docker 28.0.4 was installed but its daemon was stopped; launching Docker resolved
+that. The initial Lambda Python 3.12 + general-purpose static LGPL ffmpeg image
+measured 1,224,378,400 bytes, above the <1 GB target. Packaging switches to an
+official checksum-pinned ffmpeg source build restricted to the pipeline's
+MP4/H.264/H.265 decoding and raw-output filters; final measurements follow in
+S7_REPORT.md. AWS configuration reports no access key/profile/region, so no
+cloud duration, cost, public-access or teardown result is claimed.
+
+## S7 — GitHub CLI and Git credential identities differ
+
+`gh repo create rahul-software-dev/hazardtrack --public` succeeded, but an HTTPS
+push used the existing rahulgunwanistudy-2005 Git credential and returned 403.
+A command-scoped `gh auth git-credential` helper pushed through the authenticated
+rahul-software-dev account. No global credential setting or token was changed
+or committed.
+
+## S7 — SAM and Docker build caches differ
+
+`sam build --template-file infra/template.yaml` used Docker's separate build
+path and did not reuse the successful source-compilation layer from `docker
+build`. Its AL2023 package bootstrap/configure stage repeated the slow network
+and emulation work. That validation attempt was stopped deliberately. Resolution:
+publish the already tested minimal static binaries as a versioned release
+bundle, including their official source archive, LGPL license, exact build
+recipe and provenance; pin its actual SHA-256 in the normal Dockerfile. Keep
+`Dockerfile.source` for independent rebuilding. No detector or quality gate was
+removed; the final clean SAM/image checks use the downloaded, checksum-verified
+artifact.

@@ -280,3 +280,29 @@ FAIL events (or any Kids events) are rejected by the TV reader even when a
 sidecar carries a passes=true flag. Source detection and the S5 engine model
 remain unchanged. The disclaimer is a focusable scroll destination so a
 D-pad viewer can read the complete exact text.
+
+## S7 publication and deployment choices
+
+All three profiles must verify before a video is uploaded publicly or a ready
+status is committed. Catalog discovery uses ready statuses and listing-based
+conditional writes; publication order and ETag retries are product concurrency
+semantics, not broadcast rules. A download refused before its full source hash
+exists receives an explicitly unbound notification-derived rejection id.
+
+Lambda accepts at most 512 MiB encoded / 120 s video, with a separate decoded
+cache disk preflight. These limits bound this 10 GiB/900 s deployment; they are
+not limits of the format or claims that every eligible film finishes in time.
+S3 CORS applies at bucket scope; only public/* receives anonymous read access.
+A hard Lambda timeout cannot write a status and is diagnosed through logs/retry.
+
+Reference-library source/format authority is the public hazardtrack release.
+The product's infra lockfile pins that git tag; its container installs the
+CI-built release wheel. The local engine/spec remain an auditable development
+mirror, with original evaluation/calibration provenance. Root-source changes
+must be exported and released before changing the deployment dependency pin.
+
+Integer frame PTS times the filter's rational time base is used for decoding;
+ffmpeg's human-readable pts_time rounds differently across releases and moved
+exact one-second boundaries in Ubuntu CI. The cache version changes so rounded
+historical decoded timestamps are never silently reused. Detector thresholds
+and independent source truth are unchanged.

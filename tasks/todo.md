@@ -292,18 +292,31 @@ Scope: execute the supplied S7 AWS/OSS brief. The explicit user request
 supersedes manual-commit defaults and the historical S6-before-S7 deferral.
 Preserve recorded S6 video-drop limitations; use plain systematic commits.
 
-- [ ] Build a verified-only S3 pipeline with bounded temporary storage, typed
+- [x] Build a verified-only S3 pipeline with bounded temporary storage, typed
   statuses, idempotent source binding, structured metrics and race-safe catalog.
-- [ ] Package a checksum-pinned ffmpeg Lambda image from a CI-built wheel;
+- [x] Package a checksum-pinned ffmpeg Lambda image from a CI-built wheel;
   validate SAM permissions, public-prefix policy, retention and concurrency.
-- [ ] Extract and publish the Apache-2.0 hazardtrack reference repository,
+- [x] Extract and publish the Apache-2.0 hazardtrack reference repository,
   conformance fixtures, browser example and independent quality CI.
-- [ ] Pin the product to the published library and add build-time TV catalog config.
-- [ ] Exercise local integration/quality gates and public repository CI;
-  deploy, upload a CC-BY sample, verify permissions/VVD and tear down if AWS
-  authentication is available. Record unavailable live gates honestly.
-- [ ] Document measurements, submission links, real friction and review results;
+- [x] Pin the product to the published library and add build-time TV catalog config.
+- [x] Exercise local integration/quality gates and public repository CI;
+  record unavailable live gates honestly.
+- [ ] Deploy from a clean checkout, upload a CC-BY sample, measure cloud latency
+  and costs, verify anonymous bucket permissions and catalog playback on VVD,
+  then test teardown. Requires authenticated AWS profile and region.
+- [x] Document measurements, submission links, real friction and review results;
   commit each completed stage without attribution trailers.
 
 AWS ~/.aws is empty; live credentials/region requested while local work continues.
 Authenticated GitHub account is rahul-software-dev. No Kiro usage is claimed.
+
+S7 local/OSS implementation is committed; live AWS acceptance is incomplete.
+See docs/S7_REPORT.md and docs/S7_VALIDATION.json. Final release CI passes 422
+tests, lint/format/strict types, schema/timeline/browser contracts and wheel
+publication. Product TV passes 47 tests / 9 suites and Release build. The infra
+passes 10 tests against the published git tag; SAM lint, normal build and clean
+committed-snapshot build pass. The final 901,802,753-byte read-only image verifies
+real H.264 and H.265 inputs for all three profiles. Browser overlay playback and
+source-mismatch refusal were observed; a safe constant-gray capture is retained.
+No local timing substitutes for a cloud observation. The AWS account remains
+unconfigured; no resources were deployed, cloud costs measured or teardown run.

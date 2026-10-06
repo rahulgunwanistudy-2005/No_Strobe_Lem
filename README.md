@@ -120,3 +120,16 @@ Luma-only media support: explicitly tagged limited-range 8-bit planar YUV SDR. D
 Lane A: macOS arm64, Vega SDK 0.24.12112 / CLI 1.4.2; the protected W3C player runs on the Vega Virtual Device with measured timing/compositing and actual rendered-screen checks. See [TV setup and calibration](tv/README.md), [Session 1 report](docs/S1_REPORT.md), [Session 2 report](docs/S2_REPORT.md), [Session 3 report](docs/S3_REPORT.md), [Session 4 report](docs/S4_REPORT.md), [Session 5 report](docs/S5_REPORT.md), [detection performance](docs/PERFORMANCE.md), [interpretations](docs/INTERPRETATIONS.md), [tool feedback](docs/PRODUCT_FEEDBACK.md), and [build safety](docs/SAFETY.md).
 
 Licensed under Apache-2.0. No AWS resources are deployed.
+
+## Reference library and AWS ingest
+
+The public Apache-2.0 [HazardTrack reference library](https://github.com/rahul-software-dev/hazardtrack)
+owns the portable format, deterministic engine and browser example. The AWS
+product dependency is pinned to its `v0.1.0` release in `infra/uv.lock`; the
+container installs the CI-built release wheel. `engine/` and `spec/` remain
+an auditable development mirror, exported with `scripts/export-hazardtrack.py`.
+
+See [AWS operations](docs/AWS.md), [S7 evidence and open gates](docs/S7_REPORT.md)
+and [open-source contribution record](docs/OSS_SUBMISSION.md). Use
+`NOSTROBE_CATALOG_URL` at TV build time after a live deployment. Local/container
+validation does not establish AWS latency, costs, bucket permissions or teardown.
