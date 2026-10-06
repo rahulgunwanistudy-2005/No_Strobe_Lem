@@ -63,5 +63,13 @@
     "targets": [
       "tv"
     ]
+  },
+  "overrides": {
+    "lodash": "4.18.1",
+    "minimatch@<4": "3.1.5",
+    "minimatch@>=9 <10": "9.0.9",
+    "ajv@>=7 <8.18": "8.20.0",
+    "toml": "4.3.0",
+    "fast-xml-parser@>=5 <5.7": "5.11.2"
   }
 }
