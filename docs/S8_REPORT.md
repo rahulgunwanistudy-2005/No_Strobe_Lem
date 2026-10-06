@@ -1,7 +1,7 @@
 # Session 8 — hardening and submission readiness
 
-S8 implementation and review work is in progress. The session will finish with
-current evaluation/check receipts below. **Submission acceptance is not yet
+S8 implementation, review and the first full evaluation are complete. A second
+complete default evaluation is running to confirm byte-identical output. **Submission acceptance is not yet
 complete:** the SDK dependency graph retains high advisories; authenticated
 live AWS validation and its demo shot are unavailable; existing VVD video-drop
 and unadjudicated natural-film limitations remain. A product `v1.0.0` tag is
@@ -50,8 +50,18 @@ withheld while these gates are open.
   on VVD. First concurrent TV run had a timed catalog wait (51/52); isolated
   retry (52/52) and final post-guard suite (53/53) pass with unchanged assertions.
   This uses the existing host/toolchain, not a freshly installed OS.
-- Complete current-provenance evaluation is still running at this checkpoint;
-  final evaluation/determinism receipts will replace this status.
+- Current-provenance evaluation: all 978 outcomes complete; FN=FP=0 in all
+  three profiles, 975/975 tracks verify at −268.875/0/+268.875 ms, unresolved=0.
+  The 325 scored clips comprise 120 boundaries, 200 shapes and five composites;
+  the full-film control's three outcomes remain outside confusion scores.
+  A second complete default run is recomputing accuracy/mitigation/verification;
+  deterministic replay mode is not used.
+- Product independent Ubuntu CI passes all 431 engine tests, 16 infra tests,
+  contracts, SAM validate/build and read-only image validation. The corrected
+  helper records Linux x86_64, and local receipt records Darwin arm64.
+  [Product CI](https://github.com/rahulgunwanistudy-2005/No_Strobe_Lem/actions/runs/37474690435).
+- README, Devpost and Q&A tables match; copy/link/checksum checks and 12
+  distinct friction entries pass.
 - [Engineering review](S8_REVIEW.md) maps all requested edge cases to evidence.
 
 ## Review decisions and scope
@@ -86,8 +96,8 @@ container-id file in a finally block.
   the deployed catalog on VVD, and tear down.
 - Record/review the live cloud shot and final narrated/captioned demonstration;
   verify every edited frame before asserting no flashing and publish its URL.
-- Final tables/evaluation evidence will be published after freeze. Product
-  source is already public on main and GitHub recognizes Apache-2.0, using the
-  existing owner Git account; no visibility/access-list change or invitation.
+Product source is public on main and GitHub recognizes Apache-2.0, using the
+existing owner Git account; no visibility/access-list change or invitation.
+Final frozen evaluation evidence is published after the complete repeat.
 - Keep physical-TV calibration, original-film adjudication, PEAT and the S6
   zero-drop objective visible as scope limits.

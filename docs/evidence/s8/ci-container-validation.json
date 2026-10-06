@@ -1,0 +1,59 @@
+{
+  "aws_measured": false,
+  "environment": "Docker linux/amd64 on Linux x86_64 with in-memory S3; not Lambda",
+  "host_machine": "x86_64",
+  "host_system": "Linux",
+  "image": "analyzefunction:s7",
+  "image_budget_passes": true,
+  "image_id": "sha256:1afeef36ca555dc82d90a2615b79e8cc00b83f14e00c12f5f3ea13aecf64c4aa",
+  "image_size_bytes": 901783592,
+  "read_only_runtime_passes": true,
+  "size_budget_bytes": 1000000000,
+  "status": {
+    "content_id": "eab965c98212-sample",
+    "item": {
+      "attribution": {
+        "changes": "Source unchanged; verified HazardTrack sidecars added",
+        "credit": "Uploader supplied media",
+        "license": "Unspecified; no reuse license granted",
+        "url": "https://example.invalid/unprovided"
+      },
+      "content_id": "eab965c98212-sample",
+      "duration_s": 10.0,
+      "report": "https://example.com/public/eab965c98212-sample/report.html",
+      "source_sha256": "eab965c982124bb03c5f81d71043700d846d379291604e57edcfb5cd98e02951",
+      "title": "sample",
+      "tracks": {
+        "broadcast": {
+          "hazard_count": 0,
+          "url": "https://example.com/public/eab965c98212-sample/broadcast.hzt.json"
+        },
+        "kids": {
+          "hazard_count": 0,
+          "url": "https://example.com/public/eab965c98212-sample/kids.hzt.json"
+        },
+        "local": {
+          "hazard_count": 0,
+          "url": "https://example.com/public/eab965c98212-sample/local.hzt.json"
+        }
+      },
+      "video": "https://example.com/public/eab965c98212-sample/video.mp4"
+    },
+    "metrics": {
+      "duration_s": 10.0,
+      "elapsed_s": 3.162096007999992,
+      "input_bytes": 9882,
+      "profile_event_counts": {
+        "broadcast": {},
+        "kids": {},
+        "local": {}
+      },
+      "verifier_passes": {
+        "broadcast": true,
+        "kids": true,
+        "local": true
+      }
+    },
+    "state": "ready"
+  }
+}

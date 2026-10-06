@@ -29,7 +29,12 @@ Earlier performance measurements remain under S5/S6 with their own provenance.
   after the queued-seek cancellation guard. Assertions/timeouts are unchanged.
 - `seek-guard-negative.txt`: deliberately removed guard causes the new
   regression to fail; restored source passes the full final TV suite.
-- Evaluation/submission receipts are added after completion.
+- `submission-metrics.json`: current passing evaluation and public-table
+  checksums; `copy-check.txt` confirms equal tables, links and friction fields.
+- `product-ci-final.json`, `product-ci-final-quality.txt`,
+  `ci-container-validation.json`: independently passing Ubuntu product checks
+  and actual corrected read-only image receipt.
+- Determinism receipts are added after the complete repeat.
 
 The first image validation on the 12 s moving demo hit the unchanged utility
 300 s timeout. The retry on the existing constant-gray source passes the same

@@ -1,0 +1,10 @@
+aws-package	Run uv run ruff check lambda tests smoke.py check_image.py && uv run ruff format --check lambda tests smoke.py check_image.py && uv run mypy --strict lambda smoke.py check_image.py && uv run pytest -q	2026-10-06T13:56:10.4070017Z All checks passed!
+aws-package	Run uv run ruff check lambda tests smoke.py check_image.py && uv run ruff format --check lambda tests smoke.py check_image.py && uv run mypy --strict lambda smoke.py check_image.py && uv run pytest -q	2026-10-06T13:56:10.4269383Z 8 files already formatted
+aws-package	Run uv run ruff check lambda tests smoke.py check_image.py && uv run ruff format --check lambda tests smoke.py check_image.py && uv run mypy --strict lambda smoke.py check_image.py && uv run pytest -q	2026-10-06T13:56:21.1554895Z Success: no issues found in 5 source files
+aws-package	Run uv run ruff check lambda tests smoke.py check_image.py && uv run ruff format --check lambda tests smoke.py check_image.py && uv run mypy --strict lambda smoke.py check_image.py && uv run pytest -q	2026-10-06T13:56:26.9622840Z 16 passed in 5.25s
+aws-package	Run uv tool run --from aws-sam-cli==1.166.2 sam validate --lint --template-file infra/template.yaml	2026-10-06T13:56:33.6999122Z /home/runner/work/No_Strobe_Lem/No_Strobe_Lem/infra/template.yaml is a valid SAM Template
+aws-package	Run uv tool run --from aws-sam-cli==1.166.2 sam build --template-file infra/template.yaml	2026-10-06T13:57:16.9421823Z Build Succeeded
+session-one	Run uv run ruff check && uv run ruff format --check && uv run mypy --strict src && uv run pytest -q	2026-10-06T13:56:16.7933026Z All checks passed!
+session-one	Run uv run ruff check && uv run ruff format --check && uv run mypy --strict src && uv run pytest -q	2026-10-06T13:56:16.8237740Z 91 files already formatted
+session-one	Run uv run ruff check && uv run ruff format --check && uv run mypy --strict src && uv run pytest -q	2026-10-06T13:56:27.6046472Z Success: no issues found in 56 source files
+session-one	Run uv run ruff check && uv run ruff format --check && uv run mypy --strict src && uv run pytest -q	2026-10-06T14:00:50.5849487Z 431 passed in 262.13s (0:04:22)
