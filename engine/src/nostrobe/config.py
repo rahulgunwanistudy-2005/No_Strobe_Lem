@@ -2,12 +2,20 @@
 
 from pathlib import Path
 
+from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+
+def _default_root() -> Path:
+    checkout = Path(__file__).resolve().parents[3]
+    if (checkout / "engine/src/nostrobe/config.py").is_file():
+        return checkout
+    return Path.cwd()
 
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_prefix="NOSTROBE_", frozen=True)
-    repo_root: Path = Path(__file__).resolve().parents[3]
+    repo_root: Path = Field(default_factory=_default_root)
     ffmpeg: str = "ffmpeg"
     ffprobe: str = "ffprobe"
     log_level: str = "INFO"
