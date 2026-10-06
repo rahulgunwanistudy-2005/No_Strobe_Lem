@@ -2,6 +2,7 @@
 
 import argparse
 import json
+import platform
 import subprocess
 from pathlib import Path
 from tempfile import TemporaryDirectory
@@ -94,7 +95,12 @@ print(json.dumps(outcome, sort_keys=True))
         "size_budget_bytes": 1_000_000_000,
         "image_budget_passes": True,
         "read_only_runtime_passes": True,
-        "environment": "Docker linux/amd64 on Apple Silicon with in-memory S3; not Lambda",
+        "environment": (
+            f"Docker linux/amd64 on {platform.system()} {platform.machine()} "
+            "with in-memory S3; not Lambda"
+        ),
+        "host_system": platform.system(),
+        "host_machine": platform.machine(),
         "status": status,
         "aws_measured": False,
     }
