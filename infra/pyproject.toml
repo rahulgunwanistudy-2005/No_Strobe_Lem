@@ -5,7 +5,7 @@ requires-python = ">=3.12,<3.13"
 dependencies = ["boto3==1.42.65", "nostrobe"]
 
 [tool.uv.sources]
-nostrobe = {git = "https://github.com/rahul-software-dev/hazardtrack.git", tag = "v0.1.0", subdirectory = "engine"}
+nostrobe = {git = "https://github.com/rahul-software-dev/hazardtrack.git", tag = "v0.1.1", subdirectory = "engine"}
 
 [dependency-groups]
 dev = ["pytest>=8.3,<10", "ruff>=0.9,<1", "mypy>=1.14,<2", "types-boto3[s3]>=1.42,<2"]

@@ -308,8 +308,8 @@ wheels = [
 
 [[package]]
 name = "nostrobe"
-version = "0.1.0"
-source = { git = "https://github.com/rahul-software-dev/hazardtrack.git?subdirectory=engine&tag=v0.1.0#4bb05e9c27d90c9b2c683248b9048e1ea893e892" }
+version = "0.1.1"
+source = { git = "https://github.com/rahul-software-dev/hazardtrack.git?subdirectory=engine&tag=v0.1.1#52df1f0d96b6e0fb7a3067c0fd802a1b501e3881" }
 dependencies = [
     { name = "jinja2" },
     { name = "matplotlib" },
@@ -340,7 +340,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "boto3", specifier = "==1.42.65" },
-    { name = "nostrobe", git = "https://github.com/rahul-software-dev/hazardtrack.git?subdirectory=engine&tag=v0.1.0" },
+    { name = "nostrobe", git = "https://github.com/rahul-software-dev/hazardtrack.git?subdirectory=engine&tag=v0.1.1" },
 ]
 
 [package.metadata.requires-dev]

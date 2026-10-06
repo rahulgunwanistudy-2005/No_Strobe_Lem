@@ -1,8 +1,8 @@
 # Open-source contribution record
 
 - Repository: https://github.com/rahul-software-dev/hazardtrack
-- Contribution: https://github.com/rahul-software-dev/hazardtrack/commit/f07188f
-- Release: https://github.com/rahul-software-dev/hazardtrack/releases/tag/v0.1.0
+- Contribution: https://github.com/rahul-software-dev/hazardtrack/commit/52df1f0d96b6e0fb7a3067c0fd802a1b501e3881
+- Release: https://github.com/rahul-software-dev/hazardtrack/releases/tag/v0.1.1
 - GitHub username: rahul-software-dev (the authenticated publishing account).
 - GitHub creation timestamp: 2026-10-06 08:49:40 UTC (6 October, 14:19:40 IST).
 - Visibility/license: public / Apache-2.0, confirmed by repository metadata.

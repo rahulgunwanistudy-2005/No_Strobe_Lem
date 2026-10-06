@@ -1,17 +1,17 @@
 {
   "ci_conclusion": "success",
-  "ci_run_url": "https://github.com/rahul-software-dev/hazardtrack/actions/runs/37441310248",
+  "ci_run_url": "https://github.com/rahul-software-dev/hazardtrack/actions/runs/37448503294",
   "ffmpeg_bundle_provenance": "Compiled from pinned official source using Dockerfile.source; verified static ELF and real H.264/H.265 pipelines on read-only root",
   "ffmpeg_bundle_sha256": "cdae69e1c416c10a340be3c998bcd1a7a1d591a930c44d96c2441b5c09fd5595",
   "ffmpeg_bundle_url": "https://github.com/rahul-software-dev/hazardtrack/releases/download/v0.1.0/ffmpeg-7.1.1-hazardtrack-linux-x86_64.tar.xz",
   "ffmpeg_source_sha256": "733984395e0dbbe5c046abda2dc49a5544e7e0e1e2366bba849222ae9e3a03b1",
   "ffmpeg_source_url": "https://ffmpeg.org/releases/ffmpeg-7.1.1.tar.xz",
-  "git_commit": "4bb05e9c27d90c9b2c683248b9048e1ea893e892",
-  "git_tag": "v0.1.0",
+  "git_commit": "52df1f0d96b6e0fb7a3067c0fd802a1b501e3881",
+  "git_tag": "v0.1.1",
   "lambda_base_digest": "sha256:517bcc7dc1a3ba62e324961c1563cc54a2bd6dc1060188f9d376211ecb7b2926",
-  "reference_tests_passed": 422,
-  "release_url": "https://github.com/rahul-software-dev/hazardtrack/releases/tag/v0.1.0",
+  "reference_tests_passed": 429,
+  "release_url": "https://github.com/rahul-software-dev/hazardtrack/releases/tag/v0.1.1",
   "repository_url": "https://github.com/rahul-software-dev/hazardtrack",
-  "wheel_sha256": "56bf633697d178fed428be2276e26bfebd4ba33cc40b61a1fe4e538a96ffe92e",
-  "wheel_url": "https://github.com/rahul-software-dev/hazardtrack/releases/download/v0.1.0/nostrobe-0.1.0-py3-none-any.whl"
+  "wheel_sha256": "857d20cb8d25e5aa0c54e77bf328d07b1c5555c96d36936d2814577236404bb9",
+  "wheel_url": "https://github.com/rahul-software-dev/hazardtrack/releases/download/v0.1.1/nostrobe-0.1.1-py3-none-any.whl"
 }
