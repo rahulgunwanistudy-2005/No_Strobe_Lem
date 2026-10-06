@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HazardTrack reference player</title>
+<style>
+body{background:#101820;color:#edf4f5;font:18px system-ui;max-width:800px;margin:3rem auto;padding:0 24px}
+h1{font-size:38px}label{display:block;margin:20px 0}input{width:100%;font:inherit}
+button{font:inherit;padding:10px 20px;margin:12px 12px 12px 0}.stage{position:relative;background:#000}
+video{display:block;width:100%}.veil{position:absolute;inset:0;background:#000;opacity:1;pointer-events:none}
+output{display:block;white-space:pre-wrap}small{line-height:1.6;display:block;margin-top:24px}
+</style>
+<h1>HazardTrack reference player</h1>
+<p>Load a matching video and verified JSON or WebVTT sidecar. Playback stays paused until the track loads.</p>
+<label>Video URL<input id="media" placeholder="https://…/video.mp4"></label>
+<label>HazardTrack URL<input id="track" placeholder="https://…/broadcast.hzt.vtt"></label>
+<button id="load">Load</button><button id="play" disabled>Play / pause</button>
+<div class="stage"><video id="video" playsinline preload="metadata"></video><div id="veil" class="veil"></div></div>
+<output id="status">Awaiting a matching video and track.</output>
+<small>No Strobe-lem is a viewing aid that reduces flashing according to published broadcast guidelines.
+It is not a medical device and cannot guarantee that content is safe for every person with photosensitive epilepsy.</small>
+<script type="module">
+import {attachHazardTrack} from './reader.js';
+const byId = id => document.getElementById(id);
+const video = byId('video'), veil = byId('veil'), play = byId('play');
+let cleanup, generation = 0;
+byId('load').onclick = async () => {
+  const current = ++generation; play.disabled = true; video.pause(); cleanup?.(); veil.style.opacity = '1';
+  byId('status').textContent = 'Checking media binding and verification…';
+  try {
+    const trackURL = new URL(byId('track').value, location.href);
+    const sourceURL = new URL(byId('media').value, location.href);
+    // Hash exact source bytes before unlocking controls; this example targets small files.
+    const [source, sidecar] = await Promise.all([fetch(sourceURL), fetch(trackURL)]);
+    if (!source.ok || !sidecar.ok) throw new Error('Download failed');
+    const [bytes, text] = await Promise.all([source.arrayBuffer(), sidecar.text()]);
+    const metadata = text.startsWith('WEBVTT')
+      ? JSON.parse(text.split(/\r?\n\s*\r?\n/).find(b => b.startsWith('NOTE hazardtrack\n')).split('\n')[1])
+      : JSON.parse(text);
+    const hash = [...new Uint8Array(await crypto.subtle.digest('SHA-256', bytes))]
+      .map(byte => byte.toString(16).padStart(2, '0')).join('');
+    if (hash !== metadata.media.source_sha256) throw new Error('Video checksum does not match the track');
+    if (current !== generation) return;
+    const blobURL = URL.createObjectURL(new Blob([bytes], {type: 'video/mp4'}));
+    video.src = blobURL;
+    const trackBlob = URL.createObjectURL(new Blob([text]));
+    let detach;
+    try { detach = await attachHazardTrack(video, veil, trackBlob); }
+    finally { URL.revokeObjectURL(trackBlob); }
+    if (current !== generation) {detach(); URL.revokeObjectURL(blobURL); return;}
+    cleanup = () => {detach(); URL.revokeObjectURL(blobURL);};
+    play.disabled = false; byId('status').textContent = 'Verified track attached. Ready to play.';
+  } catch (error) {if (current === generation) byId('status').textContent = `Playback refused: ${error.message}`;}
+};
+play.onclick = () => video.paused ? video.play() : video.pause();
+</script>
+</html>

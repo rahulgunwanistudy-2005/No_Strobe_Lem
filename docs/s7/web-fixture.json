@@ -1,0 +1,11 @@
+{
+  "purpose": "nonhazardous browser overlay fixture; deliberate nonminimal veil",
+  "source_sha256": "b751f455a2cea508e9d18b54631f001ad8c495293fe680a4f3110db7521723d4",
+  "input_events": 0,
+  "output_passes": true,
+  "offsets_checked_s": [
+    -0.26887499999999925,
+    0.0,
+    0.26887499999999925
+  ]
+}

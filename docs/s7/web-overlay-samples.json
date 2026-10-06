@@ -1,0 +1,194 @@
+[
+  {
+    "gray": "rgb(0, 0, 0)",
+    "opacity": 0,
+    "paused": false,
+    "time": 0.819417,
+    "file": "frame-000.jpg",
+    "captured_at_ms": 1791277196580
+  },
+  {
+    "gray": "rgb(0, 0, 0)",
+    "opacity": 0,
+    "paused": false,
+    "time": 0.934785,
+    "file": "frame-001.jpg",
+    "captured_at_ms": 1791277196672
+  },
+  {
+    "gray": "rgb(0, 0, 0)",
+    "opacity": 0,
+    "paused": false,
+    "time": 1.114083,
+    "file": "frame-002.jpg",
+    "captured_at_ms": 1791277196848
+  },
+  {
+    "gray": "rgb(0, 0, 0)",
+    "opacity": 0,
+    "paused": false,
+    "time": 1.201821,
+    "file": "frame-003.jpg",
+    "captured_at_ms": 1791277196937
+  },
+  {
+    "gray": "rgb(0, 0, 0)",
+    "opacity": 0,
+    "paused": false,
+    "time": 1.309983,
+    "file": "frame-004.jpg",
+    "captured_at_ms": 1791277197046
+  },
+  {
+    "gray": "rgb(0, 0, 0)",
+    "opacity": 0,
+    "paused": false,
+    "time": 1.476806,
+    "file": "frame-005.jpg",
+    "captured_at_ms": 1791277197235
+  },
+  {
+    "gray": "rgb(64, 64, 64)",
+    "opacity": 0.274396,
+    "paused": false,
+    "time": 1.731415,
+    "file": "frame-006.jpg",
+    "captured_at_ms": 1791277197467
+  },
+  {
+    "gray": "rgb(64, 64, 64)",
+    "opacity": 0.374174,
+    "paused": false,
+    "time": 1.82747,
+    "file": "frame-007.jpg",
+    "captured_at_ms": 1791277197570
+  },
+  {
+    "gray": "rgb(64, 64, 64)",
+    "opacity": 0.6,
+    "paused": false,
+    "time": 2.080928,
+    "file": "frame-008.jpg",
+    "captured_at_ms": 1791277197818
+  },
+  {
+    "gray": "rgb(64, 64, 64)",
+    "opacity": 0.6,
+    "paused": false,
+    "time": 2.247718,
+    "file": "frame-009.jpg",
+    "captured_at_ms": 1791277197985
+  },
+  {
+    "gray": "rgb(64, 64, 64)",
+    "opacity": 0.6,
+    "paused": false,
+    "time": 2.469458,
+    "file": "frame-010.jpg",
+    "captured_at_ms": 1791277198207
+  },
+  {
+    "gray": "rgb(64, 64, 64)",
+    "opacity": 0.6,
+    "paused": false,
+    "time": 2.669779,
+    "file": "frame-011.jpg",
+    "captured_at_ms": 1791277198409
+  },
+  {
+    "gray": "rgb(64, 64, 64)",
+    "opacity": 0.6,
+    "paused": false,
+    "time": 2.861304,
+    "file": "frame-012.jpg",
+    "captured_at_ms": 1791277198597
+  },
+  {
+    "gray": "rgb(64, 64, 64)",
+    "opacity": 0.6,
+    "paused": false,
+    "time": 2.988783,
+    "file": "frame-013.jpg",
+    "captured_at_ms": 1791277198723
+  },
+  {
+    "gray": "rgb(64, 64, 64)",
+    "opacity": 0.6,
+    "paused": false,
+    "time": 3.151913,
+    "file": "frame-014.jpg",
+    "captured_at_ms": 1791277198886
+  },
+  {
+    "gray": "rgb(64, 64, 64)",
+    "opacity": 0.6,
+    "paused": false,
+    "time": 3.241591,
+    "file": "frame-015.jpg",
+    "captured_at_ms": 1791277198985
+  },
+  {
+    "gray": "rgb(64, 64, 64)",
+    "opacity": 0.6,
+    "paused": false,
+    "time": 3.465456,
+    "file": "frame-016.jpg",
+    "captured_at_ms": 1791277199200
+  },
+  {
+    "gray": "rgb(64, 64, 64)",
+    "opacity": 0.6,
+    "paused": false,
+    "time": 3.54654,
+    "file": "frame-017.jpg",
+    "captured_at_ms": 1791277199281
+  },
+  {
+    "gray": "rgb(64, 64, 64)",
+    "opacity": 0.6,
+    "paused": false,
+    "time": 3.700626,
+    "file": "frame-018.jpg",
+    "captured_at_ms": 1791277199435
+  },
+  {
+    "gray": "rgb(64, 64, 64)",
+    "opacity": 0.6,
+    "paused": false,
+    "time": 3.812524,
+    "file": "frame-019.jpg",
+    "captured_at_ms": 1791277199547
+  },
+  {
+    "gray": "rgb(64, 64, 64)",
+    "opacity": 0.6,
+    "paused": false,
+    "time": 3.86484,
+    "file": "frame-020.jpg",
+    "captured_at_ms": 1791277199602
+  },
+  {
+    "gray": "rgb(64, 64, 64)",
+    "opacity": 0.6,
+    "paused": false,
+    "time": 3.934905,
+    "file": "frame-021.jpg",
+    "captured_at_ms": 1791277199670
+  },
+  {
+    "gray": "rgb(64, 64, 64)",
+    "opacity": 0.6,
+    "paused": false,
+    "time": 4.035839,
+    "file": "frame-022.jpg",
+    "captured_at_ms": 1791277199770
+  },
+  {
+    "gray": "rgb(64, 64, 64)",
+    "opacity": 0.6,
+    "paused": false,
+    "time": 4.151883,
+    "file": "frame-023.jpg",
+    "captured_at_ms": 1791277199887
+  }
+]

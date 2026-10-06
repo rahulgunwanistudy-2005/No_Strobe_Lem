@@ -4,6 +4,7 @@ const {spawnSync} = require('node:child_process');
 const root = path.resolve(__dirname, '../tv');
 const mode = process.argv[2];
 if (!['Debug', 'Release'].includes(mode)) throw new Error('Choose Debug or Release');
+require('./configure-catalog.cjs');
 const names = ['sync.mp4', 'compositing.mp4'];
 const destinations = names.map(name => path.join(root, 'assets/raw', name));
 if (destinations.some(file => fs.existsSync(file))) {
