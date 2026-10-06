@@ -167,3 +167,11 @@ def test_full_synthetic_suite_linear_error(tmp_path: Path, spec: ClipSpec) -> No
     path = write_clip(tmp_path, spec)
     for (decoded, _), raw in zip(iter_luma(path), iter_frames(spec), strict=True):
         assert np.max(np.abs(to_cells(decoded) - to_cells(raw))) < 1
+
+
+@pytest.mark.parametrize("fps", [24, 30, 60])
+def test_integer_pts_preserve_one_second_boundaries(tmp_path: Path, fps: int) -> None:
+    """Six-digit showinfo pts_time can move a frame across the one-second window."""
+    spec = ClipSpec("exact_pts", "flat", duration_s=2, fps=fps, width=320, height=180)
+    times = np.array([t for _, t in iter_luma(write_clip(tmp_path, spec), grid=(320, 180))])
+    np.testing.assert_allclose(times, np.arange(2 * fps) / fps, atol=1e-12, rtol=0)

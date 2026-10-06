@@ -19,7 +19,7 @@ from nostrobe.luminance.color import bt709_to_linear
 from nostrobe.luminance.curve import FloatArray, code10_to_cd_m2
 from nostrobe.veil.composite import composite_luts
 
-CACHE_VERSION = "s3-code-grid-640-v1"
+CACHE_VERSION = "s7-code-grid-640-integer-pts-v2"
 
 
 @dataclass(frozen=True)

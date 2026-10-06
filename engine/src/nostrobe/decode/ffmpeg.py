@@ -23,7 +23,8 @@ from nostrobe.errors import DecodeError, UnsupportedMediaError
 from nostrobe.luminance.curve import FloatArray, code10_to_cd_m2
 
 ByteArray = NDArray[np.uint8]
-_PTS = re.compile(rb"\bn:\s*\d+.*?pts_time:([^ ]+)")
+_PTS = re.compile(rb"\bn:\s*\d+.*?\bpts:\s*(-?\d+)\s")
+_TIME_BASE = re.compile(rb"config in time_base:\s*(\d+/\d+)")
 _LUMA_LUT = code10_to_cd_m2(np.arange(256, dtype=np.float64) * 4)
 
 
@@ -157,20 +158,27 @@ def _frames(
     except OSError as exc:
         raise DecodeError(f"could not start decoder: {exc}") from exc
     assert process.stdout is not None and process.stderr is not None
-    timestamps: Queue[float] = Queue(maxsize=16)
+    timestamps: Queue[float | DecodeError] = Queue(maxsize=16)
     cancel = Event()
     errors: deque[bytes] = deque(maxlen=40)
 
     def drain() -> None:
         assert process.stderr is not None
+        time_base: Fraction | None = None
         while line := process.stderr.readline(4096):
             errors.append(line)
+            base = _TIME_BASE.search(line)
+            if base:
+                time_base = Fraction(base.group(1).decode())
             match = _PTS.search(line)
             if match:
-                try:
-                    pts = float(match.group(1))
-                except ValueError:
-                    continue
+                # showinfo pts_time is rounded differently across ffmpeg releases.
+                # Integer PTS and filter time base retain exact presentation timing.
+                pts: float | DecodeError = (
+                    float(int(match.group(1)) * time_base)
+                    if time_base is not None
+                    else DecodeError("decoder did not report the filter time base")
+                )
                 while not cancel.is_set():
                     try:
                         timestamps.put(pts, timeout=0.1)
@@ -197,6 +205,8 @@ def _frames(
                 pts = timestamps.get(timeout=5)
             except Empty as exc:
                 raise DecodeError("decoder did not emit a presentation timestamp") from exc
+            if isinstance(pts, DecodeError):
+                raise pts
             yield np.frombuffer(chunks, dtype=np.uint8).reshape(shape).copy(), pts
         result = process.wait(timeout=30)
         thread.join(timeout=5)
