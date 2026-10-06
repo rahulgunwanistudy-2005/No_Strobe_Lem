@@ -1,0 +1,5 @@
+**
+!infra/
+!infra/lambda/
+!infra/lambda/**
+!infra/runtime-requirements.txt

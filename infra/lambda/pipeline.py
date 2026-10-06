@@ -120,9 +120,11 @@ def publish(s3: Any, config: Config, key: str, event_etag: str | None) -> dict[s
     with tempfile.TemporaryDirectory(prefix="nostrobe-", dir="/tmp") as temporary:
         work = Path(temporary)
         source = work / "source.mp4"
-        response = s3.get_object(
-            Bucket=config.bucket, Key=key, **({"IfMatch": event_etag} if event_etag else {})
-        )
+        conditions = {}
+        if event_etag:
+            etag = event_etag.strip('"')
+            conditions["IfMatch"] = f'"{etag}"'
+        response = s3.get_object(Bucket=config.bucket, Key=key, **conditions)
         body = response["Body"]
         digest, size = hashlib.sha256(), 0
         try:

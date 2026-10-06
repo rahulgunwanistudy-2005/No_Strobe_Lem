@@ -19,3 +19,26 @@ jobs:
       - run: uv run ruff check && uv run ruff format --check && uv run mypy --strict src && uv run pytest -q
         working-directory: engine
       - run: npm run types:check && npm run typecheck
+  aws-package:
+    runs-on: ubuntu-24.04
+    env:
+      SAM_CLI_TELEMETRY: '0'
+      AWS_EC2_METADATA_DISABLED: 'true'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: '0.8.23'
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - run: uv sync --locked
+        working-directory: infra
+      - run: uv run ruff check lambda tests smoke.py check_image.py && uv run ruff format --check lambda tests smoke.py check_image.py && uv run mypy --strict lambda smoke.py check_image.py && uv run pytest -q
+        working-directory: infra
+      - run: uv tool run --from aws-sam-cli==1.166.2 sam validate --lint --template-file infra/template.yaml
+      - run: uv tool run --from aws-sam-cli==1.166.2 sam build --template-file infra/template.yaml
+      - run: uv run --directory engine python ../tools/prepare_web_demo.py ../synth_out/s7/web
+      - run: uv run --directory infra python check_image.py --image analyzefunction:s7 --source ../synth_out/s7/web/HAZARD_overlay-demo.mp4 --output ../docs/s7/ci-container-validation.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lambda-validation
+          path: docs/s7/ci-container-validation.json

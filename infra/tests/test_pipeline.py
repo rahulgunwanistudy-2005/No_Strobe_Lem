@@ -1,5 +1,4 @@
 import hashlib
-import io
 import json
 from pathlib import Path
 from typing import Any
@@ -11,62 +10,9 @@ from config import Config
 from nostrobe.domain.models import HazardTrack
 from nostrobe.errors import UnsupportedMediaError
 from pipeline import InputLimitError, process, rebuild_catalog
+from store import Store, error
 
 ROOT = Path(__file__).resolve().parents[2]
-
-
-def error(code: str) -> ClientError:
-    return ClientError({"Error": {"Code": code, "Message": code}}, "S3")
-
-
-class Store:
-    def __init__(self) -> None:
-        self.objects: dict[str, bytes] = {}
-        self.metadata: dict[str, dict[str, str]] = {}
-        self.uploads: list[str] = []
-        self.conflict = False
-        self.inject = None
-
-    def get_object(self, **kw: Any) -> dict[str, Any]:
-        key = kw["Key"]
-        if key not in self.objects:
-            raise error("NoSuchKey")
-        payload = self.objects[key]
-        etag = hashlib.md5(payload).hexdigest()
-        if kw.get("IfMatch") not in {None, etag}:
-            raise error("PreconditionFailed")
-        return {
-            "Body": io.BytesIO(payload),
-            "ContentLength": len(payload),
-            "ETag": etag,
-            "Metadata": self.metadata.get(key, {}),
-        }
-
-    def put_object(self, **kw: Any) -> None:
-        key = kw["Key"]
-        if key == "public/catalog.json" and self.inject:
-            action, self.inject = self.inject, None
-            action()
-        current = self.objects.get(key)
-        if (kw.get("IfNoneMatch") == "*" and current is not None) or (
-            "IfMatch" in kw
-            and (current is None or hashlib.md5(current).hexdigest() != kw["IfMatch"])
-        ):
-            self.conflict = True
-            raise error("PreconditionFailed")
-        self.objects[key] = kw["Body"]
-
-    def upload_file(self, path: str, bucket: str, key: str, **kw: Any) -> None:
-        self.uploads.append(key)
-        self.objects[key] = Path(path).read_bytes()
-
-    def get_paginator(self, name: str) -> "Store":
-        return self
-
-    def paginate(self, **kw: Any) -> list[dict[str, Any]]:
-        # Multiple pages exercise pagination without a service or credentials.
-        keys = sorted(k for k in self.objects if k.startswith(kw["Prefix"]))
-        return [{"Contents": [{"Key": k} for k in keys[i : i + 2]]} for i in range(0, len(keys), 2)]
 
 
 def event(key: str = "ingest/film+name.mp4", **extra: Any) -> dict[str, Any]:
@@ -205,3 +151,19 @@ def test_oversized_input_has_unbound_typed_status(store: Store) -> None:
     assert outcome["error"]["type"] == "InputLimitError"
     assert not store.uploads
     assert json.loads(store.objects["public/catalog.json"])["items"] == []
+
+
+def test_matching_notification_etag_is_quoted_for_conditional_get(
+    store: Store, config: Config
+) -> None:
+    digest = hashlib.md5(store.objects["ingest/film name.mp4"]).hexdigest()
+    artifacts = tracks("fixture")
+    with (
+        patch("pipeline.probe", return_value=artifacts[0].media),
+        patch("pipeline.load_cache"),
+        patch("pipeline.analyze_cache", return_value=artifacts),
+        patch("pipeline.render", return_value="<html>traces</html>"),
+        patch.object(store, "get_object", wraps=store.get_object) as download,
+    ):
+        assert process(event(eTag=digest), store, config)["results"][0]["state"] == "ready"
+        assert download.call_args_list[0].kwargs["IfMatch"] == f'"{digest}"'

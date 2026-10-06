@@ -16,7 +16,7 @@ from nostrobe.track.jsonio import parse
 def http_status(url: str) -> int:
     try:
         with urlopen(url, timeout=30) as response:
-            return response.status
+            return int(response.status)
     except HTTPError as exc:
         return exc.code
 

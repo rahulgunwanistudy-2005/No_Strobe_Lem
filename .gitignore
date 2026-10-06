@@ -17,3 +17,5 @@ synth_out/
 
 .nostrobe_cache/
 analysis_out/
+
+.aws-sam/

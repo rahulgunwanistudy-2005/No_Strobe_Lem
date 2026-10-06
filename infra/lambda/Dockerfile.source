@@ -1,10 +1,21 @@
 FROM public.ecr.aws/lambda/python:3.12@sha256:517bcc7dc1a3ba62e324961c1563cc54a2bd6dc1060188f9d376211ecb7b2926 AS ffmpeg
-ARG FFMPEG_URL=https://github.com/rahul-software-dev/hazardtrack/releases/download/v0.1.0/ffmpeg-7.1.1-hazardtrack-linux-x86_64.tar.xz
-ARG FFMPEG_SHA256=cdae69e1c416c10a340be3c998bcd1a7a1d591a930c44d96c2441b5c09fd5595
-RUN curl --fail --silent --show-error --location --retry 3 --connect-timeout 20 --max-time 180 \
-       "$FFMPEG_URL" -o /tmp/ffmpeg.tar.xz \
-    && echo "$FFMPEG_SHA256  /tmp/ffmpeg.tar.xz" | sha256sum --check - \
-    && python -c 'import tarfile; tarfile.open("/tmp/ffmpeg.tar.xz").extractall("/opt/ffmpeg", filter="data")'
+ARG FFMPEG_VERSION=7.1.1
+ARG FFMPEG_SHA256=733984395e0dbbe5c046abda2dc49a5544e7e0e1e2366bba849222ae9e3a03b1
+RUN dnf install -y gcc make glibc-static tar xz && dnf clean all \
+    && curl --fail --silent --show-error --location --retry 3 \
+       "https://ffmpeg.org/releases/ffmpeg-${FFMPEG_VERSION}.tar.xz" -o /tmp/ffmpeg-source.tar.xz \
+    && echo "$FFMPEG_SHA256  /tmp/ffmpeg-source.tar.xz" | sha256sum --check - \
+    && mkdir /tmp/ffmpeg && tar -xJf /tmp/ffmpeg-source.tar.xz --strip-components=1 -C /tmp/ffmpeg \
+    && cd /tmp/ffmpeg && ./configure --prefix=/opt/ffmpeg \
+       --disable-autodetect --disable-debug --disable-doc --disable-network --disable-x86asm \
+       --disable-shared --enable-static --extra-ldflags=-static --disable-everything \
+       --enable-ffmpeg --enable-ffprobe --disable-avdevice \
+       --enable-decoder=h264,hevc --enable-parser=h264,hevc --enable-demuxer=mov \
+       --enable-muxer=rawvideo --enable-encoder=rawvideo --enable-protocol=file,pipe \
+       --enable-filter=buffer,buffersink,extractplanes,scale,format,split,hstack,setpts,showinfo,null \
+    && make -j2 && make install \
+    && cp COPYING.LGPLv2.1 /opt/ffmpeg/LICENSE.txt \
+    && cp /tmp/ffmpeg-source.tar.xz /opt/ffmpeg/source.tar.xz
 
 FROM public.ecr.aws/lambda/python:3.12@sha256:517bcc7dc1a3ba62e324961c1563cc54a2bd6dc1060188f9d376211ecb7b2926
 COPY --from=ffmpeg /opt/ffmpeg/bin/ffmpeg /opt/ffmpeg/bin/ffprobe /usr/local/bin/
