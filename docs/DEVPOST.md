@@ -25,7 +25,15 @@ React Native for Vega calls `@amazon-devices/react-native-w3cmedia` through `tv/
 ## Results
 
 <!-- submission-results:start -->
-See [RESULTS.md](../engine/eval/RESULTS.md); current-provenance S8 evaluation is in progress.
+Copied from [RESULTS.md](../engine/eval/RESULTS.md) and its machine-readable results; these are synthetic/composite corpus scores.
+
+| Profile | Missed / must-fail | False alarms / must-pass | Veiled runtime | Mean α |
+|---|---:|---:|---:|---:|
+| broadcast | 0 / 96 | 0 / 229 | 27.8428% | 0.432571 |
+| local | 0 / 108 | 0 / 217 | 31.2563% | 0.430608 |
+| kids | 0 / 142 | 0 / 183 | 44.8651% | 0.458386 |
+
+975/975 profile tracks re-verify at −268.875, 0, +268.875 ms; 0 unresolved segments.
 <!-- submission-results:end -->
 
 Scores concern seeded synthetic boundaries/shapes and injected hazards over licensed footage. The original film control has unadjudicated flags; it cannot establish zero natural-film false alarms. PEAT was not run. S6 observed video drops on VVD and the zero-drop objective remains open. These limits are part of the submission, not omitted from the results.

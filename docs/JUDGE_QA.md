@@ -7,7 +7,15 @@
 **How much does it change the picture?** The search minimizes measured luminance distortion over its candidate grid, then veils only the resulting timeline. The table below describes the evaluation corpus, not a typical household viewing session. Viewers can also skip.
 
 <!-- submission-results:start -->
-See [RESULTS.md](../engine/eval/RESULTS.md); current-provenance S8 evaluation is in progress.
+Copied from [RESULTS.md](../engine/eval/RESULTS.md) and its machine-readable results; these are synthetic/composite corpus scores.
+
+| Profile | Missed / must-fail | False alarms / must-pass | Veiled runtime | Mean α |
+|---|---:|---:|---:|---:|
+| broadcast | 0 / 96 | 0 / 229 | 27.8428% | 0.432571 |
+| local | 0 / 108 | 0 / 217 | 31.2563% | 0.430608 |
+| kids | 0 / 142 | 0 / 183 | 44.8651% | 0.458386 |
+
+975/975 profile tracks re-verify at −268.875, 0, +268.875 ms; 0 unresolved segments.
 <!-- submission-results:end -->
 
 **Can the veil itself introduce flashing?** The verifier checks complete simulated output, including ramps and overlaps, at every stated offset. A passing simulation is limited to the detector/model and analyzed input; it is not an absolute guarantee.

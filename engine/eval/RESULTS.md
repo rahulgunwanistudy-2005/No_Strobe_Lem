@@ -16,9 +16,9 @@ VVD calibration: worst-scenario absolute p95 179.250 ms; maximum 223.000 ms. Mea
 
 | Profile | TP | TN | FP | **FN** | IoU median | IoU p10 |
 |---|---:|---:|---:|---:|---:|---:|
-| broadcast | 96 | 229 | 0 | **0** | 1.0 | 0.9999998684210526 |
-| local | 108 | 217 | 0 | **0** | 1.0 | 0.9999998684210526 |
-| kids | 142 | 183 | 0 | **0** | 1.0 | 0.9999998461538698 |
+| broadcast | 96 | 229 | 0 | **0** | 1.0 | 1.0 |
+| local | 108 | 217 | 0 | **0** | 1.0 | 1.0 |
+| kids | 142 | 183 | 0 | **0** | 1.0 | 1.0 |
 
 | Suite | Profile | TP | TN | FP | FN |
 |---|---|---:|---:|---:|---:|
@@ -38,9 +38,9 @@ Duration-weighted costs include simulated unresolved fallback veils; they do not
 
 | Profile | Verified / analyzed | Unresolved segments | Veiled runtime | Mean α during veil support | Mean ΔL cd/m² |
 |---|---:|---:|---:|---:|---:|
-| broadcast | 325 / 325 | 0 | 0.278428 | 0.432571 | 16.789856 |
-| local | 325 / 325 | 0 | 0.312563 | 0.430608 | 18.479293 |
-| kids | 325 / 325 | 0 | 0.448651 | 0.458386 | 24.976024 |
+| broadcast | 325 / 325 | 0 | 0.278428 | 0.432571 | 16.789858 |
+| local | 325 / 325 | 0 | 0.312563 | 0.430608 | 18.479295 |
+| kids | 325 / 325 | 0 | 0.448651 | 0.458386 | 24.976025 |
 
 ## Throughput
 
@@ -48,10 +48,10 @@ All-profile shared passes. Full analyze includes decode/cache loading or packing
 
 | Suite | Clips | Duration s | Detect × real-time | Full analyze × real-time |
 |---|---:|---:|---:|---:|
-| boundary | 120 | 350.000000 | 5.1778 | 0.3227 |
-| shapes | 200 | 600.000000 | 4.6285 | 0.6273 |
-| realistic | 5 | 15.000000 | 5.5316 | 0.0257 |
-| clean | 1 | 596.458333 | 32.3924 | not run (detection control) |
+| boundary | 120 | 350.000000 | 3.6894 | 0.2207 |
+| shapes | 200 | 600.000000 | 4.9082 | 0.6422 |
+| realistic | 5 | 15.000000 | 5.2177 | 0.0259 |
+| clean | 1 | 596.458333 | 35.6896 | not run (detection control) |
 
 ## Unmodified film controls
 
@@ -97,9 +97,9 @@ The initial S4 oracle applied the HDR relative criterion to SDR high-dark states
 ```json
 {
   "cpu_model": "Apple M1",
-  "engine_version": "0.1.0",
+  "engine_version": "0.1.1",
   "ffmpeg": "ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers",
-  "git_sha": "c2372f23ba25430314748cfa02d005430761a501",
+  "git_sha": "98a60865eef0366ee2f04197c91a40fe94615cb7",
   "machine": "arm64",
   "memory_bytes": 8589934592,
   "params_hash": {
@@ -117,7 +117,7 @@ Provenance:
 
 ```json
 {
-  "code_sha256": "f34c34ce1d68ea31ef6f37d1f6e86d02bbc4cbf8ed90cb63bb27cfbcf6a1c5b4",
+  "code_sha256": "838ca254b19ebe98f1a2ac64946c843e6626b8616e70599aae730c89d50bb6ec",
   "control_review_sha256": "c05d53262c47670fc0477b1ad77db35b4e565227a312b6ba3e3b5bd5e0f3fa07",
   "cpu_model": "Apple M1",
   "device_calibration": {
@@ -151,15 +151,3 @@ Tears of Steel originals lack required BT.709 tags and are not clean controls. T
 ## PEAT cross-check
 
 not run: no Windows PEAT environment available
-
-## S7 deployment measurements
-
-No AWS credentials/profile/region was available. Live catalog latency, Lambda
-real-time multiplier, billed cost per analyzed hour, anonymous bucket policy
-checks and teardown are not measured. No cloud number is inferred from local
-results. The S7 local three-second CC-BY sample ran in 6.155733 s with all three
-profiles verified and zero events, using an in-memory S3 adapter on macOS; this
-is integration evidence, not a Lambda benchmark. Read-only image/codec and
-pipeline evidence are in docs/S7_REPORT.md and docs/s7/. Historical S4/S5 results
-and source truth above remain unchanged; no full S4 rerun is claimed for S7's
-integer-PTS parsing/cache-version correction.

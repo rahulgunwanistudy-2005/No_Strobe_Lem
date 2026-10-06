@@ -102,7 +102,15 @@ The public [HazardTrack reference repository](https://github.com/rahul-software-
 ## Results
 
 <!-- submission-results:start -->
-Current published evidence: [engine/eval/RESULTS.md](engine/eval/RESULTS.md). A complete S8 rerun is in progress; previous headline numbers retain their historical provenance until it finishes.
+Copied from [RESULTS.md](engine/eval/RESULTS.md) and its machine-readable results; these are synthetic/composite corpus scores.
+
+| Profile | Missed / must-fail | False alarms / must-pass | Veiled runtime | Mean α |
+|---|---:|---:|---:|---:|
+| broadcast | 0 / 96 | 0 / 229 | 27.8428% | 0.432571 |
+| local | 0 / 108 | 0 / 217 | 31.2563% | 0.430608 |
+| kids | 0 / 142 | 0 / 183 | 44.8651% | 0.458386 |
+
+975/975 profile tracks re-verify at −268.875, 0, +268.875 ms; 0 unresolved segments.
 <!-- submission-results:end -->
 
 The unmodified film control has unadjudicated flags and is excluded from confusion scores. PEAT was not run. VVD calibration does not establish physical-TV or browser calibration. Recorded S6 video fluidity was 76.7–81.7% with dropped frames; the zero-drop objective remains open. [Performance evidence](docs/S6_REPORT.md), [security audit](docs/SECURITY.md) and [release blockers](docs/S8_REPORT.md) state the limits.

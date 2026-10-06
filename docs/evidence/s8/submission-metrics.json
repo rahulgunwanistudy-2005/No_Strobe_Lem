@@ -1,0 +1,66 @@
+{
+  "code_sha256": "838ca254b19ebe98f1a2ac64946c843e6626b8616e70599aae730c89d50bb6ec",
+  "offset_ms": 268.87499999999926,
+  "report_sha256": "3fcef6fa351c41936914c8d030a0b5140965836ae08cde0468781e3ac49312b9",
+  "results_sha256": "20cb6561e7c552ed122a725e435ad4aecd8ba6c793dd07bdc728e2b89d0de682",
+  "scope": "synthetic and composite clips; natural-film control excluded",
+  "summary": {
+    "broadcast": {
+      "analyzed_tracks": 325,
+      "clips": 325,
+      "confusion": {
+        "fn": 0,
+        "fp": 0,
+        "tn": 229,
+        "tp": 96
+      },
+      "gate_passes": true,
+      "iou_median": 1.0,
+      "iou_p10": 1.0,
+      "mean_alpha": 0.43257098112193204,
+      "mean_delta_cd_m2": 16.789857537780538,
+      "unresolved_segments": 0,
+      "veiled_fraction": 0.27842832469775475,
+      "verified_tracks": 325,
+      "verifier_pass_rate": 1.0
+    },
+    "kids": {
+      "analyzed_tracks": 325,
+      "clips": 325,
+      "confusion": {
+        "fn": 0,
+        "fp": 0,
+        "tn": 183,
+        "tp": 142
+      },
+      "gate_passes": true,
+      "iou_median": 1.0,
+      "iou_p10": 1.0,
+      "mean_alpha": 0.4583855352576071,
+      "mean_delta_cd_m2": 24.976025004103636,
+      "unresolved_segments": 0,
+      "veiled_fraction": 0.4486511226252159,
+      "verified_tracks": 325,
+      "verifier_pass_rate": 1.0
+    },
+    "local": {
+      "analyzed_tracks": 325,
+      "clips": 325,
+      "confusion": {
+        "fn": 0,
+        "fp": 0,
+        "tn": 217,
+        "tp": 108
+      },
+      "gate_passes": true,
+      "iou_median": 1.0,
+      "iou_p10": 1.0,
+      "mean_alpha": 0.4306081916002667,
+      "mean_delta_cd_m2": 18.47929451204484,
+      "unresolved_segments": 0,
+      "veiled_fraction": 0.3125630397236615,
+      "verified_tracks": 325,
+      "verifier_pass_rate": 1.0
+    }
+  }
+}

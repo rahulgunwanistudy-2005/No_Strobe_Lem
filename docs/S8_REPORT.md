@@ -96,8 +96,9 @@ container-id file in a finally block.
   the deployed catalog on VVD, and tear down.
 - Record/review the live cloud shot and final narrated/captioned demonstration;
   verify every edited frame before asserting no flashing and publish its URL.
+- Keep physical-TV calibration, original-film adjudication, PEAT and the S6
+  zero-drop objective visible as scope limits.
+
 Product source is public on main and GitHub recognizes Apache-2.0, using the
 existing owner Git account; no visibility/access-list change or invitation.
 Final frozen evaluation evidence is published after the complete repeat.
-- Keep physical-TV calibration, original-film adjudication, PEAT and the S6
-  zero-drop objective visible as scope limits.
