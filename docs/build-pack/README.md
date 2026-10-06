@@ -30,4 +30,4 @@ Fire TV track (Vega OS) · AWS Builder mini · Open Source mini — Amazon "Buil
 - Every number in the video and the write-up comes from `eval/RESULTS.md`. No invented figures.
 - Never put an unmitigated hazardous sequence at full speed in the video or in the default app build (bible §14).
 
-Session sources archived in this checkout: `S1.md` through `S6.md`.
+Session sources archived in this checkout: `S1.md` through `S8.md`, plus supporting 09–11 and the friction template.

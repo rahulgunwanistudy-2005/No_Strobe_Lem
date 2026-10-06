@@ -1,0 +1,8 @@
+{
+  "method": "SDK EmulatorController.getScreenshot; single UI snapshot, not calibration",
+  "timestamp_us": 1791282355647797,
+  "request_ns": 353261232396000,
+  "received_ns": 353261411074125,
+  "width": 960,
+  "height": 540
+}

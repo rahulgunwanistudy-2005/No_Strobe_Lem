@@ -1,0 +1,57 @@
+{
+  "aws_measured": false,
+  "environment": "Docker linux/amd64 on Apple Silicon with in-memory S3; not Lambda",
+  "image": "analyzefunction:s7",
+  "image_budget_passes": true,
+  "image_id": "sha256:bbc6c59fb5317e84a945037f01c7f416729a8145df0e7e66878b2fc6cf153143",
+  "image_size_bytes": 901803157,
+  "read_only_runtime_passes": true,
+  "size_budget_bytes": 1000000000,
+  "status": {
+    "content_id": "b751f455a2ce-sample",
+    "item": {
+      "attribution": {
+        "changes": "Source unchanged; verified HazardTrack sidecars added",
+        "credit": "Uploader supplied media",
+        "license": "Unspecified; no reuse license granted",
+        "url": "https://example.invalid/unprovided"
+      },
+      "content_id": "b751f455a2ce-sample",
+      "duration_s": 10.0,
+      "report": "https://example.com/public/b751f455a2ce-sample/report.html",
+      "source_sha256": "b751f455a2cea508e9d18b54631f001ad8c495293fe680a4f3110db7521723d4",
+      "title": "sample",
+      "tracks": {
+        "broadcast": {
+          "hazard_count": 0,
+          "url": "https://example.com/public/b751f455a2ce-sample/broadcast.hzt.json"
+        },
+        "kids": {
+          "hazard_count": 0,
+          "url": "https://example.com/public/b751f455a2ce-sample/kids.hzt.json"
+        },
+        "local": {
+          "hazard_count": 0,
+          "url": "https://example.com/public/b751f455a2ce-sample/local.hzt.json"
+        }
+      },
+      "video": "https://example.com/public/b751f455a2ce-sample/video.mp4"
+    },
+    "metrics": {
+      "duration_s": 10.0,
+      "elapsed_s": 90.60429312500037,
+      "input_bytes": 9886,
+      "profile_event_counts": {
+        "broadcast": {},
+        "kids": {},
+        "local": {}
+      },
+      "verifier_passes": {
+        "broadcast": true,
+        "kids": true,
+        "local": true
+      }
+    },
+    "state": "ready"
+  }
+}

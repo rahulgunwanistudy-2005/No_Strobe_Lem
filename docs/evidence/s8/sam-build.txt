@@ -1,0 +1,79 @@
+Building codeuri: /Users/rahul/No_Strobe_Lem/infra runtime: None architecture: x86_64 functions: AnalyzeFunction
+Building image for AnalyzeFunction function
+Setting DockerBuildArgs for AnalyzeFunction function
+Step 1/15 : FROM public.ecr.aws/lambda/python:3.12@sha256:517bcc7dc1a3ba62e324961c1563cc54a2bd6dc1060188f9d376211ecb7b2926 AS ffmpeg
+ ---> e21a7f58e7fb
+Step 2/15 : ARG FFMPEG_URL=https://github.com/rahul-software-dev/hazardtrack/releases/download/v0.1.0/ffmpeg-7.1.1-hazardtrack-linux-x86_64.tar.xz
+ ---> Using cache
+ ---> 8802b184ed68
+Step 3/15 : ARG FFMPEG_SHA256=cdae69e1c416c10a340be3c998bcd1a7a1d591a930c44d96c2441b5c09fd5595
+ ---> Using cache
+ ---> 2f6e6dfa8420
+Step 4/15 : RUN curl --fail --silent --show-error --location --retry 3 --connect-timeout 20 --max-time 180        "$FFMPEG_URL" -o /tmp/ffmpeg.tar.xz     && echo "$FFMPEG_SHA256  /tmp/ffmpeg.tar.xz" | sha256sum --check -     && python -c 'import tarfile; tarfile.open("/tmp/ffmpeg.tar.xz").extractall("/opt/ffmpeg", filter="data")'
+ ---> Using cache
+ ---> b18e816a3053
+Step 5/15 : FROM public.ecr.aws/lambda/python:3.12@sha256:517bcc7dc1a3ba62e324961c1563cc54a2bd6dc1060188f9d376211ecb7b2926
+ ---> e21a7f58e7fb
+Step 6/15 : COPY --from=ffmpeg /opt/ffmpeg/bin/ffmpeg /opt/ffmpeg/bin/ffprobe /usr/local/bin/
+ ---> Using cache
+ ---> d177dfa1423d
+Step 7/15 : COPY --from=ffmpeg /opt/ffmpeg/LICENSE.txt /opt/ffmpeg/source.tar.xz /opt/ffmpeg/
+ ---> Using cache
+ ---> 444972a2f724
+Step 8/15 : COPY infra/runtime-requirements.txt /tmp/requirements.txt
+ ---> Using cache
+ ---> 202cd7b47bdb
+Step 9/15 : RUN pip install --no-cache-dir --no-compile --require-hashes -r /tmp/requirements.txt --target /var/task     && rm /tmp/requirements.txt
+ ---> Using cache
+ ---> 4acad3e29d3b
+Step 10/15 : ARG NOSTROBE_WHEEL_URL=https://github.com/rahul-software-dev/hazardtrack/releases/download/v0.1.1/nostrobe-0.1.1-py3-none-any.whl
+ ---> [Warning] The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested
+ ---> Running in 6c2b4e13c854
+ ---> Removed intermediate container 6c2b4e13c854
+ ---> 3c85829917b8
+Step 11/15 : ARG NOSTROBE_WHEEL_SHA256=857d20cb8d25e5aa0c54e77bf328d07b1c5555c96d36936d2814577236404bb9
+ ---> [Warning] The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested
+ ---> Running in af928640232e
+ ---> Removed intermediate container af928640232e
+ ---> 6688fdd761bd
+Step 12/15 : RUN curl --fail --silent --show-error --location --retry 3 "$NOSTROBE_WHEEL_URL"        -o /tmp/nostrobe-0.1.1-py3-none-any.whl     && echo "$NOSTROBE_WHEEL_SHA256  /tmp/nostrobe-0.1.1-py3-none-any.whl" | sha256sum --check -     && pip install --no-cache-dir --no-compile --no-deps /tmp/nostrobe-*.whl --target /var/task     && rm /tmp/*.whl
+ ---> [Warning] The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested
+ ---> Running in 7871319975f4
+/tmp/nostrobe-0.1.1-py3-none-any.whl: OK
+Processing /tmp/nostrobe-0.1.1-py3-none-any.whl
+Installing collected packages: nostrobe
+Successfully installed nostrobe-0.1.1
+[91mWARNING: Target directory /var/task/bin already exists. Specify --upgrade to force replacement.
+[0m[91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+[0m[91m
+[notice] A new release of pip is available: 25.0.1 -> 26.2.1
+[notice] To update, run: pip install --upgrade pip
+[0m ---> Removed intermediate container 7871319975f4
+ ---> be74f989c444
+Step 13/15 : COPY infra/lambda/*.py /var/task/
+ ---> d100473b2f58
+Step 14/15 : ENV NUMBA_CACHE_DIR=/tmp/numba MPLCONFIGDIR=/tmp/matplotlib
+ ---> [Warning] The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested
+ ---> Running in d9ddddd0d756
+ ---> Removed intermediate container d9ddddd0d756
+ ---> ffc574194e2b
+Step 15/15 : CMD ["handler.handler"]
+ ---> [Warning] The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested
+ ---> Running in d717e770c7e0
+ ---> Removed intermediate container d717e770c7e0
+ ---> bbc6c59fb531
+Successfully built bbc6c59fb531
+Successfully tagged analyzefunction:s7
+
+
+Build Succeeded
+
+Built Artifacts  : .aws-sam/build
+Built Template   : .aws-sam/build/template.yaml
+
+Commands you can use next
+=========================
+[*] Validate SAM template: sam validate
+[*] Invoke Function: sam local invoke
+[*] Test Function in the Cloud: sam sync --stack-name {{stack-name}} --watch
+[*] Deploy: sam deploy --guided

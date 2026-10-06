@@ -306,3 +306,23 @@ ffmpeg's human-readable pts_time rounds differently across releases and moved
 exact one-second boundaries in Ubuntu CI. The cache version changes so rounded
 historical decoded timestamps are never silently reused. Detector thresholds
 and independent source truth are unchanged.
+
+## S8 hardening and submission
+
+- A frame-rate fraction with a zero denominator is malformed probe metadata;
+  it maps to DecodeError instead of escaping as ZeroDivisionError. Zero/negative
+  rates and nonfinite values remain rejected by the unchanged media contract.
+- Same-turn remote events can observe the prior React state. A synchronous seek
+  latch serializes them before rendering; premature/duplicate seeked events
+  cannot release the shield, and native seek exceptions retain the error cover.
+- HTTPS catalog media may be player-supported HLS URLs; accepting a catalog URL
+  is not evidence of HLS analysis or live HLS playback. The engine/Lambda ingest
+  still analyzes local MP4 inputs. Signed queries are retained; embedded userinfo,
+  fragments, whitespace and backslashes are refused by the asset boundary.
+- Original build-pack Devpost/demo language is a draft. Current copy states
+  simulated verification, an illustrative demo cue, natural-control uncertainty,
+  cloud/device limits and prior content-modification art. Unresolved tracks are
+  refused entirely by this reader; a diagnostic skip chip does not permit them.
+- Compatible transitive dependency fixes are pinned and revalidated. Remaining
+  advisories with no compatible upstream fix keep the security/release gate open;
+  neither framework downgrades nor offline audits establish a pass.

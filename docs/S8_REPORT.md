@@ -1,0 +1,86 @@
+# Session 8 — hardening and submission readiness
+
+S8 implementation and review work is in progress. The session will finish with
+current evaluation/check receipts below. **Submission acceptance is not yet
+complete:** the SDK dependency graph retains high advisories; authenticated
+live AWS validation and its demo shot are unavailable; existing VVD video-drop
+and unadjudicated natural-film limitations remain. A product `v1.0.0` tag is
+withheld while these gates are open.
+
+## Built
+
+- Typed malformed-frame-rate refusal, including zero denominators; encoded 4K,
+  silent, corrupt and zero-byte input regressions preserve bounded decoding.
+- Synchronous seek serialization before React state updates, ignored premature
+  completions, and covered native-seek errors; signed HTTPS/HLS URL acceptance
+  with credentials/fragments/backslashes refused. HLS playback is unmeasured.
+- Finite positive ingest configuration, streamed-size and disk-preflight
+  regressions. Input/source/profile/verifier refusal is unchanged.
+- Tested dependency overrides and a pinned `v0.1.1` reference wheel; source-build
+  pins match. Image checks remove their own timed-out containers.
+- Runtime-hook README, engine/TV/AWS quickstarts, architecture, source-linked
+  prior art and a reproducible 20-second nonflashing schematic GIF.
+- Consolidated per-tool feedback, 12 distinct reproduced friction entries with
+  preserved historical detail, five evidence-backed feature requests, honest
+  Devpost/Q&A drafts and shot-by-shot demo readiness/reviewer-access notes.
+- Submission table generator refuses incomplete/stale engine provenance; copy
+  checker binds result checksums, compares every public table, validates links,
+  refuses prohibited claims and checks friction entry fields.
+
+## Verification checkpoints
+
+- Product engine: 431 tests pass; lint/format/strict types pass. The complete
+  suite was run alongside evaluation; timings are not isolated benchmarks.
+- Reference patch: independent Ubuntu CI passes 429 extracted tests, lint,
+  format, strict types, schema, 500 browser timeline samples and wheel release.
+  [Tagged CI](https://github.com/rahul-software-dev/hazardtrack/actions/runs/37448503294).
+- TV: 52 tests / 9 suites, strict types, ESLint and all Release architecture
+  builds pass after remediation. Native package content excludes calibration
+  media. Current actual catalog/player/settings captures are in `evidence/s8/`.
+- Infra: 16 tests, lint/format/strict types and SAM lint/build pass against the
+  published dependency. The updated read-only amd64 image passes all three
+  source-bound JSON/VTT profiles with no live AWS service; exact image/size is
+  recorded in `evidence/s8/container-validation.json`.
+- Python and root contract npm audits report no known findings. Gitleaks scans
+  both reachable histories and the tracked archive with no reported leak.
+  TV findings remain explicit in `SECURITY.md` and raw official audit reports.
+- Fresh-clone quickstart and complete current-provenance evaluation are still
+  running at this checkpoint. Final receipts will replace this status.
+
+## Review decisions and scope
+
+The user's explicit commit authorization overrides the build pack's manual
+commit default. Stage messages contain no attribution trailers; existing Git
+history/tags are not rewritten. The original demo/Devpost/Q&A files are draft
+source material: unsupported cloud/medical/novelty claims are not copied into
+public submission text. Original source-corrected SDR interpretations and
+independent ground truth remain unchanged.
+
+The 12-second native demo is not a must-fail hazard example. Broadcast/Local
+catalog veils are illustrative; Kids suppresses warning events. The numerical
+report command performs real analysis rather than inventing a hazard count.
+VVD restarted after becoming unavailable; rejected/black initial frames remain
+diagnostic snapshots and cannot be used as calibration evidence. Current
+functional checks do not replace S5 measurements or S6 drop reports.
+
+The first image check on the moving 12-second sample exceeded its 300-second
+utility timeout and left the Docker container running. Exact identity/mounts
+were checked before removing that orphan. A repeated check on the existing
+constant-gray source passed all unchanged assertions; it is an adapter/container
+check, not a Lambda latency measurement. The helper now owns cleanup through a
+container-id file in a finally block.
+
+## Remaining acceptance gates
+
+- Resolve the upstream braces advisory through a compatible published fix and
+  repeat official audits/builds; no clean-security or final-release claim.
+- Supply an authenticated AWS profile/region, deploy, upload an attributed
+  sample, measure real timing/cost, test anonymous public/ingest access, exercise
+  the deployed catalog on VVD, and tear down.
+- Record/review the live cloud shot and final narrated/captioned demonstration;
+  verify every edited frame before asserting no flashing and publish its URL.
+- Publish final product source through its owner's account and verify Apache-2.0
+  recognition in About. Current CLI has READ permission there; no invitation or
+  product remote setting was changed.
+- Keep physical-TV calibration, original-film adjudication, PEAT and the S6
+  zero-drop objective visible as scope limits.
