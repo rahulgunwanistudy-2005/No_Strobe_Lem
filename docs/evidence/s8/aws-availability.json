@@ -1,0 +1,9 @@
+{
+  "available_profiles": [],
+  "configured_region": null,
+  "credentials_available": false,
+  "metadata_lookup_disabled": true,
+  "aws_resources_deployed": false,
+  "cloud_cost_measured": false,
+  "scope": "local authentication availability; no credential values serialized"
+}

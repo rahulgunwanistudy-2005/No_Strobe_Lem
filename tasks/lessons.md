@@ -119,3 +119,16 @@
 - S7: measure uncompressed image size rather than release archive size. A
   minimal static decoder build fits the budget; pin its source, binary checksum
   and provenance so separate SAM builders avoid repeating slow compilation.
+
+- S8: synchronous refs serialize same-turn seek input before React state updates.
+  Cover native dispatch/completion with a separate flag; media errors cancel
+  queued dispatch and any deferred resume. Verify the regression fails without
+  its guard, rather than merely mirroring an implementation branch.
+- S8: a timed-out Docker client can leave its container running. Record a
+  per-check container id and clean up only that owned container in finally.
+- S8: a CLI permission check describes that CLI's identity, not necessarily the
+  existing Git credential. Check the relevant account and repository permission
+  without exposing credentials before declaring a publication blocker.
+- S8: a clean checkout on the same host tests fresh environments, not a new OS.
+  Retain a failed timed test and its unchanged isolated repeat; never extend
+  timeouts or omit failures to describe the first run as passing.

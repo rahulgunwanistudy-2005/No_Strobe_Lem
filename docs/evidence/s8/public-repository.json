@@ -1,0 +1,18 @@
+{
+  "defaultBranchRef": {
+    "name": "main"
+  },
+  "licenseInfo": {
+    "key": "apache-2.0",
+    "name": "Apache License 2.0",
+    "nickname": ""
+  },
+  "url": "https://github.com/rahulgunwanistudy-2005/No_Strobe_Lem",
+  "visibility": "PUBLIC",
+  "published_commit": "585809f6c0cb78469f6479778cf31fd7fc6400e4",
+  "git_account": "rahulgunwanistudy-2005",
+  "github_cli_account": "rahul-software-dev",
+  "authorization_check": "default Git credential used only for GitHub account and product permission query; owner push confirmed before ordinary main publication",
+  "force_push": false,
+  "invitations_sent": false
+}

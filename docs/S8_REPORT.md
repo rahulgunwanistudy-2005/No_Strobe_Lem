@@ -86,8 +86,8 @@ container-id file in a finally block.
   the deployed catalog on VVD, and tear down.
 - Record/review the live cloud shot and final narrated/captioned demonstration;
   verify every edited frame before asserting no flashing and publish its URL.
-- Publish final product source through its owner's account and verify Apache-2.0
-  recognition in About. Current CLI has READ permission there; no invitation or
-  product remote setting was changed.
+- Final tables/evaluation evidence will be published after freeze. Product
+  source is already public on main and GitHub recognizes Apache-2.0, using the
+  existing owner Git account; no visibility/access-list change or invitation.
 - Keep physical-TV calibration, original-film adjudication, PEAT and the S6
   zero-drop objective visible as scope limits.

@@ -2,11 +2,13 @@
 
 The product remote is public: [No_Strobe_Lem](https://github.com/rahulgunwanistudy-2005/No_Strobe_Lem).
 
-Local source includes a visible Apache-2.0 LICENSE. The public GitHub metadata
-queried during S8 returned `licenseInfo: null`, with this authenticated CLI
-account having READ permission on the product repository. The owner must
-publish the final source and verify GitHub recognizes Apache-2.0 in About before
-submission; no remote settings/access change is claimed.
+The reviewed product commits are published on `main`, and GitHub recognizes
+**Apache License 2.0** in the public repository metadata. The ordinary push used
+the existing Git account `rahulgunwanistudy-2005`, whose product admin/push
+permission was checked first. The GitHub CLI account `rahul-software-dev` has
+READ permission here; its initial read-only result does not describe the
+separate saved Git identity. No global credential setting, visibility or access
+list changed. [Publication receipt](evidence/s8/public-repository.json).
 
 The separate public reference repository has an Apache-2.0 license and tested
 patch release: [hazardtrack](https://github.com/rahul-software-dev/hazardtrack).
