@@ -1,1 +1,117 @@
-# SAM deployment begins in S7. No resources are declared in S1.
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Verified SDR ingest and public HazardTrack catalog
+Parameters:
+  BucketName:
+    Type: String
+    AllowedPattern: '[a-z0-9][a-z0-9.-]{1,61}[a-z0-9]'
+  MaxDurationSeconds:
+    Type: Number
+    Default: 120
+    MinValue: 1
+    MaxValue: 120
+Resources:
+  MediaBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref BucketName
+      OwnershipControls:
+        Rules:
+          - ObjectOwnership: BucketOwnerEnforced
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        IgnorePublicAcls: true
+        BlockPublicPolicy: false
+        RestrictPublicBuckets: false
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+      CorsConfiguration:
+        CorsRules:
+          - AllowedMethods: [GET]
+            AllowedOrigins: ['*']
+            AllowedHeaders: ['Range']
+            ExposedHeaders: ['Content-Range', 'Accept-Ranges', 'ETag']
+  PublicPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref MediaBucket
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal: '*'
+            Action: s3:GetObject
+            Resource: !Sub '${MediaBucket.Arn}/public/*'
+          - Effect: Deny
+            Principal: '*'
+            Action: s3:*
+            Resource:
+              - !GetAtt MediaBucket.Arn
+              - !Sub '${MediaBucket.Arn}/*'
+            Condition:
+              Bool:
+                aws:SecureTransport: false
+  AnalyzeFunction:
+    Type: AWS::Serverless::Function
+    Metadata:
+      Dockerfile: infra/lambda/Dockerfile
+      DockerContext: ..
+      DockerTag: s7
+    Properties:
+      PackageType: Image
+      Architectures: [x86_64]
+      MemorySize: 3008
+      Timeout: 900
+      EphemeralStorage:
+        Size: 10240
+      ReservedConcurrentExecutions: 2
+      Environment:
+        Variables:
+          MEDIA_BUCKET: !Ref BucketName
+          PUBLIC_BASE_URL: !Sub 'https://${BucketName}.s3.${AWS::Region}.${AWS::URLSuffix}/public'
+          MAX_DURATION_S: !Ref MaxDurationSeconds
+          MAX_INPUT_BYTES: '536870912'
+          NUMBA_CACHE_DIR: /tmp/numba
+          MPLCONFIGDIR: /tmp/matplotlib
+      Policies:
+        - Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Action: s3:GetObject
+              Resource: !Sub 'arn:${AWS::Partition}:s3:::${BucketName}/ingest/*'
+            - Effect: Allow
+              Action: [s3:GetObject, s3:PutObject]
+              Resource: !Sub 'arn:${AWS::Partition}:s3:::${BucketName}/public/*'
+            - Effect: Allow
+              Action: s3:ListBucket
+              Resource: !Sub 'arn:${AWS::Partition}:s3:::${BucketName}'
+              Condition:
+                StringLike:
+                  s3:prefix: ['public/*']
+      Events:
+        Ingest:
+          Type: S3
+          Properties:
+            Bucket: !Ref MediaBucket
+            Events: s3:ObjectCreated:*
+            Filter:
+              S3Key:
+                Rules:
+                  - Name: prefix
+                    Value: ingest/
+                  - Name: suffix
+                    Value: .mp4
+  AnalyzeLogs:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub '/aws/lambda/${AnalyzeFunction}'
+      RetentionInDays: 7
+Outputs:
+  CatalogUrl:
+    Value: !Sub 'https://${BucketName}.s3.${AWS::Region}.${AWS::URLSuffix}/public/catalog.json'
+  MediaBucketName:
+    Value: !Ref MediaBucket
+  AnalyzeFunctionName:
+    Value: !Ref AnalyzeFunction
