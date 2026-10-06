@@ -172,6 +172,7 @@ export function PlayerScreen({item, preferences, visible, onBack, onSettings, on
     resumeAfterSeek.current = !player.paused;
     player.pause(); setSeeking(true);
     afterPaint(() => {
+      if (!seekPending.current) {return;}
       clock.anchor({currentTime: value, duration: item.duration_s, playbackRate: player.playbackRate, paused: true});
       try {seekIssued.current = true; player.seek(value);}
       catch (failure: unknown) {fail(failure);}

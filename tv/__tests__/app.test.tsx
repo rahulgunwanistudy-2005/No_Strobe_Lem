@@ -8,6 +8,7 @@ import {VegaW3CPlayer} from '../src/player/VegaW3CPlayer';
 import {defaultPreferences} from '../src/settings/preferences';
 import type {CatalogItem} from '../src/catalog/api';
 import type {PlayerEvent} from '../src/player/PlayerAdapter';
+import {PlaybackError} from '../src/player/PlayerAdapter';
 import {AsyncStorage} from '../src/player/TVPlatform';
 
 jest.mock('react-native', () => {
@@ -172,4 +173,29 @@ test('native seek exception stays covered and offers retry', async () => {
   expect(screen.getByTestId('blocked')).toBeTruthy();
   expect(player.play).toHaveBeenCalledTimes(1);
   screen.unmount();
+});
+
+test('media error cancels a seek queued before native dispatch', async () => {
+  jest.spyOn(global, 'fetch').mockResolvedValue({ok: true, json: async () => valid} as Response);
+  const screen = render(<PlayerScreen {...props} />);
+  await waitFor(() => expect(screen.getByText('broadcast · Verified flash reduction')).toBeTruthy());
+  const player = (VegaW3CPlayer as jest.Mock).mock.results[0].value;
+  const listener = player.subscribe.mock.calls[0][0] as (event: PlayerEvent) => void;
+  act(() => listener({type: 'canplay', currentTime: 0, duration: 12, paused: true, playbackRate: 1}));
+  await waitFor(() => expect(player.play).toHaveBeenCalledTimes(1));
+  const {useTVEventHandler} = require('../src/player/TVPlatform');
+  fireEvent(screen.getByRole('adjustable'), 'focus');
+  jest.useFakeTimers();
+  try {
+    act(() => {
+      (useTVEventHandler as jest.Mock).mock.calls.at(-1)[0]({eventType: 'right', eventKeyAction: 0});
+      listener({type: 'error', currentTime: 0, duration: 12, paused: true, playbackRate: 1,
+        error: new PlaybackError('media', 'Media interrupted')});
+    });
+    act(() => {jest.advanceTimersByTime(100);});
+    expect(screen.getByText('Unsupported media or playback failure. Media interrupted')).toBeTruthy();
+    expect(screen.getByTestId('blocked')).toBeTruthy();
+    expect(player.seek).not.toHaveBeenCalled();
+    expect(player.play).toHaveBeenCalledTimes(1);
+  } finally {jest.useRealTimers(); screen.unmount();}
 });
