@@ -1,0 +1,25 @@
+
+> @amazon-devices/nostrobetv@0.0.1 test
+> jest --runInBand
+
+watchman warning:  Recrawled this watch 1 time, most recently because:
+MustScanSubDirs UserDroppedTo resolve, please review the information on
+https://facebook.github.io/watchman/docs/troubleshooting.html#recrawl
+To clear this warning, run:
+`watchman watch-del '/Users/rahul/No_Strobe_Lem' ; watchman watch-project '/Users/rahul/No_Strobe_Lem'`
+
+PASS __tests__/app.test.tsx
+PASS __tests__/contracts.test.ts
+PASS __tests__/scheduler.test.ts
+PASS __tests__/veilLayer.test.tsx
+PASS __tests__/ux.test.ts
+PASS __tests__/load.test.ts
+PASS __tests__/player.test.ts
+PASS __tests__/calibration.test.ts
+PASS __tests__/mediaClock.test.ts
+
+Test Suites: 9 passed, 9 total
+Tests:       53 passed, 53 total
+Snapshots:   0 total
+Time:        4.054 s
+Ran all test suites.

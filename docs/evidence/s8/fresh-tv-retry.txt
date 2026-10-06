@@ -1,0 +1,19 @@
+
+> @amazon-devices/nostrobetv@0.0.1 test
+> jest --runInBand
+
+PASS __tests__/app.test.tsx
+PASS __tests__/contracts.test.ts
+PASS __tests__/ux.test.ts
+PASS __tests__/veilLayer.test.tsx
+PASS __tests__/scheduler.test.ts
+PASS __tests__/load.test.ts
+PASS __tests__/player.test.ts
+PASS __tests__/calibration.test.ts
+PASS __tests__/mediaClock.test.ts
+
+Test Suites: 9 passed, 9 total
+Tests:       52 passed, 52 total
+Snapshots:   0 total
+Time:        2.988 s, estimated 20 s
+Ran all test suites.

@@ -1,0 +1,100 @@
+Cloning into '/tmp/nostrobe-s8-cleanclone'...
+done.
+Updating files:  76% (283/371)
+Updating files:  77% (286/371)
+Updating files:  78% (290/371)
+Updating files:  79% (294/371)
+Updating files:  80% (297/371)
+Updating files:  81% (301/371)
+Updating files:  82% (305/371)
+Updating files:  83% (308/371)
+Updating files:  84% (312/371)
+Updating files:  85% (316/371)
+Updating files:  86% (320/371)
+Updating files:  87% (323/371)
+Updating files:  88% (327/371)
+Updating files:  89% (331/371)
+Updating files:  90% (334/371)
+Updating files:  91% (338/371)
+Updating files:  92% (342/371)
+Updating files:  93% (346/371)
+Updating files:  94% (349/371)
+Updating files:  95% (353/371)
+Updating files:  96% (357/371)
+Updating files:  97% (360/371)
+Updating files:  98% (364/371)
+Updating files:  99% (368/371)
+Updating files: 100% (371/371)
+Updating files: 100% (371/371), done.
+
+added 22 packages, and audited 23 packages in 16s
+
+8 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+Using CPython 3.12.11
+Creating virtual environment at: engine/.venv
+Resolved 41 packages in 242ms
+   Building nostrobe @ file:///private/tmp/nostrobe-s8-cleanclone/engine
+      Built nostrobe @ file:///private/tmp/nostrobe-s8-cleanclone/engine
+Prepared 1 package in 6.29s
+Installed 40 packages in 788ms
+ + annotated-doc==0.0.5
+ + annotated-types==0.8.0
+ + contourpy==1.4.0
+ + cycler==0.12.1
+ + fonttools==4.66.1
+ + hypothesis==6.168.3
+ + iniconfig==2.3.0
+ + jinja2==3.1.6
+ + kiwisolver==1.5.1
+ + librt==0.16.0
+ + llvmlite==0.49.0
+ + markdown-it-py==4.2.0
+ + markupsafe==3.0.4
+ + matplotlib==3.11.2
+ + mdurl==0.1.2
+ + mypy==1.20.2
+ + mypy-extensions==1.1.0
+ + nostrobe==0.1.1 (from file:///private/tmp/nostrobe-s8-cleanclone/engine)
+ + numba==0.67.0
+ + numpy==2.5.3
+ + packaging==26.3
+ + pathspec==1.1.1
+ + pillow==12.3.0
+ + pluggy==1.6.0
+ + pydantic==2.13.5
+ + pydantic-core==2.46.5
+ + pydantic-settings==2.15.0
+ + pygments==2.21.0
+ + pyparsing==3.3.3
+ + pytest==9.1.1
+ + python-dateutil==2.9.0.post0
+ + python-dotenv==1.2.4
+ + rich==15.0.0
+ + ruff==0.16.10
+ + shellingham==1.5.4
+ + six==1.17.0
+ + sortedcontainers==2.4.0
+ + typer==0.27.2
+ + typing-extensions==4.16.0
+ + typing-inspection==0.4.4
+All checks passed!
+91 files already formatted
+Success: no issues found in 56 source files
+........................................................................ [ 16%]
+........................................................................ [ 33%]
+........................................................................ [ 50%]
+........................................................................ [ 66%]
+........................................................................ [ 83%]
+.......................................................................  [100%]
+431 passed in 740.05s (0:12:20)
+
+> nostrobe-contracts@0.1.0 types:check
+> node scripts/generate-types.cjs --check
+
+
+> nostrobe-contracts@0.1.0 typecheck
+> tsc --noEmit
+

@@ -1,0 +1,2 @@
+Installed /tmp/nostrobe-s8-cleanclone/tv/build/aarch64-release/nostrobetv_aarch64.vpkg on VirtualDevice
+Successfully launched the app

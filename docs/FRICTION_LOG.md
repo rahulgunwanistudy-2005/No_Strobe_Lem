@@ -74,9 +74,9 @@ Consolidated distinct reproduced issues; no entry is added to satisfy a count. O
 - Task attempted: Start a persistent test device
 - Steps taken: 1. `vega virtual-device start`. 2. Let invoking session close. 3. `vega virtual-device status`; `vega device list`.
 - Expected: A reported ready device remains available.
-- Actual: Twice: ready message, then running=false and no device.
+- Actual: Twice: ready message, then running=false and no device. On the held S8 restart, QEMU ran but discovery/install temporarily failed until the VDA server was restarted; the detailed recovery is retained in the history.
 - Severity: Major
-- Workaround: Keep launch terminal alive and independently verify device discovery.
+- Workaround: Keep launch terminal alive and independently verify device discovery. For the separately observed running-but-undiscovered state, restarting the VDA connection server restored install/launch without resetting device data.
 - Suggestion: Detach emulator lifetime or report parent-session ownership explicitly.
 
 ### FL-008 — Settings core API loses preferences after restart

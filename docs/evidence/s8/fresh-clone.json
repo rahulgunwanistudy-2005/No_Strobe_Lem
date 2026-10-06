@@ -1,0 +1,17 @@
+{
+  "checkout": "fresh local clone from the product repository; new venv/node_modules; existing macOS host and Vega SDK",
+  "commit": "107662dd5c8e9895c2fd349d4fa4a65f51c1628d",
+  "engine_tests": 431,
+  "infra_tests": 16,
+  "tv_tests": 53,
+  "tv_suites": 9,
+  "engine_quality": "lint,format,strict types,schema/generated-type drift and root TypeScript pass",
+  "tv_quality": "strict types,ESLint and all three Release architectures pass",
+  "first_tv_run": "51/52; unchanged catalog waitFor timed out under concurrent full evaluation, engine tests and native builds",
+  "isolated_repeat": "52/52; unchanged assertions/timeouts",
+  "final_after_seek_guard": "53/53",
+  "native_install_launch": "clean-clone aarch64 Release installed and launched on actual VVD",
+  "package_sha256": "0c514148729c556da2466b973c79d446cb2c3bb6f27221b582677e4f377b61bc",
+  "new_os": false,
+  "live_aws": false
+}

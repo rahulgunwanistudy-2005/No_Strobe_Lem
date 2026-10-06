@@ -1,0 +1,23 @@
+[
+  {
+    "key": "KEY_DOWN",
+    "request_ns": 354941513944416,
+    "received_ns": 354943318398541,
+    "exit_code": 0,
+    "response": "Injecting Button Press As Driver: KEY_DOWN State: short"
+  },
+  {
+    "key": "KEY_RIGHT",
+    "request_ns": 354943621782208,
+    "received_ns": 354944677547250,
+    "exit_code": 0,
+    "response": "Injecting Button Press As Driver: KEY_RIGHT State: short"
+  },
+  {
+    "key": "KEY_ENTER",
+    "request_ns": 354944982604916,
+    "received_ns": 354946028279375,
+    "exit_code": 0,
+    "response": "Injecting Button Press As Driver: KEY_ENTER State: short"
+  }
+]

@@ -41,3 +41,20 @@ RGB display-code space (90% effect, 10% original). These are modified test
 assets, named `HAZARD_`, held only in ignored `synth_out/`; no autoplay.
 Scenario names describe intended effects, not independently annotated scene
 semantics. Original films remain byte-identical and contain unreviewed flags.
+
+## Bundled demonstration and S8 assets
+
+The native app bundles the credited 12-second opening excerpt of Big Buck Bunny
+under CC-BY-3.0: resized to 640×360, audio removed, with a poster derived from
+the same footage. The app's catalog and Attribution view retain credit, license,
+source link and modifications. [TV asset inventory](../tv/assets/README.md)
+records the encoded source hash and the illustrative Broadcast/Local overlays;
+Kids covers measured warning events. No raw calibration or `HAZARD_` stimulus
+is included in the Release package.
+
+The 20-second S8 timeline GIF and static preview are original schematic artwork
+produced by [the renderer](../tools/render_submission_preview.py), using
+Pillow and matplotlib's DejaVu Sans font. They display a timeline, smooth gray
+overlay and cursor; they contain no source film frames or flashing stimulus.
+The GIF is released with this repository under Apache-2.0. It illustrates
+playback semantics and is not a detector result or timing measurement.

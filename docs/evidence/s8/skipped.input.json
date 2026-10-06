@@ -1,0 +1,9 @@
+[
+  {
+    "key": "KEY_ENTER",
+    "request_ns": 355240335111875,
+    "received_ns": 355242106286875,
+    "exit_code": 0,
+    "response": "Injecting Button Press As Driver: KEY_ENTER State: short"
+  }
+]

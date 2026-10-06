@@ -293,6 +293,40 @@ its own read-only validation container remained running. This is a validation
 utility lifecycle defect, not a Lambda timeout observation. The helper now
 records its own container id and removes it in a finally block. The exact orphan
 was identified by image id, mounted source and validation script before removal;
-no unrelated Docker containers were stopped. Repeat uses the existing 3 s
+no unrelated Docker containers were stopped. Repeat uses the existing 10 s
 constant-gray source; all source-binding, three-profile, size and read-only
 assertions remain unchanged.
+
+
+## S8 fresh-clone timed Jest check
+
+The fresh-clone first full TV test run overlapped full engine evaluation, fresh
+engine tests and native builds. One unchanged 1-second waitFor timed out while
+the catalog still showed its loading state; 51/52 tests passed. An isolated
+retry is required and is recorded separately; no assertion or timeout is
+changed to turn that first run into a pass. The original output is retained.
+
+The isolated fresh-clone TV retry passed all 52 tests / 9 suites in 2.988 s,
+with unchanged assertions and timeouts. Full first-run output and retry are
+both retained. Fresh engine environment passes all 431 tests, lint/format,
+strict typing and generated-contract checks. Native fresh-clone Release build
+passes; this is a clean checkout on the existing host/toolchain, not a new OS.
+
+## S8 — running VVD temporarily unavailable to VDA
+
+A held launch session kept QEMU running, but `vega run-app` could not reach
+`com.amazon.dev.shell.service` and device discovery was empty. Instance files
+were present. The [Amazon support guidance](https://community.amazondeveloper.com/t/virtual-device-fails-to-register-device-info-blocking-app-install-on-sdk-v0-24-9859/28932)
+recommends restarting the VDA connection server. `vega exec vda kill-server`
+then `vega exec vda start-server` restored emulator-5554 and VirtualDevice
+discovery; Release install/launch succeeded. No SDK reinstall or device-data
+reset was needed. The current authenticated screenshot endpoint was enabled
+again on loopback; discovery credentials were never printed or committed.
+This recovery is retained alongside FL-007 rather than counted as an extra
+entry for the same virtual-device readiness boundary.
+
+The old task-local catalog server had also stopped. Selecting Kids failed the
+sidecar fetch, stayed covered and displayed `Protected playback unavailable`
+with `Network request failed`. Restarting the loopback server and opening the
+card again produced protected Kids playback and the warning skip chip. Both
+the unavailable-source frame and recovered playback are preserved as observed.

@@ -1,0 +1,30 @@
+[
+  {
+    "key": "KEY_ENTER",
+    "request_ns": 355011652240125,
+    "received_ns": 355013655955666,
+    "exit_code": 0,
+    "response": "Injecting Button Press As Driver: KEY_ENTER State: short"
+  },
+  {
+    "key": "KEY_BACK",
+    "request_ns": 355013957251916,
+    "received_ns": 355015053993083,
+    "exit_code": 0,
+    "response": "Injecting Button Press As Driver: KEY_BACK State: short"
+  },
+  {
+    "key": "KEY_ENTER",
+    "request_ns": 355015557139125,
+    "received_ns": 355016591772416,
+    "exit_code": 0,
+    "response": "Injecting Button Press As Driver: KEY_ENTER State: short"
+  },
+  {
+    "key": "KEY_PLAYPAUSE",
+    "request_ns": 355017596852958,
+    "received_ns": 355018955173333,
+    "exit_code": 0,
+    "response": "Injecting Button Press As Driver: KEY_PLAYPAUSE State: short"
+  }
+]

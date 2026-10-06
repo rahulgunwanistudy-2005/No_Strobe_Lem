@@ -34,7 +34,7 @@ withheld while these gates are open.
 - Reference patch: independent Ubuntu CI passes 429 extracted tests, lint,
   format, strict types, schema, 500 browser timeline samples and wheel release.
   [Tagged CI](https://github.com/rahul-software-dev/hazardtrack/actions/runs/37448503294).
-- TV: 52 tests / 9 suites, strict types, ESLint and all Release architecture
+- TV: 53 tests / 9 suites, strict types, ESLint and all Release architecture
   builds pass after remediation. Native package content excludes calibration
   media. Current actual catalog/player/settings captures are in `evidence/s8/`.
 - Infra: 16 tests, lint/format/strict types and SAM lint/build pass against the
@@ -44,8 +44,15 @@ withheld while these gates are open.
 - Python and root contract npm audits report no known findings. Gitleaks scans
   both reachable histories and the tracked archive with no reported leak.
   TV findings remain explicit in `SECURITY.md` and raw official audit reports.
-- Fresh-clone quickstart and complete current-provenance evaluation are still
-  running at this checkpoint. Final receipts will replace this status.
+- Fresh local clone: new locked Python/Node environments, 431 engine tests,
+  strict types/lint/format/generated contracts and 53 TV tests pass; all Release
+  architectures build. Its actual aarch64 package installs/launches and plays
+  on VVD. First concurrent TV run had a timed catalog wait (51/52); isolated
+  retry (52/52) and final post-guard suite (53/53) pass with unchanged assertions.
+  This uses the existing host/toolchain, not a freshly installed OS.
+- Complete current-provenance evaluation is still running at this checkpoint;
+  final evaluation/determinism receipts will replace this status.
+- [Engineering review](S8_REVIEW.md) maps all requested edge cases to evidence.
 
 ## Review decisions and scope
 

@@ -1,0 +1,16 @@
+[
+  {
+    "key": "KEY_ENTER",
+    "request_ns": 355318834540166,
+    "received_ns": 355321170110791,
+    "exit_code": 0,
+    "response": "Injecting Button Press As Driver: KEY_ENTER State: short"
+  },
+  {
+    "key": "KEY_PLAYPAUSE",
+    "request_ns": 355322674516833,
+    "received_ns": 355326806437750,
+    "exit_code": 0,
+    "response": "Injecting Button Press As Driver: KEY_PLAYPAUSE State: short"
+  }
+]

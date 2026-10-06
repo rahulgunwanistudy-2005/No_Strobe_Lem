@@ -1,0 +1,298 @@
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm warn deprecated @babel/plugin-proposal-optional-catch-binding@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-optional-catch-binding instead.
+npm warn deprecated @babel/plugin-proposal-nullish-coalescing-operator@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-nullish-coalescing-operator instead.
+npm warn deprecated @babel/plugin-proposal-numeric-separator@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-numeric-separator instead.
+npm warn deprecated @babel/plugin-proposal-class-properties@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-class-properties instead.
+npm warn deprecated rimraf@2.6.3: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated @babel/plugin-proposal-optional-chaining@7.21.0: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-optional-chaining instead.
+npm warn deprecated glob@7.2.3: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+npm warn deprecated @babel/plugin-proposal-async-generator-functions@7.20.7: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-async-generator-functions instead.
+npm warn deprecated @babel/plugin-proposal-object-rest-spread@7.20.7: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-object-rest-spread instead.
+npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+npm warn deprecated metro-react-native-babel-preset@0.76.9: Use @react-native/babel-preset instead
+npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+
+added 1120 packages, and audited 1121 packages in 1m
+
+195 packages are looking for funding
+  run `npm fund` for details
+
+72 vulnerabilities (12 moderate, 60 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues possible (including breaking changes), run:
+  npm audit fix --force
+
+Some issues need review, and may require choosing
+a different dependency.
+
+Run `npm audit` for details.
+npm warn allow-scripts 1 package has install scripts not yet covered by allowScripts:
+npm warn allow-scripts   fsevents@2.3.3 (install: (install scripts present))
+npm warn allow-scripts
+npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
+
+> @amazon-devices/nostrobetv@0.0.1 typecheck
+> tsc --noEmit
+
+
+> @amazon-devices/nostrobetv@0.0.1 lint
+> eslint src __tests__ --ext .ts,.tsx
+
+
+> @amazon-devices/nostrobetv@0.0.1 test
+> jest --runInBand
+
+FAIL __tests__/app.test.tsx (14.245 s)
+  ● catalog selection with failing verifier keeps video blocked and never loads or plays native source
+
+    Unable to find an element with accessibility label: Fixture
+
+    [36m<View>[39m
+      [36m<View>[39m
+        [36m<Text>[39m
+          [0mNo Strobe-lem[0m
+        [36m</Text>[39m
+        [36m<Text>[39m
+          [0mLoading your viewing experience…[0m
+        [36m</Text>[39m
+        [36m<View[39m
+          [33maccessibilityLabel[39m=[32m"Settings"[39m
+          [33maccessibilityRole[39m=[32m"button"[39m
+          [33maccessibilityState[39m=[32m{
+            {
+              "disabled": false,
+            }
+          }[39m
+          [33maccessible[39m=[32m{true}[39m
+        [36m>[39m
+          [36m<Text>[39m
+            [0mSettings[0m
+          [36m</Text>[39m
+        [36m</View>[39m
+      [36m</View>[39m
+    [36m</View>[39m
+
+      49 |     .mockResolvedValueOnce({ok: true, json: async () => bad} as Response);
+      50 |   const screen = render(<App />);
+    > 51 |   await waitFor(() => expect(screen.getByLabelText('Fixture')).toBeTruthy());
+         |                ^
+      52 |   fireEvent.press(screen.getByLabelText('Fixture'));
+      53 |   await waitFor(() => expect(screen.getByText('This track has not passed verification')).toBeTruthy());
+      54 |   expect(screen.getByTestId('blocked')).toBeTruthy();
+
+      at Object.<anonymous> (__tests__/app.test.tsx:51:16)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+      at node_modules/@babel/runtime/helpers/asyncToGenerator.js:22:7
+      at Object.<anonymous> (node_modules/@babel/runtime/helpers/asyncToGenerator.js:14:12)
+
+PASS __tests__/ux.test.ts
+PASS __tests__/load.test.ts
+PASS __tests__/player.test.ts
+PASS __tests__/mediaClock.test.ts
+PASS __tests__/veilLayer.test.tsx
+PASS __tests__/contracts.test.ts
+PASS __tests__/scheduler.test.ts
+PASS __tests__/calibration.test.ts
+
+Test Suites: 1 failed, 8 passed, 9 total
+Tests:       1 failed, 51 passed, 52 total
+Snapshots:   0 total
+Time:        21.408 s
+Ran all test suites.
+
+> @amazon-devices/nostrobetv@0.0.1 build:release
+> node ../scripts/build-tv.cjs Release
+
+- Awaiting resources 
+info Building bundle artifacts for index.js
+[SYSTEM_BUNDLE] Creating app bundle config with globalPrefix: (none)
+info Building split bundle for index.js
+
+                        ▒▒▓▓▓▓▒▒
+                     ▒▓▓▓▒▒░░▒▒▓▓▓▒
+                  ▒▓▓▓▓░░░▒▒▒▒░░░▓▓▓▓▒
+                 ▓▓▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▓▓
+                 ▓▓░░░░░▒▓▓▓▓▓▓▒░░░░░▓▓
+                 ▓▓░░▓▓▒░░░▒▒░░░▒▓▒░░▓▓
+                 ▓▓░░▓▓▓▓▓▒▒▒▒▓▓▓▓▒░░▓▓
+                 ▓▓░░▓▓▓▓▓▓▓▓▓▓▓▓▓▒░░▓▓
+                 ▓▓▒░░▒▒▓▓▓▓▓▓▓▓▒░░░▒▓▓
+                  ▒▓▓▓▒░░░▒▓▓▒░░░▒▓▓▓▒
+                     ▒▓▓▓▒░░░░▒▓▓▓▒
+                        ▒▒▓▓▓▓▒▒
+
+
+                Welcome to Metro v0.83.8
+              Fast - Scalable - Integrated
+
+
+transform[stderr]: (node:4708) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+transform[stderr]: (Use `node --trace-warnings ...` to show where the warning was created)
+transform[stderr]: (node:4709) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+transform[stderr]: (Use `node --trace-warnings ...` to show where the warning was created)
+transform[stderr]: (node:4710) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+transform[stderr]: (Use `node --trace-warnings ...` to show where the warning was created)
+transform[stderr]: (node:4711) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+transform[stderr]: (Use `node --trace-warnings ...` to show where the warning was created)
+transform[stderr]: (node:4713) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+transform[stderr]: (Use `node --trace-warnings ...` to show where the warning was created)
+transform[stderr]: (node:4712) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+transform[stderr]: (Use `node --trace-warnings ...` to show where the warning was created)
+Getting Dependencies from System Modules: /private/tmp/nostrobe-s8-cleanclone/tv/node_modules/@amazon-devices/react-native-kepler/SystemModules/amzn__react-native-kepler-4.modules.txt
+Getting Dependencies from System Modules: /private/tmp/nostrobe-s8-cleanclone/tv/node_modules/@react-native-async-storage/async-storage/SystemModules/amzn__react-native-async-storage__async-storage-2.modules.txt
+Getting Dependencies from System Modules: /private/tmp/nostrobe-s8-cleanclone/tv/node_modules/@amazon-devices/react-native-w3cmedia/SystemModules/amzn__react-native-w3cmedia-2.modules.txt
+Getting Dependencies from System Modules: /private/tmp/nostrobe-s8-cleanclone/tv/node_modules/@amazon-devices/kepler-media-controls/SystemModules/amzn__kepler-media-controls.modules.txt
+Getting Dependencies from System Modules: /private/tmp/nostrobe-s8-cleanclone/tv/node_modules/@amazon-devices/keplermediadescriptor/SystemModules/amzn__keplermediadescriptor-1.modules.txt
+LOG:Writing bundle output to: /private/tmp/nostrobe-s8-cleanclone/tv/build/lib/rn-bundles/Release/index.bundle
+LOG:Writing sourcemap output to: /private/tmp/nostrobe-s8-cleanclone/tv/build/debugging/Release/srcmap/index.bundle.map
+LOG:Done writing bundle output
+LOG:Done writing sourcemap output
+info Completed building JS bundle and sourcemap for index.js
+info Completed processing debugging files for index.js
+info Completed building Hermes bundle for index.js
+info Initiating native artifacts build for Vega platform
+validating '/private/tmp/nostrobe-s8-cleanclone/tv/manifest.toml' ...
+analyzing manifest.toml ...
+manifest.toml is valid
+manifest validation found 0 errors
+manifest.toml:3:1 info: [package.icon] Icon is not defined in the manifest. System default will be used.
+  help: Define icon to help users recognize your application
+
+done.
+
+🔍 Build Configuration
+───────────────────────────────────────
+OS configuration resolved from package.json: ["vega"]
+Architectures resolved from package.json: ["armv7","x86_64","aarch64"]
+[VegaTargetSelector] Searching 23 paths
+[VegaTargetSelector] Config not found in any search path
+🔧 Resolved OS-version compatibility for 2 managed dependencies
+
+🔨 Build Plan (3 targets)
+───────────────────────────────────────
+  Release: aarch64, armv7, x86_64
+
+🔍 Build Parallelization
+───────────────────────────────────────
+Parallelizing 3 total requests:
+  - Known targets and buildTypes: aarch64 for Release
+  - Known targets and buildTypes: armv7 for Release
+  - Known targets and buildTypes: x86_64 for Release
+Running at most 4 threads in parallel
+
+[native-build] Could not compare package-lock.json, continuing to autolink
+[native-build] Perform autolinking on 3 qualified npm packages
+[native-build] cp: no such file or directory: /private/tmp/nostrobe-s8-cleanclone/tv/build/lib/rn-bundles/Release/assets/*
+[native-build] 2026-10-06T13:16:28.599366Z  INFO amzn_kepler_manifest_module_remapper: Checking manifest at: /private/tmp/nostrobe-s8-cleanclone/tv/build/private/vega/aarch64/Release/manifest.toml
+[native-build] 2026-10-06T13:16:28.605671Z  INFO amzn_kepler_manifest_module_remapper::modify: Found dependencies to add to the manifest: 
+[native-build] 	wants: []
+[native-build] 	needs: ["/com.amazon.kepler.async_storage__async_storage_2@IAsyncStorage__AsyncStorage_1", "/com.amazon.kepler.kepler_media_controls_1@IKeplerMediaControls_0", "/com.amazon.kepler.keplermediadescriptor_1@IKeplermediadescriptor_1", "/com.amazon.kepler.keplerscript_4@IKeplerScript_0", "/com.amazon.kepler.runtime.react_native_kepler_4@IReactNativeKepler_0", "/com.amazon.kepler.w3cmedia_2@IW3cmedia_3"]
+[native-build] 2026-10-06T13:16:28.605718Z  INFO amzn_kepler_manifest_module_remapper: Writing new manifest to: /private/tmp/nostrobe-s8-cleanclone/tv/build/private/vega/aarch64/Release/manifest.toml
+[native-build] 2026-10-06T13:16:28.606180Z  INFO amzn_kepler_manifest_module_remapper: Manifest remapping complete
+[native-build] Calling vpt with args pack /private/tmp/nostrobe-s8-cleanclone/tv/build/private/vega/aarch64/Release -n @amazon-devices/nostrobetv_aarch64 -d /private/tmp/nostrobe-s8-cleanclone/tv/build/private/kepler/@amazon-devices/nostrobetv/undefined/vega/aarch64/Release --validate
+[native-build] creating vpkg ...
+[native-build] WARNING: build_number is 0. Provide via --build-number CLI option or in manifest.toml [package] section.
+[native-build] analyzing manifest.toml ...
+[native-build] manifest.toml is valid
+[native-build] manifest validation found 0 errors
+[native-build] manifest.toml:3:1 info: [package.icon] Icon is not defined in the manifest. System default will be used.
+[native-build]   help: Define icon to help users recognize your application
+[native-build] 
+[native-build] staging package artifacts ...
+[native-build] generating meta-info ...
+[native-build] archiving ...
+[native-build] created: /private/tmp/nostrobe-s8-cleanclone/tv/build/private/kepler/@amazon-devices/nostrobetv/undefined/vega/aarch64/Release/@amazon-devices/nostrobetv_aarch64.vpkg
+[native-build] done.
+[native-build] {
+[native-build]   "title": "No Strobe-lem",
+[native-build]   "id": "com.nostrobe.tv",
+[native-build]   "version": "0.1.0",
+[native-build]   "build_number": 0,
+[native-build]   "size": 6448868,
+[native-build]   "os_version_registry": {
+[native-build]     "contract_package_version": "1.0.323.0",
+[native-build]     "os_versions": [
+[native-build]       "1.2"
+[native-build]     ]
+[native-build]   }
+[native-build] }
+[native-build] Could not compare package-lock.json, continuing to autolink
+[native-build] Perform autolinking on 3 qualified npm packages
+[native-build] cp: no such file or directory: /private/tmp/nostrobe-s8-cleanclone/tv/build/lib/rn-bundles/Release/assets/*
+[native-build] 2026-10-06T13:16:33.431842Z  INFO amzn_kepler_manifest_module_remapper: Checking manifest at: /private/tmp/nostrobe-s8-cleanclone/tv/build/private/vega/armv7/Release/manifest.toml
+[native-build] 2026-10-06T13:16:33.444278Z  INFO amzn_kepler_manifest_module_remapper::modify: Found dependencies to add to the manifest: 
+[native-build] 	wants: []
+[native-build] 	needs: ["/com.amazon.kepler.async_storage__async_storage_2@IAsyncStorage__AsyncStorage_1", "/com.amazon.kepler.kepler_media_controls_1@IKeplerMediaControls_0", "/com.amazon.kepler.keplermediadescriptor_1@IKeplermediadescriptor_1", "/com.amazon.kepler.keplerscript_4@IKeplerScript_0", "/com.amazon.kepler.runtime.react_native_kepler_4@IReactNativeKepler_0", "/com.amazon.kepler.w3cmedia_2@IW3cmedia_3"]
+[native-build] 2026-10-06T13:16:33.444323Z  INFO amzn_kepler_manifest_module_remapper: Writing new manifest to: /private/tmp/nostrobe-s8-cleanclone/tv/build/private/vega/armv7/Release/manifest.toml
+[native-build] 2026-10-06T13:16:33.468137Z  INFO amzn_kepler_manifest_module_remapper: Manifest remapping complete
+[native-build] Calling vpt with args pack /private/tmp/nostrobe-s8-cleanclone/tv/build/private/vega/armv7/Release -n @amazon-devices/nostrobetv_armv7 -d /private/tmp/nostrobe-s8-cleanclone/tv/build/private/kepler/@amazon-devices/nostrobetv/undefined/vega/armv7/Release --validate
+[native-build] creating vpkg ...
+[native-build] WARNING: build_number is 0. Provide via --build-number CLI option or in manifest.toml [package] section.
+[native-build] analyzing manifest.toml ...
+[native-build] manifest.toml is valid
+[native-build] manifest validation found 0 errors
+[native-build] manifest.toml:3:1 info: [package.icon] Icon is not defined in the manifest. System default will be used.
+[native-build]   help: Define icon to help users recognize your application
+[native-build] 
+[native-build] staging package artifacts ...
+[native-build] generating meta-info ...
+[native-build] archiving ...
+[native-build] created: /private/tmp/nostrobe-s8-cleanclone/tv/build/private/kepler/@amazon-devices/nostrobetv/undefined/vega/armv7/Release/@amazon-devices/nostrobetv_armv7.vpkg
+[native-build] done.
+[native-build] {
+[native-build]   "title": "No Strobe-lem",
+[native-build]   "id": "com.nostrobe.tv",
+[native-build]   "version": "0.1.0",
+[native-build]   "build_number": 0,
+[native-build]   "size": 6448868,
+[native-build]   "os_version_registry": {
+[native-build]     "contract_package_version": "1.0.323.0",
+[native-build]     "os_versions": [
+[native-build]       "1.2"
+[native-build]     ]
+[native-build]   }
+[native-build] }
+[native-build] Could not compare package-lock.json, continuing to autolink
+[native-build] Perform autolinking on 3 qualified npm packages
+[native-build] cp: no such file or directory: /private/tmp/nostrobe-s8-cleanclone/tv/build/lib/rn-bundles/Release/assets/*
+[native-build] 2026-10-06T13:16:39.485593Z  INFO amzn_kepler_manifest_module_remapper: Checking manifest at: /private/tmp/nostrobe-s8-cleanclone/tv/build/private/vega/x86_64/Release/manifest.toml
+[native-build] 2026-10-06T13:16:39.488284Z  INFO amzn_kepler_manifest_module_remapper::modify: Found dependencies to add to the manifest: 
+[native-build] 	wants: []
+[native-build] 	needs: ["/com.amazon.kepler.async_storage__async_storage_2@IAsyncStorage__AsyncStorage_1", "/com.amazon.kepler.kepler_media_controls_1@IKeplerMediaControls_0", "/com.amazon.kepler.keplermediadescriptor_1@IKeplermediadescriptor_1", "/com.amazon.kepler.keplerscript_4@IKeplerScript_0", "/com.amazon.kepler.runtime.react_native_kepler_4@IReactNativeKepler_0", "/com.amazon.kepler.w3cmedia_2@IW3cmedia_3"]
+[native-build] 2026-10-06T13:16:39.488319Z  INFO amzn_kepler_manifest_module_remapper: Writing new manifest to: /private/tmp/nostrobe-s8-cleanclone/tv/build/private/vega/x86_64/Release/manifest.toml
+[native-build] 2026-10-06T13:16:39.488811Z  INFO amzn_kepler_manifest_module_remapper: Manifest remapping complete
+[native-build] Calling vpt with args pack /private/tmp/nostrobe-s8-cleanclone/tv/build/private/vega/x86_64/Release -n @amazon-devices/nostrobetv_x86_64 -d /private/tmp/nostrobe-s8-cleanclone/tv/build/private/kepler/@amazon-devices/nostrobetv/undefined/vega/x86_64/Release --validate
+[native-build] creating vpkg ...
+[native-build] WARNING: build_number is 0. Provide via --build-number CLI option or in manifest.toml [package] section.
+[native-build] analyzing manifest.toml ...
+[native-build] manifest.toml is valid
+[native-build] manifest validation found 0 errors
+[native-build] manifest.toml:3:1 info: [package.icon] Icon is not defined in the manifest. System default will be used.
+[native-build]   help: Define icon to help users recognize your application
+[native-build] 
+[native-build] staging package artifacts ...
+[native-build] generating meta-info ...
+[native-build] archiving ...
+[native-build] created: /private/tmp/nostrobe-s8-cleanclone/tv/build/private/kepler/@amazon-devices/nostrobetv/undefined/vega/x86_64/Release/@amazon-devices/nostrobetv_x86_64.vpkg
+[native-build] done.
+[native-build] {
+[native-build]   "title": "No Strobe-lem",
+[native-build]   "id": "com.nostrobe.tv",
+[native-build]   "version": "0.1.0",
+[native-build]   "build_number": 0,
+[native-build]   "size": 6448868,
+[native-build]   "os_version_registry": {
+[native-build]     "contract_package_version": "1.0.323.0",
+[native-build]     "os_versions": [
+[native-build]       "1.2"
+[native-build]     ]
+[native-build]   }
+[native-build] }
+[native-build] vega vtbuild exited with code 0
+info build-vega completed

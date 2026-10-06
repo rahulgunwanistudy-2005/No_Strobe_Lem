@@ -1,0 +1,48 @@
+
+> @amazon-devices/nostrobetv@0.0.1 test
+> jest --runInBand --runTestsByPath __tests__/app.test.tsx --testNamePattern media error cancels a seek
+
+watchman warning:  Recrawled this watch 1 time, most recently because:
+MustScanSubDirs UserDroppedTo resolve, please review the information on
+https://facebook.github.io/watchman/docs/troubleshooting.html#recrawl
+To clear this warning, run:
+`watchman watch-del '/Users/rahul/No_Strobe_Lem' ; watchman watch-project '/Users/rahul/No_Strobe_Lem'`
+
+FAIL __tests__/app.test.tsx
+  ✕ media error cancels a seek queued before native dispatch (340 ms)
+  ○ skipped catalog selection with failing verifier keeps video blocked and never loads or plays native source
+  ○ skipped stored Kids household is restored before the catalog becomes interactive
+  ○ skipped storage read failure applies Kids and explains the fallback
+  ○ skipped missing track defaults to pause for Kids, explicit choice keeps banner and does not autoplay
+  ○ skipped profile swap replaces only the sidecar, preserves playback position and ignores mismatched profile
+  ○ skipped network error offers retry and never loads video
+  ○ skipped verified autoplay waits for native metadata and seeks keep a shield until veil propagation
+  ○ skipped same-turn seek storm issues one seek and ignores premature completion
+  ○ skipped native seek exception stays covered and offers retry
+
+  ● media error cancels a seek queued before native dispatch
+
+    expect(jest.fn()).not.toHaveBeenCalled()
+
+    Expected number of calls: 0
+    Received number of calls: 1
+
+    1: 10
+
+      196 |     expect(screen.getByText('Unsupported media or playback failure. Media interrupted')).toBeTruthy();
+      197 |     expect(screen.getByTestId('blocked')).toBeTruthy();
+    > 198 |     expect(player.seek).not.toHaveBeenCalled();
+          |                             ^
+      199 |     expect(player.play).toHaveBeenCalledTimes(1);
+      200 |   } finally {jest.useRealTimers(); screen.unmount();}
+      201 | });
+
+      at Object.toHaveBeenCalled (__tests__/app.test.tsx:198:29)
+      at asyncGeneratorStep (node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:17)
+      at _next (node_modules/@babel/runtime/helpers/asyncToGenerator.js:17:9)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 9 skipped, 10 total
+Snapshots:   0 total
+Time:        1.066 s, estimated 2 s
+Ran all test suites within paths "__tests__/app.test.tsx".

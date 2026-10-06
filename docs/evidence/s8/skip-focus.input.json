@@ -1,0 +1,13 @@
+[
+  {
+    "key": "KEY_UP",
+    "request_ns": 355117260694791,
+    "received_ns": 355119992600958,
+    "exit_code": 0,
+    "response": "Injecting Button Press As Driver: KEY_UP State: short"
+  },
+  {
+    "key": "KEY_UP",
+    "method": "Additional direct SDK VDA call between the initial focus snapshot and final skip-focus.png; per-event monotonic timestamps were not recorded"
+  }
+]

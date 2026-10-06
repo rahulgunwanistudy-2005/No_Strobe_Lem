@@ -328,18 +328,18 @@ The user's request authorizes systematic commits without attribution tags.
 Source-corrected interpretations and existing device/cloud limitations remain
 binding evidence; the pack's unverified marketing claims are draft material.
 
-- [ ] Review product and extracted reference code; cover decoder, catalog,
+- [x] Review product and extracted reference code; cover decoder, catalog,
   unresolved/overlap and rapid-seek edge cases with meaningful regressions.
-- [ ] Scan tracked files and reachable history for secrets; audit locked Python
+- [x] Scan tracked files and reachable history for secrets; audit locked Python
   and npm dependencies, fix supported high-severity updates, recheck IAM,
   public-prefix restrictions and Lambda input/storage limits.
-- [ ] Run engine, TV, infra and generated-contract quality gates; independently
+- [x] Run engine, TV, infra and generated-contract quality gates; independently
   exercise a clean checkout README quickstart and current VVD Release.
 - [ ] Recompute complete evaluation, compare a second run for determinism,
   freeze current-provenance results and synchronize every submission number.
-- [ ] Build a 20-second nonflashing timeline GIF; rewrite README around runtime
+- [x] Build a 20-second nonflashing timeline GIF; rewrite README around runtime
   hooks, quickstarts, architecture, results, prior art, safety and attribution.
-- [ ] Finalize real friction entries, per-tool feedback, source-linked feature
+- [x] Finalize real friction entries, per-tool feedback, source-linked feature
   requests, Devpost draft, judge Q&A and shot-by-shot demo readiness evidence.
 - [ ] Record open external gates honestly; tag v1.0.0 only if its acceptance
   gates are met, otherwise document the precise release blockers.
@@ -348,3 +348,9 @@ binding evidence; the pack's unverified marketing claims are draft material.
 Live AWS profile/region requested; independent local hardening proceeds.
 No reviewer invitations or public submission messaging is authorized by this
 request. Prepare repository access instructions for submission time instead.
+
+S8 implementation/security/docs checkpoints are committed. Engine 431 tests,
+TV 53 tests, infra 16 tests and reference Linux 429 tests pass. SDK advisories
+remain open after supported remediation; no v1.0.0 release pass is asserted.
+Fresh-clone environments/quality/Release/native playback pass; the complete
+current-provenance evaluation continues.
