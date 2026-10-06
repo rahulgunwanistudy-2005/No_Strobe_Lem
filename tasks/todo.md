@@ -285,3 +285,25 @@ three UI runs at 100% fluidity; app first frame 201–789 ms. First video frame
 0.923–1.376 s, but 76.7–81.7% video fluidity and nonzero drops. The zero-drop
 objective is open; missing fully-drawn markers are explicitly reported. No
 complete performance pass is asserted. See docs/S6_REPORT.md / S6_VALIDATION.json.
+
+# Session 7 plan
+
+Scope: execute the supplied S7 AWS/OSS brief. The explicit user request
+supersedes manual-commit defaults and the historical S6-before-S7 deferral.
+Preserve recorded S6 video-drop limitations; use plain systematic commits.
+
+- [ ] Build a verified-only S3 pipeline with bounded temporary storage, typed
+  statuses, idempotent source binding, structured metrics and race-safe catalog.
+- [ ] Package a checksum-pinned ffmpeg Lambda image from a CI-built wheel;
+  validate SAM permissions, public-prefix policy, retention and concurrency.
+- [ ] Extract and publish the Apache-2.0 hazardtrack reference repository,
+  conformance fixtures, browser example and independent quality CI.
+- [ ] Pin the product to the published library and add build-time TV catalog config.
+- [ ] Exercise local integration/quality gates and public repository CI;
+  deploy, upload a CC-BY sample, verify permissions/VVD and tear down if AWS
+  authentication is available. Record unavailable live gates honestly.
+- [ ] Document measurements, submission links, real friction and review results;
+  commit each completed stage without attribution trailers.
+
+AWS ~/.aws is empty; live credentials/region requested while local work continues.
+Authenticated GitHub account is rahul-software-dev. No Kiro usage is claimed.
