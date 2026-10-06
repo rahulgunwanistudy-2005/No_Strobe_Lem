@@ -1,0 +1,54 @@
+{
+  "attribution_file": "infra/sample-attribution.json",
+  "aws_measured": false,
+  "content_id": "4b68046087a1-bbb-opening",
+  "derived_sample_changes": "first three seconds, reencoded with explicit limited BT.709 metadata",
+  "derived_sample_source": "Blender Big Buck Bunny 1080p film",
+  "environment": "local macOS pipeline with in-memory S3 adapter; not AWS Lambda",
+  "item": {
+    "attribution": {
+      "changes": "Source unchanged; verified HazardTrack sidecars added",
+      "credit": "Blender Foundation / Big Buck Bunny (2008)",
+      "license": "CC-BY-3.0",
+      "url": "https://peach.blender.org/about/"
+    },
+    "content_id": "4b68046087a1-bbb-opening",
+    "duration_s": 3.0,
+    "report": "https://media.example/public/4b68046087a1-bbb-opening/report.html",
+    "source_sha256": "4b68046087a1798db08f36a447cb2b5c33436c181caf15a7a3672909cf24fb0f",
+    "title": "Big Buck Bunny \u2014 quiet opening sample",
+    "tracks": {
+      "broadcast": {
+        "hazard_count": 0,
+        "url": "https://media.example/public/4b68046087a1-bbb-opening/broadcast.hzt.json"
+      },
+      "kids": {
+        "hazard_count": 0,
+        "url": "https://media.example/public/4b68046087a1-bbb-opening/kids.hzt.json"
+      },
+      "local": {
+        "hazard_count": 0,
+        "url": "https://media.example/public/4b68046087a1-bbb-opening/local.hzt.json"
+      }
+    },
+    "video": "https://media.example/public/4b68046087a1-bbb-opening/video.mp4"
+  },
+  "lambda_cost_per_video_hour": null,
+  "metrics": {
+    "duration_s": 3.0,
+    "elapsed_s": 6.155733083025552,
+    "input_bytes": 694676,
+    "profile_event_counts": {
+      "broadcast": {},
+      "kids": {},
+      "local": {}
+    },
+    "verifier_passes": {
+      "broadcast": true,
+      "kids": true,
+      "local": true
+    }
+  },
+  "platform": "macOS-26.3-arm64-arm-64bit",
+  "state": "ready"
+}
