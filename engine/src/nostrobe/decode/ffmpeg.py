@@ -85,6 +85,7 @@ def probe(
         OSError,
         subprocess.TimeoutExpired,
         ValueError,
+        ZeroDivisionError,
         KeyError,
         IndexError,
         ValidationError,

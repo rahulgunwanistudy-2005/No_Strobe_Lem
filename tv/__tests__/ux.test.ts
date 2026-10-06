@@ -78,3 +78,24 @@ test('catalog bindings and URL policy reject broken entries without rewriting UR
   for (const path of ['//evil/video', '/../video', '/a\\b', 'http://evil/video', '/a/../video']) {expect(() => assetUrl(path)).toThrow();}
   expect(assetUrl('https://example.com/video.mp4', true)).toBe('https://example.com/video.mp4');
 });
+
+test('skip traverses unresolved and veiled overlaps without landing in either', () => {
+  const mixed = {...track, unresolved_segments: [{start: 6, end: 9, covers: [], reason: 'fixture'}],
+    veils: [track.veils[0], {...track.veils[0], id: 'last', t_on: 9, t_off: 10, ramp_out_s: 0.5}]};
+  const first = hazardAhead(mixed, 0, true)!;
+  expect(skipTarget(mixed, first)).toBe(10.5);
+});
+
+test('HTTPS HLS catalog URLs retain their exact source binding', () => {
+  const item = {content_id: track.media.content_id, source_sha256: track.media.source_sha256,
+    title: 'HLS fixture', duration_s: track.media.duration_s, video: 'https://media.example/vod/index.m3u8',
+    tracks: {}, attribution: {credit: 'Fixture', license: 'Test', url: 'https://example.com/', changes: 'None'}};
+  expect(parseCatalog({version: 1, items: [item]})[0].video).toBe(item.video);
+});
+
+test('catalog rejects credential and fragment URLs but permits signed HTTPS HLS', () => {
+  for (const url of ['https://user:password@example.com/a', 'https://example.com/a#b', 'https://example.com/a\\b']) {
+    expect(() => assetUrl(url)).toThrow();
+  }
+  expect(assetUrl('https://example.com/a.m3u8?token=fixture', true)).toBe('https://example.com/a.m3u8?token=fixture');
+});

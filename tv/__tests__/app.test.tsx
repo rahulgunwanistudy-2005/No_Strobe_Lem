@@ -131,3 +131,45 @@ test('verified autoplay waits for native metadata and seeks keep a shield until 
   await waitFor(() => expect(screen.getByTestId('unblocked')).toBeTruthy());
   screen.unmount();
 });
+
+test('same-turn seek storm issues one seek and ignores premature completion', async () => {
+  jest.spyOn(global, 'fetch').mockResolvedValue({ok: true, json: async () => valid} as Response);
+  const screen = render(<PlayerScreen {...props} />);
+  await waitFor(() => expect(screen.getByText('broadcast · Verified flash reduction')).toBeTruthy());
+  const player = (VegaW3CPlayer as jest.Mock).mock.results[0].value;
+  const listener = player.subscribe.mock.calls[0][0] as (event: PlayerEvent) => void;
+  act(() => listener({type: 'canplay', currentTime: 0, duration: 12, paused: true, playbackRate: 1}));
+  await waitFor(() => expect(player.play).toHaveBeenCalledTimes(1));
+  const {useTVEventHandler} = require('../src/player/TVPlatform');
+  fireEvent(screen.getByRole('adjustable'), 'focus');
+  const handler = (useTVEventHandler as jest.Mock).mock.calls.at(-1)[0];
+  act(() => {
+    for (let i = 0; i < 30; i++) {handler({eventType: 'right', eventKeyAction: 0});}
+    listener({type: 'seeked', currentTime: 0, duration: 12, paused: true, playbackRate: 1});
+  });
+  expect(screen.getByTestId('blocked')).toBeTruthy();
+  await waitFor(() => expect(player.seek).toHaveBeenCalledTimes(1));
+  expect(player.seek).toHaveBeenCalledWith(10);
+  expect(screen.getByTestId('blocked')).toBeTruthy();
+  act(() => listener({type: 'seeked', currentTime: 10, duration: 12, paused: true, playbackRate: 1}));
+  await waitFor(() => expect(screen.getByTestId('unblocked')).toBeTruthy());
+  screen.unmount();
+});
+
+test('native seek exception stays covered and offers retry', async () => {
+  jest.spyOn(global, 'fetch').mockResolvedValue({ok: true, json: async () => valid} as Response);
+  const screen = render(<PlayerScreen {...props} />);
+  await waitFor(() => expect(screen.getByText('broadcast · Verified flash reduction')).toBeTruthy());
+  const player = (VegaW3CPlayer as jest.Mock).mock.results[0].value;
+  const listener = player.subscribe.mock.calls[0][0] as (event: PlayerEvent) => void;
+  act(() => listener({type: 'canplay', currentTime: 0, duration: 12, paused: true, playbackRate: 1}));
+  await waitFor(() => expect(player.play).toHaveBeenCalledTimes(1));
+  player.seek.mockImplementationOnce(() => {throw new Error('Native seek failed');});
+  const {useTVEventHandler} = require('../src/player/TVPlatform');
+  fireEvent(screen.getByRole('adjustable'), 'focus');
+  act(() => (useTVEventHandler as jest.Mock).mock.calls.at(-1)[0]({eventType: 'right', eventKeyAction: 0}));
+  await waitFor(() => expect(screen.getByText('Native seek failed')).toBeTruthy());
+  expect(screen.getByTestId('blocked')).toBeTruthy();
+  expect(player.play).toHaveBeenCalledTimes(1);
+  screen.unmount();
+});

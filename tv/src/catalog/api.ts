@@ -19,7 +19,7 @@ function string(value: unknown): string {
   return value;
 }
 export function assetUrl(path: string, media = false): string {
-  if (/^https:\/\/[^/\s]+\//.test(path)) {return path;}
+  if (/^https:\/\/[^/@\s\\?#]+\/[^\s\\#]*$/.test(path)) {return path;}
   if (!/^\/(?!\/)/.test(path) || /[\\\s?#]/.test(path) || path.split('/').includes('..')) {
     throw new CatalogError('Unsupported catalog asset URL');
   }

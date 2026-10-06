@@ -42,6 +42,7 @@ export function PlayerScreen({item, preferences, visible, onBack, onSettings, on
   const [chrome, setChrome] = useState(true);
   const [scrubbing, setScrubbing] = useState(false);
   const sourceLoaded = useRef(false), autoStarted = useRef(false), resumeAfterSeek = useRef(false);
+  const seekPending = useRef(false), seekIssued = useRef(false);
   const frames = useRef(new Set<number>()), lastInput = useRef(performance.now());
   const live = useRef(true);
   const afterPaint = useCallback((action: () => void) => {
@@ -55,6 +56,8 @@ export function PlayerScreen({item, preferences, visible, onBack, onSettings, on
   const fail = useCallback((failure: unknown) => {
     if (!live.current) {return;}
     player.pause(); setPaused(true); setUnprotected(false);
+    resumeAfterSeek.current = false;
+    seekPending.current = false; seekIssued.current = false;
     const message = failure instanceof Error ? failure.message : 'Playback unavailable. Please retry.';
     console.error(JSON.stringify({event: 'playback_error', content_id: item.content_id, message}));
     setError(message);
@@ -79,12 +82,19 @@ export function PlayerScreen({item, preferences, visible, onBack, onSettings, on
       clock.update(event); setPaused(event.paused);
       if (event.type === 'seeking') {setSeeking(true);}
       if (event.type === 'seeked') {
+        if (!seekPending.current || !seekIssued.current) {return;}
+        seekIssued.current = false;
         afterPaint(() => {
+          if (!seekPending.current) {return;}
           setSeeking(false);
           if (resumeAfterSeek.current) {
             resumeAfterSeek.current = false;
-            afterPaint(() => {player.play().catch(fail);});
-          }
+            afterPaint(() => {
+              if (!seekPending.current) {return;}
+              seekPending.current = false;
+              if (live.current) {player.play().catch(fail);}
+            });
+          } else {seekPending.current = false;}
         });
       }
       if (event.error) {fail(new Error('Unsupported media or playback failure. ' + event.error.message));}
@@ -156,13 +166,15 @@ export function PlayerScreen({item, preferences, visible, onBack, onSettings, on
     if (!player.paused) {player.pause();} else {player.play().catch(fail);}
   };
   const seekTo = (target: number) => {
-    if (!canControl) {return;}
+    if (!canControl || seekPending.current) {return;}
+    seekPending.current = true;
     const value = Math.max(0, Math.min(item.duration_s, target));
     resumeAfterSeek.current = !player.paused;
     player.pause(); setSeeking(true);
     afterPaint(() => {
       clock.anchor({currentTime: value, duration: item.duration_s, playbackRate: player.playbackRate, paused: true});
-      player.seek(value);
+      try {seekIssued.current = true; player.seek(value);}
+      catch (failure: unknown) {fail(failure);}
     });
   };
   const segment = useMemo(() => hazardAhead(track, time, preferences.warnAhead), [track, time, preferences.warnAhead]);
