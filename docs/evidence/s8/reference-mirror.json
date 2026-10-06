@@ -1,0 +1,273 @@
+{
+  "scope": "all product-mirrored engine/src and spec tracked files",
+  "reviewed_paths": 66,
+  "differences": [],
+  "product_commit": "930d9ff8ab4becfc7a23c85ab660d7cde5ea7815",
+  "reference_commit": "3af8ff34bc51f28873a16a07dbe73889f600d9c2",
+  "files": [
+    {
+      "path": "engine/src/nostrobe/__init__.py",
+      "sha256": "b1939d10d4c2a50cfe5c599874728758048e19036d6368cc62ac9aa60deeb084"
+    },
+    {
+      "path": "engine/src/nostrobe/analysis.py",
+      "sha256": "2a9f415b37ddecd2462a6ae2dcd5bb7ba30ef0798e1ccfb53636477a8e3b0a91"
+    },
+    {
+      "path": "engine/src/nostrobe/calibration/__init__.py",
+      "sha256": "cbd53601f30f3831754bbed8abd6c7182e1b6d11679e46c16f1bc53c86a60ddd"
+    },
+    {
+      "path": "engine/src/nostrobe/calibration/measure.py",
+      "sha256": "031fc1e29259a0d05ddc27e518788558d2b6ed6329a7c994ff57654db5290f1b"
+    },
+    {
+      "path": "engine/src/nostrobe/calibration/stimuli.py",
+      "sha256": "1c6d135c65289ce0785a2ec08e53c8532fda13af90f6329d655a04fda87040a8"
+    },
+    {
+      "path": "engine/src/nostrobe/cli.py",
+      "sha256": "da7090b6d201420f13701981ca5306eda053b0266d487e3065ea7913f6646a48"
+    },
+    {
+      "path": "engine/src/nostrobe/config.py",
+      "sha256": "3a4e25b4b6aa7199f5615e9f3d98d9ce4890ccc6467ab9fd7dbe4dbcff3bad27"
+    },
+    {
+      "path": "engine/src/nostrobe/decode/__init__.py",
+      "sha256": "26721be4b6305c0ca262b857bf50ef8a8c26da27c8195560cd2194e82821da66"
+    },
+    {
+      "path": "engine/src/nostrobe/decode/cache.py",
+      "sha256": "0e92707ee98e9ba9922c685afc5c62f7a5986028653e87c1fc7d410d15c59acb"
+    },
+    {
+      "path": "engine/src/nostrobe/decode/ffmpeg.py",
+      "sha256": "9bed3ecd2637d1e603e2e9088d112012e4b5d3480bf225a0d58e71c44c0ef5bd"
+    },
+    {
+      "path": "engine/src/nostrobe/decode/process.py",
+      "sha256": "16fe8d9b4a5a663d5f1453df0204ffd5385db3b5c657c930d3ce58fceadba442"
+    },
+    {
+      "path": "engine/src/nostrobe/detect/__init__.py",
+      "sha256": "49e9853fc13618bfb3119fbee94766c28b43544b2460f2bad1b16b6056d84f41"
+    },
+    {
+      "path": "engine/src/nostrobe/detect/area.py",
+      "sha256": "37c615d6ec2ab32a91b23425bace13d3b5d4a4f23e4cb58bcd1c5dd2d1860ba9"
+    },
+    {
+      "path": "engine/src/nostrobe/detect/events.py",
+      "sha256": "111a4408ed014b6fdfd2a0f490f26340193bb39a55071c306b6e8150d6c025da"
+    },
+    {
+      "path": "engine/src/nostrobe/detect/extended.py",
+      "sha256": "9b30c214af0ddfcf6d85b3b3b198ff1ddbc631c31eee73e827e6d2ef442df643"
+    },
+    {
+      "path": "engine/src/nostrobe/detect/kernels.py",
+      "sha256": "69f6fe8191604cfbae5a5a53554a093d25834250f912ca75eb95b03db903732b"
+    },
+    {
+      "path": "engine/src/nostrobe/detect/luma_flash.py",
+      "sha256": "43e8b44a06229532479f720046ef81587a30b21d189576edcbc8f7009aa2e9b8"
+    },
+    {
+      "path": "engine/src/nostrobe/detect/pipeline.py",
+      "sha256": "2ed99215c608b50ce5514c511f832b307dc31a1ec0d4ec311c2d1ad5559be31e"
+    },
+    {
+      "path": "engine/src/nostrobe/detect/rate.py",
+      "sha256": "4b267c7233ab0e05f0092ac130744c94f49d60abaf046a43a4d9f7c9185ef46a"
+    },
+    {
+      "path": "engine/src/nostrobe/detect/red_flash.py",
+      "sha256": "661c548cd39b3f2109b9689f8754ba9f7ce1be61f7b5caf82b3d7d7ee121562a"
+    },
+    {
+      "path": "engine/src/nostrobe/detect/window.py",
+      "sha256": "c4f2f327dadb214a8e1e7b2fcb0a275bb72cb9e6696efdf01dee3f44cc1544ba"
+    },
+    {
+      "path": "engine/src/nostrobe/detect/zigzag.py",
+      "sha256": "12fe328cb1709aafdfe939e5f6ef72a889c635f2f9c6efbb74f089b1067af906"
+    },
+    {
+      "path": "engine/src/nostrobe/detect/zigzag_types.py",
+      "sha256": "176491effb673cfd4e64c31f534ca01d386c9a99c35980945f1254de2e985ac5"
+    },
+    {
+      "path": "engine/src/nostrobe/domain/__init__.py",
+      "sha256": "0af752a04fd2a9bc90f2cef46fcfe027bc7dc15d8dd0828dbf8b72fe59c31ab8"
+    },
+    {
+      "path": "engine/src/nostrobe/domain/models.py",
+      "sha256": "8f2b2507137417adb2772b5ccf8b4e35c659c6428166498127d038299f1d71c2"
+    },
+    {
+      "path": "engine/src/nostrobe/domain/profiles.py",
+      "sha256": "74d45796cb8f11087eb84cb5345f871cd48a5deef483419f8c7e0abf6df6a53f"
+    },
+    {
+      "path": "engine/src/nostrobe/domain/schema.py",
+      "sha256": "3bd590b568e3b4b0ced849b8fe0c4cc2158aa242e2332bae826f1a9faf090ea1"
+    },
+    {
+      "path": "engine/src/nostrobe/errors.py",
+      "sha256": "8b5d9fd7c7c0b8683c9e38f108d2e50fc359d344ae61cb45c6b977f4ac63b5f9"
+    },
+    {
+      "path": "engine/src/nostrobe/evaluation/__init__.py",
+      "sha256": "e075030ab45a728f63bdbb964058383886ba8ca72143cb45350ae622c7338b06"
+    },
+    {
+      "path": "engine/src/nostrobe/evaluation/cache.py",
+      "sha256": "8655603867fc038e03c2690bac62cefab59ce13b2a44c075646c1836e1e6bb6b"
+    },
+    {
+      "path": "engine/src/nostrobe/evaluation/manifest.py",
+      "sha256": "0954cbf6a4632929c472c94540a7e46593daca6960779791975c7c0744022700"
+    },
+    {
+      "path": "engine/src/nostrobe/evaluation/metrics.py",
+      "sha256": "6363fa26aca47c8bd47a1658bdd9a083ef68fb712cec39c0042555d0092a1ef4"
+    },
+    {
+      "path": "engine/src/nostrobe/evaluation/report.py",
+      "sha256": "8ccd30cbdd86a869388b198b87ef6ec016f0ddb084420cf4f2f67abc17f27b00"
+    },
+    {
+      "path": "engine/src/nostrobe/evaluation/runner.py",
+      "sha256": "cdddaa927d26ba54f6ad7662eeac9b5b93cf161d984b05fd3e7eaf14899b29a7"
+    },
+    {
+      "path": "engine/src/nostrobe/evaluation/suites.py",
+      "sha256": "6deeb7af188a51632485c699cbfa793b70e13a4a7a7d1201d161e6692245a251"
+    },
+    {
+      "path": "engine/src/nostrobe/evaluation/truth.py",
+      "sha256": "68223da3d41478f4a93c1d4fd2965dd7bffc64609ba1f62a60a7a9a502301acf"
+    },
+    {
+      "path": "engine/src/nostrobe/logging.py",
+      "sha256": "4cbbbfa24f0bef7415c0cde1146e27bd6fba938f596b518a8892dd15498d9c6b"
+    },
+    {
+      "path": "engine/src/nostrobe/luminance/__init__.py",
+      "sha256": "dd13a1e684bfa7cb3b629b8a00bd3e331e094d768f7d6d2e187cc72249496cef"
+    },
+    {
+      "path": "engine/src/nostrobe/luminance/bt1702_sdr_curve.csv",
+      "sha256": "8fcb9551d0cf8cc303e5f785f82b4f9b32e37a6e68df558ec52b5f9a69be8be1"
+    },
+    {
+      "path": "engine/src/nostrobe/luminance/color.py",
+      "sha256": "f3b9cb81090ab8daa30f8cc5c5b306fbb80cbd102ce8f31ed0d731d9930bb0d2"
+    },
+    {
+      "path": "engine/src/nostrobe/luminance/curve.py",
+      "sha256": "48a3005035a4599dc386d52459369095152b682013e779ec234675a419579d0a"
+    },
+    {
+      "path": "engine/src/nostrobe/py.typed",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "engine/src/nostrobe/report/__init__.py",
+      "sha256": "d08a62d6d699ab18985d766ebc9ab2e98c19827bca40676ff69d16105a733678"
+    },
+    {
+      "path": "engine/src/nostrobe/report/html.py",
+      "sha256": "1931b0c81aede7f1586ae6a96dab07eb68752644033e32fc3e3ec21218fa69f4"
+    },
+    {
+      "path": "engine/src/nostrobe/report/templates/report.html.j2",
+      "sha256": "820ae8f190e209e2c150e32d34e589d19e0c1521990f8482de95860d1c1b3cd9"
+    },
+    {
+      "path": "engine/src/nostrobe/synth/__init__.py",
+      "sha256": "c0e0d1196edca4dcf88b8f4b25717637712f88d37cdad8618e79db7133709050"
+    },
+    {
+      "path": "engine/src/nostrobe/synth/composite_real.py",
+      "sha256": "387cbd9bfa2b8f8069eb726bf20badf75b010b61ea2e33c00b97ce47daf5c09f"
+    },
+    {
+      "path": "engine/src/nostrobe/synth/generator.py",
+      "sha256": "6b664487d7c6597f7e2f038f4a5bfaff075e127836c99c6fd628f9677c2dff4c"
+    },
+    {
+      "path": "engine/src/nostrobe/track/__init__.py",
+      "sha256": "f74d3f27dd052fad317b22fadec78fd1f0440e025c169cb1aa033425e8e77c2e"
+    },
+    {
+      "path": "engine/src/nostrobe/track/jsonio.py",
+      "sha256": "8db0ec4df5b62be4d357cd6d37a640ee1cf499a76a4232a0a18de6cf0cc0a35b"
+    },
+    {
+      "path": "engine/src/nostrobe/track/stats.py",
+      "sha256": "9e0f9dc3202f0247136ff65c1d57d99def95d9076f72f0d8a9b113013ca056fa"
+    },
+    {
+      "path": "engine/src/nostrobe/track/webvtt.py",
+      "sha256": "807fca21a2cd89607a319ddaf3d32e737ecee0f44bcd9378a94d5adcdab8dd4d"
+    },
+    {
+      "path": "engine/src/nostrobe/veil/__init__.py",
+      "sha256": "f7de5c447e7cf4ce402d1e1df1420331d2545b75e560adc64199eb4147f57aa1"
+    },
+    {
+      "path": "engine/src/nostrobe/veil/composite.py",
+      "sha256": "c01533c999be02dfc6fb35192b4d28753848b9589ac120bc7834dc77591d377e"
+    },
+    {
+      "path": "engine/src/nostrobe/veil/conformance.py",
+      "sha256": "4e5d7f22374460373e44685eb22b724dcc33d3b01bfe6aecdb3fe0b5897a2b02"
+    },
+    {
+      "path": "engine/src/nostrobe/veil/segments.py",
+      "sha256": "e01c2f941515f082215d248c8c453d821578ff997786a323ab50047a279df505"
+    },
+    {
+      "path": "engine/src/nostrobe/veil/solver.py",
+      "sha256": "b342fe077339eedc0aedf3cc134f85b142a4659393d83f6eeceb4c1701a83aac"
+    },
+    {
+      "path": "engine/src/nostrobe/verify/__init__.py",
+      "sha256": "e4ad1de83a53e0af6c0b8d505dc8f9de1d2418cf8f9881ec53f1861e87c4316e"
+    },
+    {
+      "path": "engine/src/nostrobe/verify/verifier.py",
+      "sha256": "558466f8458843db3c484d0e28ee1f275bb227013601db6a5fa7aebe4fa5d5af"
+    },
+    {
+      "path": "spec/HAZARDTRACK.md",
+      "sha256": "23dd20cac7296f4e92eaeffda8223102c7bfcdf743b80dcbc375abb8eb1d2f1c"
+    },
+    {
+      "path": "spec/examples/contract.hzt.json",
+      "sha256": "0fd77e6ceac67252894b3038a1fce82f6cd3da9952d6494bde35c7104aaf347f"
+    },
+    {
+      "path": "spec/examples/timeline_conformance.json",
+      "sha256": "b3bdcfe7bcdca842389b9f98c35f77092201687c61976aa608a312e999c1c567"
+    },
+    {
+      "path": "spec/examples/web/README.md",
+      "sha256": "2da546c98ea8303e93a509fffcd6c486ec449f9f2b15ee627ff9821f33808390"
+    },
+    {
+      "path": "spec/examples/web/index.html",
+      "sha256": "f82cca7cc8942e77202570e820048b4d25e9bcb7e2c710fca64ba5602d588017"
+    },
+    {
+      "path": "spec/examples/web/reader.js",
+      "sha256": "8dfad7ca399d79cc066b5076726bbc55706a34fb25add8b484f2ce81288aacf5"
+    },
+    {
+      "path": "spec/schema/hazardtrack.schema.json",
+      "sha256": "7eadbbb7df391b236a55737ae58d663b4322292cb2a842203f153255f37a470b"
+    }
+  ]
+}

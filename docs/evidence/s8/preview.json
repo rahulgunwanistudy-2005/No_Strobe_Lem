@@ -1,0 +1,14 @@
+{
+  "file": "docs/assets/veil-timeline.gif",
+  "sha256": "c99cb84095e4ce5ee5e967937d3aef98df621fe1dc41c7d30288242171357eaa",
+  "frames": 100,
+  "dimensions": [
+    880,
+    360
+  ],
+  "duration_ms": 20000,
+  "frame_ms": [
+    200
+  ],
+  "scope": "schematic timeline and smooth gray overlay; contains no source film frames; visual inspection completed"
+}

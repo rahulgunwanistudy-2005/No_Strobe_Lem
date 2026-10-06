@@ -1,0 +1,216 @@
+{
+  "scope": "all tracked READMEs, product Devpost draft, TV sources and reference browser reader",
+  "zero_forbidden_phrases": true,
+  "files": [
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "README.md",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "docs/DEVPOST.md",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "docs/build-pack/README.md",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "docs/evidence/s5/README.md",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "docs/evidence/s6/README.md",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "docs/evidence/s8/README.md",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "infra/README.md",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "infra/oss/README.md",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "spec/examples/web/README.md",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "tv/README.md",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "tv/assets/README.md",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "tv/src/App.tsx",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "tv/src/calibration/CalibrationScreen.tsx",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "tv/src/calibration/timeline.ts",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "tv/src/catalog/api.ts",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "tv/src/config.ts",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "tv/src/deployment.ts",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "tv/src/player/PlayerAdapter.ts",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "tv/src/player/TVPlatform.ts",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "tv/src/player/VegaW3CPlayer.ts",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "tv/src/player/VideoSurface.tsx",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "tv/src/settings/preferences.ts",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "tv/src/track/load.ts",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "tv/src/track/parseWebvtt.ts",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "tv/src/track/profileSwap.ts",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "tv/src/types/hazardtrack.ts",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "tv/src/types/validateHazardTrack.d.ts",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "tv/src/types/validateHazardTrack.js",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "tv/src/ui/Catalog.tsx",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "tv/src/ui/FocusButton.tsx",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "tv/src/ui/HazardAheadChip.tsx",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "tv/src/ui/HazardScrubber.tsx",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "tv/src/ui/PlayerScreen.tsx",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "tv/src/ui/ProfilePicker.tsx",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "tv/src/ui/Settings.tsx",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "tv/src/ui/hazards.ts",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "tv/src/veil/VeilLayer.tsx",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "tv/src/veil/mediaClock.ts",
+      "passes": true
+    },
+    {
+      "repository": "No_Strobe_Lem",
+      "path": "tv/src/veil/scheduler.ts",
+      "passes": true
+    },
+    {
+      "repository": "hazardtrack",
+      "path": "README.md",
+      "passes": true
+    },
+    {
+      "repository": "hazardtrack",
+      "path": "examples/web/README.md",
+      "passes": true
+    },
+    {
+      "repository": "hazardtrack",
+      "path": "spec/examples/web/README.md",
+      "passes": true
+    }
+  ]
+}
