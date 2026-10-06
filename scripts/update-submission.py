@@ -20,6 +20,9 @@ def update() -> None:
     summary = data["summary"]
     total = sum(row["analyzed_tracks"] for row in summary.values())
     verified = sum(row["verified_tracks"] for row in summary.values())
+    unresolved = sum(row["unresolved_segments"] for row in summary.values())
+    if verified != total or unresolved:
+        raise ValueError("Submission requires every track to verify without unresolved segments")
     tolerance = data["environment"]["sync_tolerance_s"] * 1000
     lines = [
         "Copied from [RESULTS.md]({link}) and its machine-readable results; "
@@ -36,7 +39,6 @@ def update() -> None:
             f"{c['fp']} / {c['tn'] + c['fp']} | "
             f"{100 * row['veiled_fraction']:.4f}% | {row['mean_alpha']:.6f} |"
         )
-    unresolved = sum(row["unresolved_segments"] for row in summary.values())
     lines.extend(
         [
             "",
