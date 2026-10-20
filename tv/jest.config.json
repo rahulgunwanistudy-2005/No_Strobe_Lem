@@ -1,5 +1,7 @@
 {
   "preset": "@amazon-devices/react-native-kepler",
+  "setupFilesAfterEnv": ["<rootDir>/jest.setup.ts"],
+  "testTimeout": 30000,
   "testMatch": [
     "<rootDir>/__tests__/**/*.test.ts",
     "<rootDir>/__tests__/**/*.test.tsx"
