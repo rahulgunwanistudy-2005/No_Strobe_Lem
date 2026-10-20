@@ -134,6 +134,28 @@ Consolidated distinct reproduced issues; no entry is added to satisfy a count. O
 - Workaround: Publish source/licensed, checksum-pinned static binaries; clean SAM build then passes.
 - Suggestion: Document builder cache isolation and artifact packaging for compiled dependencies.
 
+### FL-013 — Missing VVD system image reported as a QEMU registration failure
+- Product / tool: Vega CLI 1.4.2 / SDK 0.24.12112 Vega Virtual Device
+- Date / version: 2026-10-20 IST; macOS 26.3 arm64
+- Task attempted: Start the existing VVD instance to rerun the Release app.
+- Steps taken: 1. Host cleanup had removed `vvd/images/tv/image_files/system.ext4`. 2. `vega virtual-device start`.
+- Expected: A message naming the missing image file and how to restore it.
+- Actual: `Registering QEMU binary as identified to system failed.`; logs empty. The CLI runs `xattr -r -d com.apple.quarantine` over the VVD tree and treats the dangling instance symlink's `No such file` as a registration failure.
+- Severity: Major
+- Workaround: Install the same SDK version under an isolated `HOME`, compare the surviving image files byte for byte, move only `system.ext4` back, delete the temporary SDK.
+- Suggestion: Validate instance image links before quarantine removal; offer a per-component repair or reinstall command.
+
+### FL-014 — W3C media stays `paused=false` after `ended`
+- Product / tool: W3C Media 2.3.2 on Vega Virtual Device (SDK 0.24.12112)
+- Date / version: 2026-10-20 IST; Release build, 12 s demo excerpt
+- Task attempted: Let a title play to its end, then use the D-pad controls.
+- Steps taken: 1. Play the catalog demo to completion. 2. Inspect controls and device log.
+- Expected: Per HTML media semantics, `paused` becomes true and `pause` precedes `ended`.
+- Actual: `ended` arrives, later events still report `paused=false`, and the element logs `No Time update even in Playing state: 11.999` every 250 ms. The UI showed Pause, auto-hid its controls and kept a stale hazard chip.
+- Severity: Minor
+- Workaround: The player screen latches `ended` until `seeking`/`play`/`playing`, holds the controls, hides the chip and replays through the shielded seek path; regression test added.
+- Suggestion: Set `paused` at end of playback as browsers do, or document the deviation in the W3C Media guide.
+
 ## S8 security follow-up
 
 The official npm advisory endpoint reports unfixed `braces` stack exhaustion in the dependency graph; the initial legacy `toml` findings were fixed in the SDK dependency graph. Supported Lodash/Minimatch/Ajv updates were applied and tested; remaining findings retain their exact reports in `docs/evidence/s8/`. No offline audit is treated as proof of security.

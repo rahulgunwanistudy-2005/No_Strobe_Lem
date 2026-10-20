@@ -1,6 +1,6 @@
 # Product feedback
 
-Final consolidation, 6 October 2026 IST. Only tools actually used receive an evaluation. Detailed session records remain in [the history](PRODUCT_FEEDBACK_HISTORY.md); [friction entries](FRICTION_LOG.md) provide reproductions.
+Final consolidation, 6 October 2026 IST; device recheck 20 October 2026 IST. Only tools actually used receive an evaluation. Detailed session records remain in [the history](PRODUCT_FEEDBACK_HISTORY.md); [friction entries](FRICTION_LOG.md) provide reproductions.
 
 ## Vega SDK / CLI 0.24.12112 / 1.4.2
 
@@ -14,7 +14,7 @@ Final consolidation, 6 October 2026 IST. Only tools actually used receive an eva
 
 - Used for: Playback, remote focus, storage restart, actual screen capture and calibration
 - Worked well: Authenticated SDK screenshots expose rendered pixels and original timestamps
-- Needs work: Ready message can precede parent-session shutdown; a running instance needed a VDA server restart before discovery; screenshot discovery is obscure; measured video drops remain
+- Needs work: Ready message can precede parent-session shutdown; a running instance needed a VDA server restart before discovery; screenshot discovery is obscure; measured video drops remain; a missing system image is reported as a QEMU registration failure (FL-013); a host sleep suspends the VM and the resumed app is killed as not responding
 - Onboarding zero → hello world: Start VVD, verify device discovery, install package and use SDK screenshot controller; S5/S6 retain actual evidence
 - Would build again: **Yes:** useful repeatable device testing; physical-TV calibration still needed
 
@@ -22,7 +22,7 @@ Final consolidation, 6 October 2026 IST. Only tools actually used receive an eva
 
 - Used for: VideoPlayer, surface attachment, events, protected seeking
 - Worked well: Awaited initialization, packaged media, native overlay stacking and measured compositing
-- Needs work: Empty HTTP error message; core manifest snippet omits player-session permission; delayed paused seek under load
+- Needs work: Empty HTTP error message; core manifest snippet omits player-session permission; delayed paused seek under load; `paused` stays false after `ended` (FL-014)
 - Onboarding zero → hello world: Builder Tools media workflow, explicit wants.service permissions and `/pkg/assets/raw/demo.mp4`; S5 measured actual frames
 - Would build again: **Yes:** adapter keeps portable timing semantics and native playback isolated
 
