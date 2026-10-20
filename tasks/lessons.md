@@ -132,3 +132,16 @@
 - S8: a clean checkout on the same host tests fresh environments, not a new OS.
   Retain a failed timed test and its unchanged isolated repeat; never extend
   timeouts or omit failures to describe the first run as passing.
+
+- 2026-10-20: run the TV Jest suite with a cleared transform cache before
+  calling it green. React Native's lazy exports compile during the first
+  render, which exceeded Testing Library's 1 s waitFor and Jest's 5 s test
+  defaults on a fresh clone while every warm rerun passed.
+- 2026-10-20: a disposer stored for later must be cleared when consumed. The
+  web reference page reused a stale cleanup after a failed reload, and the
+  second removeCue threw before any status update, silently disabling Load.
+- 2026-10-20: console screenshots of the VVD take 6–8 s. Time UI checks from
+  the capture timestamp, not the requested wait; otherwise normal end of a
+  short clip looks like an unexpected seek and auto-hidden controls look broken.
+- 2026-10-20: before calling an on-device kill an app fault, check whether
+  every process stopped logging over the same interval and the host sleep log.

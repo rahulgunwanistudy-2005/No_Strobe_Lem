@@ -359,3 +359,37 @@ All public tables and copy/link/evidence checks pass. Source is published in
 both public repositories; product Apache-2.0 recognition is verified. S8 local
 work is complete; live cloud/demo acceptance and upstream SDK advisories remain
 open, so v1.0.0 is deliberately withheld. See docs/S8_REPORT.md.
+
+# Verification session — 2026-10-20
+
+Scope: rerun every local gate, exercise the product end to end and fix
+breakages. No commits, pushes, AWS changes or SDK reinstalls without approval.
+
+- [x] Engine: lint/format/strict types/drift; 431 tests; synth → analyze →
+  verify (JSON and WebVTT) with mismatch/tamper refusals; HTML report.
+- [x] TV: types/lint; fix cold-cache Jest failure; Release build (3 arches).
+- [x] Infra 16 tests, SAM lint, web reader, catalog config, submission checks.
+- [x] Browser run of the reference player; fix dead Load button after a
+  failed reload (spec/examples/web/index.html).
+- [x] Fresh boundary-suite evaluation against the frozen gate.
+- [x] VVD run: SDK image `system.ext4` (2,130,862,080 bytes) had been deleted
+  from the host on 2026-10-14. Reinstalled SDK 0.24.12112 under an isolated
+  HOME with a 3 GiB free-space guard; the download checksum verified and every
+  surviving image file matched byte for byte. Moved only `system.ext4` back,
+  removed the temporary SDK; the real Vega config was untouched.
+- [x] Release app on VVD with D-pad only: catalog, protected autoplay under the
+  veil, hazard chip and skip, scrubber ticks, settings (Kids household locks
+  Kids), disclaimer, persistence across process restart, Kids playback.
+- [x] Fix end-of-media: native media keeps `paused=false` after `ended`; the UI
+  now latches ended, holds controls, hides the stale chip and replays through
+  the shielded seek. Regression test fails without the fix; device-verified.
+- [x] Dependencies: handlebars 4.7.10 (critical) and uuid 11.1.1 overrides;
+  braces/fast-xml-parser/sprintf-js have no in-range fix. Python audits clean.
+- [x] Lambda image (`analyzefunction:s7`) rerun on a hazard clip: read-only root,
+  size budget, three verified profiles, two events each.
+- [x] Reference repo (`hazardtrack`): same web player fix in both copies.
+- [ ] Live AWS deploy/cost/teardown: no AWS credentials on this host.
+- [ ] Final narrated demo video and v1.0.0 tag: unchanged S8 blockers.
+
+Two device-killed sessions were host effects, not app faults: a 9 s whole-VM
+stall flagged by the SDK as a possibly false ANR, and a ~3 h host sleep.
