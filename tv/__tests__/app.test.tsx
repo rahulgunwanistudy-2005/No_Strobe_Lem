@@ -133,6 +133,35 @@ test('verified autoplay waits for native metadata and seeks keep a shield until 
   screen.unmount();
 });
 
+test('end of media holds as paused although native reports playing, hides the stale chip and replays through a shielded seek', async () => {
+  const toEnd = {...valid, veils: valid.veils.map(cue => ({...cue, t_off: 11.5}))};
+  jest.spyOn(global, 'fetch').mockResolvedValue({ok: true, json: async () => toEnd} as Response);
+  const screen = render(<PlayerScreen {...props} />);
+  await waitFor(() => expect(screen.getByText('broadcast · Verified flash reduction')).toBeTruthy());
+  const player = (VegaW3CPlayer as jest.Mock).mock.results[0].value;
+  const listener = player.subscribe.mock.calls[0][0] as (event: PlayerEvent) => void;
+  act(() => listener({type: 'canplay', currentTime: 0, duration: 12, paused: true, playbackRate: 1}));
+  await waitFor(() => expect(player.play).toHaveBeenCalledTimes(1));
+  act(() => listener({type: 'playing', currentTime: 11.9, duration: 12, paused: false, playbackRate: 1}));
+  await waitFor(() => expect(screen.getByLabelText('Flashing ahead · OK to skip')).toBeTruthy());
+  act(() => {
+    listener({type: 'ended', currentTime: 11.999, duration: 12, paused: false, playbackRate: 1});
+    listener({type: 'timeupdate', currentTime: 11.999, duration: 12, paused: false, playbackRate: 1});
+  });
+  await waitFor(() => expect(screen.getByLabelText('Replay')).toBeTruthy());
+  expect(screen.queryByLabelText('Flashing ahead · OK to skip')).toBeNull();
+  expect(screen.queryByLabelText('Pause')).toBeNull();
+  fireEvent.press(screen.getByLabelText('Replay'));
+  expect(player.pause).toHaveBeenCalled();
+  expect(screen.getByTestId('blocked')).toBeTruthy();
+  await waitFor(() => expect(player.seek).toHaveBeenCalledWith(0));
+  act(() => listener({type: 'seeking', currentTime: 0, duration: 12, paused: true, playbackRate: 1}));
+  act(() => listener({type: 'seeked', currentTime: 0, duration: 12, paused: true, playbackRate: 1}));
+  await waitFor(() => expect(player.play).toHaveBeenCalledTimes(2));
+  await waitFor(() => expect(screen.getByTestId('unblocked')).toBeTruthy());
+  screen.unmount();
+});
+
 test('same-turn seek storm issues one seek and ignores premature completion', async () => {
   jest.spyOn(global, 'fetch').mockResolvedValue({ok: true, json: async () => valid} as Response);
   const screen = render(<PlayerScreen {...props} />);

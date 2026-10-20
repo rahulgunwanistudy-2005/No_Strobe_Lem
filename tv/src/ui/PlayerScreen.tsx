@@ -42,7 +42,7 @@ export function PlayerScreen({item, preferences, visible, onBack, onSettings, on
   const [chrome, setChrome] = useState(true);
   const [scrubbing, setScrubbing] = useState(false);
   const sourceLoaded = useRef(false), autoStarted = useRef(false), resumeAfterSeek = useRef(false);
-  const seekPending = useRef(false), seekIssued = useRef(false);
+  const seekPending = useRef(false), seekIssued = useRef(false), ended = useRef(false);
   const frames = useRef(new Set<number>()), lastInput = useRef(performance.now());
   const live = useRef(true);
   const afterPaint = useCallback((action: () => void) => {
@@ -79,7 +79,10 @@ export function PlayerScreen({item, preferences, visible, onBack, onSettings, on
         }
         if (event.type === 'canplay') {setMediaReady(true);}
       }
-      clock.update(event); setPaused(event.paused);
+      // Vega media keeps reporting paused=false after `ended`; hold end-of-media until playback restarts.
+      if (event.type === 'ended') {ended.current = true;}
+      if (event.type === 'seeking' || event.type === 'play' || event.type === 'playing') {ended.current = false;}
+      clock.update(event); setPaused(event.paused || ended.current);
       if (event.type === 'seeking') {setSeeking(true);}
       if (event.type === 'seeked') {
         if (!seekPending.current || !seekIssued.current) {return;}
@@ -107,7 +110,7 @@ export function PlayerScreen({item, preferences, visible, onBack, onSettings, on
     });
     const timer = setInterval(() => {
       setTime(clock.now());
-      setChrome(player.paused || performance.now() - lastInput.current < 4000);
+      setChrome(player.paused || ended.current || performance.now() - lastInput.current < 4000);
     }, 100);
     return () => {
       live.current = false; unsubscribe(); background.remove(); clearInterval(timer); swap.cancel();
@@ -163,13 +166,13 @@ export function PlayerScreen({item, preferences, visible, onBack, onSettings, on
   const showChrome = () => {lastInput.current = performance.now(); setChrome(true);};
   const toggle = () => {
     showChrome(); if (!canControl) {return;}
-    if (!player.paused) {player.pause();} else {player.play().catch(fail);}
+    if (ended.current) {seekTo(0, true);} else if (!player.paused) {player.pause();} else {player.play().catch(fail);}
   };
-  const seekTo = (target: number) => {
+  const seekTo = (target: number, resume = !player.paused && !ended.current) => {
     if (!canControl || seekPending.current) {return;}
     seekPending.current = true;
     const value = Math.max(0, Math.min(item.duration_s, target));
-    resumeAfterSeek.current = !player.paused;
+    resumeAfterSeek.current = resume;
     player.pause(); setSeeking(true);
     afterPaint(() => {
       if (!seekPending.current) {return;}
@@ -178,7 +181,8 @@ export function PlayerScreen({item, preferences, visible, onBack, onSettings, on
       catch (failure: unknown) {fail(failure);}
     });
   };
-  const segment = useMemo(() => hazardAhead(track, time, preferences.warnAhead), [track, time, preferences.warnAhead]);
+  const segment = useMemo(() => paused && ended.current ? undefined : hazardAhead(track, time, preferences.warnAhead),
+    [track, time, preferences.warnAhead, paused]);
   useTVEventHandler(event => {
     if (!visible || event.eventKeyAction === 1) {return;}
     showChrome();
@@ -214,7 +218,7 @@ export function PlayerScreen({item, preferences, visible, onBack, onSettings, on
       </> : <>
         <View style={styles.row}>
           <FocusButton label="Catalog" onPress={onBack} />
-          <FocusButton label={paused ? 'Play' : 'Pause'} preferred onPress={toggle} disabled={!canControl} />
+          <FocusButton label={ended.current && paused ? 'Replay' : paused ? 'Play' : 'Pause'} preferred onPress={toggle} disabled={!canControl} />
           <FocusButton label={`Settings · ${preferences.profile}`} onPress={onSettings} />
           {!!error && <FocusButton label="Retry playback" onPress={onRetry} />}
         </View>
