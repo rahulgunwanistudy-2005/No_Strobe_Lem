@@ -25,7 +25,8 @@ const byId = id => document.getElementById(id);
 const video = byId('video'), veil = byId('veil'), play = byId('play');
 let cleanup, generation = 0;
 byId('load').onclick = async () => {
-  const current = ++generation; play.disabled = true; video.pause(); cleanup?.(); veil.style.opacity = '1';
+  const current = ++generation, previous = cleanup; cleanup = undefined;
+  play.disabled = true; video.pause(); previous?.(); veil.style.opacity = '1';
   byId('status').textContent = 'Checking media binding and verification…';
   try {
     const trackURL = new URL(byId('track').value, location.href);
