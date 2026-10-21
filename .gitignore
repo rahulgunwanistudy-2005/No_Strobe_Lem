@@ -19,3 +19,4 @@ synth_out/
 analysis_out/
 
 .aws-sam/
+.claude/launch.json
