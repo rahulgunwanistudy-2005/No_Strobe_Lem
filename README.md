@@ -18,6 +18,8 @@ The Release app builds and runs on the **Vega Virtual Device (VVD)**. Timing and
 
 ## Quickstart
 
+To check everything at once, run `scripts/verify-all.sh` (about 10 minutes; `--quick` skips the engine suite). It ends with a PASS/FAIL table.
+
 Requirements: Python 3.12, [uv](https://docs.astral.sh/uv/), Node.js 24, ffmpeg/ffprobe ≥6 with libx264, and the installed [Vega SDK](https://developer.amazon.com/docs/vega/0.24/install-vega-sdk) for TV work. Lockfiles pin resolved dependencies. Run from this repository's root.
 
 ### Engine and contracts
@@ -129,6 +131,6 @@ HazardTrack contributes a portable, versioned sidecar plus playback-time profile
 
 ## Submission and license
 
-[Demo shot readiness](docs/DEMO_READINESS.md) · [Devpost draft](docs/DEVPOST.md) · [Judge Q&A](docs/JUDGE_QA.md) · [Tool feedback](docs/PRODUCT_FEEDBACK.md) · [Real friction log](docs/FRICTION_LOG.md) · [Feature requests](docs/FEATURE_REQUESTS.md) · [Open-source contribution](docs/OSS_SUBMISSION.md).
+[Submission checklist](docs/SUBMISSION_CHECKLIST.md) · [Demo shot readiness](docs/DEMO_READINESS.md) · [Devpost draft](docs/DEVPOST.md) · [Judge Q&A](docs/JUDGE_QA.md) · [Tool feedback](docs/PRODUCT_FEEDBACK.md) · [Real friction log](docs/FRICTION_LOG.md) · [Feature requests](docs/FEATURE_REQUESTS.md) · [Open-source contribution](docs/OSS_SUBMISSION.md).
 
 [Apache-2.0 license](LICENSE). [Attribution](docs/ATTRIBUTION.md) credits Blender Foundation / Peach and Mango teams and records CC-BY modifications. Bundled ffmpeg source/license/build provenance is recorded in the release lock and AWS guide.
